@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Lossless Audio: Everything you need to know as a smartphone user</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>无损音频:作为智能手机用户你需要知道的一切</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/noozy-audio-player-brings-unique-sound/#0001-01-01">https://www.xda-developers.com/noozy-audio-player-brings-unique-sound/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+
+<p>还记得随身听、iPods和CD播放器的美好时光吗？或者甚至在那之前，唱片在唱盘上播放的时候？这才是真正的无损音频。最纯粹形式的音频，音乐以最纯粹的形式呈现，完全符合艺术家的意图。然而，随着智能手机和音乐流媒体服务的出现，专用音乐播放器几乎已经过时。虽然能够随时随地访问庞大的音乐库非常方便，但这种方便是有代价的——音乐的音频质量。</p>
+
+  
+<p>如今，我们听的大多数音乐都经过了大幅压缩，以节省设备空间和消耗更少的移动数据。这种压缩会显著降低音频质量。如果你想听最高质量的音乐，就像艺术家想要的那样，无损音频就是答案。但是什么是无损音频呢？是否明显优于MP3等压缩音频格式？</p>
+
+ 
+<h2 id="what-is-audio-compression">什么是音频压缩？</h2><div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/12/walkman-featured.avif" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Image credit: Florian Schemetz on Unsplash&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/12/walkman-featured.avif?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/12/walkman-featured.avif?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/12/walkman-featured.avif?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/12/walkman-featured.avif?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img width="" height="" class="lazyload" alt="Walkman featured" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/12/walkman-featured.avif" src="../Images/fde7822cbc7c083225cd244854cc08a8.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/12/walkman-featured.avif"/> </picture> <figcaption class="body-img-caption">Image credit: Florian Schemetz on Unsplash</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>在我们回答这个问题之前，重要的是多了解一些(不那么)常用的术语- <em>比特率</em>和<em>采样率</em>。</p>
+
+<p>比特率是指每秒钟编码为音频的数据量。数据是以比特的形式存在的，因此比特率通常以千比特每秒或<em> kbps </em>的形式表示。另一方面，采样率指的是一秒钟内声音被转换成数据的次数。因为任何每秒<em>的值</em>都表示频率，所以采样率以千赫兹或<em>千赫兹</em>的形式表示。如果你觉得很难理解比特率和采样率的真正含义，只需知道比特率和采样率越高，你听到的音频质量就越好。</p>
+
+<p>CD或压缩光盘通常使用专门为CD播放器构建的音频格式，没有直接连接到PC的对等物。当我们将CD文件“翻录”到计算机时，我们通常会将这些音频流转换为WAV或AIF，因为这两种编解码器支持CD的相同比特率和采样速率。高质量的WAV文件通常具有1，411kbps的比特率和44.1KHz的采样速率。理想情况下，这是听到“无损”音频所需的比特率和采样速率。然而，有一个警告。高比特率意味着更多的数据，这反过来意味着高文件大小。为了减小这些音频文件的大小，它们必须被压缩，这就是它们失去<em>无损</em>标签的地方。</p>
+
+<p>现在你从网上下载的大多数音频文件通常都是MP3格式的。这种格式很受欢迎，因为它在多种设备上得到广泛支持，没有任何兼容性问题。然而，MP3是一种压缩音频格式，这基本上意味着你会错过一些信息，而这些信息你可能会在无损音频文件中听到。我们说<em>可能</em>的原因是因为甚至一些音响发烧友声称他们无法区分320kbps MP3和FLAC这样的无损格式，我们稍后会谈到这一点。音频流媒体服务也使用一种称为AAC的格式，在相同的比特率下，这种格式通常比MP3听起来更好。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/24bit-WAV-1024x602.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;24-bit WAV Audio&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/24bit-WAV-1024x602.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/24bit-WAV-1024x602.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/24bit-WAV-1024x602.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/24bit-WAV-1024x602.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="24-bit WAV Audio Waveform" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/24bit-WAV-1024x602.jpg" src="../Images/06dfc480cb0388e8f947b62509253e4d.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/24bit-WAV-1024x602.jpg"/> </picture> <figcaption class="body-img-caption">24-bit WAV Audio</figcaption> </figure> </div>
+
+
+ </div>
+
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-320kbps-1024x601.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;320kbps MP3 Audio&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-320kbps-1024x601.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-320kbps-1024x601.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-320kbps-1024x601.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-320kbps-1024x601.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="320kbps MP3 Audio Waveform" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-320kbps-1024x601.jpg" src="../Images/7fdb7d9049ca8ebcafb21214514acade.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-320kbps-1024x601.jpg"/> </picture> <figcaption class="body-img-caption">320kbps MP3 Audio</figcaption> </figure> </div>
+
+
+ </div>
+
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-128kbps-1024x600.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;128kbps MP3 Audio&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-128kbps-1024x600.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-128kbps-1024x600.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-128kbps-1024x600.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-128kbps-1024x600.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="MP3 128kbps Audio Waveform" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-128kbps-1024x600.jpg" src="../Images/f713ceb951111221a82d567d058c8ab7.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/MP3-128kbps-1024x600.jpg"/> </picture> <figcaption class="body-img-caption">128kbps MP3 Audio</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>你在上面看到的波形很好地描述了WAV和MP3音频之间的区别。正如你所看到的，特定频率以上的细节在MP3音频文件中被截掉，但在WAV音频中被保留。在128kbps MP3频谱图中，您可以看到截止频率低于320kbps MP3文件，这表明比特率和位深度较低的音频文件的音频质量较低。24位WAV文件具有更高的频率范围，表示更多的细节和更好的音频质量。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="difference-between-uncompressed-and-lossless-audio">未压缩音频和无损音频的区别</h2>
+<p>自从苹果宣布在iOS和Android上的Apple Music中使用无损音频以来,“无损”一词就被广泛使用。尽管无损音频和未压缩音频是不一样的，但值得注意的是。未压缩音频指的是未经任何技术干预的最纯粹形式的录制轨道。这是一种拥有最细微细节的音频。然而由于存储限制，分发这种音频格式是不实际的，这是压缩但无损的音频进入画面的地方。通俗地说，这就是所谓无损音频。</p>
+
+
+
+<p>在某些情况下，我们提到无损音频的比特率通常从1，411kbps开始。另一方面，MP3和AAC最大可以压缩320kbps，这显示了这些格式的实际压缩程度。到现在为止，你一定已经意识到在无损音频和压缩音频之间找到一个中间点是很重要的。输入弗莱克和ALAC。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="lossless-audio-on-smartphones-flac-and-alac">智能手机flac和alac上的无损音频</h2>
+<p>智能手机和电脑等数字设备上的无损音频已经存在了一段时间，但由于两个原因一直不太受欢迎——一是价格昂贵，需要订阅服务，如<a href="https://tidal.com/"> Tidal </a>或<a href="https://www.amazon.com/music/unlimited/hd?tag=xda-6mjt00n-20&amp;ascsubtag=UUxdaUeUpU6436&amp;asc_refurl=https%3A%2F%2Fwww.xda-developers.com%2Flossless-audio%2F&amp;asc_campaign=Authority" class="norewrite noskim" rel="sponsored nofollow"> Amazon Music HD </a>。第二，无损格式的专辑是有限的。</p>
+
+<p>它们是如何工作的呢？他们使用一种称为FLAC或免费无损音频编解码器的音频编解码器。</p>
+
+
+
+<p>FLAC使用一种压缩算法，可以保持高达96KHz的高采样率，这甚至比我们之前谈到的WAV格式更好，而只占用一半的存储空间。虽然大多数现代智能手机和笔记本电脑都支持FLAC，但苹果公司开发了自己的编解码器，称为ALAC，代表苹果无损音频编解码器。这类似于FLAC，只不过它兼容iOS和macOS。如果您想要使用iTunes将无损音频传输到iPhone，这是您需要的格式。</p>
+
+<p>有一个参数我们之前没有提到，它在决定音频质量方面也起着很大的作用，那就是<em>位深度</em>或<em>分辨率</em>。位深度表示每个样本中存在的数据的位数。理解这一点的一个简单方法是从视频的角度来看。如果你看的是分辨率较低的视频，比如480p，那么你看到的信息量或数据量比1080p视频要少。同样，更高的<em>位深度</em>或<em>分辨率</em>表示更好的音频质量。</p>
+
+<p>FLAC和ALAC都支持高达32位的音频，高于CD支持的16位分辨率。另外，请注意，FLAC和ALAC并不总是未压缩音频的完美再现。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="apple-music-lossless-audio">苹果音乐无损音频</h2>
+<p>2021年7月，Apple Music加入了Tidal和亚马逊音乐HD，为大众带来无损音频流。Apple Music与其他平台提供无损音频的最大区别是，Apple Music上的所有歌曲都是无损格式的，而不仅仅是精选的几张专辑。最棒的是，苹果不会对无损选项额外收费。这是一个大新闻，因为苹果通常会为其他品牌树立榜样。如果苹果免费提供无损音频，使用其他流媒体服务的消费者将会转向苹果音乐。</p>
+
+
+
+<p>Spotify宣布他们也在致力于将无损音频引入该平台，但该公司尚未提供具体的发布日期。就目前的情况来看，Apple Music是无损荣耀中最简单、最便宜的收听所有喜欢的曲目的方式。当然，你需要相关的硬件来体验它，你可以在我们的<a href="https://www.xda-developers.com/best-wired-earphones-headphones-dac-lossless-audio/">体验无损音频的最佳配件文章</a>中找到，它列出了你听无损音频所需的所有不同部分。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="lossless-audio-vs-compressed-audio-can-you-really-tell-the-difference">无损音频与压缩音频:你真的能区分吗？</h2>
+<p>对于普通用户来说，压缩音频和无损音频之间的区别可能并不明显。即使你是一个音响发烧友，你可能仍然不能清楚地区分320kbps的MP3和FLAC文件。一个简单的方法来检查你是否真的能够区分压缩音频和无损音频，就是通过你的智能手机上的录音机应用程序，以两种不同的格式录制相同的音频。</p>
+
+<p>例如，在iPhone上，导航到<em>设置</em> <em> &gt; </em> <em>语音备忘录</em>会显示一个名为<em>音频质量的选项。</em>先设置为<em>压缩</em>，然后转到语音备忘录app，录一个短片。回到<em>设置</em>，现在将<em>质量</em>更改为<em>无损</em>。再录一段。连续回放两个片段，看看是否能听出不同。</p>
+
+<p>这或多或少就是你在播放压缩音频和无损音频时会注意到的区别。请注意，最好使用一副高品质的耳机或头戴式耳机来听这段，因为差异会更明显。或者，你也可以访问<a href="http://abx.digitalfeed.net/list.html">这个网站</a>，戴上耳机进行测试，看看你能否区分无损音频和有损音频。</p>
+
+<p>然而，如果您没有合适的硬件来利用它，高比特率甚至没有任何意义。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="how-to-experience-lossless-audio-on-your-android-ios-smartphone">如何在Android/iOS智能手机上体验无损音频</h2>
+<p>现在困难的部分来了。你已经理解了无损音频、FLAC、ALAC和所有其他术语的含义，现在你想体验一下。你怎么能这样做？我们希望答案是直截了当的。</p>
+
+<p>在宣布Apple Music上的无损音频后不久，苹果公司也发表了一份声明，称无损音频不会在<a href="https://www.amazon.com/Apple-MWP22AM-A-AirPods-Pro/dp/B07ZPC9QD4/?tag=xda-6mjt00n-20&amp;ascsubtag=UUxdaUeUpU6436&amp;asc_refurl=https%3A%2F%2Fwww.xda-developers.com%2Flossless-audio%2F&amp;asc_campaign=Authority" class="norewrite noskim" rel="sponsored nofollow"> AirPods Pro </a>甚至超级昂贵的<a href="https://www.amazon.com/New-Apple-AirPods-Max-Space/dp/B08PZHYWJS?tag=xda-6mjt00n-20&amp;ascsubtag=UUxdaUeUpU6436&amp;asc_refurl=https%3A%2F%2Fwww.xda-developers.com%2Flossless-audio%2F&amp;asc_campaign=Authority" class="norewrite noskim" rel="sponsored nofollow"> AirPods Max </a>上工作。事实上，即使你有<a href="https://www.xda-developers.com/best-phones/">最好的智能手机</a>和<a href="https://www.xda-developers.com/best-wireless-earbuds/">最好的真正无线耳机</a>，你仍然无法在Apple Music上体验无损音频。</p>
+
+<p>原因是蓝牙编解码器无法匹配无损音频文件的比特率。苹果使用AAC通过蓝牙传输音频，比特率上限为256kbps。虽然Android手机和一些无线耳机支持aptX HD，但该编解码器的比特率(576 kbps)也无法接近ALAC。索尼的LDAC最接近实现无损音频所需的1，411 kbps(990 kbps时为32位/96kHz)，但iPhone不支持它，支持该编解码器的耳机也很少。</p>
+
+<p>问题的关键是蓝牙音频编解码器不支持传输无损音频文件所需的带宽，而不压缩它们。</p>
+
+
+
+<p>在iPhone上体验无损音频的最佳方式是使用lightning to 3.5mm毫米DAC以及一副好的耳机或头戴式耳机。Android设备也一样，只是你需要一个Type-C到3.5毫米的适配器。一些Android手机确实带有内置的HiFi DAC，这些应该能够通过耳机插孔或USB-C端口直接传输无损音频。虽然从技术上讲，每部手机都有内置的DAC，但它可能无法推送无损音频。LG在其智能手机上使用了高质量的DAC，现在华硕ROG手机5也有一个。如果您想要最佳体验，您可能需要购买一个通过USB连接的良好外部DAC。同样的解决方案也可以用在电脑或笔记本电脑上。</p>
+
+<p>注意，Apple Music lossless将分为两层——<em>无损</em>层是<em> 16位/48kHz </em>，比特率为<em> 1411kbps </em>。如果您使用苹果的lightning DAC，这是可以访问的层。还有一个<em>高分辨率无损</em>层，让你体验<em> 24位/192KHz </em>音频，为此你需要一个更好的DAC。</p>
+
+<p>因此，要真正享受无损音频，您需要三个部分协同工作:</p>
+
+<ul> <li>内置DAC的器件，或者内置DAC的器件。</li> <li>一副高质量的耳机</li> <li>无损的文件源，即支持无损音频流的流服务。</li> </ul>
+
+<p>以下是一些产品建议，可以帮助您在智能手机或电脑上开始使用无损音频。这些只是你可以根据你的设备选择的一些建议。</p>
+
+<div class="display-card tag"><div class="w-img "><div class="body-img portrait"><div class="responsive-img img-article-square" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lightning-35mm.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Apple Lightning to 3.5mm Dongle&quot;"> <figure> <picture>  <source media="(min-width: 1024px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lightning-35mm.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="320px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lightning-35mm.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="400px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lightning-35mm.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="300px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lightning-35mm.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="This is the dongle you'll need to connect your pair of wired earphones to your iPhone via the lightning port." data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lightning-35mm.jpg" src="../Images/83852bb8dda724563aa99e55e76229b3.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lightning-35mm.jpg"/> </picture> <figcaption class="body-img-caption">Apple Lightning to 3.5mm Dongle</figcaption> </figure> </div> </div> </div><div class="w-display-card-content"> <h5 class="display-card-title">苹果Lightning转3.5毫米耳机适配器</h5><div class="w-display-card-description"><p class="display-card-description">这是您需要通过lightning端口将有线耳机连接到iPhone的加密狗。</p> </div> </div> </div>
+<div class="display-card tag"><div class="w-img "><div class="body-img landscape"><div class="responsive-img img-article-square" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-6.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Portable USB-C 32-bit DAC&quot;"> <figure> <picture>  <source media="(min-width: 1024px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-6.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="320px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-6.jpg?q=50&amp;fit=crop&amp;w=320&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="400px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-6.jpg?q=50&amp;fit=crop&amp;w=400&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="300px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-6.jpg?q=50&amp;fit=crop&amp;w=300&amp;dpr=1.5"/> <img class="lazyload" alt="This is one of the most affordable 32-bit USB-C DACs we could find and should be good enough for most people wanting to experience lossless audio." data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-6.jpg" src="../Images/d96295ada5d14e6bf7d514b86342c74b.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-6.jpg"/> </picture> <figcaption class="body-img-caption">Portable USB-C 32-bit DAC</figcaption> </figure> </div> </div> </div><div class="w-display-card-content"> <h5 class="display-card-title">WKWZY 32位USB-C DAC</h5><div class="w-display-card-description"><p class="display-card-description">这是我们能找到的最实惠的32位USB-C DAC之一，对于大多数想要体验无损音频的人来说应该足够好了。</p> </div> </div> </div>
+<div class="display-card tag"><div class="w-img "><div class="body-img landscape"><div class="responsive-img img-article-square" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-9.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Xtrem Pro X1 USB-A DAC&quot;"> <figure> <picture>  <source media="(min-width: 1024px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-9.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="320px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-9.jpg?q=50&amp;fit=crop&amp;w=320&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="400px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-9.jpg?q=50&amp;fit=crop&amp;w=400&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="300px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-9.jpg?q=50&amp;fit=crop&amp;w=300&amp;dpr=1.5"/> <img class="lazyload" alt="The Xtrem Pro X1 DAC connects via USB-A and offers reliable performance at an affordable price. If you just want to get started, this is an ideal option." data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-9.jpg" src="../Images/840f82dc872cc6052cfed9e2b1639ab8.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-9.jpg"/> </picture> <figcaption class="body-img-caption">Xtrem Pro X1 USB-A DAC</figcaption> </figure> </div> </div> </div><div class="w-display-card-content"> <h5 class="display-card-title">Xtrem Pro X1 USB-A DAC</h5><div class="w-display-card-description"><p class="display-card-description">Xtrem Pro X1 DAC通过USB-A连接，性能可靠，价格实惠。如果你只是想入门，这是一个理想的选择。</p> </div> </div> </div>
+<div class="display-card tag"><div class="w-img "><div class="body-img landscape"><div class="responsive-img img-article-square" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-12.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;KZ ZSN Pro IEM&quot;"> <figure> <picture>  <source media="(min-width: 1024px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-12.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="320px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-12.jpg?q=50&amp;fit=crop&amp;w=320&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="400px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-12.jpg?q=50&amp;fit=crop&amp;w=400&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="300px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-12.jpg?q=50&amp;fit=crop&amp;w=300&amp;dpr=1.5"/> <img class="lazyload" alt="These are one of the most popular IEMs you can find and they're also affordable. Highly recommended." data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-12.jpg" src="../Images/b9e279a943b1b861ed1b5ffc86861037.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/Lossless-Audio-12.jpg"/> </picture> <figcaption class="body-img-caption">KZ ZSN Pro IEM</figcaption> </figure> </div> </div> </div><div class="w-display-card-content"> <h5 class="display-card-title">KZ ZSN亲IEM</h5><div class="w-display-card-description"><p class="display-card-description">这是你能找到的最受欢迎的iem之一，而且价格也很实惠。强烈推荐。</p> </div> </div> </div>
+<p>如果您正在寻找更多选项，我们有关于<a href="https://www.xda-developers.com/best-wired-earphones-headphones-dac-lossless-audio/">音频设备的单独指南，您将需要开始使用无损音频</a>。这里列出了DAC、高保真音响、IEMs、耳机等多种选择。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="should-you-be-excited-about-lossless-audio">你应该对无损音频感到兴奋吗？</h2>
+<p>一般来说，无损音频听起来比压缩音频好，但好到什么程度取决于你的耳机和音频源的质量。虽然Apple Music和TIDAL使访问高分辨率音频变得更加容易，但您仍然需要购买DAC或USB-C到3.5毫米转换器等附件，才能真正体验无损音频。如果你是一个漫不经心的听众，这可能不值得投资，因为音质的差异可能对你来说不明显。另一方面，音响发烧友和专业人士可能会欣赏无损音频增加的深度、清晰度和丰富性。也就是说，音频质量是一个非常主观的话题。在Apple Music上尝试无损音乐，并将其与Spotify进行比较，亲自看看您是否能真正区分两者。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>
