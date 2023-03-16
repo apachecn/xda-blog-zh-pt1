@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Google will make the Android Runtime (ART) a Mainline module in Android 12</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌将把Android运行时(ART)作为Android 12的主线模块</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-android-runtime-art-mainline-module-android-12/#0001-01-01">https://www.xda-developers.com/google-android-runtime-art-mainline-module-android-12/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p><a href="https://www.xda-developers.com/android-project-mainline-modules-explanation/">项目主线</a>是Android近年来最大的变化之一。虽然你作为消费者可能没有注意到这一变化，但它从根本上改变了Android作为开源操作系统的运作方式，现在谷歌手中的权力比以往任何时候都多。这种控制权的增加是好是坏是另一个辩论的话题。现在，谷歌计划将Android运行时(ART)作为可更新的主线模块包含在<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>中。</p>
+
+ 
+<h2 id="what-is-android-runtime-art">什么是Android运行时(ART)？</h2>
+<p>Android Runtime，或ART，是Android上的默认运行时，它是在2013年与Android 4.4 Kitkat一起推出的。正如谷歌提到的，ART是“Android 上的应用程序和一些系统服务使用的<em>托管运行时”。这是2014年的一段XDA电视视频，它参照从前的达尔维克VM带来的变化来解释艺术:</em></p>
+
+ 
+<p class="w-rich w-youtube" id="USgXkI-NRPo">  </p>
+
+
+<p>长话短说，ART本质上是将Android应用的字节码翻译成本机指令。它使用提前编译，在安装时直接将应用程序编译成本机代码。正如你所猜测的，这是一个非常重要的功能，理想情况下应该在整个Android生态系统中以相同的方式执行。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="art-as-a-mainline-module">艺术作为主线模块</h2>
+<p/><p data-pm-slice="1 1 []">正如XDA知名开发者<a href="https://forum.xda-developers.com/member.php?u=5778309"> <em> luca020400 </em> </a>所发现的，一位<a href="https://android-review.googlesource.com/c/platform/system/sepolicy/+/1465897/20#message-bd9ae7aa989c8ab3feda9bddcc6b1b347e090e7e">谷歌工程师透露</a>该公司计划将Android运行时(ART)作为Android S/Android 12中一个可更新的主线模块。</p>
+
+
+
+<p>通过让ART成为主线模块，谷歌将能够对它进行更多的控制，这符合主线模块的总体主题。正如我们在项目主线的<a href="https://www.xda-developers.com/android-project-mainline-modules-explanation/">主要讲解者中提到的:</a></p>
+
+<p/><p>项目主线延伸了项目三重的努力。虽然Treble降低了原始设备制造商对SoC供应商进行每一次操作系统更新的依赖程度，但Mainline降低了谷歌对原始设备制造商提供关键操作系统组件安全更新的依赖程度。Project Mainline将三重理念扩展到Android框架的更关键部分，将OEM从这个等式中移除。Project Mainline的目的是让Google从原始设备制造商手中夺取对安全性和维护开发一致性至关重要的框架组件和系统应用程序的控制权。Project Mainline被恰当地称为自Project Treble 以来对Android的最大改变。</p>
+
+<p>ART作为一个主线模块将允许谷歌更新它，而不需要系统OTA更新。如果谷歌强制要求原始设备制造商预装谷歌签名的ART模块(很可能以APEX的形式交付)，那么谷歌将能够保留在所有Android设备上推送ART更新的控制权。谷歌将能够通过谷歌Play商店推送对ART的更新，而原始设备制造商将无法对ART进行修改。这反过来又会逐步实现第三方应用开发者所期望的整个生态系统的行为一致性。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

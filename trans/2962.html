@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Microsoft rolls out fix for issue preventing Windows 11 users from signing in</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>微软推出阻止Windows 11用户登录问题的修复程序</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/microsoft-fixes-issue-windows-11-msa-sign-in/#0001-01-01">https://www.xda-developers.com/microsoft-fixes-issue-windows-11-msa-sign-in/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>微软已经确认并发布了Windows 11中一个漏洞的修复程序，该漏洞可能导致用户在向Windows添加新的微软帐户后无法登录。该问题首次出现在8月25日推出的Windows 11最新可选更新(标记为<a href="https://support.microsoft.com/en-us/topic/august-25-2022-kb5016691-os-build-22000-918-preview-59097044-915a-49a0-8870-49823236adbd"> KB5016691 </a>，或build 22000.918)之后，因此除非你选择安装该更新，否则你可能不会注意到。</p>
+
+  
+<p>据微软解释，该问题只会影响拥有微软帐户的用户-这意味着Active Directory和Azure AD帐户不会受到影响-并且只有在安装更新后向Windows添加微软帐户时才会发生。此外，登录问题仅在首次登录时出现，并且仅在重启或注销电脑后的“短暂时间”内出现，这意味着它会及时消失。</p>
+
+<p>在承认问题的同时，微软立即发布了使用已知问题回滚的修复程序，这是修复累积更新问题的常用方法。这是一个微小的配置更改，您看不到，但只要您连接到互联网，问题应该会在24小时内得到解决。微软表示，如果你重启设备，修复程序可能会更快应用，以防你等不起。</p>
+
+<p>如果您在企业环境中，并且需要立即修复，您可以使用组策略编辑器来手动应用修复。可以到<strong>电脑配置</strong> - &gt; <strong>管理模板</strong>-&gt;<strong>kb 5016691 220722 _ 051525已知问题回滚</strong> - &gt; <strong> Windows 11(原版本)</strong>安装配置策略。这应该允许您再次使用Microsoft帐户登录Windows 11。</p>
+
+<p>这种问题在Windows累积更新中并不罕见。就在上周，微软不得不发布另一个修复程序——这一次是针对Windows 10——这个问题可能导致<a href="https://www.xda-developers.com/windows-10-update-audio-issue/">在某些情况下无法播放音频</a>。考虑到这个问题出现在周二补丁发布的强制更新中，这个问题实际上更令人担忧。</p>
+
+<hr/>
+
+<p>来源:<a href="https://docs.microsoft.com/en-us/windows/release-health/status-windows-11-21h2#2896msgdesc">微软</a></p>
+
+<p>Via: <a href="https://www.neowin.net/news/microsoft-confirms-windows-11-may-not-let-you-sign-in-after-adding-microsoft-account/"> Neowin </a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

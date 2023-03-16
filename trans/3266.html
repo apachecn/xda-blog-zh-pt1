@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Windows 11 optional August update fixes printing issues</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11可选的8月更新修复了打印问题</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-optional-august-preview-update-patches-printing/#0001-01-01">https://www.xda-developers.com/windows-11-optional-august-preview-update-patches-printing/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>每个月底，微软都喜欢为<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>的公共非测试版发布一个可选更新。这些累积更新预览通常会在下一个月的第二个星期二发布通常的补丁星期二发布之前带来常见Windows问题的补丁。在本月的更新(称为KB5016691)中，微软刚刚修补了USB打印、蓝牙音频等问题。</p>
+
+  
+<p>本次KB5016691预览版更新总共有四大亮点，可以在设置中<em> Windows更新</em>的<em>下载&amp;安装</em>版块下找到。最重要的是修复了USB打印机在重启或重新安装后可能出现故障的地方。其他三个亮点可以在下面看到，涵盖了微软商店、蓝牙音响、微软Edge。</p>
+
+<ul> <li>解决了可能导致某些蓝牙音频耳机在进度条调整后停止播放的问题。</li> <li>解决了阻止Windows 11 SE信任某些Microsoft Store应用程序的问题。这可能会阻止您下载不受信任的应用程序。</li> <li>解决了在使用IE模式时导致Microsoft Edge停止响应的已知问题。这个问题还会阻止您与对话框进行交互。</li> </ul>
+
+<p>此版本没有任何安全更新或更改，而是为我们上面提到的质量改进而设计的。其他一些改进可以在下面看到。微软强调了针对IT管理员、文件压缩和Microsoft Defender的三项新改进，这些改进于本周在<a href="https://www.xda-developers.com/windows-11-build-22621-457-release-preview-fixes/"> Windows Insider计划的发布预览分支</a>中推出。完整的变更日志可以在下面看到。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_4"><h3 id="improvements-in-kb5016691">KB5016691的改进</h3><ul> <li>新的！使IT管理员能够远程添加语言和语言相关功能。此外，他们现在可以跨多个端点管理器管理语言场景。</li> <li>新的！如果您配置了服务器消息块(SMB)压缩，则压缩文件，而不考虑其大小。</li> <li>新的！增强Microsoft Defender for Endpoint识别和拦截勒索软件和高级攻击的能力。</li> <li>解决了在一些完整配置方案中导致ServerAssignedConfigurations为空的问题。</li> <li>解决了影响支持跨适配器资源扫描(CASO)的GPU驱动程序的自动高动态范围(自动HDR)功能的问题。</li> <li>解决了在使用IE模式时导致Microsoft Edge停止响应的已知问题。这个问题还会阻止您与对话框进行交互。</li> <li>解决了阻止虚拟化App-V Microsoft Office应用程序打开或导致其停止工作的问题。</li> <li>解决了重置设备后，在某些情况下可能导致Windows Hello for Business证书部署失败的问题。</li> <li>解决与USB打印相关的多个问题，例如:</li> <li>重新启动或重新安装打印机后，打印机出现故障</li> <li>从互联网打印协议(IPP)类驱动程序切换到独立硬件供应商(IHV)驱动程序后，处于错误模式</li> <li>遇到阻止您访问设备功能的双向通信问题</li> <li>解决影响ProjectionManager的问题。StartProjectingAsync API。此问题会阻止某些语言环境连接到Miracast接收器。</li> <li>解决降低BitLocker性能的问题。</li> <li>解决了阻止Windows 11 SE信任某些Microsoft Store应用程序的问题。</li> <li>解决了阻止在具有Arm64处理器的系统上自动启用虚拟机管理程序代码完整性的问题。</li> <li>解决了阻止非Windows设备进行身份验证的问题。当他们连接到基于Windows的远程桌面并使用智能卡进行身份验证时，会出现此问题。</li> <li>解决了导致策略工具结果集(Rsop.msc)在处理1，000个或更多“文件系统”安全设置时停止工作的问题。</li> <li>解决了导致“参加测试”应用程序在您关闭该应用程序时删除所有与锁定实施相关的策略的问题。</li> <li>解决了在访问“隐私”&gt;“活动历史记录”页面时导致设置应用程序在服务器域控制器(DC)上停止工作的问题。</li> <li>解决了可能导致某些蓝牙音频耳机在进度条调整后停止播放的问题。这个问题会影响支持高级音频分发模式(A2DP)卸载的现代系统。</li> <li>解决了在没有基本驱动程序的情况下安装扩展驱动程序时，设备无法从Windows Update接收相同扩展驱动程序的问题。</li> <li>解决导致本地安全机构子系统服务(LSASS)停止在Active Directory域控制器上工作的争用情况。当LSASS同时处理无法解密的传输层安全性(TLS)轻型目录访问协议(LDAP)请求时，会出现此问题。异常代码为0xc 0000409(STATUS _ STACK _ BUFFER _ overflow)。</li> <li>解决了影响使用只读域控制器(RODC)从本地域查找不存在的安全ID (SID)的问题。查找意外返回STATUS_TRUSTED_DOMAIN_FAILURE错误，而不是STATUS_NONE_MAPPED或STATUS_SOME_MAPPED错误。</li> <li>解决了可能导致本地安全机构服务器服务(LSASS)泄漏令牌的问题。此问题会影响已安装日期为2022年6月14日或更高版本的Windows更新的设备。当设备在作为网络服务运行的不可信计算基础(TCB) Windows服务中为用户(S4U)执行特定形式的服务时，会出现此问题。</li> </ul> </div></section>
+<p>这些类型的更新通常也伴随着服务堆栈更新。微软表示，本月的更新提高了服务堆栈本身的质量。服务堆栈用于安装Windows更新。</p>
+
+<p>至于已知问题，如果您选择在PC上安装此更新，XPS Viewer可能无法打开XML纸张规格文档或打开非英语语言的XML纸张规格文件。这个问题已经持续了一个月，微软正在努力解决这个问题，并将在即将发布的版本中提供更新。</p>
+
+<p>安装这些可选更新通常是安全的，但是如果你不确定，你可以等待。Windows 11可选更新中的许多修复和补丁通常会在两周后的Windows 11补丁周二更新中推出。如果你愿意，你也可以手动下载更新。</p>
+
+<p>来源:<a href="https://support.microsoft.com/en-us/topic/august-25-2022-kb5016691-os-build-22000-918-preview-59097044-915a-49a0-8870-49823236adbd">微软</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

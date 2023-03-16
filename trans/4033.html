@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>You won't have to download a full update to get new emojis on Android 12</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>你不需要下载完整的更新就可以在Android 12上获得新的表情符号</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-prepares-decouple-new-emojis-android-system-updates/#0001-01-01">https://www.xda-developers.com/google-prepares-decouple-new-emojis-android-system-updates/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_0"><p><strong>更新1 (01/26/2021 @美国东部时间下午1:53):</strong>谷歌已经合并了Android中启用可更新系统字体的提交，正好赶上<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>。<a href="#update1">点击这里了解更多信息。</a>文章发表于2020年11月24日，下面保留。</p> </div></section>
+<p/><p>表情符号已经成为我们非正式表达中不可或缺的一部分。这些微小的图形资产为纯粹的文字添加了情感、意图和特征。Unicode标准中频繁添加的新表情符号证明了它们的受欢迎程度。每当Unicode获得新的表情符号时，我们需要等待操作系统升级到我们的手机，以支持表情符号，然后我们才能真正让它们成为我们互联网行话的一部分。谷歌似乎准备让这变得更容易，因为一些提交表明，它正在努力将新的表情符号与Android系统更新分离。</p>
+
+  
+<p>目前，Android上的所有字体都存储在系统分区中，更具体地说，是在<em> /system/fonts </em>目录下。特别是表情符号，存在于名为<em> NotoColorEmoji.ttf </em>的文件中。系统分区是只读的，更新分区内的任何文件都需要在分区未挂载时进行系统更新。所以获得新字体和新表情符号的唯一方法是等待官方OTA更新或者<a href="https://www.xda-developers.com/android-11-new-emoji-install-root-magisk-module-unicode-13/">通过root </a>自己非正式安装。</p>
+
+<p>Android开源项目(AOSP) Gerrit发现了新的提交，旨在将字体文件从需要升级操作系统中分离出来。请记住，这些提交还没有被合并。我们可以从提交描述中了解他们的目的:</p>
+
+<p><a href="https://android-review.googlesource.com/c/platform/system/sepolicy/+/1501158">添加/数据/字体/文件目录</a>:</p>
+
+<p/><p><em>更新后的字体文件将存储到/data/fonts/files，所有应用程序将读取该文件以绘制文本。因此，/data/fonts/files需要对应用程序可读，而只对system_server(和init)可写。</em></p>
+
+<p><a href="https://android-review.googlesource.com/c/platform/system/core/+/1502269">为可更新的系统字体设置/data/fonts目录</a>:</p>
+
+<p/><p><em> - /data/fonts/files更新后的字体文件放在这个目录下。任何应用程序都可以读取该目录下的文件。只有system_server可以将字体文件写入此目录。</em></p>
+
+<p/><p><em>-/data/fonts/config system _ server使用的字体配置存储在这个目录下。只有system_server可以读/写此目录。</em></p>
+
+<p>这些提交实质上使得<em> system_server </em>进程能够将更新的字体文件写入<em> /data/fonts目录</em>。数据分区是以读写方式挂载的，因此通过这种改变，Google只允许<em> system_server </em>进程对这个目录进行写操作。然后，所有应用程序将从这个目录中读取字体和表情文件来绘制文本。因此，更新的字体文件，以及新的表情符号，可以被推送到手机上，而不需要为此进行整个OTA更新。</p>
+
+<p>我们重申，这些提交尚未合并。因此，我们不确定这种变化何时会发生。如果这些提交在未来几个月内合并，我们可以看到这种变化发生在<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>中。</p>
+
+<p><em>感谢XDA公认的开发者<a href="https://forum.xda-developers.com/member.php?u=5778309"> luca020400 </a>的提示！</em></p>
+
+<hr/>
+
+
+<h2 id="update-1-possible-support-in-android-12">更新Android 12可能支持</h2>
+<p>前几天Google <a href="https://android-review.googlesource.com/q/topic:%22add_data_font_dir%22+(status:open%20OR%20status:merged)">合并了</a>为可更新系统字体设置了/data/fonts目录的提交。由于表情符号包含在字体文件中，这意味着可以通过将更新的字体文件推送到该目录来添加新的表情符号，而不是通过完整的系统更新。由于这些提交是在几个月后Android 12稳定发布之前合并的，因此这一可更新的系统字体功能很可能会在即将到来的Android版本中提供。</p>
+
+<p><em>感谢@ <a href="https://twitter.com/LinkofHyrule89/status/1353947218361815045"> LinkofHyrule89 </a>的提示！</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

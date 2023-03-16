@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Windows 11 build 25163 brings back taskbar overflow</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11 build 25163带回任务栏溢出</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-build-25163-taskbar-overflow/#0001-01-01">https://www.xda-developers.com/windows-11-build-25163-taskbar-overflow/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>微软正在向在开发频道注册的Windows内部人员推出新版本的Windows 11，这次是版本25163。这个版本的大新闻是任务栏溢出体验的重新引入。这使得您可以在任务栏上看到所有打开的应用程序，即使它们超出了最大可用空间。</p>
+
+  
+<p>现在，当任务栏上有许多打开或锁定的应用程序，并且它们不再适合屏幕时，您会看到一个溢出按钮，让您显示不适合的应用程序。这是以前版本的Windows的一个功能，但奇怪的是在Windows 11中被删除了，这使得如果你同时打开许多应用程序，切换它们变得更加困难。这个新的溢出菜单支持“许多”与任务栏本身相同的功能，所以你可以看到固定的应用程序、跳转列表等等。</p>
+
+
+
+<p>除此之外，微软在这个版本中增加了改进的共享体验，尽管他们实际上在本周早些时候在测试版频道中为Windows内部人员进行了更新。这里有两个值得注意的补充。首先，附近共享现在支持UDP上的发现，因此您可以轻松地与同一网络上的PC共享文件和内容。其次，OneDrive现在可以作为本地存储文件的共享目标。这本质上是一种将文件备份到OneDrive的方法，也使文件更容易通过链接与其他人共享。</p>
+
+
+
+<p>这就是这个版本中的新特性，但是对于操作系统的各个部分还有一个很长的修复列表。然而，仍然有一些已知的问题，正如你所期望的预发布软件。你可以看看下面的列表。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_6"><h3 id="fixes-in-windows-11-build-25163">Windows 11内部版本25163中的修复</h3><p><strong>【文件浏览器】</strong></p><ul> <li>修正了拖动标签时explorer.exe崩溃的问题。</li> <li>做了一些工作，以修复内存泄漏时，使用标签与文件浏览器。</li> <li>修正了一个问题，在任务栏，ALT + Tab和任务视图中的文件浏览器的预览缩略图可能会显示相邻选项卡的标题，而不是当前选定的一个。</li> <li>如果启用了“显示所有文件夹”，文件资源管理器导航窗格中的分隔线将不再显示。有了这个改变，它应该也解决了分隔线在其他文件夹选择器中意外显示的问题。</li> <li>修正了当焦点在标签间移动时，讲述人不能读出标签标题的问题。</li> <li>修正了一个问题，当你在你的显示器上拖动文件浏览器后，一个关闭的标签可能会再次出现在文件浏览器中。</li> <li>修复了选项卡行可能意外垂直扩展，覆盖命令栏内容的问题。</li> <li>可移动驱动器不应再意外地单独显示在导航窗格的一个部分中，导航窗格会将该部分与此PC和网络分开。</li> <li>修正了使用水生或沙漠对比主题时添加新标签按钮不清晰的问题。</li> <li>当使用文本缩放时，添加新标签按钮不应该与标题栏中的最小化按钮重叠，因为已经有很多标签打开了。</li> </ul><p><strong>【任务栏】</strong></p><ul> <li>修正了一个罕见的explorer.exe崩溃，这种崩溃可能发生在微软团队通话时，与从任务栏共享窗口有关。</li> </ul><p><strong>【设置】</strong></p><ul> <li>进行了更改，以帮助修复在桌面上使用Windows Spotlight可能会恢复为纯色背景的问题。</li> <li>改进了在网格视图中使用应用程序&gt;已安装应用程序时卸载按钮周围的填充。</li> <li>修正了几个可能导致启动时快速设置崩溃的问题。</li> </ul><p><strong>【输入】</strong></p><ul> <li>修复了一个问题，导致某些应用程序冻结后，复制行动，如果建议的行动被启用。</li> </ul><p><strong>【其他】</strong></p><ul> <li>修正了一个影响建议动作可靠性的高碰撞。</li> </ul> </div></section>
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_7"><h3 id="known-issues-in-windows-11-build-25163">Windows 11内部版本25163中的已知问题</h3><p><strong>【常规】</strong></p><ul> <li>我们正在调查有关SQL Server Management Studio未能为一些内部人士推出的报道。</li> <li>一些使用Easy Anti-check的游戏可能会崩溃或导致您的电脑进行错误检查。</li> </ul><p><strong>【文件浏览器】</strong></p><ul> <li>文件资源管理器选项卡中的向上箭头没有对齐。这将在未来的更新中得到解决。</li> <li>我们正在解决这样的报告，即在使用黑暗模式时以某些方式启动文件资源管理器(例如，从命令行)会在明亮模式下意外显示文件资源管理器的主体。</li> </ul><p><strong>【微件】</strong></p><ul> <li>任务栏上的通知徽章编号可能会出现错位。</li> <li>在某些情况下，某些徽章的通知横幅不会出现在小部件板上。</li> <li>我们正在修复一个导致小部件首选项(温度单位和固定小部件)意外重置为默认值的问题。</li> </ul><p><strong>【直播字幕】</strong></p><ul> <li>全屏模式下的某些应用程序(如视频播放器)会阻止显示实时字幕。</li> <li>位于屏幕顶部附近并在运行实时字幕前关闭的某些应用程序将在位于顶部的实时字幕窗口后重新启动。当应用程序有焦点时，使用系统菜单(ALT +空格键)将应用程序的窗口进一步下移。</li> </ul> </div></section>
+<p>像往常一样，如果你注册了Windows Insider开发频道，你需要做的就是检查更新以获得Windows 11 build 25163，尽管它们会在一段时间后自动安装。这些更新是正在进行的开发周期的一部分，目前还不清楚它们何时会向公众发布。最近有报道称<a href="https://www.xda-developers.com/windows-12-coming-2024-report/">微软可能会在几年后</a>发布Windows 12，一些功能可能会保留到更新中。</p>
+
+<hr/>
+
+<p>来源:<a href="https://blogs.windows.com/windows-insider/2022/07/20/announcing-windows-11-insider-preview-build-25163/">微软</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

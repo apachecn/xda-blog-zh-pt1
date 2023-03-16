@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Android Automotive 13 is here with several behind-the-scenes changes</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android Automotive 13带来了一些幕后变化</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-automotive-13-rollout/#0001-01-01">https://www.xda-developers.com/android-automotive-13-rollout/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>谷歌<a href="https://www.xda-developers.com/android-13-launched/">本月早些时候开始向其Pixel系列推出第一个稳定版本</a>的<a href="https://www.xda-developers.com/android-13/"> Android 13 </a>。虽然更新尚未向所有Pixel用户开放，但该公司现在已经发布了Android Automotive 13，这是其车载信息娱乐(IVI)系统的最新版本。与包含几个新功能的Android 13不同，Android Automotive 13带来了一系列幕后变化。尽管缺乏新功能可能会让一些Android汽车用户失望，但很高兴看到谷歌及时推出操作系统更新来增强用户体验。</p>
+
+  
+<p>谷歌的Android Automotive 13官方发布说明(通过米莎尔·拉赫曼)透露，此次更新包括对摄像头子系统、汽车框架、连接性、隐私、传感器、遥测、用户管理和车辆集成的改进。一些最值得注意的新增功能包括超宽带支持、Android 12的<a href="https://www.xda-developers.com/android-12-privacy-private-compute-core-privacy-dashboard/">隐私仪表盘</a>，以及名为Gabeldorsche的新版Android蓝牙协议栈。</p>
+
+ 
+
+
+
+<p>此外，Android Automotive 13带来了一些摄像头改进，将允许第三方应用程序同时访问一个或多个车载摄像头，而不会影响扩展视图系统(EVS)，并支持外部摄像头的热插拔。此外，谷歌还为雾灯、电动汽车充电、拖车、车辆重量和车轮跳动增加了对新传感器类型和新属性的支持。请在下面的部分查看完整的变更列表。</p>
+
+<p><strong> Android Automotive 13变更日志</strong></p>
+
+<ul> <li><strong>摄像机</strong><ul> <li><strong> Android camera2 API。</strong>允许第三方消费者应用程序同时访问一个或多个车载摄像头，而不会影响扩展视图系统(EVS)的性能和行为。</li> <li><strong>按相对位置列举摄像机设备。</strong>允许客户端根据相对位置枚举和打开摄像机设备(或视频流),以及对客户端隐藏的硬件详细信息(例如，设备节点名称)。</li> <li><strong> EVS热插拔事件。</strong>增加了热插拔摄像头的通知和处理。</li> </ul> </li> <li><strong>汽车框架</strong><ul> <li><strong>汽车框架主线。</strong>增加了新的汽车框架模块，包括汽车API和汽车服务。这使得汽车栈的更新独立于Android平台版本。</li> <li><strong>行车安全区域支持。</strong>允许应用程序指定驾驶安全区域，允许系统指定区域并提供临时豁免。</li> <li>将车辆HAL从HIDL迁移至AIDL。HIDL HAL仍受支持，但新的属性只能添加到新的AIDL车辆HAL中。</li> <li><strong>支持VHAL中更大的有效载荷和批量调用。</strong> VHAL现在可以通过共享内存传递更大的有效载荷。批处理调用允许更有效地发送多个请求。</li> <li><strong>集群导航元数据填充。</strong>此功能扩展了导航状态API中的导航状态协议缓冲区，增加了描述导航元数据的字段。</li> <li><strong>触摸模式。</strong>Android 13中通知现在与焦点事件分离。在Android 12和更早的版本中，焦点和触摸模式由相同的C++原生FocusEvent表示。触摸模式的更改现在在一个新事件TouchModeEvent中表示。这个新的本机事件是针对所有现有窗口调度的，无论是否有焦点。</li> </ul> </li> <li><strong>连通性</strong><ul> <li><strong>启用超宽带(UWB)。</strong>为定位UWB标签提供多锚支持，精度为10cm。</li> <li><strong>蓝牙主线集成。</strong>将车载蓝牙变成一个模块，实现独立于Android平台版本的更新。在Google的持续支持下，隐藏API被迁移到系统API。</li> <li>Gabledorsch。启用了新版蓝牙协议栈，支持汽车应用。</li> <li><strong>车联网。</strong>为基于以太网的网络添加控制，包括动态管理IP配置、网络功能、应用程序访问控制列表，以及动态连接和断开网络的能力。</li> <li><strong>参考TCU。</strong>通过电话HAL使外部远程信息处理ECU与Android的集成变得更加简单。</li> <li><strong>投影支持。</strong>添加了新的API，将VendorElements作为生成的hostapd AP配置的一部分。</li> <li>当Wi-Fi关闭时，获取Wi-Fi频道和国家代码列表的API。</li> </ul> </li> <li><strong>功率</strong><ul> <li><strong>支持磁盘挂起。</strong>断电模式，保存RAM内容。支持挂起到磁盘和挂起到RAM。</li> <li><strong>停工过程的控制。</strong>允许供应商在车库模式前后及时采取行动。</li> </ul> </li> <li><strong>隐私</strong><ul> <li><strong>汽车的权限模型。</strong>对权限模型的更改平衡了驾驶时的安全、隐私和用户体验。</li> <li><strong>驾驶后许可决定提醒。</strong>提醒停车的用户在驾驶时做出的许可决定。</li> <li><strong>最近的许可决定。</strong>最近的权限决策出现在隐私设置中，使用户能够更改权限决策。</li> <li><strong>汽车隐私仪表板。</strong>允许用户在隐私设置中查看最近的应用权限使用情况，包括传感器(如位置、麦克风和摄像头)的事件时间表和GMSCore使用的子属性。</li> </ul> </li> <li><strong>传感器</strong><ul> <li><strong>Android传感器框架中的新传感器类型。</strong>针对有限的轴和航向增加了新的惯性测量单元(IMUs)传感器类型，以支持不同的传感器配置和导航用例。</li> </ul> </li> <li><strong>遥测</strong><ul> <li><strong> OEM遥测。</strong>支持原始设备制造商使用Android驱动的信息娱乐系统来配置和收集车载信息娱乐系统(IVI)和车辆数据。</li> </ul> </li> <li><strong>用户管理</strong><ul> <li><strong>改进的用户生命周期事件管理。</strong>添加了新的用户生命周期过滤器，以提高性能并简化客户端代码。</li> </ul> </li> <li><strong>车辆集成</strong><ul> <li>新的VHAL属性。增加了雾灯、电动汽车充电、拖车、车辆重量和车轮跳动的新属性。</li> </ul> </li> </ul>
+
+<p>由于Android Automotive 13与Android 13不同，是针对提供Android Automotive OS驱动的IVI系统的OEM厂商的，因此changelog是针对Android Automotive OS系统工程师的。因此，正如拉赫曼指出的那样，谷歌可能在发行说明中遗漏了一些面向用户的变化。尽管如此，如果你想了解更多关于最新版本的变化，我们建议你看看斯珀博客的深度报道，链接如下。</p>
+
+<hr/>
+
+<p><strong>来源:</strong> <a href="https://source.android.com/docs/devices/automotive/start/t_release"> Android Automotive 13发布说明</a></p>
+
+<p><strong> Via: </strong> <a href="https://blog.esper.io/android-13-deep-dive/#android_automotive">斯珀</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

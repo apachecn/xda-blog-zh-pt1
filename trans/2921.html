@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Latest Windows 11 beta tweaks Task manager with better theme support, process filter</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>最新的Windows 11测试版通过更好的主题支持和进程过滤器调整了任务管理器</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-beta-channel-build-tweaks-task-manager/#0001-01-01">https://www.xda-developers.com/windows-11-beta-channel-build-tweaks-task-manager/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>微软本周将推出两个新的Windows 11测试版。像往常一样，第一个版本(22623.891)是为那些有新功能的人准备的，它可以实现最令人兴奋的事情，比如调整任务管理器。第二个版本(22621.891)是为那些默认关闭新功能的人准备的，只是修补了Windows 11中的一些bug。</p>
+
+  
+<p>在build 22623.891上，有一组对任务管理器的很好的调整。第一个是新的进程过滤功能，因此您可以基于二进制名称、PID或发布者名称来过滤和搜索进程。微软表示，过滤器将在你切换页面时应用，并将其视为挑出有问题进程的快速方法。第二个改进是增加了在任务管理器中使用首选主题的能力，而不管你在Windows上使用的是亮还是暗的主题。</p>
+
+
+
+<p>此版本中较小的任务管理器更改包括支持应用内对话的主题，以及一个改进的效率模式对话框，该对话框添加了一个“不要再问我”框。您可以通过查看下面的内容来了解此版本的其他变化和改进。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_4"><p>-我们通过在表情面板中正确处理假名/汉字和拼音，改进了日语和简体中文的表情搜索。</p><p>-当使用右下角手势查看快速设置时，任务栏不应再停留在展开状态(而不是消失在折叠状态)。</p><p>-修复了在“请勿打扰”模式下导致“请勿打扰”图标消失的问题。</p><p>-新的显示隐藏图标弹出的动画现在应该与其他任务栏弹出一致。</p><p>-如果在“设置”&gt;“个性化”&gt;“颜色”中启用了“在开始和任务栏上显示强调颜色”,“显示隐藏图标”弹出按钮背景颜色现在应该与您的强调颜色对齐。</p><p>-修复了影响任务栏性能的多个explorer.exe崩溃。</p> </div></section>
+<p>至于在第二个测试版中有什么变化，build 22621.891和build 22623.891都带来了这些修复集。文件资源管理器、微软Defender和Windows 11的其他关键部分有许多核心变化。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_6"><p>- <strong> <em>新！</em> </strong>您可以将适用的设置备份到您的Microsoft帐户。您也可以在任何Windows设备和Microsoft Office中同步这些设置。</p><p>-我们修复了一个影响文件浏览器的问题。它无法本地化文件夹。</p><p>-我们修复了一个影响<strong> CopyFile </strong>功能的问题。它有时可能会返回错误317: ERROR_MR_MID_NOT_FOUND。</p><p>-我们修复了一个影响流程创建的问题。它无法为它和其他相关的审核事件创建安全审核。</p><p>-我们修复了影响Microsoft Edge中横向模式打印的问题。打印输出不正确。使用Microsoft Defender Application Guard时出现此问题。</p><p>-我们修复了当Microsoft Defender不是主要防病毒软件时影响它的问题。Microsoft Defender未能关闭被动模式。当您关闭智能应用程序控制(SAC)时，会出现此问题。</p><p>-我们加了。wcx添加到某些应用控制策略不允许的危险扩展列表中。</p><p>-我们修复了一个影响计算机帐户的问题。使用非标准字符可能会阻止开箱即用体验(OOBE)帐户的清理。</p><p>-我们修复了一个影响Windows防火墙服务的问题。当您打开“覆盖阻止规则”选项时，它不会启动。</p><p>-我们修复了一个可能会影响在Windows锁定策略(WLDP)下运行的应用程序的问题。他们可能已经停止工作了。</p> </div></section>
+<p>如果您计划安装这些版本，还有一系列已知的问题。这些问题会影响任务管理器、任务栏和系统托盘。下面来看看吧。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_8"><p>-我们正在调查有关音频在最近的测试版频道建设中对一些内部人员停止工作的报告。</p><p>-在桌面姿势和平板电脑姿势之间转换时，任务栏有时会闪烁。</p><p>-在桌面姿势和平板电脑姿势之间切换时，任务栏转换到触摸优化版本所需的时间比预期的长。</p><p>-[新]按发布者名称过滤在“流程”页面上不正确匹配。</p><p>- [NEW]应用过滤后，某些服务可能不会显示在服务页面中。</p><p>- [NEW]如果在设置了过滤器的情况下启动了一个新进程，则该进程可能会在过滤列表中出现一瞬间。</p><p>-[NEW]删除键和工具提示在过滤器输入框中不起作用。</p><p>- [NEW]从任务管理器设置页面应用时，某些对话框可能无法以正确的主题呈现。</p><p>- [NEW]在任务管理器设置页面中应用主题更改时，进程页面的数据内容区域可能会闪烁一次。</p><p>- [NEW]我们正在调查一个问题，即任务管理器不能正确显示明暗内容，导致文本不可读。当你在“设置”&gt;“个性化”&gt;“颜色”中设置了“自定义”模式时，就会发生这种情况——作为暂时的解决办法，请将其切换为“亮”或“暗”。</p> </div></section>
+<p>微软也有一条针对测试版Windows内部人员的警告信息。那些在构建22622上的人将很快被转移到构建22623，并带有一个支持包。该软件包将提高那些推出新功能的设备的版本号，并使其更容易与测试版中其他没有新功能的设备区分开来。那些在默认情况下关闭新功能的组中的人也可以检查更新，并选择安装将推出新功能的更新。</p>
+
+<p><strong>来源:</strong> <a href="https://blogs.windows.com/windows-insider/2022/11/10/announcing-windows-11-insider-preview-build-22621-891-and-22623-891/">微软</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

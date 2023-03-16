@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>How to set up WhatsApp Pay for sending and receiving money</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何设置WhatsApp Pay收发钱</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/how-to-use-whatsapp-pay/#0001-01-01">https://www.xda-developers.com/how-to-use-whatsapp-pay/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>在经历了艰难的起步之后，WhatsApp的支付功能现在已经在印度和其他受支持的市场广泛提供，这标志着这家脸书公司向前迈出了一大步，因为它希望扩展其通讯功能之外的领域，并准备利用电子商务机会。以下是你需要知道的关于WhatsApp雄心勃勃的支付功能的一切。</p>
+
+ 
+<h2 id="background-a-long-quest">背景——漫长的探索</h2>
+<p>WhatsApp寻求在印度推出支付服务可以追溯到2018年。2018年2月，WhatsApp获得了印度国家支付公司(NPCI)的批准，对其支付服务进行测试，该公司向100万用户推出了这项服务。</p>
+
+
+
+<p>但看似一帆风顺的事情很快就戛然而止，因为该公司卷入了一场旷日持久的监管斗争，这场斗争持续了两年。监管机构提出的要求之一是遵守印度储备银行的<a href="https://m.rbi.org.in/Scripts/FAQView.aspx?Id=130">数据存储指南</a>，该指南要求所有支付服务提供商(PSP)存储印度境内用户的财务数据。</p>
+
+<p>RBI要求NPCI暂停WhatsApp Pay的全面推广，直到该公司满足这些要求。WhatsApp最初抵制合规性，但意识到没有其他办法，该公司同意遵守数据本地化要求，以获得推广的绿灯。</p>
+
+<p>WhatsApp任命第三方CERT-In审计师德勤(Deloitte)审计其合规性，德勤于2020年5月29日向NPCI提交了报告，称WhatsApp完全符合RBI的数据本地化规范。</p>
+
+
+
+<p>NPCI对这份报告感到满意，随后正式批准WhatsApp及其支付服务提供商ICICI Bank分阶段在UPI上上线，第一批用户最多可达2000万。2021年11月，WhatsApp <a href="https://www.xda-developers.com/whatsapp-pay-approval-expand-40-million/">获得了将服务</a>扩展到另外2000万用户的许可。这使得WhatsApp Pay的用户总数达到4000万，考虑到WhatsApp在中国拥有4亿多用户，这个数字微不足道。这就把我们带到了下一个问题。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="is-whatsapp-s-payments-feature-available-in-my-country">WhatsApp的支付功能在我的国家可用吗？</h2>
+<p>与其他普遍可用的WhatsApp功能不同，支付功能目前仅在三个国家可用:印度、美国和巴西。在印度，WhatsApp Pay使用统一支付接口(UPI)平台，而在巴西，该功能由脸书Pay提供支持，由信用卡和借记卡运营商Cielo处理支付处理。</p>
+
+<p>在美国，WhatsApp用户可以通过Novi钱包收发钱款<a href="https://www.xda-developers.com/whatsapp-novi-integration-live-some-users-us/">。到目前为止，它只对有限数量的用户开放。Novi是WhatsApp母公司</a><a href="https://www.xda-developers.com/facebook-meta-name/"> Meta </a>的数字钱包。它允许用户通过一种叫做USDP的稳定货币转账，这种货币由美元支持(例如1 USDP等于1美元)。)</p>
+
+<p>WhatsApp在它的<a href="https://faq.whatsapp.com/payments/set-up/learn-more-about-participating-countries-and-supported-banks/"> FAQ页面</a>上提到，它正在<em>“努力将这一功能带到其他国家”</em>，但是到目前为止，该公司还没有分享关于在其他市场进一步扩张的具体细节。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="how-to-use-whatsapp-pay">如何使用WhatsApp Pay</h2>
+<p>使用WhatsApp Pay的要求非常基本——你只需要最新版本的WhatsApp 。如果你符合这一要求，请按照以下步骤设置该功能，并开始在WhatsApp上发送和接收付款:</p>
+
+ 
+
+
+
+<ul> <li>确保你的手机上安装了最新版本的WhatsApp稳定版还是测试版，都没关系。</li> <li>在应用程序中，点击右上角的三点菜单，寻找<em>支付</em>选项。</li> <li>即使你在菜单中看到了<em>支付</em>选项，也不能保证你的账户激活了该功能。你可能会看到<em>你现在不能在WhatsApp中设置支付</em>的错误，或者看到一个类似这样的屏幕(在这种情况下，恭喜你，你可以使用这个功能了)。</li> </ul>
+
+
+
+<ul> <li>入职流程非常简单。点击<em>添加支付方式</em>并从列表中选择您的银行。</li> </ul>
+
+
+
+<ul> <li>WhatsApp将尝试查找并链接与您的手机号码相关联的银行账户。你可能会被要求通过短信验证你的电话号码——这是第一次设置账户时UPI应用程序中的一个常见程序。</li> </ul>
+
+
+
+<ul> <li>如果链接过程顺利，您现在应该已经准备好通过WhatsApp Pay发送和接收资金了。</li> </ul>
+
+
+
+
+<p class="ad-odd"> </p>
+
+
+<h2 id="the-whatsapp-pay-experience">WhatsApp付费体验</h2>
+<p>使用WhatsApp Pay与使用任何其他UPI应用程序非常相似，但由于该服务被集成到WhatsApp应用程序中，因此它带来了更简化、更整洁的体验。UI非常干净直观，主要强调对等交易。您还可以选择扫描二维码在商家和企业支付。</p>
+
+<p>它不会取代像Google Pay这样的成熟应用程序——例如，你不能支付你的账单——但对于收发资金来说，它可以相当好地完成工作。</p>
+
+
+
+<p>如果收款人已经设置了WhatsApp Pay，汇款就像选择联系号码、输入金额和输入您的UPI PIN码一样简单。如果另一方还没有支付功能，你可以选择向他们的另一个UPI ID汇款——假设他们使用类似Google Pay或PhonePe或任何UPI的东西。只需要求他们分享他们的UPI ID，看起来应该类似于<em> 91XXXXXXXX@okicici </em>或&lt; <em>用户名&gt; @ &lt; bankupi &gt;，</em>并完成交易。</p>
+
+<p>同样，您也可以通过提供自己的ID，从其他服务提供商那里将钱存入自己的WhatsApp Pay UPI ID。但是WhatsApp生成的ID看起来像是<em> &lt;你的电话号码&gt; .wa.xes@icici </em>，这不像其他基于用户名的UPI IDs那样直观。因此，对拥有WhatsApp Pay的发送者和接收者的软“要求”是简化用户名共享过程，并消除这种想法。</p>
+
+<p>将来，在WhatsApp中使用一个出现在聊天栏内的专用支付按钮来支付款项会更加容易。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="looking-ahead">展望未来</h2>
+<p>印度有十几个UPI应用程序，WhatsApp要说服人们一夜之间转向自己的UPI并不容易，不管它在易用性和简单性方面有什么优点。这也为脸书多年来一直关注的电子商务机会铺平了道路，也是即时通讯平台货币化的可行方式。</p>
+
+<p>WhatsApp在印度有着家喻户晓的天然优势。与其他合众国际社的应用程序不同，它不必去寻找新用户，也不必乞求人们在他们的手机上安装另一个合众国际社的应用程序。这款应用已经出现在超过4亿台设备上，因此该公司的任务被简化为找出如何推动这些用户养成使用WhatsApp Pay的习惯。</p>
+
+<p>尽管有这些优势，WhatsApp Pay在印度移动支付领域仍然是一个相对不为人知的名字。NPCI 发布的<a href="https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics">最新数据显示，WhatsApp在2021年12月仅进行了225万笔交易。相比之下，沃尔玛旗下的PhonePe和Google Pay分别处理了20.7760亿笔和15.8743亿笔交易，分别位居第一和第二。WhatsApp是否能够扭转局面，成为头号玩家还有待观察。</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

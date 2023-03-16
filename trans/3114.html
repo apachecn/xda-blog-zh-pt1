@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Google is still the one holding back native browsers for Windows on Arm</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌仍然是阻碍Arm上Windows原生浏览器的人</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-holding-back-native-browsers-windows-on-arm/#0001-01-01">https://www.xda-developers.com/google-holding-back-native-browsers-windows-on-arm/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>如果你在过去十年左右一直在关注，那么你就会知道微软和谷歌之间的故事是一样的。无论是Windows RT、Windows Phone，还是Arm上的<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>，我们从来没有看到过原生的Google apps。当然，这三个平台中的前两个早就死了，但Arm上的Windows仍然活着，而且没有针对它的原生Arm64谷歌Chrome浏览器。</p>
+
+  
+<p>早在2019年初，我就听说谷歌已经准备好了Arm64版本的Chrome，我的一个消息来源将其与Chromecast的Prime视频支持进行了比较。换句话说，这两家公司必须先达成协议。不过这不应该令人惊讶，因为有很多Arm驱动的Chromebooks。谷歌对在高通处理器上运行浏览器并不陌生。</p>
+
+<p>但是，唯一能在Arm64 Windows电脑上运行的浏览器是微软Edge和Mozilla Firefox。因此，虽然谷歌为什么不把自己的应用程序带到Arm上已经不是什么秘密了，但问题是，像Vivaldi、Brave和Opera这样的浏览器呢？事实证明，这也是谷歌的错。</p>
+
+ 
+<h2 id="it-all-comes-down-to-widevine">这一切都归结于威德文</h2>
+<p>微软不久前用Chromium重建了Edge浏览器，剥离了谷歌的大部分内容；然而，大多数浏览器制造商没有微软拥有的资源。Vivaldi、Brave和几乎所有其他Chromium浏览器，除了Edge，都使用Widevine，这是谷歌的DRM解决方案，需要它来运行网飞等网络应用和其他流媒体服务。谷歌没有为Arm上的Windows提供Widevine，所以这是一个障碍。浏览器可以工作，但是那些服务不行。</p>
+
+
+
+<p>当我向Vivaldi询问其浏览器的原生Arm64版本时，答案是直接否定的</p>
+
+<p>“最大的问题是它无法与任何大型媒体平台如网飞、Prime、Disney+等合作。”维瓦尔第的发言人在给XDA的一份声明中说。“这完全不在我们的掌控之中，因为谷歌没有为Windows ARM生产Widevine，没有它我们就无法解密这些平台上使用的DRM。所以我们可以做一个浏览器，但是你不能用它来做这些服务。如果谷歌开始在Windows上为Arm提供Widevine，那么我们可以也应该这么做。”</p>
+
+<p>该公司承认，理论上有可能放弃Widevine，转而支持微软的PlayReady，这就是edge可以在Arm上原生运行的原因，但当然，“这需要一些工作”。值得注意的是，尽管Arm设备上的Windows已经上市五年多了，但它仍然不是一个成熟的平台。正在使用的设备数量可能不值得像Vivaldi Technologies这样的小公司付出这样的努力。</p>
+
+
+
+<p>当我开始研究这个故事时，我也和Brave谈过。该公司没有像维瓦尔第那样坚决拒绝。不过，它确实承认了Widevine的问题。工程副总裁Brian Clifton直截了当地指出，实际构建浏览器并不存在任何障碍。他还建议，代替原生Widevine构建，Brave也许可以找到一个“聪明的变通方法”。事实上，看起来公司已经开始着手这项工作了。</p>
+
+<p>我也联系了Opera，但该公司拒绝置评。</p>
+
+<p>同样，这里的问题不是浏览器是否能工作。没有Widevine的工作，浏览器就不能完全发挥作用，像网飞这样的服务也不能。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="native-browsers-are-really-important">原生浏览器真的很重要</h2>
+<p>Arm电脑上的Windows可以模拟任何为英特尔处理器开发的应用。没有什么能阻止你运行谷歌Chrome、Vivaldi、Brave、Opera或任何你能得到的其他浏览器。就是不太好。</p>
+
+<p>自Arm上的Windows早期以来，这一直是一个问题。Web浏览器动态生成代码，这更难缓存和模拟。当你开始看到你想要使用的浏览器和微软Edge在性能上的巨大差异时，你可能会去使用Edge，或者干脆买一台英特尔电脑。</p>
+
+<p>我们得到的高通官方声明是，“随着越来越多的市场领导者投资于提供原生ARM解决方案，骁龙Windows应用生态系统的势头继续加快。我们期待在ISV合作伙伴公开发布新版本时与大家分享。”谷歌没有回复我们的置评请求。</p>
+
+<p>我从高通的许多人那里听到的目标是，最终，性能会变得足够好，以至于你甚至不会注意到一个应用程序正在被模仿。事实上，这是一种可能性，但鉴于现在已经过去了五年多，越来越难保持对这种事情得到解决的希望。</p>
+
+<p>当然，高通正在开发定制处理器，将与苹果芯片竞争，并将于明年上市。希望这将是该平台所需要的突破，因为当前基于Arm参考设计的高通骁龙芯片似乎不能满足它。</p>
+
+<p>在那之前，Arm上的Windows的命运似乎又一次掌握在谷歌手中。只要它能阻止原生浏览器为Arm64编译，特别是当其中一个是谷歌Chrome时，微软的命运仍然与英特尔联系在一起。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

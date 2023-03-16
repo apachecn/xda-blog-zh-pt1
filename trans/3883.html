@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Google has added an Ultra-wideband (UWB) API in Android</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌在Android中增加了一个超宽带(UWB) API</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-adding-ultra-wideband-uwb-api-android/#0001-01-01">https://www.xda-developers.com/google-adding-ultra-wideband-uwb-api-android/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_0"><p><strong>更新1(美国东部时间01/25/2021 @ 02:20PM):</strong>谷歌在<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>发布时及时添加了支持超宽带传感器的API，但它们可能不会用于第三方应用。<a href="#update1">点击这里了解更多信息。</a>文章发表于2020年11月10日，下面保留。</p> </div></section>
+<p/><p>自智能手机早期以来，我们一直依赖Wi-Fi和蓝牙无线技术来满足短程连接需求。超宽带(UWB)被广泛认为是无线技术领域的下一件大事，有望为智能家居设备提供高精度的室内定位和高速点对点数据传输。苹果的iPhone 11是第一款支持超宽带技术的现代智能手机。三星紧随其后推出了Galaxy Note 20和Note 20 Ultra，成为第一家采用新技术的Android OEM厂商。小米还宣布了加入UWB技术的计划，<a href="https://www.xda-developers.com/xiaomi-demos-intuitive-smart-home-controls-with-uwb-ultra-wide-band-technology/">展示了它如何利用该技术</a>控制其智能家居生态系统。随着未来几天越来越多的智能手机预计将采用这一新的无线协议，谷歌正在AOSP添加一个新的API，以更好地支持未来Android智能手机上的UWB技术。</p>
+
+  
+<p>随着官方Android API的引入，开发人员将能够创建在不同的具有UWB硬件的Android智能手机上无缝工作的应用程序，而不是使用来自不同OEM的不同API集。</p>
+
+<p>谷歌<a href="https://android-review.googlesource.com/q/UWB">合并了Android开源项目(AOSP)的多个提交</a>，增加了一个超宽带(UWB) API。例如，<a href="https://android-review.googlesource.com/c/platform/frameworks/base/+/1453876"> UwbManager类</a>“<em>提供了一种执行UWB操作的方法，例如查询设备的能力，确定本地设备和远程设备之间的距离和角度。</em>" API实现遵循<a href="https://standards.ieee.org/standard/802_15_4z-2020.html"> IEEE针对低速率无线网络的802.15.4z </a>标准。</p>
+
+<p>提醒一句:这个API仍在开发中，不能保证它能及时为Android 12准备好。仅仅因为这个API被添加到Android并不意味着下一个Pixel将配备UWB硬件。</p>
+
+<p>如前所述，目前唯一拥有超宽带(UWB)硬件的Android设备是三星Galaxy Note 20和Note 20 Ultra，唯一使用该硬件的应用程序是三星的SmartThings应用程序<a href="https://www.xda-developers.com/smartthings-find-helps-find-lost-samsung-galaxy-devices/">，用于SmartThings Find功能</a>。</p>
+
+<p>UWB仍处于起步阶段，虽然它有很大的潜力，但它在现实世界中的实用性和应用还有待充分实现。</p>
+
+<p><em>由<a title="xnimrodx" href="https://www.flaticon.com/authors/xnimrodx"> xnimrodx </a>从Flaticon </em>制作的图标</p>
+
+<hr/>
+
+
+<h2 id="update-1-merged-as-system-api">更新1:合并为系统API</h2>
+<p>在上周晚些时候合并的提交中，谷歌将Android的超宽带API标记为T2系统API T3。链接到Android SDK的第三方应用程序无法访问SystemAPIs。因此，第三方应用程序将无法访问这些API。尚不清楚为什么这些API仅限于系统应用程序，但有可能谷歌认为这些API还没有准备好供公众使用。谷歌对RCS API做了<a href="https://www.xda-developers.com/google-rcs-api-3rd-party-apps/">类似的事情，第三方消息应用程序仍然无法使用。</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

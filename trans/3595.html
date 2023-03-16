@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>New Android 11 devices may not support virtual A/B for Seamless Updates</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>新的Android 11设备可能不支持无缝更新的虚拟A/B</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-virtual-ab-seamless-updates-android-11/#0001-01-01">https://www.xda-developers.com/google-virtual-ab-seamless-updates-android-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_0"><p><strong>更新1 (01/25/2021 @美国东部时间下午2:06):</strong>在Android 11发布之前，谷歌似乎在要求启动设备支持虚拟A/B方面出了问题。<a href="#update1">点击这里了解更多信息。</a>下面保留了2021年4月7日发表的文章。</p> </div></section>
+<p/><p>在Android 7.0牛轧糖中，谷歌引入了一种旨在加快软件更新速度的分区方案。在Nougat中，Google增加了对复制某些分区的支持，这样非活动分区可以在后台更新，然后通过快速重启切换到活动分区。这种<a href="https://www.xda-developers.com/how-a-b-partitions-and-seamless-updates-affect-custom-development-on-xda/">“A/B分区”设置允许在受支持的Android设备上进行“无缝更新”</a>，很像谷歌的Chrome操作系统。然而，谷歌从未强制要求使用A/B分区，所以很多设备都不支持无缝更新。然而，随着Android 11的推出，这种情况可能会发生变化，因为谷歌正在强制新推出的设备支持虚拟A/B分区。</p>
+
+  
+<p>作为一点背景知识，A/B分区指的是一组重复的只读分区。复制的分区通常包括系统、供应商、引导和产品分区。当手机下载更新时，更新程序会在后台修补不活动的分区集(一个“插槽”)。一旦更新应用到非活动插槽后，系统会提示用户重启设备。当用户重新启动设备时，非活动插槽与活动插槽交换位置，完成更新过程。如果引导新更新的插槽出现问题，则先前活动的插槽保持不变。当下一次更新开始时，这个过程会重复进行。如果你对更技术性的解释感兴趣，<a href="https://source.android.com/devices/tech/ota/ab">参考Google关于A/B分区的开发者文档</a>。</p>
+
+
+
+<p>相比之下，没有A/B分区的设备，如三星Galaxy S20、OPPO Find X2和许多其他设备，在恢复过程中通过专用的更新程序应用更新。这将用户踢出Android，并使他们在几分钟内无法使用他们的设备，可能会错过重要的通知、电话或短信。谷歌认为，简化更新过程会导致更多的人在更新推出后真正接受更新；事实上，在2017年5月，<a href="https://source.android.com/devices/tech/ota/ab/ab_faqs">谷歌发现</a>Pixel用户运行最新安全更新的比例高于Nexus用户。当然，用户可以安排在不使用设备的时候进行更新，但是许多用户甚至在被提示的时候也不更新他们的设备。此外，由于没有A/B分区，用户错过了一个固有的好处:保护他们免受拙劣的系统更新。</p>
+
+<p>例如，当小米<a href="https://www.xda-developers.com/download-xiaomi-mi-a2-lite-official-android-10-update-sideload/">首次为Mi A2 Lite推出Android 10更新</a>时，许多用户发现他们的设备无法启动。对他们来说幸运的是，Mi A2 Lite有A/B分区用于无缝更新，所以我们论坛上的<a href="https://forum.xda-developers.com/showpost.php?p=81973955&amp;postcount=184">用户发现</a>他们可以使用fastboot命令来设置引导加载程序，以引导未触及的、先前活动的分区集。因此，A/B分区不仅为用户提供了更快的更新过程，而且它们还充当了拙劣更新的故障保险。没有实现A/B分区的OEM仍然可以设计他们自己的方法来防止OTA故障，尽管当这种保护是A/B分区设计的一部分时，为什么要经历这种麻烦呢？为了你的参考，这里有一个部分(当然也是过时的)<a href="https://www.xda-developers.com/list-android-devices-seamless-updates/">支持A/B分区</a>进行无缝更新的设备列表，这里有一个关于<a href="https://www.xda-developers.com/how-to-check-android-device-supports-seamless-updates/">如何检查你自己的设备是否支持功能</a>的教程。</p>
+
+<p>似乎令人费解的是，为什么像三星这样的原始设备制造商对一部智能手机要价1400美元，却不提供如此漂亮的功能。原因通常归结为存储:原始设备制造商不想牺牲几千兆字节的存储空间来支持无缝更新。像三星Galaxy S20这样的手机有大量的预装软件，所以复制/system和/product这样的分区会导致大量巨大的文件和应用程序被复制。谷歌设法实现了A/B分区，而没有牺牲太多的存储空间<a href="https://source.android.com/devices/tech/ota/ab/ab_faqs#how-did-you-halve-the-size-of-the-system-partition-without-squashfs">,这要归功于一个巧妙的技巧</a>来解决复制海量数据的问题。odex文件。原始设备制造商可能选择不实现A/B分区的另一个原因是成本:跟上谷歌对Android分区方案的不断变化需要很多努力，正如XDA公认的开发者<a href="https://forum.xda-developers.com/member.php?u=4470081"> topjohnwu </a>将告诉你的那样。除非原始设备制造商被迫这样做，否则许多人不会费事去改变已经对他们起作用的东西。</p>
+
+<p>不过，最后，谷歌似乎要在Android 11中制定法律。通过在新推出的设备上强制采用虚拟A/B分区，他们几乎可以肯定OEM将必须支持其2020年底和2021年设备的无缝更新。正如XDA知名开发者<a href="https://forum.xda-developers.com/member.php?u=5778309"> luca020400 </a>所发现的，谷歌Treble项目团队的软件工程师Yifan Hong向Gerrit提交了一份名为“<a href="https://android-review.googlesource.com/c/platform/test/vts-testcase/kernel/+/1280636">在R发布</a>时要求虚拟A/B”的承诺该提交更新了供应商测试套件(VTS ),这是一项自动化测试，所有设备都必须通过才能被视为与Project Treble兼容。新的测试检查系统属性“<code>ro.virtual_ab.enabled</code>”是否设置为true，以及“<code>ro.virtual_ab.retrofit</code>”是否设置为false(对于出厂API级别为30或更高的设备)。换句话说，该测试检查使用Android 11或更高版本启动的设备是否支持虚拟A/B分区。Android 10引入了“虚拟”A/B分区和“动态分区”，后者是可动态调整大小的分区。它们与常规A/B分区的概念相同，只是它们可以自由调整大小。</p>
+
+
+
+
+
+<p>如果使用Android 11启动的设备不支持虚拟A/B分区，那么它将无法通过VTS。如果设备未能通过VTS，则不能使用谷歌移动服务。换句话说，Google已经有效地要求OEM支持虚拟A/B分区，并通过扩展实现无缝更新。<del/></p>
+
+<hr/>
+
+
+<h2 id="update-virtual-a-b-not-required-for-android-11">更新:Android 11不需要虚拟A/B</h2>
+<p>当我们在4月份首次报道谷歌要求所有Android 11发布设备支持<a href="https://source.android.com/devices/tech/ota/virtual_ab">虚拟A/B更新机制</a>时，人们非常兴奋，因为这将最终使三星手机实现无缝更新。不幸的是，事实证明Google决定不将虚拟A/B支持作为一项要求。Android 11的<a href="https://source.android.com/compatibility/android-cdd#11_updatable_software">兼容性定义文档</a> (CDD)目前写着“设备实现应该支持A/B系统更新”而不是“必须”支持。似乎在Android 11发布之前的某个时候，谷歌决定收回其要求虚拟A/B支持的决定，可能是在几家原始设备制造商的要求下。这种情况经常发生，但从未向公众传达，因为只有CDD的最终草案在网上公布。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

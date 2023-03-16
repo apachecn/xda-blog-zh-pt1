@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Windows 11 build 22000.832 enables version upgrades during setup</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11内部版本22000.832支持安装期间的版本升级</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-cumulative-update-22000-829/#0001-01-01">https://www.xda-developers.com/windows-11-cumulative-update-22000-829/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>微软为Windows 11用户发布了一个新的可选累积更新，使该操作系统的内部版本号为22000.832。这是从上周<a href="https://www.xda-developers.com/windows-11-22000-829-major-updates-setup/">在发布预览频道</a>向Windows内部人士推出的版本的一个小增量，但这个版本对任何想安装它的人都是可用的。更新标签为<a href="https://support.microsoft.com/en-us/topic/july-21-2022-kb5015882-os-build-22000-829-preview-473e1d95-06a0-4f40-9554-cdc7cca85584"> KB5015882 </a>，你可以<a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5015882">在这里</a>手动下载。</p>
+
+  
+<p>此次更新的亮点在于，它允许Windows 11在开箱即用体验(OOBE)期间安装Windows的主要版本更新。基本上，当您第一次使用用户帐户设置电脑时，如果版本升级可用并且您的设备符合条件，系统会提示您安装版本升级。考虑到我们预计Windows 11版本22H2将在未来几个月的某个时间推出，这一变化来得正是时候。通过这种方式，购买装有Windows 11原始版本的新PC的人将能够升级并获得开箱即用的最新功能。</p>
+
+<p>然而，这还不是全部的新内容。还有一个新选项，允许Windows 11在对焦辅助开启时显示紧急通知。以下是本次更新中的亮点:</p>
+
+
+
+<p>Windows 11 build 22000.832中的完整更改列表要长得多，正如你所料，它主要是关于修复和微小的改进。各种问题已经解决，您可以在下面找到完整的列表。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_5"><h3 id="improvements-in-windows-11-build-22000-832">WIndows 11 build 22000.832中的改进</h3><ul> <li><b> <i>新增！</i> </b>使您能够在焦点辅助开启时同意接收紧急通知。</li> <li><b> <i>新增！</i> </b>为符合条件的设备在首次登录时的开箱即用体验(OOBE)期间提供更新至较新的Windows 11版本的选项。如果您选择更新到较新的版本，更新过程将在设备上安装更新后不久开始。</li> <li><b> <i>新增！</i> </b>为受硬件重用安全缓解影响的Windows自动驾驶部署场景恢复功能。此更新取消了自部署模式(SDM)和预配置模式(PP)的一次性使用限制。此更新还为批准的制造商在用户驱动模式(UDM)部署中重新启用任何用户主体名称(UPN)显示。</li> <li>解决了<b> UIAutomation() </b>中导致应用程序停止工作的问题。</li> <li><p>解决了阻止某些应用程序的启动任务API按预期工作的问题。</p> </li> <li>提高了操作系统升级后按钮复位的可靠性。</li> <li>解决了删除EN-US语言包时导致租户限制事件日志记录通道不可访问的问题。</li> <li>解决了在域控制器上安装2022年5月10日安全更新后，在某些情况下导致基于证书的计算机帐户身份验证失败的问题。</li> <li>解决了影响您使用Windows 11软件开发工具包(SDK)构建的Arm64EC代码的问题。</li> <li>更新<b> Remove-Item </b> cmdlet以正确地与Microsoft OneDrive文件夹交互。</li> <li>解决了阻止某些故障排除工具打开的问题。</li> <li>解决了导致容器端口映射冲突的问题。</li> <li>解决了导致代码完整性在文件被修改后继续信任文件的问题。</li> <li>解决了在打开智能安全图功能的情况下启用Windows Defender应用程序控制时可能导致Windows停止工作的问题。</li> <li>将搜索亮点部署到设备。要访问搜索重点的策略(在安装了2022年6月累积更新预览版或2022年7月每月质量更新的设备上)，请转到<b>C:\ Windows \ policy definitions</b>并找到<b> Search.admx </b>。为了您的方便，我们将发布管理模板的更新版本。<b> admx </b> ) for Windows 11，版本21H2即将到微软下载中心。</li> <li>解决了在某些设备上使用播放和暂停键盘按钮时导致<b>explorer.exe</b>停止工作的问题。</li> <li>解决了当您使用“开始”菜单的上下文菜单(Win+X)并且外部显示器连接到您的设备时，<b>explorer.exe</b>停止工作的问题。</li> <li>解决了当鼠标悬停在任务栏上的搜索图标上时显示无法关闭的空白窗口的问题。</li> <li>在许多线程争用一个文件的高每秒输入/输出操作(IOPS)情况下，减少资源争用的开销。</li> <li><p>解决了导致Windows配置文件服务偶尔失败的问题。登录时可能会出现故障。错误消息是，“gpsvc服务登录失败。拒绝访问”。</p> </li> </ul> </div></section>
+<p>如果您想获得这些修补程序，只需在Windows Update中查找更新，然后选择安装KB5015882累积更新。否则，您可以使用我们在顶部提供的链接手动下载。</p>
+
+<p>虽然这是一个可选的更新，但所有这些变化都将在下个月向每个人公布，届时微软将为Patch Tuesday推出新的累积更新。这些是强制性的更新，它们通常包括额外的修复。不过最近，微软主要发布了补丁星期二更新，没有太多的变更日志，所以大部分变化都在这次更新中。</p>
+
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_8"><p><strong>【更新7月25日@美国东部时间5:38AM】</strong>该更新最初被标记为内部版本号22000.829，但这是不正确的。正确的内部版本号是22000.832。我们相应地更新了文章。</p> </div></section></div>
+
+
+</div>    
+</body>
+</html>

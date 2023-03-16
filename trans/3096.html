@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Windows 11 version 22H2 is causing problems with Remote Desktop</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11版本22H2导致远程桌面出现问题</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-version-22h2-remote-desktop-connection-problems/#0001-01-01">https://www.xda-developers.com/windows-11-version-22h2-remote-desktop-connection-problems/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>9月20日，Windows 11开始接收其第一次重大更新——<a href="https://www.xda-developers.com/windows-11-22h2/">Windows 11 version 22 H2</a>，或2022更新，其中有很多好的补充。然而，正如许多Windows更新的情况一样，也有一些问题。微软已经承认了一些打印机的问题，现在，一些用户遇到了远程桌面连接的问题。</p>
+
+  
+<p>这些问题最初是在微软社区论坛上报告的，随后许多用户确认他们也遇到了这个问题。根据最初的报告，Windows 11版本22H2中的远程桌面客户端存在一个bug，它只尝试通过UDP建立连接，完全忽略TCP连接。因此，许多连接会失败，因为一些组织被设置为仅使用TCP。</p>
+
+<p>虽然微软尚未将该问题添加到Windows 11发布健康信息页面，但该公司确实对论坛帖子做出了回应，最终表示正在调查该问题。幸运的是，如果您遇到了这个问题，有一个解决方法。您需要使用注册表编辑器导航到<strong>Computer \ HKEY _ LOCAL _ MACHINE \ SOFTWARE \ Policies \ Microsoft \ Windows NT \ Terminal Services \ Client</strong>，然后在该文件夹中创建一个名为<strong> fClientDisableUDP </strong>的新DWORD值，并将该值设置为1。这应该允许远程桌面TCP连接再次工作，直到微软解决这个问题。</p>
+
+<p>这也不是最近在Windows 11版本22H2中发现的唯一问题。微软在Windows 11发布信息页面中添加了一个单独的问题,声明配置包可能无法在Windows 11版本22H2中正常工作。如果您设置安装了此更新的电脑，设置包可能不会在安装过程中完全安装，从而导致某些选项配置不正确。也有可能导致安装过程意外重启或无法完成。</p>
+
+<p>解决这个问题的一个简单方法是在安装更新之前提供设备。如果初始设置已经完成，升级到Windows 11版本22H2不会导致任何问题。此外，使用Windows自动修补进行设置不受此问题的影响。微软表示，它正在努力修复更新，但尚未提供时间表。</p>
+
+<hr/>
+
+<p><strong>来源:</strong> <a href="https://answers.microsoft.com/en-us/windows/forum/all/issues-with-remote-desktop-on-windows-11-after/2f0b90c8-9549-46bb-bede-41c2d3990380">微软社区</a></p>
+
+<p><strong>Via:</strong><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-investigates-windows-11-22h2-remote-desktop-issues/">bleeding computer</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>
