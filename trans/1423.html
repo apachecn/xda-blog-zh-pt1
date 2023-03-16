@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>Download and install the latest GApps: Open GApps, NikGApps, FlameGApps, and more</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>下载并安装最新的GApps: Open GApps、NikGApps、FlameGApps等等</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/drive-sheets-slides-docs-update/#0001-01-01">https://www.xda-developers.com/drive-sheets-slides-docs-update/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>GApps(Google Apps的缩写)包在Android售后开发社区中是必不可少的。它们是为<a href="https://www.xda-developers.com/most-popular-custom-roms-android/">定制rom</a>专门制作的可选插件，可用于在您的设备上获取Google应用程序，如Google Play服务和Play Store。如果你想知道如何在你的设备或<a href="https://www.xda-developers.com/best-android-phones/">最好的安卓手机</a>上选择和安装正确的GApps包，这个指南应该可以帮助你。</p>
+
+ 
+<h2 id="why-gapps">为什么是GApps？</h2>
+<p>谷歌要求每一个Android设备制造商遵循<a href="https://source.android.com/compatibility/cdd" rel="noopener noreferrer" target="_blank">兼容性定义文件</a> (CDD)通过<a href="https://source.android.com/compatibility/cts/" rel="noopener noreferrer" target="_blank">兼容性测试套件</a> (CTS)，这样他们就可以<a href="https://www.xda-developers.com/google-blocks-gapps-uncertified-devices-custom-rom-whitelist/">允许他们的设备预装谷歌应用和服务</a>。然而，定制ROM开发者不能轻易地将这些谷歌应用和服务与他们的构建捆绑在一起。由于这些应用程序没有使用Apache或GPLv2许可证，将它们捆绑在ROM中存在法律挑战。</p>
+
+<p>这正是GApps软件包的用武之地。GApps维护人员依赖于构建脚本，这些脚本允许定期自动创建新的更新包。另一方面，ROM开发者通常以这样一种方式构建定制ROM，即最终用户可以在其构建的基础上闪存第三方GApps发行版，并无缝地获得使用谷歌Play商店或任何其他需要Google Play服务的应用程序的能力。</p>
+
+<p>请记住，谷歌应用程序不需要启动或运行大多数定制的rom。然而，许多用户发现它们有利于充分利用Android生态系统。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="variants-of-gapps">GApps的变体</h2>
+<p>对于一个普通用户来说，一堆第一方谷歌应用已经逐渐成为Android功能或外观和感觉的一部分。然后是那些喜欢绝对简约的设置，认为几乎所有东西都是臃肿的软件的人。</p>
+
+<p>因为很难找到一个通用的解决方案，所以GApps维护者通常会提供几个版本。这就是为什么您可以找到带有“pico”、“basic”、“full”和类似标签的GApps包。当然，Play Store以及强制性的Play服务和相关库是它们之间的共同组成部分，但捆绑的第一方谷歌应用程序的数量是关键的差异化因素。</p>
+
+<p>与旧版本Android的兼容性是GApps场景中另一个有趣的方面。即使在定制rom的帮助下，也不是所有设备都可以运行最新和最棒的Android版本，这就是为什么有必要保持对旧版本的支持。此外，一些低级库依赖于CPU架构，所以主流维护者有时也会提供特定于架构的构建。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="popular-gapps-distributions">流行的GApps发行版</h2>
+<p>多年来，许多不同的GApps发行版已经流行起来。以下是售后市场开发社区中一些最受欢迎且积极维护的GApps产品。</p>
+
+<h3 id="open-gapps">开放式间隙</h3>
+<p>Open GApps项目可能是在定制rom上下载谷歌应用程序的最受欢迎的选择，它始于2015年，是ParanoidAndroid GApps的精神继承者。这个发行版的代码库已经被分叉了无数次，这都要归功于项目的多功能性、广泛的文档和对遗留Android版本的丰富支持。</p>
+
+
+
+<ul> <li><strong>安卓版本支持:</strong>安卓4.4 KitKat到安卓11。维护者也为Android 12 和<a href="https://forum.xda-developers.com/posts/86595145"> Android 12L </a>提供测试包<a href="https://forum.xda-developers.com/posts/85928131">。</a></li> <li><strong>平台支持:</strong> Arm，Arm64，x86，x86-64。</li> <li><strong>变体:</strong><ul> <li>Pico :这个软件包是为那些希望获得绝对最小的GApps安装的用户设计的。</li> <li>Nano :这个包是为那些希望尽可能减少谷歌足迹，同时仍然享受原生的“Okay Google”和谷歌搜索支持的用户设计的。</li> <li><a href="https://github.com/opengapps/opengapps/wiki/Micro-Package"> Micro </a>:这个包是为那些拥有小系统分区的传统设备的用户或者那些喜欢极简方式的用户设计的。</li> <li><a href="https://github.com/opengapps/opengapps/wiki/Mini-Package"> Mini </a>:这个包是为那些使用有限的Google apps或者喜欢自己安装应用的人设计的。</li> <li><a href="https://github.com/opengapps/opengapps/wiki/Full-Package"> Full </a>:如果你更喜欢使用股票/AOSP应用程序，这个软件包就是为你设计的。</li> <li><a href="https://github.com/opengapps/opengapps/wiki/Stock-Package">股票</a>:这个包包含了Pixel智能手机标配的所有谷歌应用。</li> <li><a href="https://github.com/opengapps/opengapps/wiki/Super-Package">超级</a>:这个包是给那些想拥有所有谷歌应用的人的。它包括谷歌设备上发布的所有谷歌应用程序。</li> <li>Aroma包是常规“超级”包的一个特殊版本，但是有一个图形化的前端，允许你选择安装(或不安装)哪些特定的应用程序，而不必手动编写一个gapps-config文件。</li> <li><a href="https://github.com/opengapps/opengapps/wiki/TVStock-Package"> TVStock </a>:这个包是针对Android电视设备的。它包括Nexus Player标配的所有谷歌应用。</li> <li>TVMini:适用于Android电视设备的一套较小的谷歌应用程序，类似于Mini相对于Stock variant的应用程序。</li><p> </p> </ul> </li> </ul>
+
+<h3 id="nikgapps">NikGApps</h3>
+<p>NikGApps是另一个功能丰富的GApps发行版，它为高级用户提供了广泛的定制选项。由XDA资深会员<a href="https://forum.xda-developers.com/m/nikhil.4867515/"> Nikhil </a>创建，这个GApps项目最显著的特点之一是它专门为低端设备提供的Android Go包。与其他发行版不同，它还允许您随时刷新软件包。</p>
+
+
+
+<p>最后但同样重要的是，用户可以将他们的定制配置上传到项目的存储库中，以创建个性化的构建。</p>
+
+<ul> <li><strong>安卓版本支持:</strong>安卓10到安卓13。</li> <li><strong>平台支持:</strong> Arm64。</li> <li><strong>变体:</strong><ul> <li>核心:运行Play Store所需的最低Google Apps集。</li> <li>基本:核心的一切，加上谷歌运营商服务，谷歌拨号器(取代AOSP拨号器)，谷歌信息(取代AOSP信息)，谷歌联系人(取代AOSP联系人)等。</li> <li>Omni:一切从基本，加上Gmail(取代AOSP电子邮件)，谷歌/像素设置向导，谷歌照片(取代AOSP画廊)等。</li> <li>股票:Omni的一切，加上谷歌录音机，谷歌标记，谷歌声音，谷歌壁纸等。</li> <li>全:一切从股票，加上谷歌浏览器(取代AOSP浏览器)，谷歌助手，安卓汽车等。</li> <li>Go:面向低端设备。核心变体的略微增强版本。</li><p> </p> </ul> </li> </ul>
+
+<h3 id="flamegapps">火焰间隙</h3>
+<p>以前被称为ExLiteGApps，FlameGApps项目是XDA资深成员ayandebnath的创意。由于发行版的模块化设计，最终用户可以安装各种组件，如带有设备个性化服务的Pixel Launcher、带有助手的Google Search以及使用官方附加包的设备个性化服务。</p>
+
+
+
+<ul> <li><strong>安卓版本支持:</strong>安卓10到安卓12/12L。Android 13还没有官方支持，尽管开发者<a href="https://sourceforge.net/projects/flamegapps/files/arm64/canary/android-13/" rel="noopener noreferrer" target="_blank">发布了一个金丝雀版本</a>用于测试。</li> <li><strong>平台支持:</strong> Arm64。</li> <li><strong>变体:</strong><ul> <li>基本:包括核心GApps，如Google Play服务(GMS)、Google服务框架(GSF)、谷歌Play商店和其他基本组件。</li> <li>全面:包括所有必要的核心应用程序，更有用的如谷歌拨号器，谷歌联系人，谷歌信息等。</li><p> </p> </ul> </li> </ul>
+
+<h3 id="bitgapps">BiTGApps</h3>
+<p>XDA资深会员<a href="https://forum.xda-developers.com/m/thehitman.8569961/"> TheHitMan </a>的BiTGApps不到90MB，是一个独特的极简发行版。除了极简主义，它还提供了一些独特的功能，例如为所有谷歌应用程序启用电池优化，从引导系统直接安装的能力，以及作为Magisk模块以无系统的方式安装。</p>
+
+
+
+<ul> <li><strong>安卓版本支持:</strong>安卓牛轧糖(7.1)到安卓13。</li> <li><strong>平台支撑:</strong> Arm，Arm64。</li> <li><strong>变体:</strong><ul> <li>标准:目标是坚持能够提供适当的Google服务功能的最小设置。这个变体也支持无系统模式，前提是您已经通过Magisk获得了root访问权限。</li> <li>定制:如果你想坚持简单的基于旧系统的闪存，那么你可以选择基本，泛光灯，股票，全套。成分与NikGApps相似。</li><p> </p> </ul> </li> </ul>
+
+<h3 id="litegapps">文学应用</h3>
+<p>LiteGApps由XDA资深成员<a href="https://forum.xda-developers.com/m/wahyu6070.9507265/"> Wahyu6070 </a>创建，是一个独特的发行版，涵盖了各种各样的用例。您可以通过恢复或作为Magisk模块安装它。</p>
+
+
+
+<ul> <li><strong>安卓版本支持:</strong>安卓5.0棒棒糖到安卓13。</li> <li><strong>平台支撑:</strong> Arm，Arm64。</li> <li><strong>变体:</strong><ul> <li>Original:它提供了以下子变量:Lite、Basic、Core、Go、User、Basic、Nano、Micro和Pixel。其组成类似于开放的GApps。</li> <li>Plus-Plus:您可以使用“Plus-Plus”变体来服务常规版本以及LTS版本(遗留Android版本)和MicroG版本。</li><p> </p> </ul> </li> </ul>
+
+<h3 id="magiskgapps">MagiskGapps</h3>
+<p>起源于NikGApps的一个分支，由<a href="https://github.com/wacko1805" rel="noopener noreferrer" target="_blank">wack 1805</a>开发的MagiskGapps是一个完全无系统的Google apps发行版。它可以用来无缝地更改另一个GApps发行版的现有安装，而无需清除系统分区。</p>
+
+
+
+<ul> <li><strong>安卓版本支持:</strong>安卓11到安卓13。</li> <li><strong>平台支持:</strong> Arm64。</li> <li><strong>变体:</strong><ul> <li>GMS:只有必要的谷歌服务和同步组件。</li> <li>核心:在GMS包上面玩商店。</li> <li>基本:除了核心软件包，还有一些应用程序，如谷歌拨号器、信息和联系人。</li> <li>股票:全像素风格的应用程序。</li><p> </p> </ul> </li> </ul>
+
+<h3 id="mindthegapps">MindTheGapps</h3>
+<p>由LineageOS贡献者Alessandro Astone，又名XDA资深会员<a href="https://forum.xda-developers.com/m/aleasto.4742143/"> aleasto </a>维护的MindTheGapps是另一个紧凑的Gapps发行版。这个在社区中特别出名，因为它是由<a href="https://www.xda-developers.com/five-reasons-xda-loves-lineageos/">linegeos</a>团队为其定制ROM正式推荐的GApps解决方案。</p>
+
+
+
+<ul> <li><strong>安卓版本支持:</strong>安卓10到安卓13。你也可以找到Android TV的单独包。值得注意的是，它还托管了Android 9 Pie和Android 8.1 Oreo的遗留包。</li> <li><strong>平台支持:</strong> Arm，Arm64(也支持x86，但只支持传统Android版本)。</li> <li><strong>变体:</strong>无。只有一种没有定制选项的变体。它提供了使用谷歌系统所需的一切，仅此而已。</li> </ul>
+<p class="ad-odd"> </p>
+
+
+<h2 id="how-to-install-gapps">如何安装GApps</h2>
+<h3 id="download-and-preparation">下载和准备</h3>
+<p>在安装GApps包之前，您需要选择与目标设备的CPU架构和您想要的定制ROM的Android基础相匹配的版本。请记住，一些原始设备制造商故意在Arm64设备上提供Arm32固件，因此请咨询定制ROM维护者以确定平台兼容性。如果你要闪存一个集成了Google apps的定制ROM，那么你不需要安装一个独立的GApps包。</p>
+
+<p>要了解CPU架构，请使用设备上的终端模拟器应用程序运行以下命令:</p>
+
+<pre> <code class="hljs css"><span class="hljs-selector-tag">getprop</span> <span class="hljs-selector-tag">ro</span><span class="hljs-selector-class">.product</span><span class="hljs-selector-class">.cpu</span><span class="hljs-selector-class">.abi</span></code> </pre>
+<p>粗略地说，如果你有一部相当新的智能手机，并且你打算安装一个基于Android 13 的<a href="https://www.xda-developers.com/android-13-custom-rom-list/">定制ROM，从前面提到的列表中下载一个用于</a><a href="https://www.xda-developers.com/android-13"> Android 13 </a>的Arm64 GApps。</p>
+
+<p>我们将假设您已经安装了像TWRP这样的自定义恢复，并且(可选)拥有实际刷新过程的root访问权限。如果没有，我们有关于如何给你的安卓设备安装根的指南和关于如何安装TWRP的指南。</p>
+
+<h3 id="flashing-gapps-from-twrp">来自TWRP的闪光信号</h3>
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_48"><p><strong>警告:</strong>大部分情况下，GApps包在第一次引导进入自定义ROM之前必须进行闪存！总是建议进行工厂重置和格式化数据，以清除先前安装的GApps发行版的任何可能残留。</p> </div></section>
+<ol> <li>确保你的电脑有ADB和Fastboot。设置说明可在<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">这里</a>找到。</li> <li>在你的电脑上下载<strong>自定义ROM包</strong>和<strong>匹配GApps包</strong>。</li> <li>使用适当的组合键或ADB: <code>adb reboot recovery</code>将目标设备重新引导至恢复模式</li> <li>现在点击<strong>清除</strong> <em>、</em> <strong>恢复出厂设置</strong>，最后点击<strong>格式化数据</strong>继续清理过程。这将取消加密并删除存储在内部存储器中的所有文件。</li> <li>返回主菜单。</li> <li>侧装自定义ROM ZIP包:<ul> <li>在目标设备上，选择<strong>高级</strong>，然后选择<strong> ADB侧载</strong>开始。</li> <li>在主机上，使用<code>adb sideload filename.zip</code>从侧面装载包装</li><p> </p> </ul> </li> <li>无需重启，点击返回按钮，然后对GApps包重复相同的过程:<code>adb sideload gapps.zip</code></li> <li>目标设备上的TWRP屏幕应显示安装进度。</li> <li>一旦你成功安装了所有东西，点击<strong>重启系统</strong>按钮。</li> </ol>
+
+
+
+
+
+<h3 id="validation">确认</h3>
+<p>如果一切顺利，你应该在重启后准备好谷歌应用和服务。</p>
+<div class="body-img portrait"><div class="responsive-img image-expandable img-article-item-portrait" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/LineageOS-18.1-with-NikGApps-640x1024.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;A LineageOS installation with GApps&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/LineageOS-18.1-with-NikGApps-640x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/LineageOS-18.1-with-NikGApps-640x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="600px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/LineageOS-18.1-with-NikGApps-640x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="360px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/LineageOS-18.1-with-NikGApps-640x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="LineageOS 18.1 with NikGApps" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/LineageOS-18.1-with-NikGApps-640x1024.jpg" src="../Images/b50fc637b8e4698e10be4fa6eb6afa27.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/06/LineageOS-18.1-with-NikGApps-640x1024.jpg"/> </picture> <figcaption class="body-img-caption">A LineageOS installation with GApps</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>大多数GApps发行版和定制ROM支持OTA生存，这意味着当你安装ROM更新时没有必要刷新GApps包。不过，主要版本更新是另一回事，因为你必须为新的Android基础找到合适的GApps包，并在必要时进行全新安装。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>
