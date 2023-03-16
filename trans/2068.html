@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>Qualcomm Snapdragon 888 benchmarks: Here's how 2021's flagship 5G phones will perform</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>高通骁龙888基准:以下是2021年的旗舰5G手机将如何表现</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/new-snapdragons-some-context-contrast/#0001-01-01">https://www.xda-developers.com/new-snapdragons-some-context-contrast/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>本月早些时候，高通邀请记者参加虚拟的骁龙科技峰会，会上他们宣布了骁龙888移动平台。高通最新的8系列SoC为图像处理和机器学习带来了重大改进，但对CPU和GPU性能的改善甚微。为了了解高通最新的芯片组到底有多强大，我们通常有机会在它的参考硬件上运行基准测试。然而，由于新冠肺炎的原因，高通无法安排一次面对面的基准测试会议，因此，他们向我们发送了一段预先录制的视频，展示了一台高通骁龙888参考设备运行所有流行的基准测试。</p>
+
+  
+<p>在骁龙888参考设备上，高通运行了一个整体基准(AnTuTu)、一个以CPU为中心的基准(Geekbench)、一个以GPU为中心的基准(GFXBench)和几个AI/ML基准(AIMark、AITuTu、MLPerf和Procyon)。每个基准测试运行三次，所以公司共享了三次迭代的平均结果。此外，该公司表示，他们使用骁龙888参考设计的默认设置运行每个基准，这意味着他们没有启用任何高性能模式。但是，因为基准分数是为我们提供的，所以我们无法为自己验证结果或测试条件。一旦我们得到了高通骁龙888的商业设备，我们将重新运行这些基准。</p>
+
+<p>如果你有兴趣阅读高通骁龙888移动平台的所有规格和功能，那么我推荐阅读本月早些时候发表的Idrees Patel关于骁龙888的精彩讲解。他的文章详细介绍了高通对CPU、GPU、调制解调器、连接子系统、ISP、AI引擎、DSP和其他所有组件的改进。为了快速参考，我整理了一张图表，比较了高通骁龙888参考设备与本次基准比较中使用的其他两种设备的关键规格:骁龙865供电的参考设备和我在去年的基准会议中使用的骁龙855供电的Pixel 4。您可以在基准测试结果之前找到下面的图表。</p>
+
+ 
+<h2 id="qualcomm-snapdragon-888-benchmark-results">高通骁龙888基准测试结果</h2>
+<h3 id="test-devices-specifications">测试设备的规格</h3>
+<div class="table-container"><table border="1" cellpadding="1" cellspacing="1"><thead><tr><th> </th><th><p>高通骁龙855(谷歌像素4)</p> </th><th><p>高通骁龙865(高通参考装置)</p> </th><th><p>高通骁龙888(高通参考装置)</p> </th> </tr></thead><tbody><tr><td><p><strong> CPU </strong></p> </td><td>  <ul> <li>1个Kryo 485(基于ARM Cortex A76)Prime core @ 2.84 GHz，1个512KB L2高速缓存</li> <li>3个Kryo 485(基于ARM Cortex A76)性能内核@ 2.42GHz，3个256KB L2高速缓存</li> <li>4个Kryo 385(基于ARM Cortex A55)高效内核@ 1.8GHz，4个128KB L2高速缓存</li> <li>2MB L3快取记忆体</li> </ul> </td><td>  <ul> <li>1个Kryo 585(基于ARM Cortex A77)Prime core @ 2.84 GHz，1个512KB L2高速缓存</li> <li>3个Kryo 585(基于ARM Cortex A77)性能内核@ 2.4GHz，3个256KB L2高速缓存</li> <li>4个Kryo 385(基于ARM Cortex A55)高效内核@ 1.8GHz，4个128KB L2高速缓存</li> <li>4MB三级高速缓存</li> </ul> </td><td>  <ul> <li>1个Kryo 680(基于ARM Cortex X1)Prime core @ 2.84 GHz，1个1MB L2缓存</li> <li>3个Kryo 680(基于ARM Cortex A78)性能内核@ 2.4GHz，3个512KB L2高速缓存</li> <li>4个Kryo 680(基于ARM Cortex A55)高效内核@ 1.8GHz，4个128KB L2高速缓存</li> <li>4MB三级高速缓存</li> </ul> </td> </tr><tr><td><p><strong> GPU </strong></p> </td><td><p>肾上腺素640</p> </td><td><p>肾上腺素650</p> </td><td><p>肾上腺素660</p> </td> </tr><tr><td><p><strong>显示</strong></p> </td><td>  <ul> <li>2280 x 1080分辨率</li> <li>60Hz刷新率</li> </ul> </td><td>  <ul> <li>2880 x 1440分辨率</li> <li>60Hz刷新率</li> </ul> </td><td>  <ul> <li>2340 x 1080分辨率</li> <li>120赫兹刷新率</li> </ul> </td> </tr><tr><td><p><strong>艾</strong></p> </td><td>  <ul> <li>具有六边形矢量扩展和六边形张量加速器的六边形690</li> <li>第四代人工智能引擎</li> <li>最多7个</li> </ul> </td><td>  <ul> <li>六边形698与六边形矢量扩展和新的六边形张量加速器</li> <li>第五代人工智能引擎</li> <li>高通传感中心</li> <li>最多15个</li> </ul> </td><td>  <ul> <li>带融合人工智能加速器架构的Hexagon 780</li> <li>第六代人工智能引擎</li> <li>高通传感中心(第二代)<ul> <li>新型专用人工智能处理器</li> <li>Hexagon DSP的任务减少80%</li> <li>5X更多处理能力同比增长</li> </ul> </li> <li>16倍大的共享内存</li> <li>标量加速器快50%，张量加速器快2倍</li> <li>最多26个</li> </ul> </td> </tr><tr><td><p><strong>内存</strong></p> </td><td>  <ul> <li>6GB LPDDR4</li> <li>3MB系统级缓存</li> </ul> </td><td>  <ul> <li>12GB LPDDR5</li> <li>3MB系统级缓存</li> </ul> </td><td>  <ul> <li>12GB LPDDR5</li> <li>3MB系统级缓存</li> </ul> </td> </tr><tr><td><p><strong>存储</strong></p> </td><td><p>64GB UFS 2.1</p> </td><td><p>128GB UFS 3.0</p> </td><td><p>512GB UFS 3.0</p> </td> </tr><tr><td><p><strong> ISP </strong></p> </td><td>  <ul> <li>双通道14位Spectra 380 ISP</li> </ul> </td><td>  <ul> <li>双通道14位Spectra 480 ISP</li> <li>每秒2.0千兆像素吞吐量</li> </ul> </td><td>  <ul> <li>三路14位Spectra 580 ISP</li> <li>每秒27亿像素吞吐量</li> </ul> </td> </tr><tr><td><p><strong>制造过程</strong></p> </td><td><p>7纳米(TSMC的N7)</p> </td><td><p>7纳米(TSMC的N7P)</p> </td><td><p>5nm(三星的5LPE)</p> </td> </tr><tr><td><p><strong>软件版本</strong></p> </td><td><p>安卓10</p> </td><td><p>安卓10</p> </td><td><p>安卓11</p> </td> </tr></tbody> </table> </div>
+<h3 id="benchmarks-overview">基准概述</h3>
+<p><em>输入来自<a href="http://www.xda-developers.com/author/mario-serrafero/">马里奥·塞拉费罗</a>T3】</em></p>
+
+<ul> <li><a href="http://www.antutu.com/en/index.htm"> <strong>安图图</strong> </a>:这是一个整体基准。AnTuTu测试CPU、GPU和内存性能，同时包括抽象测试和最近的相关用户体验模拟(例如，涉及滚动ListView的子测试)。最终得分根据设计者的考虑进行加权。</li> <li><a href="https://www.geekbench.com/"><strong>【geek bench】</strong></a>:以CPU为中心的测试，使用多种计算工作负载，包括加密、压缩(文本和图像)、渲染、物理模拟、计算机视觉、光线追踪、语音识别和对图像的卷积神经网络推理。分数细分给出了具体的指标。最终分数根据设计者的考虑进行加权，重点是整数性能(65%)，然后是浮点性能(30%)，最后是加密(5%)。</li> <li><a href="https://gfxbench.com/result.jsp"> <strong> GFXBench </strong> </a>:旨在使用最新的API模拟视频游戏图形渲染。大量的屏幕效果和高质量的纹理。较新的测试使用Vulkan，而遗留测试使用OpenGL ES 3.1。输出是测试期间的帧数和每秒帧数(本质上是另一个数除以测试长度)，而不是加权分数。<ul> <li>阿兹特克废墟:这些测试是GFXBench提供的计算量最大的测试。目前，顶级移动芯片组无法支持每秒30帧。具体来说，该测试提供了非常高的多边形计数几何图形、硬件镶嵌、高分辨率纹理、全局照明和大量阴影贴图、丰富的粒子效果，以及bloom和景深效果。这些技术中的大多数将强调处理器的着色器计算能力。</li> <li>曼哈顿ES 3.0/3.1 :鉴于现代游戏已经达到了其提出的图形保真度并实现了相同类型的技术，这项测试仍然具有相关性。它采用了复杂的几何体，包括多个渲染目标、反射(立方体贴图)、网格渲染、许多延迟光源，以及后期处理过程中的高光和景深。</li> </ul> </li> <li><strong><a href="https://mlcommons.org/en/">ml perf Mobile</a>:</strong>ml perf Mobile是一款测试移动AI性能的开源基准。它是由MLCommons 创建的<a href="https://mlcommons.org/en/news/mlcommons-launch/">，这是一个非盈利的开放工程联盟，旨在“为比较ML系统、软件和解决方案提供透明和公平的竞争环境。”MLPerf Mobile的第一次迭代为一些计算机视觉和自然语言处理任务提供了推理性能基准。有关更多信息，请参考论文“</a><a href="https://www.researchgate.net/publication/346668830_MLPerf_Mobile_Inference_Benchmark_Why_Mobile_AI_Benchmarking_Is_Hard_and_What_to_Do_About_It"> MLPerf移动推理基准测试:为什么移动AI基准测试很难以及如何应对。</a>”<ul> <li><strong>图像分类:</strong>该测试包括推断应用于输入图像的标签。典型的使用案例包括照片搜索或文本提取。使用的参考模型为MobileNetEdgeTPU，参数为4M，数据集为ImageNet 2012 (224x224)，质量目标为FP32的98%(76.19% Top-1)。</li> <li><strong>图像分割:</strong>该测试包括将输入图像分割成标记对象。典型的用例包括自动驾驶或遥感。使用的参考模型是带2M参数的DeepLab v3+，数据集是ADE20K (512x512)，质量目标是FP32的93%(0.244 mAP)。</li> <li><strong>对象检测:</strong>该测试包括在对象周围绘制边界框，并为这些对象提供标签。典型的使用案例涉及摄像机输入，例如用于危险检测或驾驶时的交通分析。参考模型为SSD-MobileNet v2，参数为17M，数据集为COCO 2017 (300x300)，质量目标为FP32的97%(54.8% mIoU)。</li> <li>语言处理:这个测试包括口语化地回答问题。典型的用例包括在线搜索引擎。参考模型为MobileBERT，参数为25M，数据集为mini Squad(斯坦福问答数据集)v1.1 dev，质量目标为FP32的93%(93.98% F1)。</li> </ul> </li> </ul>
+
+<h3 id="antutu-results">安图图结果</h3>
+<p>从AnTuTu开始，我们可以看到高通骁龙888参考设备的得分比骁龙865参考设备高近17，000分，比骁龙855驱动的Pixel 4高近350，000分。当您查看CPU、GPU、内存和UX子分数(此处未显示)时，我们可以看到性能的最大提升来自GPU和内存。骁龙888 QRD在安图图的GPU子测试中的得分比骁龙865 QRD高出约45.56%。同样，骁龙888 QRD在安图图记忆测试中的得分比骁龙865 QRD高出52.08%。与骁龙855驱动的Pixel 4相比，888 QRD在GPU和内存子测试中的得分分别高出98.42%和117.58%。</p>
+
+<p>与此同时，骁龙888 QRD在AnTuTu的CPU子测试中分别比骁龙865 QRD和骁龙855驱动的Pixel 4高出约30.05%和90.28%。UX的subscore很难比较，因为每台设备运行的Android操作系统版本不同(去年我对Pixel 4和骁龙865·QRD进行基准测试时，它们运行的是Android 10，而888 QRD运行的是Android 11。)</p>
+
+
+
+<p>内存性能的大幅提升非常有趣。865 QRD和888 QRD都配备了12GB的LPDDR5内存，尽管我们不知道内存的主频是多少。值得注意的是，865支持高达16GB的2750 MHz lpddr 5 RAM，而888支持高达16GB的3200 MHz lpddr 5 RAM。CPU和GPU性能的提升略高于我们的预期，正如高通所说，骁龙888的CPU和GPU同比分别增长了25%和35%。然而，接下来的更多以CPU和GPU为中心的基准测试显示，收益更符合我们的预期。</p>
+
+<h3 id="geekbench-results">Geekbench结果</h3>
+<p>在Geekbench 5.0中，高通骁龙888在单核和多核测试中的性能分别比骁龙865高出22.17%和9.97%。与骁龙855相比，888的性能分别提高了89.17%和51.82%。</p>
+
+<p>高通说，骁龙888比骁龙865的CPU性能提高了25%。CPU的独立ARM Cortex-X1 Prime内核的时钟频率为保守的2.84GHz，与上一代ARM Cortex-A77 Prime内核的时钟速度相同，因此我们有可能在不可避免的年中骁龙888“Plus”更新中看到3+GHz的时钟速度。如果是这样的话，我们可以期待CPU性能进一步提高，虽然现在，公平地说，收益是稳固的，但仅仅是增量。</p>
+
+<p>因此，如果你是从两年前的旗舰产品升级，888应该会带来CPU性能的重大改进。如果你是从一年前的旗舰机升级，这些收益要小得多。我个人很高兴看到骁龙888设备如何处理控制台仿真。</p>
+
+
+
+
+
+<h3 id="gfxbench-results">GFXBench结果</h3>
+<p>高通还没有透露骁龙888中Adreno 660 GPU的核心数量或最高频率，所以除了性能方面的收益，我们对GPU没有什么好说的。在GFXBench的Manhattan测试中，使用OpenGL ES 3.0 API并在屏幕外渲染1080p场景，骁龙888的平均帧率为169fps，比骁龙865和855分别高出约34.13%和83.7%。在GFXBench的阿兹特克废墟测试中，使用Vulkan graphics API并在屏幕外渲染1080p场景，骁龙888的平均帧率为86fps，比骁龙865和855分别高出约38.71%和95.45%。</p>
+
+<p>没有多少游戏需要大量的GPU马力(最近的【Genshin Impact是一个例外)，但改进的GPU性能不仅仅是对游戏有用。但是，游戏绝对是人们关心这些基准测试结果的最大原因，骁龙888的图形渲染速度肯定比去年快35%，能效提高20%。然而，这些结果只展示了GPU的最高性能，因此我们必须重新访问gfx bench——一旦我们接触到商业硬件——以便运行基准的长期性能测试。</p>
+
+
+
+
+
+<h3 id="mlperf-results">MLPerf结果</h3>
+<p>也许最有趣的收获是在人工智能性能方面。高通通常每年都会在人工智能性能上有巨大的飞跃，但今年的进步最令人印象深刻。骁龙888的人工智能引擎拥有26 TOPS的性能，比骁龙865的15 TOPS性能和骁龙855的7 TOPS性能有所增加。高通将这一成就归功于Hexagon 780 DSP的新融合人工智能加速器架构，融合了标量、矢量和张量加速器，以消除物理距离和池内存，从而高效地共享和移动数据。</p>
+
+<p>然而，我们很难证明这种性能上的飞跃到底有多重要。我们在采访<a href="https://www.xda-developers.com/qualcomm-travis-lanier-snapdragon-855-kryo-485-cpu-hexagon-690-dsp/">高通的Travis Lanier </a>、<a href="https://www.xda-developers.com/qualcomm-gary-brotman-ziad-asghar-ai-snapdragon-855-hexagon-690-dsp/"> Gary Brotman和Ziad Asghar </a>时深入讨论了人工智能基准测试的困难。好消息是，自从我们与高通高管讨论以来，人工智能基准领域已经取得了重大进展。</p>
+
+<p>在本文的开头，我们提到高通在骁龙888参考设备上运行了4个不同的AI基准:AIMark、AITuTu、MLPerf和UL的Procyon。也许这些基准中最有前途的是MLPerf Mobile，这是一个即将发布的开源移动AI基准，由多家SoC供应商、ML框架提供商和模型制作商支持。它的第一批移动推理结果<a href="https://mlcommons.org/en/inference-mobile-07/">是公开的</a>，所以我们用那些结果与骁龙888进行比较。该结果仅涵盖3款设备:采用联发科天玑820处理器的小米Redmi 10X 5G、采用高通骁龙865+处理器的华硕ROG Phone 3和采用Exynos 990处理器的三星Galaxy Note 20 Ultra 5G。高通没有提供延迟结果——只有吞吐量数字——所以我们没有将供应商提交的全部结果绘制为<a href="https://mlcommons.org/en/inference-mobile-07/">供MLCommons验证。</a></p>
+
+<p>在这些精选的计算机视觉和自然语言处理推理基准测试中，我们可以看到高通骁龙888参考设备在所有四项测试中都获得了最高分。在3个上一代芯片组中，联发科的Dimensity 820在对象检测方面优于骁龙865+和Exynos 990，而Exynos 990在NLP方面优于骁龙865+和Dimensity 820。高通的骁龙865+普遍具有竞争力，在图像分割方面得分与Dimensity 820不相上下，在自然语言处理方面超过了它。在这些特定模型和数据集的特定推理测试中，骁龙888胜过了3个最新一代芯片组。</p>
+
+<p>看看开发人员和原始设备制造商利用骁龙888的人工智能能力能创造出什么样的应用和功能，将会很有趣。计算机视觉将在我们很可能在2021年看到的许多人工智能增强的视频功能中发挥特别重要的作用，而改进的自然语言处理性能同样可以影响视频的相邻方面，如音频记录。</p>
+
+
+
+
+
+<p>然而，我们应该注意到，骁龙888的结果未经ml commons<em>验证</em>,因为该组织的部分验证过程要求该设备在商业上可用(高通的参考设备不通过运营商或作为解锁手机出售)。此外，性能取决于选择什么样的ML模型、数字格式和ML框架，以及有什么样的ML加速器可用。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="conclusion">结论</h2>
+<p>高通的骁龙888再次带来了CPU和GPU性能的增量改进，但图像处理和人工智能的大规模改进。从两年前的设备升级的人不会注意到CPU和GPU的改进(除非他们计划运行模拟器或玩像Genshin Impact这样的游戏)，但他们肯定会注意到移动技术的其他进步。如今，设备具有更高的刷新率显示器，更多具有更高分辨率图像传感器的相机，支持5G连接，等等。普通用户不会注意到人工智能性能的巨大进步，但高通新芯片组带来的可能性令人兴奋地思考。实时人工智能视频增强、多摄像头流等更多功能将在明年出现，谷歌等公司继续通过训练机器学习模型支持的功能发布惊喜。</p>
+
+<p>不过，高通并不是唯一一家改进其SoC产品线的公司。三星即将为Galaxy S21推出的Exynos 2100据说将带来重大的性能改进。还有华为新的海思麒麟9000和联发科不断增长的移动SOC产品线。我希望一旦我们有了至少一款采用三星、华为和联发科下一代芯片的顶级设备，就能重新审视这些基准。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="qualcomm-snapdragon-888-benchmarking-demo">高通骁龙888基准测试演示</h2>
+<p>我在本文开始时提到，高通与我们分享了一段预先录制的视频。如果你感兴趣，我已经把那个视频上传到YouTube上了。它显示了骁龙888运行我上面分享的所有基准，以及我没有展示的其余人工智能基准。</p>
+
+ 
+<p class="w-rich w-youtube" id="8_VTHbu6quc">  </p>
+
+
+<p>同时，下面是高通提供给我们的总结骁龙888性能指标评测结果的表格:</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/12/Qualcomm-Snapdragon-888-Benchmark-Results.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Benchmark results from a Qualcomm Snapdragon 888 reference device. Source: Qualcomm&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/12/Qualcomm-Snapdragon-888-Benchmark-Results.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/12/Qualcomm-Snapdragon-888-Benchmark-Results.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/12/Qualcomm-Snapdragon-888-Benchmark-Results.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/12/Qualcomm-Snapdragon-888-Benchmark-Results.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="Qualcomm Snapdragon 888 benchmark results" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/12/Qualcomm-Snapdragon-888-Benchmark-Results.jpg" src="../Images/2f5f3e21360abd54b0e68d4710391673.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/12/Qualcomm-Snapdragon-888-Benchmark-Results.jpg"/> </picture> <figcaption class="body-img-caption">Benchmark results from a Qualcomm Snapdragon 888 reference device. Source: Qualcomm</figcaption> </figure> </div>
+
+
+ </div>
+
+</div>
+
+
+</div>    
+</body>
+</html>

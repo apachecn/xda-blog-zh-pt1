@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>How to uninstall carrier/OEM bloatware without root access</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何在没有root访问权限的情况下卸载运营商/OEM膨胀软件</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/which-oem-would-you-like-to-help/#0001-01-01">https://www.xda-developers.com/which-oem-would-you-like-to-help/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>如果你买了一部新的安卓手机，很有可能预装了一些你不关心的应用。原始设备制造商经常与其他品牌和公司合作，在他们的设备上预装他们的应用程序，这些应用程序可以是从流媒体服务到音乐播放器的任何东西。如果您的手机锁定了某个特定的运营商，那么您的运营商可能会在您的手机上预装一些您可能永远不会使用的应用程序。</p>
+
+  
+<p>这些应用程序不必要地塞满了你的应用程序抽屉，甚至可能会发送侵扰性的通知，有时甚至会在你的设备上推送广告。更糟糕的是，大部分时间你都无法轻松卸载这个臃肿的软件，这会导致挫败感。</p>
+
+
+
+<p>如果你被这些预装在手机上的应用程序所困扰，并希望摆脱它们，享受一个更干净的用户界面，减少干扰，或者摆脱烦人的通知，本指南将向你展示如何在没有root访问权限的情况下从你的设备上卸载运营商/OEM膨胀软件，使用几个简单的步骤，只涉及你的手机和电脑。</p>
+
+<p>这种方法不仅适用于第三方应用，也适用于一些第一方应用。例如，如果您的手机带有三星日历，但您更喜欢使用谷歌日历，您可以卸载三星的应用程序，并将谷歌日历作为您的默认日历应用程序。你唯一需要的东西就是你的安卓手机、一台带ADB的PC/Mac和一根连接你的手机和电脑的T2 USB线。</p>
+
+ 
+<h2 id="how-to-uninstall-bloatware-from-your-phone-without-root-access">如何在没有root权限的情况下卸载手机上的膨胀软件</h2>
+<p>虽然你可以在<a href="https://forum.xda-developers.com/"> XDA论坛</a>上找到一些针对特定设备的应用程序或可执行批处理文件，但这些解决方案并不通用，可能只适用于特定设备或特定的Android皮肤。有些甚至需要root访问权限。预装应用或膨胀软件的列表因OEM、运营商而异，有时甚至因设备销售地区而异。因此，最好使用这种方法解除手机屏蔽，以确保只卸载你想删除的应用程序。</p>
+
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_7"><p>注:卸载一些系统应用程序可能是危险的，并可能导致强制关闭，甚至是一个砖设备。一个应用程序可能依赖于另一个应用程序来工作，所以要小心你卸载的内容及其可能产生的后果。最好不要乱用一些核心应用程序，如拨号器、信息、相机等。，并且只卸载你认为臃肿的应用。</p> </div></section>
+ 
+<p class="w-rich w-youtube" id="fAqmjU_EJ8g">  </p>
+
+
+<h3 id="step-1-enabling-usb-debugging-on-your-phone">步骤1:在手机上启用USB调试</h3>
+<ol> <li>打开手机上的<strong>设置</strong> app，向下滚动到<strong>关于手机</strong> <em>。</em></li> <li>点击<strong>构建号</strong>七次以启用<strong>开发者选项</strong>。</li> <li>回到设置菜单，进入<strong>系统&gt;开发者选项。</strong></li> <li>启用<strong> USB调试</strong>。</li> </ol>
+
+<h3 id="step-2-interfacing-your-phone-with-adb">步骤2:将您的手机与亚行对接</h3>
+<ol> <li>将手机插入电脑，将<em> USB设置</em>从<strong>仅充电</strong>模式更改为<strong>文件传输(MTP) </strong>模式。</li> <li>确保您的计算机上已经安装了ADB。</li> <li>在您的计算机上，浏览到ADB的安装目录。按住Shift键，右键单击目录名，选择<strong>打开命令/PowerShell窗口此处</strong> <em>。</em></li> <li>如果你使用的是Mac，启动终端窗口，使用<code>cd &lt;path to the directory&gt;</code>(不带尖括号)导航到ADB目录。</li> <li>现在，输入<code>adb devices </code>并按回车键。</li> <li>您将看到系统正在启动ADB守护程序。如果这是你第一次运行ADB，你会在手机上看到一个提示，要求你授权与电脑的连接。批准吧。</li> <li>现在，如果您重新运行<code>adb devices</code>命令，终端将打印您设备的序列号。如果你看到一串数字，你就准备好继续前进了。</li> </ol>
+
+<h3 id="step-3-finding-the-name-of-the-packages-to-uninstall">步骤3:查找要卸载的软件包的名称</h3>
+<ol> <li>在命令提示符/终端窗口中，输入<strong> adb shell </strong>并按回车键。</li> <li>然后，使用以下命令:<pre> <code class="hljs xml">pm <span class="hljs-keyword">list</span> packages | grep <span class="hljs-string">'&lt;OEM/Carrier/App Name&gt;'</span></code> </pre></li> <li>这将列出您设备上安装的所有OEM和运营商应用程序。</li> <li>或者，你也可以使用Play Store的一款名为<strong> App Inspector </strong>的应用，了解手机上所有已安装应用的包名。安装app，选择要卸载的app，包名会列在那里。记下您想要卸载的所有应用程序的软件包名称。</li> </ol>
+
+ 
+<p class="w-rich w-play_store_app" id="com.ubqsoft.sec01">  </p>
+
+
+<h3 id="step-4-uninstalling-the-bloatware">步骤4:卸载膨胀软件</h3>
+<ul> <li>这是你卸载一个系统应用需要使用的命令:<pre> <code class="hljs sql">pm <span class="hljs-keyword">uninstall</span> -k </code> </pre></li> </ul>
+
+<p>注意，NameOfPackage需要替换为完整的包名，没有任何“或&lt;&gt;。您还需要对每个要卸载的应用程序执行该命令。</p>
+
+<p>作为一个警告，卸载系统应用程序可能是危险的，所以请在完成这些步骤之前知道你要删除什么。如果不这样做，可能会导致您的手机无法使用，直到您执行出厂重置。当然，通过删除任何给定的系统应用程序，可能依赖于它的另一个系统应用程序也可能会中断，所以要小心您删除的内容。如果出现问题，您可以随时执行工厂重置，将事情恢复到原来的样子。或者，有一种更简单的方法来恢复你卸载的应用程序，正如我们在最后一节解释的那样。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="adb-app-removal-guis">ADB应用程序删除GUI</h2>
+<p>如果你出于某种原因不习惯使用ADB命令(它们真的很简单，我们坚持让用户尝试一下)，你可以尝试第三方独立开发者的应用程序。这些应用程序中有几个是GUI，使得我们上面列出的ADB命令更容易执行。</p>
+
+
+
+<p>如果你在ADB命令执行上有困难，给他们一个机会，尽管自己设置ADB和执行命令在Android世界里是一个很好的技能。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="how-to-re-install-an-uninstalled-app">如何重新安装已卸载的应用程序</h2>
+<p>如果您误删除了某个应用程序，或者某个辅助应用程序因依赖于您卸载的某个应用程序而被强制关闭，您可以使用以下命令集来重新安装该应用程序:</p>
+
+<pre> <code class="hljs xml">adb shell<br/>pm <span class="hljs-keyword">install</span>-existing NameOfPackage</code> </pre>
+
+
+<p>这是因为应用程序并没有真正从你的设备上完全卸载掉。他们只是为<em>当前用户</em>(用户0是手机的默认/主用户)卸载。这就是为什么，如果你省略了卸载命令的<code>--user 0</code>和<code>-k</code>部分，这个命令就不会工作。这两个标志分别指定系统应用程序将只为当前用户(而不是所有<em>用户</em>卸载，这需要root访问权限)和系统应用程序的缓存/数据将被保留(没有root无法删除)。因此，即使您使用这种方法卸载了一个系统app，您仍然可以从您的运营商或OEM接收官方OTA更新。</p>
+
+<hr/>
+
+<p>这种方法可以在任何智能手机上使用，不管是OEM还是运营商。你通常不会获得任何空间，因为这些应用程序通常安装在系统分区。尽管如此，这将防止他们向你发送通知，堵塞你的应用抽屉。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>
