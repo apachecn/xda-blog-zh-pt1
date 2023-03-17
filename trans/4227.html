@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Manifest V3 changes for browser extensions will go live in Google Chrome 88</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>浏览器扩展的清单V3更改将在Google Chrome 88中上线</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/manifest-v3-changes-browser-extensions-go-live-google-chrome-88/#0001-01-01">https://www.xda-developers.com/manifest-v3-changes-browser-extensions-go-live-google-chrome-88/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>今年互联网浏览最大的变化之一是以广受讨论的清单V3(T1)的形式出现。一个新的清单版本允许浏览器Chrome限制某些旧API的工作，改变了web和附带扩展的工作方式，并最终改变了广大用户体验互联网的方式。经过几个月的积极讨论和反馈，Chrome extensions的Manifest V3现已在Chrome 88 Beta上推出，在接下来的几个月中将会有更多的变化。</p>
+
+ 
+<h2 id="changes-in-manifest-v3">清单V3中的更改</h2>
+<h3 id="security">安全性</h3>
+<p>在Manifest V3中，Google不允许远程托管代码。该公司声称，这种机制被用作攻击载体，以规避谷歌的恶意软件检测工具。为了用户隐私和安全的利益，这是被删除。移除远程托管的代码也将允许谷歌更彻底、更快速地审查提交给Chrome网络商店的内容。</p>
+
+<h3 id="performance">表演</h3>
+<p>在这个新版本中，谷歌引入了<a href="https://developers.google.com/web/fundamentals/primers/service-workers">服务人员</a>来替代背景页面。后台页面在后台保持活动状态，并消耗系统资源，而不管扩展是否在使用它。服务人员是“短暂的”，因为他们独立于网页运行，为不需要网页或用户交互的功能(如推送通知和后台同步)打开了大门。浏览器将能够根据需要启动和关闭服务人员，从而降低整体系统资源利用率。</p>
+
+<p>扩展API也在向更具声明性的模型发展。谷歌表示，最终结果是更好的整体性能和改善大多数扩展用户的隐私保障。</p>
+
+<h3 id="privacy">隐私</h3>
+<p>另一个大的变化来自新的扩展模型，它使得更多的权限是可选的。用户现在可以在安装时保留敏感权限，让他们可以更好地了解和控制扩展如何使用和共享他们的数据。因此，扩展开发人员应该期望用户可以随时选择加入或退出权限。</p>
+
+<p>然后是需要被动访问web活动的扩展的变化，比如<a href="https://www.xda-developers.com/google-chrome-manifest-v3-ad-blocker-extension-api/"> Web请求API和更新的声明性Net请求API </a>。特别是声明性的Net Request API，自从它第一次发布以来已经发生了变化，当前的推出考虑了来自开发人员社区的广泛反馈，例如对多个静态规则集、规则中的正则表达式、声明性头修改等的支持。</p>
+
+<section class="emaki-custom-block emaki-custom-pullquote"><div class="emaki-custom pullquote" id="custom_block_10"><p>我们非常高兴谷歌的Chrome扩展团队和我们自己的工程团队之间建立了密切的合作，以确保广告拦截扩展在Manifest V3生效后仍然可用。</p> </div></section><p class="ad-odd"> </p>
+
+
+<h2 id="availability-and-rollout-for-manifest-v3">清单V3的可用性和推广</h2>
+<p>如上所述，Manifest V3现在可以在Chrome 88 Beta上进行试验，预计在即将发布的版本中会有更多功能。Chrome网络商店将从1月中旬Chrome 88到达稳定分支时开始接受Manifest V3扩展。</p>
+
+<p>Google没有承诺移除对Manifest V2扩展的支持的确切日期，迁移期的大致时间表可以估计为Manifest V3登陆稳定分支后的一年。谷歌将在未来几个月提供时间表的更多细节。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

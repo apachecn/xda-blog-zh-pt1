@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Apple's macOS is also vulnerable to the root exploit affecting Linux</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>苹果的macOS也容易受到影响Linux的根漏洞攻击</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/apple-macos-vulnerable-root-exploit-linux/#0001-01-01">https://www.xda-developers.com/apple-macos-vulnerable-root-exploit-linux/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">苹果的macOS也容易受到影响Linux的根漏洞攻击</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">研究人员发现，针对sudo实用程序的“Baron Samedit”漏洞也可以危及苹果macOS。请继续阅读！</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p/><p>这些年来，我们已经看到了许多基于Linux的可怕攻击成为焦点。就在几天前，当Qualys <a href="https://www.xda-developers.com/linux-update-sudo-security-flaw/">的研究人员披露了“Sudo”程序</a>中的一个权限提升漏洞时，他们预测该漏洞可能会影响Unix家族的其他操作系统。嗯，他们是对的:安全研究人员耐特·赫克已经证实，CVE-2021-3156漏洞(又名“巴龙·萨梅迪”)可以很容易地被修改，以获得苹果macOS上的根访问权限。</p>
+
+  
+
+
+
+<p>macOS的底层基础基于Darwin，它本身使用了FreeBSD操作系统的各种元素。这就是问题所在，因为常见的Unix实用程序如<code>sudo</code>和<code>sudoedit</code>因此在普通的macOS安装中是开箱即用的。这个消息的问题在于<strong>苹果</strong>还没有给出官方的修复方案。这意味着即使是新的<a href="https://www.xda-developers.com/apple-macbook-air-macbook-pro-13-mac-mini-m1-arm-soc/">基于ARM的M1 MAC电脑</a>也容易受到攻击媒介的攻击。</p>
+
+ 
+
+
+
+<p>与普通的Linux发行版不同，macOS用户没有直接的方法用补丁替换系统的sudo二进制文件，因为苹果的<a href="https://support.apple.com/en-us/HT204899">系统完整性保护</a>功能。请记住，即使应用苹果的最新安全更新(<a href="https://support.apple.com/en-us/HT212147">于2月1日</a>发布)，包括macOS Big Sur 11.2、安全更新2021-001 Catalina和安全更新2021-001 Mojave，<strong>也不足以修复漏洞</strong>。因此，整个macOS生态系统仍然容易受到Baron Samedit的攻击。</p>
+
+<p>我们希望苹果公开承认这个严重的问题，并公开其解决问题的计划。除了macOS，CVE-2021-3156还影响了最新版本的<a href="https://twitter.com/astr0baby/status/1356656837538549760"> IBM AIX </a>和<a href="https://twitter.com/0xdea/status/1356896506217922562"> Solaris </a>，使其成为迄今为止发现的最具灾难性的本地权限提升漏洞之一。</p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

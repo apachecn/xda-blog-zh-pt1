@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>The Magisk Manager APK can now be flashed from within TWRP</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Magisk经理APK现在可以在TWRP内部闪现了</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/install-magisk-manager-without-separate-zip/#0001-01-01">https://www.xda-developers.com/install-magisk-manager-without-separate-zip/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>Magisk的开发者Topjohnwu今天宣布了对流行的开源生根工具的重大改变。最大的变化是，根你的手机所需的二进制文件和脚本现在包含在管理器应用程序中，而不是通过互联网下载。因此，你只需要下载一个文件Magisk管理器APK的最新版本——就可以让你的手机root并管理root访问。</p>
+
+  
+
+
+
+<p>在今天的更新之前，安装Magisk最常见的方法是首先安装Manager应用程序，然后从Manager应用程序中下载最新的flashable ZIP，其中包含Magisk安装所需的二进制文件和脚本，最后在像TWRP这样的自定义恢复中刷新该ZIP。在今天的更新之后，你所要做的就是下载最新的经理APK，把它的扩展名改为ZIP，这样它就会被TWRP识别为一个可刷新的文件，然后刷新ZIP。这可以工作的原因是，APK文件遵循ZIP文件格式，所以<a href="https://github.com/topjohnwu/Magisk/commit/ec8fffe61cf6c2ce66a52d9e8b33cd6e60c7ceb8">通过一些修改</a>，APK既可以作为Android安装包，也可以作为TWRP认可的可闪存ZIP文件。</p>
+
+<p>除了降低复杂性，这也使得整个安装和卸载过程完全离线。以前，管理器应用程序需要活跃的互联网连接才能从GitHub下载最新的Magisk ZIP。因为所需的二进制文件和脚本包含在管理器APK中，所以您可以不需要下载任何文件到您想要作为根的目标设备上。</p>
+
+<p>此外，topjohnwu表示，通过将所有二进制文件作为管理器APK的“原生库”发布，管理器应用程序的目标SDK版本可以设置为29或更高。他说，原因是因为Android 10的SELinux限制在应用程序的主目录中执行文件，同样的限制也迫使Termux开发者放弃在Google Play上提供应用程序更新。但是，目标SDK版本尚未增加，将在未来的提交中解决。</p>
+
+<p>和往常一样，你可以从topjohnwu的<a href="https://github.com/topjohnwu/Magisk"> GitHub </a>中找到Magisk的最新版本。你可以在这里找到最新的发行说明、安装说明和常见问题<a href="https://topjohnwu.github.io/Magisk/">。</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

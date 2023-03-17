@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Android 11 makes Google Photos annoying to use but there may be a fix</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android 11让谷歌照片用起来很烦，但可能会有解决办法</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-11-google-photos-trash-fix/#0001-01-01">https://www.xda-developers.com/android-11-google-photos-trash-fix/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>我们无法知道市场上有多少运行Android 11的设备，因为谷歌<a href="https://www.xda-developers.com/android-version-distribution-statistics-android-studio/">不再公布分发统计数据</a>，但现在可能有数千万，因为小米和三星等公司有时间将更新推送到<a href="https://www.xda-developers.com/android-11-update-tracker/">他们的许多型号</a>。如果你的设备运行Android 11，并且你使用谷歌照片，那么你有可能在应用处理图像删除和恢复的方式上遇到了一个相当恼人的变化。现在，你不必简单地选择想要删除的图像和视频，点击垃圾桶图标，然后点击“移至垃圾桶”按钮，而是需要点击额外的提示，以授予Google相册删除或恢复文件的权限。</p>
+
+  
+
+
+
+<p>对于那些拍摄大量照片和视频的人来说，必须授予Google相册删除或恢复文件的权限可能会很烦人。正如<a href="https://www.androidpolice.com/2020/10/15/scoped-storage-on-android-11-is-ruining-the-google-photos-experience/"> <em> AndroidPolice </em> </a>所指出的，点击额外的按钮并不是你可能必须处理的唯一问题。如果你在另一台设备上使用谷歌照片，并希望编辑或删除你从运行Android 11的手机上传的文件，该应用程序可能会要求你检查“不同步的更改”。如果Google相册不断要求你查看你刚刚在另一个平台上所做的更改，这很快就会变得令人讨厌。</p>
+
+ 
+
+
+
+<p>删除或恢复文件的额外步骤在Android 10中是不需要的，但现在在Android 11中是需要的，因为强制实施了范围存储。在作用域存储之前，对整个外部存储目录的访问由单一权限管理，这使得您很难限制哪些应用程序可以访问您的私人文档、图像或视频。有了范围存储，Android限制了应用程序在没有明确用户同意的情况下对敏感文件的访问权限。你可以在这篇文章中找到关于作用域存储<a href="https://www.xda-developers.com/android-11-developer-preview-privacy-security-features-changes/#affiliate-warning:~:text=Scoped%20Storage%20changes">的更多细节，或者查看Google下面的图表来获得变化的摘要。</a></p>
+
+
+
+<p>当他们忙于在Android 11中限制存储访问时，谷歌也在改进现有的API以改善用户体验。例如，针对Android 11的应用程序可以使用MediaStore API来<a href="https://www.xda-developers.com/android-11-hidden-recycle-bin-trashed-photos-videos/">删除文件，而不是删除它</a>。然而，为了将一个文件移到垃圾箱，应用程序必须<a href="https://developer.android.com/reference/android/provider/MediaStore#createWriteRequest(android.content.ContentResolver,%20java.util.Collection%3Candroid.net.Uri%3E)">提示用户授予它写权限</a>。由于你从手机添加到Google相册的大部分图片和视频来自不同的应用程序，如stock camera应用程序，因此在将文件移入或移出垃圾桶之前，Photos必须请求许可。然而，如果你使用的是安装了Android 11的Pixel手机，Google Photos不会要求你允许你删除文件。然而，它确实要求其他几乎所有运行Android 11的设备都获得许可，包括大多数三星、小米、一加和华硕设备。怎么回事？</p>
+
+<p>原因是系统图库应用不受范围存储限制。这意味着股票图库应用程序可以在没有明确许可的情况下打开、编辑或删除图像和视频。Google Photos在Pixel手机上预设为系统图库应用，但大多数OEM厂商都预设了自己的图库应用。此外，没有面向用户的设置来更改系统图库应用程序，甚至在Android的“默认应用程序”屏幕中也没有。然而，<em>是</em>改变系统图库应用程序的一种隐藏方式，但是有一个<em>大</em>警告:只有一个系统应用程序可以被设置为系统图库应用程序。这意味着只有<em>已经预装了谷歌照片作为系统应用</em>的手机才能利用这个技巧。</p>
+
+<p>符合这个标准的手机并不多，但是根据我们的测试，我们可以确认这个<strong>可以在大多数一加和一些华硕手机上使用</strong>。这种方法在我们测试的任何三星手机上都不起作用，在小米Mi 10 Pro上也不起作用。如果你有root权限或者正在运行一个定制的ROM，在你系统化Google Photos应用程序之后，这个方法可能会在你的设备上工作，但是我们只在普通设备上测试了这个方法。</p>
+
+ 
+<h2 id="how-to-maybe-make-google-photos-the-system-gallery-app">如何(或许)让Google相册成为系统图库应用</h2>
+<p><em>感谢基隆·奎因(<a href="https://forum.xda-developers.com/m/quinny899.3563640/">奎因899 </a>在XDA论坛上)分享了这个技巧！</em></p>
+
+<p>你需要做的第一件事是在你的电脑上安装ADB。我们有一个关于如何做的更新指南<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">在这里</a>。ADB设置完成后，输入以下命令:</p>
+
+<pre> <code class="hljs css"><span class="hljs-selector-tag">adb</span> <span class="hljs-selector-tag">shell</span> <span class="hljs-selector-tag">cmd</span> <span class="hljs-selector-tag">role</span> <span class="hljs-selector-tag">add-role-holder</span> <span class="hljs-selector-tag">android</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.role</span><span class="hljs-selector-class">.SYSTEM_GALLERY</span> <span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.google</span><span class="hljs-selector-class">.android</span><span class="hljs-selector-class">.apps</span><span class="hljs-selector-class">.photos</span></code> </pre>
+<p>如果您没有看到错误，那么它可能工作了！你可以通过拍摄照片，然后尝试在Google相册中删除照片来快速验证它是否有效。或者，您可以运行以下命令:</p>
+
+<pre> <code class="hljs ">adb shell dumpsys role</code> </pre>
+<p>...并查看“Android . app . role . system _ GALLERY”的“持有者”是否为“com . Google . Android . apps . Photos”(Google Photos的包名)。</p>
+<div class="body-img portrait"><div class="responsive-img image-expandable img-article-item-portrait" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/2021-02-02-16_57_05-Window.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;If your output matches the text highlighted in the red rectangle, then it worked.&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/2021-02-02-16_57_05-Window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/2021-02-02-16_57_05-Window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="600px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/2021-02-02-16_57_05-Window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="360px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/2021-02-02-16_57_05-Window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/2021-02-02-16_57_05-Window.jpg" src="../Images/44ed7f80402bb4fb81545b76fcf8fd43.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/2021-02-02-16_57_05-Window.jpg"/> </picture> <figcaption class="body-img-caption">If your output matches the text highlighted in the red rectangle, then it worked.</figcaption> </figure> </div>
+
+
+ </div>
+
+<p class="ad-odd"> </p>
+
+
+<h2 id="what-does-this-command-do">这个命令有什么作用？</h2>
+<p>Android 10增加了一个名为“Roles ”的<a href="https://www.xda-developers.com/android-q-security-privacy-features/#caption-attachment-261733:~:text=location.-,Roles">新API。当应用程序具有特定角色时，它会自动被授予特定权限。例如，</a><a href="https://developer.android.com/reference/androidx/core/role/RoleManagerCompat#ROLE_SYSTEM_GALLERY"> SYSTEM_GALLERY角色</a>自动授予应用程序“对外部存储上的所有图像和视频文件的完全读写权限，包括对位置元数据的访问权限”SYSTEM_GALLERY角色只能授予系统应用程序，其默认持有者由Android配置值“config_systemGallery”定义。正如我们之前解释的，大多数OEM将此值预设为与他们自己的图库应用程序对应的包名。如果不修改框架或安装一个覆盖层，这个值就不能改变，这两者都需要root访问权限。</p>
+
+<p>然而，<em>可以将另一个应用程序</em>添加为SYSTEM_GALLERY角色的持有者，但只有在该应用程序也是系统应用程序的情况下，才可以添加<em>。这在许多一加和一些华硕手机上是可能的，因为这些原始设备制造商似乎在系统级而不是用户级预装了Google相册。正因为如此，Google Photos应用程序有资格担任SYSTEM_GALLERY角色，我们利用Android的隐藏RoleManager shell接口来授予它访问通常无法授予的权限。如果您尝试将SYSTEM_GALLERY角色授予非系统应用程序，您将在logcat中看到以下错误:</em></p>
+
+<pre> <code class="hljs css"><span class="hljs-selector-tag">E</span> <span class="hljs-selector-tag">RoleControllerServiceImpl</span>: <span class="hljs-selector-tag">Package</span> <span class="hljs-selector-tag">does</span> <span class="hljs-selector-tag">not</span> <span class="hljs-selector-tag">qualify</span> <span class="hljs-selector-tag">for</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">role</span>, <span class="hljs-selector-tag">package</span>: <span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.google</span><span class="hljs-selector-class">.android</span><span class="hljs-selector-class">.apps</span><span class="hljs-selector-class">.photos</span>, <span class="hljs-selector-tag">role</span>: <span class="hljs-selector-tag">android</span><span class="hljs-selector-class">.app</span><span class="hljs-selector-class">.role</span><span class="hljs-selector-class">.SYSTEM_GALLERY</span></code> </pre>
+<p>遗憾的是，我们还没有找到绕过这个限制的方法，但是如果我们找到了，我们将与社区分享我们的方法。当然，我们更希望Google简单地使SYSTEM_GALLERY角色可由用户定义，而不是局限于OEM的选择。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

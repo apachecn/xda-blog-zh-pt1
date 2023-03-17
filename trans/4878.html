@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>The future of flashing custom ROMs will be through a web browser</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>闪存定制只读存储器的未来将通过网络浏览器实现</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/flashing-custom-roms-web-browser/#0001-01-01">https://www.xda-developers.com/flashing-custom-roms-web-browser/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>对于一些人来说，涉足售后市场开发的冲动来来去去。有时我们声称对新手机很满意，假装它拥有我们需要的一切。蜜月期一结束，我们就回到旧习惯，很快就想投入到生根发芽和定制rom的世界中。虽然有各种通用的或特定于设备的flash指南可以帮助您，但对于试图理解所有这些术语和程序的新用户来说，这仍然是一项艰巨的任务。即使对于高级用户来说，有时你就是无法让你的PC(或Mac)识别你的Android手机，不管你对系统设置做多少次手脚。</p>
+
+  
+<p>当Google <a href="https://www.xda-developers.com/google-android-flash-tool-project-treble-gsi/">第一次宣布Android Flash Tool </a>作为简化通用系统映像(GSI)安装工作的努力时，社区中有一些关于基于浏览器的方法在简化Flash范例方面有多有效的讨论。毕竟，这种方法确实让用户避免了手动下载图像并用快速启动命令刷新图像的不便。然而，谷歌的产品有一点限制性，因为这个在线工具只与少数设备兼容，你只能看到官方的AOSP图片和股票固件包。为此，在我们的论坛上被称为<a href="https://forum.xda-developers.com/m/kdrag0n.7291478/"> kdrag0n </a>的Danny Lin开发了<a href="https://github.com/kdrag0n/fastboot.js"><em>fastboot . js</em></a>——一个使用<a href="https://wicg.github.io/webusb/"> WebUSB </a> API的<a href="https://android.googlesource.com/platform/system/core/+/master/fastboot/README.md"> fastboot协议</a>的JavaScript实现，专门面向在Android设备上刷新第三方操作系统有困难的最终用户。</p>
+
+<p>看到其他选项弹出来总是好的，一个基于JavaScript的闪存工具的到来基本上意味着你将能够直接从你的浏览器闪存定制的rom！事实上，为谷歌Pixel 5(T1)和其他设备维护ProtonAOSP的开发者林已经开发出了一款通用的安卓网络安装程序(T3)，这是一款完全在浏览器中运行的成熟的安装程序应用模板。如果你有一个受ProtonAOSP项目官方支持的设备，你甚至可以尝试使用这个web安装程序的官方分支来刷新它<a href="https://protonaosp.kdrag0n.dev/install/web/">。</a></p>
+
+
+
+
+
+<p>Kdrag0n还为关注隐私的GrapheneOS项目编写了web安装程序，他认为这是该项目的最初开发资金。</p>
+
+ 
+
+
+
+<p>Chromium从61版开始就支持WebUSB，所以你PC上安装的任何基于Chromium的浏览器(如谷歌Chrome或微软Edge)都可以使用在fastboot.js之上编码的web flashing工具，在Windows上，你可能还需要为fastboot接口安装一个驱动程序，但大多数情况下会通过Windows Update自动下载安装。</p>
+
+<p>关于fastboot.js库的更多信息可以在下面链接的存储库中找到。虽然Javascript实现并不意味着是本机Fastboot二进制文件的通用替代品，但它具有固有的操作系统无关性，为Android平台工具提供了一个可移植的、方便的补充，甚至是潜在的替代品，以满足您的调整需求。用户将不再遭受错过命令或争相下载更新的Android平台工具的问题，因为你需要的一切都将在你的浏览器中。</p>
+
+<p/><p><strong><a href="https://github.com/kdrag0n/fastboot.js">fastboot . js GitHub Repo</a>T3】</strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

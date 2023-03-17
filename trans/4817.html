@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Here's why you can't sideload updates to Google Camera and Recorder</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>这就是为什么你不能下载谷歌相机和录像机的更新</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-camera-recorder-sideload-failed-verification-android-11/#0001-01-01">https://www.xda-developers.com/google-camera-recorder-sideload-failed-verification-android-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>当谷歌在10月份推出Pixel 5时，我们很高兴能接触到它的新应用。(手机本身<a href="https://www.xda-developers.com/google-pixel-5-review/">也很酷</a>。随着Pixel 5的发布，我们与社区分享了新版的<a href="https://www.xda-developers.com/download-google-camera-8-0-from-pixel-5-other-pixel-phones/">谷歌相机</a>和<a href="https://www.xda-developers.com/download-google-recorder-2-0-pixel-5-other-pixel-devices/">谷歌录像机</a>应用。然而，当许多旧Pixel设备的用户试图下载更新时，他们遇到了一个错误(如上所示)。奇怪的是，并不是每个人都有安装更新的问题。有些人能够很好地安装它们，而其他人不得不进行工厂重置，以便安装新版本。由于这个问题看似随意，许多人将其归因于一个错误。我们现在很有信心，这个问题不是源于一个错误，而是谷歌在Android 11中使用了一个新的API来阻止侧载更新。</p>
+
+  
+<p>如果你试图在运行Android 11的Pixel设备上侧载谷歌相机8.0或更高版本或谷歌记录器2.0或更高版本，你会看到一条错误消息，称验证无法成功。即使您尝试使用shell命令从侧面加载APK，您也不会得到安装失败的更具体的原因。您将得到的安装返回代码是"<a href="https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/android/content/pm/PackageManager.java;l=1340?q=INSTALL_FAILED_VERIFICATION_FAILURE">INSTALL _ FAILED _ VERIFICATION _ FAILURE</a>"，不幸的是，它没有告诉您为什么验证没有成功。通过检查logcat，我们可以了解验证失败的确切原因:</p>
+
+<pre> <code class="hljs css"><span class="hljs-selector-tag">AppIntegrityManagerServiceImpl</span>: <span class="hljs-selector-tag">Integrity</span> <span class="hljs-selector-tag">check</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.google</span><span class="hljs-selector-class">.android</span><span class="hljs-selector-class">.GoogleCamera</span> <span class="hljs-selector-tag">result</span>: <span class="hljs-selector-tag">DENY</span> <span class="hljs-selector-tag">due</span> <span class="hljs-selector-tag">to</span> <span class="hljs-selector-attr">[Rule: (PACKAGE_NAME EQ com.google.android.GoogleCamera) AND (VERSION_CODE GTE 32045130) AND (APP_CERTIFICATE EQ F0FD6C5B410F25CB25C3B53346C8972FAE30F8EE7411DF910480AD6B2D60DB83) AND NOT (INSTALLER_NAME EQ com.android.vending), DENY]</span></code> </pre>
+<p>根据该消息，对Google Camera安装的完整性检查失败，因为“INSTALLER_NAME”与谷歌Play商店的包名“com.android.vending”不匹配。(我试图用APKMirror安装程序安装谷歌相机8.0，不管它值不值得。)这条消息是由“<a href="https://android.googlesource.com/platform/frameworks/base/+/android11-release/services/core/java/com/android/server/integrity/AppIntegrityManagerServiceImpl.java">AppIntegrityManagerServiceImpl</a>”添加到系统日志中的，这是Android新的“应用完整性”功能的一部分。根据AOSP的代码，App Integrity旨在在软件包管理器现有的APK签名验证的基础上提供额外的一层检查。App Integrity API似乎使用一套<a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/content/integrity/Rule.java">规则</a>来决定是否允许或拒绝安装。规则由一个系统应用程序提供——我们认为是Google Play服务——并且<a href="https://android.googlesource.com/platform/frameworks/base/+/master/services/core/java/com/android/server/integrity/IntegrityFileManager.java">存储在一个文件</a>中。</p>
+
+<p>此外，如果清单的元数据中嵌入了“源标记”，App Integrity <a href="https://android.googlesource.com/platform/frameworks/base/+/android11-release/services/core/java/com/android/server/integrity/AppIntegrityManagerServiceImpl.java#484">还会调用另一个名为</a><a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/util/apk/SourceStampVerifier.java">的类</a>。例如，下面是我们认为来自谷歌相机应用程序清单的“源戳”:</p>
+
+<pre> <code class="hljs javascript"><span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"com.android.stamp.source"</span> <span class="hljs-attr">android:value</span>=<span class="hljs-string">"https://play.google.com/store"</span>/&gt;</span></code> </pre>
+<p>据我们所知，source stamp用于验证包安装程序的签名。因此，举例来说，你不能欺骗AppIntegrity允许安装，即使你<a href="https://developer.android.com/studio/command-line/adb#-t-option:~:text=APK.-,%2Di">冒充Play Store </a>作为安装程序。</p>
+
+<p>除此之外，我们无法确切了解谷歌如何使用AppIntegrity和相关API来阻止谷歌相机和谷歌录像机应用程序的侧装更新。对APK Google Play服务的快速检查显示，它正在使用这些API，但代码过于混乱，无法真正理解所有内容。我们甚至找到了存储完整性规则的目录— /data/system/integrity_rules —但是它没有什么用处，因为它只包含序列化的数据。我们也没有找到禁用完整性验证的方法(这似乎不像只是<a href="https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/android/provider/Settings.java;l=10026?q=INTEGRITY_CHECK_INCLUDES_RULE_PROVIDER">改变设置</a>那么简单)，尽管我们认为工厂重置对一些人有效的原因是Google Play服务没有机会初始化其规则集来阻止安装。尽管如此，logcat消息和Android 11中这些新API的引入强烈表明这完全是设计使然，而不是一个错误。</p>
+
+<p>谷歌还没有公开评论其对这些API的使用(我们也不期望他们这样做)，当被联系评论时，他们也没有回应。不过，我们有一些理论来解释为什么他们会阻止侧装更新。首先，它们可以防止人们为他们的设备安装错误版本的应用程序。谷歌向特定的像素设备提供特定版本的应用程序。例如，可以在网上找到几个版本的设备个性化服务应用程序。尽管它们都可以安装在Pixel设备上，但通过下载为旧Pixel设备构建的版本，<a href="https://twitter.com/MishaalRahman/status/1197930331397070848">可能会在Pixel 4上失去直播字幕功能</a>。另一个原因可能是“提高未经授权发布的应用程序的可追溯性”，正如Google在SourceStampVerifier类中解释的那样。</p>
+
+<p>到目前为止，只有少数使用应用捆绑格式的谷歌应用(如谷歌相机和谷歌录像机)阻止非播放商店安装，但我们不知道该公司是否会将这种行为扩展到其他应用<a href="https://www.xda-developers.com/google-android-app-bundle-play-store/">，一旦它们都转换到AAB格式</a>。我们还考虑了转换到应用捆绑包是否有必要实现应用完整性，但我们发现当用户试图安装一个不具备所有必要分裂的应用时，谷歌已经<a href="https://stackoverflow.com/a/60622124">有了一个解决方案</a>来处理。无论情况如何，我们不认为谷歌打算阻止其应用程序的所有侧装，尽管这些工具肯定允许他们这样做。</p>
+
+<p><em>感谢开发人员vvb2060、aviraxp和Quinny899对本文的帮助，感谢t </em> <em>到PNF软件公司为我们提供了使用许可</em> <em> <a href="https://www.pnfsoftware.com/?aid=xdadev"> JEB反编译程序</a> </em> <em>，这是一款用于Android应用程序的专业级逆向工程工具。</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

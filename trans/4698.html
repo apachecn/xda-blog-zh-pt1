@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Here's the new camera features OnePlus is working on for its next phones</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>这是一加正在为其下一代手机开发的新相机功能</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/oneplus-camera-new-features-oneplus-9/#0001-01-01">https://www.xda-developers.com/oneplus-camera-new-features-oneplus-9/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>上周，一加为一加7和7T 系列推出了首个基于Android 11的OxygenOS公开测试版<a href="https://www.xda-developers.com/oneplus-7-7-pro-7t-7t-pro-android-11-oxygenos-open-beta-1/">。此次更新带来了一加相机应用程序的新版本——版本6 . 4 . 23——其中包含新的资产、字符串和代码，暗示了新的相机功能。这些功能尚未在最新更新中启用，但可能会在未来的设备上启用。随着该公司的</a><a href="https://www.xda-developers.com/oneplus-9-reportedly-launching-earlier-than-expected-next-year/">下一个旗舰发布</a>定于3月，这里是我们所知道的关于它可能首次亮相的相机功能。</p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_1"><p>APK拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p><strong>倾斜移位模式</strong></p>
+
+<p>更新中提到的一个新功能叫做“倾斜移位”。这是指倾斜移位摄影或微型伪造，一种使场景看起来比实际小得多的摄影技术。以下是添加的字符串:</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"capture_mode_tiltshift"</span>&gt;</span>Tilt-shift<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_1"</span>&gt;</span>1. Select location<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_1_detail"</span>&gt;</span>Tap the screen to change the location of the blurred area.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_2"</span>&gt;</span>2. Adjust the scope<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_2_detail"</span>&gt;</span>Adjust the blurred area with two fingers.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_3"</span>&gt;</span>3. Adjust the angles<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_3_detail"</span>&gt;</span>Change the angles with double finger rotation.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_4"</span>&gt;</span>4. Adjust intensity<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_4_detail"</span>&gt;</span>Tap the button to adjust the intensity of the blurred area.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_end"</span>&gt;</span>Try it Out<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_guide_start"</span>&gt;</span>Steps to take perfect photos:<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_overview"</span>&gt;</span>Tilt-shift mode can transform the world into a miniature version. Buildings and people will resemble tiny models in the shifting lens, displaying the visuals of an \"artificial city\" in photos. Here are some samples!<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"tiltshift_introduction_title"</span>&gt;</span>About Tilt-shift mode<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>感谢XDA会员<a href="https://forum.xda-developers.com/m/lossyx.5668276/"> Lossyx </a>，我们能够发布倾斜移位模式的介绍活动的截图，以展示该功能在一加相机应用程序中的外观，但我们的线人无法从他们的设备中捕捉任何实际的倾斜移位照片。</p>
+
+
+
+
+
+<p/><p><em>演职员表:XDA成员<a href="https://forum.xda-developers.com/m/lossyx.5668276/">LossyX</a>T3】</em></p>
+
+<p><strong>星爆</strong></p>
+
+<p>当你把相机对准一个明亮的光源，如太阳，你可能会看到一个辐射的星形，而不是一个点。这被称为星爆效应，似乎一加相机应用程序将提供一个专门的模式来捕捉这种效应的照片。相机应用程序可能会选择一个最佳光圈，既足够小以实现效果，又足够大以最大限度地提高整体图像清晰度。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"starburst_hint_close"</span>&gt;</span>Starburst is off<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/>&lt;string name=<span class="hljs-string">"starburst_hint_open"</span>&gt;Starburst is recommended <span class="hljs-keyword">while</span> shooting <span class="hljs-keyword">with</span> a light source&lt;<span class="hljs-regexp">/string&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"night_mode_hint_starburst_effect"</span>&gt;</span>Starburst Effect<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p><strong>月球模式</strong></p>
+
+<p>而<a href="https://www.xda-developers.com/oneplus-9/">一加9和9 Pro </a>可能不会有潜望式长焦相机——至少<a href="https://twitter.com/MaxJmb/status/1353750174137540608">根据tipster Max报道。对于那些想要捕捉夜空照片的人来说，一加正在追赶月亮模式的潮流。相机应用程序将提供不同的滤镜来调整月亮的颜色。</a></p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"settings_moon"</span>&gt;</span>About \"Moon Natural Colour Solution\"<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filter_black_white_moon"</span>&gt;</span>B<span class="hljs-symbol">&amp;amp;</span>W<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filter_moon_black_white_new"</span>&gt;</span>OBW 2<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filter_moon_mono"</span>&gt;</span>OBW 1<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filter_moon_snapseed"</span>&gt;</span>OBW 3<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filter_pop_moon"</span>&gt;</span>Vivid<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"filter_soft_moon"</span>&gt;</span>Matte<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p><strong>过度流逝</strong></p>
+
+<p>一加相机应用已经提供了延时模式，但似乎很快也会提供专用的超延时模式。时间间隔通常是固定的，而超时间间隔会增加长距离的运动。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"hyperlapse"</span>&gt;</span>Hyperlapse<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"user_assistive_put_subject_inside_frame"</span>&gt;</span>Please put the subject in the frame<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p><strong>聚焦峰化</strong></p>
+
+<p>最后，一个字符串指向一加相机应用程序中添加的对焦峰值功能。这个功能可能会突出取景器中的任何对焦区域，如果它类似于许多无反光镜相机中的功能。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"content_description_peeking_focus"</span>&gt;</span>Focus Peaking<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>正如我之前提到的，在最新版本的一加相机应用程序中，这些功能似乎都没有对用户开放。因此，我们怀疑这些功能是为即将推出的设备保留的，无论是在主要编号系列的Nord系列中。我们知道一加正在开发一些新设备，但我们不知道哪些设备将率先推出这些功能。</p>
+
+<hr/>
+
+<p><em>感谢XDA会员<a href="https://forum.xda-developers.com/m/some_random_username.8234677/"> Some_Random_Username </a>的提示，感谢PNF软件为我们提供使用许可</em><em><a href="https://www.pnfsoftware.com/?aid=xdadev">JEB Decompiler</a></em><em>，这是一款针对Android应用的专业级逆向工程工具。</em></p>
+
+<p><em>专题图片:一加8T 赛博朋克2077版</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

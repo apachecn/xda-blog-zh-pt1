@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Google Duo may shut down in April for uncertified Android devices</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌二人组可能在4月因未经认证的安卓设备而关闭</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-duo-shut-down-april-2021-uncertified-android-devices/#0001-01-01">https://www.xda-developers.com/google-duo-shut-down-april-2021-uncertified-android-devices/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>我们最近报道了在<a href="https://www.xda-developers.com/google-messages-stop-working-uncertified-android-phones-april-2021/"> Google Messages应用程序中发现的新字符串，表明该应用程序将从2021年4月</a>起停止在未经认证的Android设备上运行。Google Duo似乎也加入了这个名单，因为该应用程序最新更新中的新字符串表明，4月份视频通话服务也将关闭。</p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_1"><p>APK拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p>Google Duo v123正在谷歌Play商店上推出，它包含以下新字符串:</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"grace_period_notification_body"</span>&gt;</span>"Because you're using an unsupported device, Duo will unregister your account on this device soon. Download your Clips and call history to avoid losing them."<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"grace_period_notification_title"</span>&gt;</span>Duo is going away soon<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>虽然Google Messages中的字符串很简单，但是Google Duo中的字符串引用了“不支持的”设备。在这些不受支持的设备上，您的帐户将被注销，但在被踢出之前，您将有机会下载剪辑和通话记录。</p>
+
+<p>然而，到底什么是“不受支持”的设备呢？深入挖掘反编译后的代码，我们可以确认“不受支持的”设备在此上下文中是指不符合GMS，本质上与未经认证的设备意思相同。反编译的代码还表明，谷歌已经将最终强制执行日期定为2021年3月31日，在此之后，谷歌Duo将完全停止为未经认证的设备工作。但稍微松了口气的是，有14天的宽限期，因此未经认证的Android设备上的用户在应用和服务为他们关闭之前，将有足够的时间下载他们的数据。</p>
+
+<p>人们可以把<a href="https://www.xda-developers.com/google-rcs-e2ee-messages/"> RCS端到端加密的推出</a>看作是谷歌放弃支持谷歌消息上未经认证的设备的一个看似合理的理由。但是对于Gooogle Duo来说，这个观点站不住脚。Google Duo在网上<a href="https://duo.google.com/">是免费的</a>，没有设备限制。因此，在经过认证或未经认证的设备上使用相同的功能并不重要。正如Mishaal确认的那样，你可以在华为P40 Pro上安装和使用Google Duo，而不需要谷歌移动服务。当然，网络也是如此。因此，只将其中一个排除在外，而让另一个存在，似乎是不合理的。我们希望谷歌在实施改变时澄清其理由。</p>
+
+ 
+
+
+
+<p><em>感谢PNF软件为我们提供了使用</em> <em> <a href="https://www.pnfsoftware.com/?aid=xdadev"> JEB反编译</a> </em> <em>的许可，这是一款针对Android应用的专业级逆向工程工具。</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

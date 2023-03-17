@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>PSA: If you use NoxPlayer to play Android games on PC, read this</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>PSA:如果你用NoxPlayer在PC上玩安卓游戏，看这个</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/psa-reinstall-noxplayer/#0001-01-01">https://www.xda-developers.com/psa-reinstall-noxplayer/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>非xPlayer用户要小心。一个黑客组织已经进入了Android模拟器的服务器基础设施，并向亚洲的一些用户推送恶意软件。斯洛伐克安全公司ESET最近发现了这一攻击，并建议受影响的NoxPlayer用户重新安装模拟器，以删除他们系统中的恶意软件。</p>
+
+  
+<p>不知道的是，NoxPlayer是一个在游戏玩家中很受欢迎的Android模拟器。该模拟器主要用于在x86 PCs上运行Android游戏，由香港一家名为BigNox的公司开发。根据最近来自<em> ZDNet </em>关于此事的报道，一个黑客组织已经获得了该公司官方API(api.bignox.com)和文件托管服务器(res06.bignox.com)的访问权限。通过这种访问，该组织篡改了API服务器中NoxPlayer更新的下载URL，从而向用户发送恶意软件。</p>
+
+<p>在一份关于攻击的<a href="https://www.welivesecurity.com/2021/02/01/operation-nightscout-supply-chain-attack-online-gaming-asia/">报告</a>中，ESET透露，它已经确定了三个不同的恶意软件家族正在<em>“从定制的恶意更新分发到选定的受害者，没有利用任何经济利益的迹象，而是监视相关的能力。”</em></p>
+
+<p>ESET进一步揭示，尽管攻击者至少从2020年9月起就可以访问BigNox服务器，但他们并没有将该公司的所有用户作为目标。相反，攻击者专注于特定的机器，这表明这是一种高度针对性的攻击，旨在感染特定类别的用户。到目前为止，恶意软件加载的NoxPlayer更新只发送给位于台湾、香港和斯里兰卡的五个受害者。然而，ESET建议所有NoxPlayer用户保持谨慎。这家安全公司在其报告中列出了一些说明，以帮助用户确定他们的系统是否受到了威胁。</p>
+
+<p>如果用户发现入侵，他们应该从干净的介质重新安装NoxPlayer。建议未受威胁的用户在BigNox通知其已减轻威胁之前不要下载任何更新。BigNox发言人告诉ZDNet ,该公司正在与ESET合作，进一步调查违规事件。</p>
+
+<p>这篇文章发表后，BigNox联系ESET，声明他们已经采取了以下措施来提高用户的安全性:</p>
+
+<ul> <li>仅使用HTTPS交付软件更新，以最大限度地降低域劫持和中间人(MitM)攻击的风险</li> <li>使用MD5哈希和文件签名检查实施文件完整性验证</li> <li>采取额外措施，特别是对敏感数据进行加密，以避免暴露用户的个人信息</li> </ul>
+
+<p>该公司进一步告诉ESET，它已经将最新的文件推送到NoxPlayer的更新服务器上，在启动时，该工具将对用户机器上以前安装的文件进行检查。</p>
+
+<p><em>本文更新于美国东部时间2021年2月3日上午11:22，添加了NoxPlayer的开发者BigNox的声明。</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

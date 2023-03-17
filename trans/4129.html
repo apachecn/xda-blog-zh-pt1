@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Developers boot Windows 10 and Linux via virtualization on Apple Silicon Mac</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>开发人员通过苹果硅Mac上的虚拟化启动Windows 10和Linux</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/apple-silicon-mac-boot-windows-10-and-linux-virtualization/#0001-01-01">https://www.xda-developers.com/apple-silicon-mac-boot-windows-10-and-linux-virtualization/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>自从苹果宣布为Mac系列定制基于ARM的芯片组<a href="https://www.xda-developers.com/apple-macbook-air-macbook-pro-13-mac-mini-m1-arm-soc/">苹果M1 SoC </a>以来，改装爱好者一直在等待该平台的全面开放。长期以来，用户一直在思考是否有可能在ARM Macs上启动Windows或标准Linux发行版。毕竟，<a href="https://www.xda-developers.com/samsung-galaxy-siii-samsung-galaxy-note-ii-htc-hd2/">主线Linux内核</a>和<a href="https://www.xda-developers.com/windows-10-arm-oneplus-6t/"> Windows 10 </a>对于ARM界来说并不陌生。剩下的只有对破译苹果定制ARM实现足够感兴趣的开发人员的血汗和眼泪。现在，由于多个开发者的努力，在苹果硅Mac上启动Windows 10和Linux已经成为可能，尽管是通过虚拟化。</p>
+
+  
+
+
+
+<p>来自亚马逊AWS的工程师Alexander Graf一直在摆弄流行的开源机器仿真器和虚拟化器QEMU，以添加苹果芯片支持。他在<a href="https://patchwork.kernel.org/project/qemu-devel/list/?series=391797">投入了大量的工作，使</a>成为必要的管理程序框架<a href="https://patchew.org/QEMU/20201130030723.78326-1-agraf@csgraf.de/">为QEMU代码库打补丁</a>，以便在M1 MAC电脑上以访客身份运行Linux和Windows。我们现在处于几乎所有基本功能，包括虚拟化音频和网络接口都可以工作的阶段。更有趣的是，由于ARM64 仿真层的<a href="https://www.xda-developers.com/microsoft-qualcomm-and-intel-the-windows-10-arm-dustup/"> WoW，为x86架构构建的传统Win32应用程序在访客Windows 10虚拟机上运行良好。</a></p>
+
+ 
+
+
+
+<p>几个开发者联合起来修复剩余的错误，使<a href="https://gist.github.com/niw/e4313b9c14e968764a52375da41b4278#file-readme-md">安装过程</a>更加<a href="https://github.com/KhaosT/ACVM">用户友好</a>。在你的Apple Silicon Mac上安装Linux 或Windows 10的<a href="https://twitter.com/jonmasters/status/1333541297563586561">虚拟化实例并不会移除其上安装的主操作系统，所以你不需要担心破坏任何东西。如果你想通过QEMU在你闪亮的新ARM Mac上开始使用Windows 10，请查看下面的视频教程。</a></p>
+
+ 
+<p class="w-rich w-youtube" id="YZtNyoqOlss">  </p>
+
+
+<p>然而，在我们看到Windows或Linux在ARM Macs上本机启动之前，仍然有很大的障碍。根据Linux创建者Linus Torvalds的说法，M1 SoC中集成的GPU和其他组件的封闭性使得移植过程有点复杂...除非苹果开放”。虽然苹果<a href="https://www.youtube.com/watch?v=Hg9F1Qjv3iU">不打算在基于M1的MAC电脑</a>上支持Boot Camp，但对于那些喜欢苹果的构建质量但不想局限于macOS的人来说，在一个节能但极其强大的ARM平台上运行Linux或Windows的想法是非常有趣的。我们肯定会密切关注修改场景，看看这些开发进展如何，并希望它最终如何有利于计算领域从x86到ARM的过渡阶段。</p>
+
+ 
+
+
+</div>
+
+
+</div>    
+</body>
+</html>

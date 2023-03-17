@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Google Play Services prepares to add wearable Exposure Notifications</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Google Play服务准备添加可穿戴曝光通知</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-play-services-20-50-14-prepares-wearable-exposure-notifications/#0001-01-01">https://www.xda-developers.com/google-play-services-20-50-14-prepares-wearable-exposure-notifications/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>回到去年8月，我们得知蓝牙特别兴趣小组(SIG)正在制定新的BLE规范,该规范将使智能手表等可穿戴设备上的联系人追踪成为可能。为了开发这一新规范，130多家蓝牙成员公司组成了蓝牙SIG暴露通知工作组(ENWG)。当时，蓝牙SIG还宣布，它将在未来几个月内发布新蓝牙规范的初步草案，以供审查。</p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_1"><p>APK拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p>正如承诺的那样，标准机构<a href="https://www.bluetooth.com/wp-content/uploads/2020/12/WENS_Wearable_Exposure_Notification_Service_Draft_Specification.pdf">上个月公布了可穿戴暴露通知服务(WENS)规范的草案</a>。该草案强调了新的蓝牙规范，这将使<em>“一个非互联网连接的可穿戴设备能够以一种与一个或多个部署的基于客户端的暴露通知系统(ENSs)互补的方式运行，从而使更多的人能够参与ENSs。”</em>尽管蓝牙SIG尚未最终确定这一新规范，但最新的Google Play服务更新的拆解显示，谷歌已经开始致力于为该应用程序添加可穿戴暴露通知支持。</p>
+
+<p>Google Play服务v20.50.14最近开始在Play Store上推出。它包括以下新字符串，揭示了即将推出的可穿戴式曝光通知支持的一些细节:</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_pair"</span>&gt;</span>Pair<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_pair_fail_dialog"</span>&gt;</span>Pair failed! Please try again.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_pair_new_device"</span>&gt;</span>Pair new device<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_paired_devices"</span>&gt;</span>Paired devices<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_pairing"</span>&gt;</span>Pairing…<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_wearable_available_devices"</span>&gt;</span>Available devices<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_wearable_device_list"</span>&gt;</span>Get notified on paired devices<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_wearable_device_name"</span>&gt;</span>Device name<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_wearable_pair_dialog_message"</span>&gt;</span>"Your phone will use this device to securely collect and share random IDs with other devices that are nearby.<br/><br/>You can be notified if you’ve been near someone who reported having COVID-19.<br/><br/>The date, duration, and signal strength associated <span class="hljs-keyword">with</span> an exposure will be <span class="hljs-keyword">shared</span> <span class="hljs-keyword">with</span> the app.<br/>"<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"exposure_notification_wearable_pair_dialog_title"</span>&gt;</span>Pair %s for COVID-19 Exposure Notification?<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>前面提到的字符串包括几个对话框，突出显示了配对过程，这将帮助用户连接支持的可穿戴设备以接收暴露通知。与新设备配对后，用户将看到一个对话框，显示:<em>“您的手机将使用此设备安全地收集随机id，并与附近的其他设备共享。</em> <em>如果你身边有人报告患有新冠肺炎，你会收到通知。</em> <em>与曝光相关的日期、持续时间和信号强度将与应用程序共享。”</em></p>
+
+<p>截至目前，谷歌尚未就此事发布任何官方信息。但由于该公司已经开始致力于为Google Play服务添加可穿戴曝光通知支持，我们预计将在未来几周内看到正式声明。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

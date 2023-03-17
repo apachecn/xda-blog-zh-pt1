@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>MicroDroid is a stripped-down version of Android for VMs</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>MicroDroid是针对虚拟机的精简版Android</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/microdroid-stripped-down-android-virtual-machines/#0001-01-01">https://www.xda-developers.com/microdroid-stripped-down-android-virtual-machines/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>谷歌正在制作microdroid，该公司称这是一个“最小的基于Android的Linux映像”。</p>
+
+  
+<p>根据<a href="https://android-review.googlesource.com/c/platform/packages/modules/Virtualization/+/1557661">提交描述</a>，microdroid将被用于虚拟机，并被设计为“通用Android系统映像(GSI)的精简版”GSI已经是开源Android的一个准系统，但是microdroid似乎更加精简了。该项目的目标可能是允许在虚拟机管理程序上运行最小版本的Android，以便允许虚拟化单个Android应用程序，而不是提供完整的二级桌面环境。</p>
+
+<p>该项目可能是谷歌在Android硬件上实现虚拟化的更大努力的一部分，旨在提高安全性。具体来说，谷歌正在努力将名为“KVM”的Linux内核虚拟化机制引入由ARM64 SoCs驱动的Android设备，据杰克·艾治在<a href="https://lwn.net/Articles/836693/"><em/></a>表示。(<em> LWN </em>的文章提供了一篇名为“<a href="https://mirrors.edge.kernel.org/pub/linux/kernel/people/will/slides/kvmforum-2020-edited.pdf">面向大众的虚拟化:揭露Android上的KVM</a>”[PDF warning]的演讲摘要，该演讲由Googler Will Deacon在KVM论坛上举办。)引入KVM支持据说是为了“取消”运行在Armv8的<a href="https://developer.arm.com/architectures/learn-the-architecture/exception-model/privilege-and-exception-levels">高特权异常级别</a>之一的第三方代码的特权。第三方代码，如DRM、加密和其他二进制代码，可以在与Android操作系统相同级别的虚拟机上运行。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/el3_is_aarch64.png" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Source: ARM&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/el3_is_aarch64.png?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/el3_is_aarch64.png?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/el3_is_aarch64.png?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/el3_is_aarch64.png?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/el3_is_aarch64.png" src="../Images/884c84adc97c95e9bacf1c612da25641.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/el3_is_aarch64.png"/> </picture> <figcaption class="body-img-caption">Source: ARM</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>为了管理这些虚拟机，谷歌正在为Android改编Chrome OS VMM ( <a href="https://chromium.googlesource.com/chromiumos/platform/crosvm/"> crosvm </a>)，该系统用于<a href="https://www.xda-developers.com/linux-apps-chrome-os-overview-crostini/">在Chrome OS </a>上运行Linux应用。谷歌正在<a href="https://android-review.googlesource.com/c/platform/packages/modules/Virtualization/+/1557662">准备</a>交付crosvm作为一个名为“虚拟化”的新APEX包的一部分，同时为Android的Linux内核forks带来其ARM64的“受保护KVM”项目。</p>
+
+<p>有了microdroid，我们设想谷歌希望在Android旁边运行小虚拟机，可能是为了DRM相关的应用。Microdroid将拥有最少的组件，如init和binder服务，以便与底层Android主机通信。这项工作可能会与骁龙888 中的<a href="https://www.xda-developers.com/qualcomm-snapdragon-888-explained-specs-features/#security">新类型1虚拟机管理程序结合起来，该公司表示，该虚拟机管理程序允许在同一设备上的应用程序和操作系统之间隔离数据，并在隔离的操作系统之间即时切换，而不会降低性能。</a></p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/Snapdragon-888-Type-1-Hypervisor.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;The new Type-1 Hypervisor on the Snapdragon 888. Source: Qualcomm&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/Snapdragon-888-Type-1-Hypervisor.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/Snapdragon-888-Type-1-Hypervisor.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/Snapdragon-888-Type-1-Hypervisor.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/Snapdragon-888-Type-1-Hypervisor.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/Snapdragon-888-Type-1-Hypervisor.jpg" src="../Images/0ac48bb1d064196fd856906ae71c9d79.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/01/Snapdragon-888-Type-1-Hypervisor.jpg"/> </picture> <figcaption class="body-img-caption">The new Type-1 Hypervisor on the Snapdragon 888. Source: Qualcomm</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>这也可能与谷歌努力将crosvm背后的想法扩展到Android应用程序有关，作为该公司正在进行的“ARCVM”项目的一部分。没有更多的信息，我们不能肯定地说谷歌的意图是什么，但我们将继续关注AOSP的更多细节。</p>
+
+<p><em>感谢XDA知名开发商<a href="https://forum.xda-developers.com/m/luca020400.5778309/"> luca020400 </a>的提示，感谢知名开发商<a href="https://forum.xda-developers.com/m/phhusson.1915408/"> phhusson </a>的协助！</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>How to debloat your phone (and more) without connecting to a PC</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何在不连接电脑的情况下解锁手机(以及更多功能)</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/debloat-your-phone-run-adb-shell-commands-no-root-no-pc/#0001-01-01">https://www.xda-developers.com/debloat-your-phone-run-adb-shell-commands-no-root-no-pc/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>Android Debug Bridge，简称ADB，是一个很棒的开发工具，可以与您的手机进行接口，用于调试和测试。通过ADB，开发者可以以比用户安装的应用更大的权限访问Android内置的Linux命令行shell。这使开发人员能够安装或卸载应用程序，授予或拒绝权限，更改系统设置值，以及做更多的事情，所有这些都可以从命令行完成。虽然这些命令是为开发人员设计的，但也有助于您解除手机屏蔽、调整隐藏设置和启用其他选项。</p>
+
+  
+<p>ADB命令可以发送到连接到PC或连接到与PC相同的无线网络的手机上。它们通常是从个人电脑的终端或命令提示窗口发送的，不能从手机本身发送，除非它已经被<a href="https://www.xda-developers.com/root/">根化</a>。然而，通过一款名为Local ADB Shell(简称l ADB)的应用程序，ADB命令可以直接从手机上发送，而不需要启动它或将其连接到PC。</p>
+
+<p>由XDA知名开发者<a href="https://forum.xda-developers.com/m/tytydraco.8155542/"> tytydraco </a>开发，LADB利用Android对无线ADB的内置支持，提供了一个直接从设备发送shell命令的GUI。在Google Play上搜索“终端模拟器”,你会发现几十个提供安卓命令行外壳访问的应用。LADB与其他应用程序的不同之处在于，它在应用程序中捆绑了一个ADB服务器，这使得它可以被设置为以与ADB shell相同的权限运行shell命令。有了亚行的外壳特权，你可以从你的手机上做一些事情，比如<a href="https://www.xda-developers.com/uninstall-carrier-oem-bloatware-without-root-access/">解除你手机的屏蔽</a>，改变隐藏的设置，以及<a href="https://www.xda-developers.com/what-is-adb/">等等。</a></p>
+
+ 
+<p class="w-rich w-youtube" id="v7hT6rMYqh4">  </p>
+
+
+<p>不过，为了设置LADB，你首先需要在WiFi上启用ADB，但根据你的设备和Android操作系统版本的不同，这个过程会有所不同。</p>
+
+<p>对于运行Android 10或更早版本的设备，<a href="https://developer.android.com/studio/command-line/adb#wireless">可以在PC上进行一些初始设置后</a>启用无线ADB。这意味着在旧版本的Android上，你仍然需要通过<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">在你的PC上设置ADB</a>。完成后，您就可以让应用程序向设备上启动的ADB服务器发送命令。</p>
+
+<p>由于Android 11 <a href="https://www.xda-developers.com/android-11-developer-preview-3-announced/">引入了对无线调试的原生支持</a>，LADB可以完全在设备上设置，而不需要root或连接到PC进行初始化。以下是如何在Android设备上设置LADB的方法。为了这个教程，我们假设你的设备运行Android 11，因为如果不是，你将不得不<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">在你的PC </a>上手动设置ADB来让它工作，这违背了使用LADB的主要目的。(如果你有一部运行基于Android 10的OxygenOS 10的一加手机，你可以使用LADB wire和PC-free，因为一加内置了他们自己的无线调试功能。)</p>
+
+ 
+<h2 id="how-to-use-ladb-to-debloat-your-phone-and-more-on-android-11">如何在Android 11+上使用LADB解锁你的手机</h2>
+<ol> <li>从Google Play 下载并安装<a href="https://play.google.com/store/apps/details?id=com.draco.ladb"> LADB应用，或者从source </a>编译<a href="https://github.com/tytydraco/ladb">。</a></li> <li>打开“设置”&gt;“关于手机”,点击“内部版本号”字段7次。这将启用“开发人员选项”(注意:“关于手机”页面可能会被称为其他名称或隐藏在设备设置中的其他位置。)</li> <li>前往“设置”&gt;“系统”&gt;“开发者选项”,启用“USB调试”和“无线调试”(注意:与“关于手机”一样，“开发者选项”页面也可以在您设备的“设置”中找到。)</li> <li>打开LADB应用程序。它将显示一个“配对信息”对话框。</li> <li>打开最近的应用程序屏幕。按住应用程序的图标并点击“分屏”以在分屏多任务视图中打开LADB。</li> <li>在下半部分，打开设置。进入系统&gt;开发者选项&gt;无线调试。点击“将设备与配对代码配对”您将看到一个弹出的“与设备配对”对话框。</li> <li>复制6位数的“Wi-Fi配对代码”并将其粘贴到LADB的“配对代码”框中。从IP地址复制5位数端口号(冒号后的5个数字)并粘贴到LADB的“端口”框中。</li> <li>在LADB点击“ok ”,你应该会看到“成功！*\(^o^)/*”</li> <li>现在，您可以在底部的“shell command”框中键入您想要的任何ADB shell命令。找事情做？查看我们的亚洲开发银行教程列表，你可以尝试一下！</li> </ol>
+
+ 
+
+
+
+<p>如果您在设置LADB时遇到问题，请务必点击右上角的三点菜单图标，然后转到帮助部分。您可以在此重置服务器，将应用恢复至出厂设置，并删除配对信息和ADB服务器文件。您还可以通读故障排除提示，找到常见问题的答案。</p>
+
+<p>我在几个不同的设备上使用过LADB，包括华硕ZenFone 7 Pro和运行Android 11的谷歌Pixel 4。我在这两个平台上都没有遇到太多麻烦，但我确实注意到，任何启用了“网络调试”的安卓电视设备都会奇怪地干扰LADB的配对过程。如果您在配对时遇到问题，并且有Android TV设备，请检查以确保“网络调试”没有打开。当你试图在手机上设置LADB时，如果你看到电视上出现ADB授权提示，你就知道这是在干扰你。</p>
+
+<p>如果您有任何反馈或问题要问开发人员，请查看下面链接的LADB XDA论坛主题，或者发电子邮件到<a href="mailto:tylernij@gmail.com">tylernij@gmail.com</a>给开发人员。该应用也是<a href="https://github.com/tytydraco/ladb">开源的</a>，如果你有兴趣为自己编译它Google Play上的价格可以被视为对开发人员制作该应用的捐赠！</p>
+
+<p/><p><strong> <a href="https://forum.xda-developers.com/t/say-hello-to-ladb-a-local-adb-shell-without-needing-root-or-a-computer.4204855/"> LADB - XDA论坛线程</a> </strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

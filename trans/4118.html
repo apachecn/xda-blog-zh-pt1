@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Jetpack Compose for Desktop adds Swing layer and Apple Silicon support</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Jetpack Compose for Desktop增加了Swing层和Apple Silicon支持</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/jetpack-compose-for-desktop-swing-interoperability-layer-apple-silicon/#0001-01-01">https://www.xda-developers.com/jetpack-compose-for-desktop-swing-interoperability-layer-apple-silicon/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>如果您从事任何类型的开发工作，您可能听说过JetBrains。他们是庞大的ide套件背后的公司，包括IntelliJ(Android Studio的基础)、CLion、PhpStorm和许多其他产品。他们也是制作广受欢迎的跨平台编程语言<a href="https://www.xda-developers.com/tag/kotlin/"> Kotlin </a>的人。</p>
+
+  
+<p>JetBrains又回来了。一年多前，谷歌推出了一个新的Android布局引擎，名为Jetpack Compose。自那以后，它经历了相当多的重大变化，但它已经成为Android经典XML布局的一个有竞争力的(尽管仍然有些不稳定)替代方案。</p>
+
+<p>Jetpack Compose和JetBrains有什么关系？首先，它是用科特林语写的。但是，JetBrains也一直在默默努力将Compose移植到桌面领域。它已经作为早期开发者预览版公开，现在JetBrains准备正式宣布它的存在。</p>
+
+ 
+<h2 id="what-is-jetpack-compose">什么是Jetpack Compose？</h2>
+<p>我在介绍中谈了一点，但我认为它值得更多的解释。如果你以前在Android上开发过，你可能已经习惯了布局的工作方式。首先，在XML文件中设计布局，然后从Java或Kotlin与布局进行交互。虽然它是功能性的，但有点过时，而且跨语言的布局可能很难管理。</p>
+
+<p>作为替代方案，Google开始开发Jetpack Compose。Compose是基于Kotlin构建的Android布局引擎。所有的布局和逻辑代码都在一个地方，这使得交互更加容易。它也是声明性的，而不是XML布局的命令式风格。</p>
+
+<p>从命令式引擎转移到声明式布局引擎可能需要一些时间来适应，但是Compose无疑是对XML的改进，尽管它仍处于早期阶段。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="jetpack-compose-for-desktop">桌面版Jetpack合成</h2>
+<p>因此，对于原生Android应用程序，Compose是一个不错的布局选择。但它(通常)不是跨平台的。这就是JetBrains的用武之地。该公司已经将Jetpack Compose移植到桌面领域，支持Windows、Linux和macOS(英特尔和ARM)。</p>
+
+<p>虽然也有其他的桌面布局引擎，比如Electron、JavaFX和UWP，但是现在有点混乱。有些不是跨平台的，所以它们只能在一个特定的操作系统上工作。其他的在技术上是跨平台的，但是需要大量的工作来分发。尽管如此，其他的工作起来还是很痛苦，比如JavaFX。</p>
+
+<p>另一方面，Jetpack Compose for Desktop相对容易使用，支持显示缩放，具有内置样式，并且(几乎)完全跨平台。虽然您还不能从一个操作系统编译所有发行版，但是代码本身是完全可移植的。就像Android一样，打包的应用程序是基于Java的，尽管用户不需要安装JDK来使用它。</p>
+
+<h3 id="cross-compatibility">交叉兼容性</h3>
+<p>由于Compose for Desktop仍然是新产品，它缺少一些功能。为了帮助开发人员解决这些限制，Compose for Desktop可以与两个更流行的Java布局引擎JavaFX和Swing进行互操作。如果您有一个在这些引擎中的一个(或两个)开发的桌面应用程序，您可以开始转换到Compose，同时保持您当前的代码库。</p>
+
+<h3 id="android-desktop">安卓+桌面</h3>
+<p>如果你想把你的Android应用程序放到桌面上呢？嗯，你也可以这样做。您的应用程序的UI元素可以在Android和桌面之间轻松共享。您将无法共享所有内容，但这无疑会使开发变得更加容易。</p>
+
+ 
+
+
+
+<h3 id="apple-silicon-support">苹果硅支架</h3>
+<p>上面提到了这个，但是我还打算再提一次。新的苹果硅MAC电脑非常惊人，但处理器基于ARM CPU架构，这意味着许多macOS应用程序目前正在通过Rosetta 2 x86 translator运行。虽然苹果在翻译方面做得很好，但原生ARM程序仍会运行得更好。</p>
+
+<p>Jetpack Compose for Desktop原生支持苹果芯片。这意味着你不必担心翻译带来的性能下降，也不必担心苹果停止翻译后的未来支持。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="functionality">功能</h2>
+<p>因此，JetBrains为桌面开发了一个新的布局引擎，这很好，但是谁能说它比我们现在拥有的更好呢？</p>
+
+<p>我。</p>
+
+<p>在撰写本文时，我使用了最新的可用版本(0.2.0-build132)为SystemUI Tuner制作了一个简单的权限授予程序。因为我不太熟悉组合和声明式设计，所以对我来说，这比XML布局应用程序更难，但是我做到了。而且比JavaFX好用很多。</p>
+
+
+
+
+
+<p>虽然主题支持(即黑暗模式)仍然有点不确定，但建立一个交互式布局很容易，除了在调整窗口大小时有一些闪烁外，一切都很好。</p>
+
+<p>如果你想看看这个应用，源代码可以在<a href="https://github.com/zacharee/SUITGranter"> GitHub </a>找到。只要用IntelliJ或Android Studio导入它，它就应该可以运行了。</p>
+
+<hr/>
+
+<p>就个人而言，我对Jetpack Compose for Desktop感到非常兴奋。我以前甚至不知道它的存在，但它已经是我选择的桌面布局引擎。你可以在桌面网站的<a href="https://www.jetbrains.com/lp/compose/"> Jetpack Compose或GitHub </a>的<a href="https://github.com/JetBrains/compose-jb">上了解更多信息。</a></p>
+
+<p>你怎么想？是否值得检验甚至使用它来代替其他可用的框架？让我知道！</p>
+
+<p><em>特色图片致谢:<a href="https://github.com/JetBrains/compose-jb/blob/master/artwork/readme/apps.png">GitHub</a>上的JetBrains</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

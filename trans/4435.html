@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>How to enable the Pixel 5's Adaptive Sound feature on older Pixel phones</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何在旧款Pixel手机上启用Pixel 5的自适应声音功能</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/enable-pixel-5-adaptive-sound-feature-older-pixel-devices/#0001-01-01">https://www.xda-developers.com/enable-pixel-5-adaptive-sound-feature-older-pixel-devices/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>谷歌本月早些时候推出了第五款Pixel功能Drop ，为新旧Pixel手机带来了许多新功能。一些老款Pixel手机获得了Hold for Me和Extreme Battery Saver等功能，而只有谷歌最新的Pixel 4a 5G和Pixel 5支持新的自适应声音功能。自适应声音功能旨在通过根据周围环境调整均衡器来改善手机的音频输出，多亏了XDA公认的开发者<a href="https://forum.xda-developers.com/m/freak07.3428502/"> Freak07 </a>，有一种方法可以在旧的Pixel设备上启用该功能。如果你有兴趣在你的手机上尝试一下，下面是你需要做的:</p>
+
+ 
+<h2 id="enable-adaptive-sound-on-older-pixel-devices-with-root">在旧的Pixel设备上启用自适应声音(带root)</h2>
+<p>在根Pixel设备上，您可以通过几个简单的步骤来启用自适应声音功能，即使在重新启动设备后，它也会保持启用状态。为此，你首先需要从APK镜报下载Pixel 5专用版本的设备个性化服务应用程序，并将其安装在你的设备上。是的，你已经安装了设备个性化服务应用程序，但谷歌推送到你手机上的应用程序版本不包括自适应声音功能。因此，你需要使用谷歌为Pixel 4a、5G和Pixel 5设计的那个。您可以通过点击<a href="https://www.apkmirror.com/apk/google-inc/device-personalization-services/device-personalization-services-r-9-playstore-pixel5-342894738-release/">此链接</a>下载该版本的应用程序。</p>
+
+<p>安装应用程序后，您需要从Magisk管理器应用程序下载并安装Adaptive _ Audio _ Settings _ Enabler Magisk模块，然后重新启动您的设备。或者，您可以通过点击<a href="https://forum.xda-developers.com/attachments/adaptive_audio_settings_enabler-zip.5159569/">此链接</a>下载模块并手动刷新。成功重启后，您应该会在设备设置中看到Adaptive Sound选项。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="enable-adaptive-sound-on-older-pixel-devices-without-root">在旧的Pixel设备上启用自适应声音(无root)</h2>
+<p>在非根像素设备上，启用自适应声音的过程有点复杂，因为您必须执行几个shell命令。但在这之前，你必须安装APK镜报的Pixel 5专用版设备个性化服务，并将其安装在你的设备上。关注<a href="https://www.apkmirror.com/apk/google-inc/device-personalization-services/device-personalization-services-r-9-playstore-pixel5-342894738-release/">此链接</a>即可获得app。</p>
+
+<p>一旦安装了应用程序，请确保在您的设备上启用了USB调试。你可以在开发者选项中点击USB调试设置旁边的开关。你还需要确保你的电脑上有一个运行的ADB环境(我们在这里有一个教程)。完成后，您需要将手机连接到PC，并逐一执行以下3个命令:</p>
+
+<pre> <code class="hljs javascript">adb shell<br/>device_config put device_personalization_services AdaptiveAudio__enable_adaptive_audio <span class="hljs-literal">true</span><br/>device_config put device_personalization_services AdaptiveAudio__show_promo_notification <span class="hljs-literal">true</span></code> </pre>
+<p>执行这三个命令后，您应该会在设备设置中看到自适应声音选项。不过，与根设备的方法不同，这种方法不会永久启用自适应声音选项，一旦重新启动设备，它就会被删除。因此，请确保在完成上述步骤后不要重启设备，否则您将不得不再次重新启动设备。</p>
+
+<p/><p><strong> <a href="https://forum.xda-developers.com/t/guide-enable-adaptive-audio-on-pixel-4-xl.4203781/">在老像素设备上启用自适应声音XDA论坛线程</a> </strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

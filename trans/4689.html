@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Always-on Display can be enabled on OnePlus 7/7T series devices with Android 11 - Here's how</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>使用Android 11的一加7/7T系列设备可以启用常亮显示功能，具体操作如下</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/enable-always-on-display-oneplus-7-7t-android-11/#0001-01-01">https://www.xda-developers.com/enable-always-on-display-oneplus-7-7t-android-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>长期以来，一直显示一直是几款智能手机的一项功能。具有讽刺意味的是，直到OxygenOS 11 的<a href="https://www.xda-developers.com/oneplus-phones-always-on-display-oxygenos-11/">发布，一加设备才真正实现了AOD。然而，该公司决定不在上周发布的一加7和7T系列</a>的<a href="https://www.xda-developers.com/oneplus-7-7-pro-7t-7t-pro-android-11-oxygenos-open-beta-1/">首批基于Android 11的开放测试版中包含这一受欢迎的功能。根据变更日志，该功能仍在内部测试中，并将在随后的一加7/7 Pro和一加7T/7T Pro的公开测试更新中发布。</a></p>
+
+  
+<p/><p><strong> <a href="https://forum.xda-developers.com/c/oneplus-7.8833/">一加七大论坛</a>| |<a href="https://forum.xda-developers.com/c/oneplus-7-pro.8847/">一加七大论坛</a>|</strong></p>
+
+<p/><p><strong> <a href="https://forum.xda-developers.com/c/oneplus-7t.9249/">一加7T论坛</a> ||| <a href="https://forum.xda-developers.com/c/oneplus-7t-pro.9327/">一加7T Pro论坛</a> </strong></p>
+
+<p>好吧，XDA的开发者社区再次伸出援手。事实上，OEM已经在最初的测试版固件中留下了始终显示模式的代码，可以利用它来解锁这些设备上的功能。正如XDA公认开发者<a href="https://forum.xda-developers.com/m/quinny899.3563640/"> Quinny899 </a>所发现的，你所需要做的就是在root shell中执行以下命令，强制OxygenOS的“OPFeatures”框架启用AOD。</p>
+
+<pre> <code class="hljs css"><span class="hljs-selector-tag">setprop</span> <span class="hljs-selector-tag">sys</span><span class="hljs-selector-class">.aod</span><span class="hljs-selector-class">.debug_support_always_on</span> 1</code> </pre>
+<p>执行该命令并重新加载系统UI(使用<code>pkill systemui</code>)后，启用AOD的选项将出现在设置&gt;显示&gt;环境显示&gt;总是在环境显示下。</p>
+
+
+
+<p>请记住，前面提到的恢复常亮显示的过程不会在重启后继续存在，但是可以编写一个特殊的<a href="https://en.wikipedia.org/wiki/Init"> init </a>脚本来在启动时执行该命令。好消息是，之前创作了<a href="https://www.xda-developers.com/opaodmod-customizable-always-on-display-rooted-oneplus-phones/"> OPAodMod </a>的Quinny899也发布了一个现成的脚本来做这件事。如果您已经使用Magisk对运行OxygenOS 11开放测试版的一加7/7T进行了根目录设置，您可以遵循本教程:</p>
+
+<ol> <li>从这个帖子的第一个帖子<a href="https://forum.xda-developers.com/t/root-magisk-enable-always-on-ambient-display-on-oxygen-os-11-beta-1.4222275/">下载附件。</a><ul> <li>请注意，虽然附件是一个ZIP文件，但它既不是Magisk模块，也不是可恢复的flash ZIP文件。</li> </ul> </li> <li>解压缩ZIP文件，从中获取名为<code>aodenable.sh</code>的脚本。</li> <li>使用合适的根文件管理器，将脚本复制到<code>/data/adb/service.d</code>。</li> <li>将其权限设置为<code>rwxr-xr-x</code> ( <code>chmod 755</code>)。</li> <li>重新启动。</li> <li>就是这样！</li> </ol>
+
+<p>如果你不喜欢手动安装过程，XDA资深会员<a href="https://forum.xda-developers.com/m/dangles3.8714092/"> DanGLES3 </a>已经<a href="https://forum.xda-developers.com/t/root-magisk-enable-always-on-ambient-display-on-oxygen-os-11-beta-1.4222275/post-84342785">提出了一个方便的Magisk模块</a>，它做的事情和上面提到的一样。要了解更多细节，请看下面链接的讨论主题。</p>
+
+<p/><p><strong> <a href="https://forum.xda-developers.com/t/root-magisk-enable-always-on-ambient-display-on-oxygen-os-11-beta-1.4222275/">为一加7和7T系列</a> </strong>启用Oxygen OS 11 Beta 1上的持续显示</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>
