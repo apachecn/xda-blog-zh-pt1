@@ -1,0 +1,15 @@
+# 三星在 2020 年 10 月为 Galaxy Note 9 推出了一个 UI 2.5 安全补丁
+
+> 原文：<https://www.xda-developers.com/samsung-rolls-out-one-ui-2-5-galaxy-note-9/>
+
+# 三星在 2020 年 10 月为 Galaxy Note 9 推出了一个 UI 2.5，并安装了安全补丁
+
+三星已经开始为 Galaxy Note 9 推出 One UI 2.5 更新，为 2020 年 10 月提供新功能和 Android 安全补丁。
+
+继今年 8 月推出 [Galaxy Note 20 系列](https://www.xda-developers.com/samsung-galaxy-note-20/)之后，三星开始向[老款 Galaxy 设备](https://www.xda-developers.com/samsung-galaxy-phones-one-ui-2-5-list/)推出 One UI 2.5 更新。从那以后，更新已经在相当多的设备上进行，包括 [Galaxy S10 系列](https://www.xda-developers.com/samsung-galaxy-s10-series-one-ui-2-5-update-september-2020-patch/)、 [Galaxy Note 10 系列](https://www.xda-developers.com/samsung-galaxy-note-10-note-10-receive-one-ui-2-5-with-september-2020-security-patches/)、 [Galaxy S10 Lite](https://www.xda-developers.com/samsung-galaxy-s10-lite-one-ui-2-5-update/) 、 [Galaxy Note 10 Lite](https://www.xda-developers.com/samsung-galaxy-s10-series-one-ui-2-5-update-september-2020-patch/) 和 [Galaxy Tab S6](https://www.xda-developers.com/samsung-one-ui-2-5-update-galaxy-tab-s6/) 。根据[最近在我们论坛上的评论](https://forum.xda-developers.com/showpost.php?p=83720407&postcount=2576)，One UI 2.5 更新现在已经开始向 Galaxy Note 9 推出。
+
+Galaxy Note 9 的 One UI 2.5 更新(固件版本 n 960 FX Xu 6 ftj 3/n 960 foxm 6 ftj 2/n 960 FX Xu 6 ftj 1)的大小为 820.76MB，它包括 2020 年 10 月的 [Android 安全补丁。此次更新还包括 Galaxy Note 20 系列推出的大部分新功能，包括支持无线 DeX、Single Take 等新相机功能、三星键盘应用的改进等等。](https://www.xda-developers.com/october-2020-android-security-update-google-pixel-samsung-galaxy-s20-s10/)
+
+与之前针对其他设备的 One UI 2.5 版本一样，更新可能需要几天才能到达所有 Galaxy Note 9 用户。同样值得注意的是，One UI 2.5 是 Galaxy Note 9 的最后一次重大更新，因为该设备不包括在三星的三代 Android 升级新政策中。然而，该设备仍将在至少一年内每月接收安全更新。如果您还没有收到更新，并且不希望再等下去，您可以从下面的链接下载更新包，并在您的设备上手动刷新。
+
+**[为 Galaxy Note 9](http://fota-s3-dn.ospserver.net/firmware/DBT/SM-N960F/60f34a287661499ea9835bf4df711fbb.bin?px-hash=&px-wid=41120201016-WSA41707838&px-wctime=2020-10-16%2005:08:17.0&px-unum=1fBohEC7lHz7yRcydUk6Zqyooz4VggppCbIlhAhq+pE=&Policy=eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHA6Ly9mb3RhLXMzLWRuLm9zcHNlcnZlci5uZXQvZmlybXdhcmUvREJUL1NNLU45NjBGLzYwZjM0YTI4NzY2MTQ5OWVhOTgzNWJmNGRmNzExZmJiLmJpbj9weC1oYXNoPSZweC13aWQ9NDExMjAyMDEwMTYtV1NBNDE3MDc4MzgmcHgtd2N0aW1lPTIwMjAtMTAtMTYlMjAwNTowODoxNy4wJnB4LXVudW09MWZCb2hFQzdsSHo3eVJjeWRVazZacXlvb3o0VmdncHBDYklsaEFocStwRT0qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjA4MDA4OTA3fSwiSXBBZGRyZXNzIjp7IkFXUzpTb3VyY2VJcCI6IjAuMC4wLjAvMCJ9fX1dfQ__&Signature=nQrK4HhCqdcAwtsnXt10V5QYV91eJ6f9a9r20fKzpT3GKNPJHdb~c0BR3AEDeTpiSYyoCDCGcfghFcGoIh9BdB2Fn9SJtdohatRR~V68nD8Hht4RskuOA4zN7D1LZzLcL2WBwdxw6mlFAUDtFDZxIIZbnwFUXW5fiG~zeJHkOZXoC83ne5vFy-NXKE9eMoT9zJsaiwiF9GF1ZqPpC3eb1~GmZeM1nryLI4ObAU7Ij3WZjhkA8QNXUqWv~9XfpCTx1eZe2tROYhnQScyY3bp7nyUoYvOLi8Cvvl1ds8jCvrxX6JALsT7vs-KwP0kelBavkhBTfF3-BLw9oAuKEk08Tg__&Key-Pair-Id=APKAIGLPRCHE2BH6RZLQ&px-nb=UGtezEZ854jbmFcvWGxLEA==&px-nac=DD0GtYPZu/2/LZwHNZdo0FoHH0hH1RLGf2dcBI7Z3zw=)** 下载一个 UI 2.5
