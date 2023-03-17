@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>The latest Windows updates are breaking users' VPN connections</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>最新的 Windows 更新正在中断用户的 VPN 连接</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-update-causing-issues-vpn/#0001-01-01">https://www.xda-developers.com/windows-update-causing-issues-vpn/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>本周早些时候，微软为 2022 年的第一个补丁星期二推出了一系列新的更新。这包括对 Windows 11 和 Windows 10 的更新，并且捆绑了一些修复。然而，看起来最新的更新导致了 Windows 10 和 Windows 11 上的 VPN 连接问题。</p>
+
+  
+<p>Reddit 上的<a href="https://www.reddit.com/r/sysadmin/comments/s1oqv8/kb5009543_january_11_2022_breaks_l2tp_vpn/">用户首先报告了这个问题(通过</a><a href="https://www.bleepingcomputer.com/news/microsoft/new-windows-server-updates-cause-dc-boot-loops-break-hyper-v/"> <em>电脑</em> </a>)，他们指出 Windows 10 电脑在更新后可以建立 VPN 连接。当试图使用内置的 Windows 客户端连接到 VPN 时，您可能会看到消息“无法连接到 VPN”。L2TP 连接尝试失败，因为安全层在与远程计算机的初始协商中遇到一个处理错误。此外，Windows 事件查看器将使用代码 789 标记该错误，简单地说连接失败。</p>
+
+
+
+
+
+<p>用户已经向各种 VPN 提供商报告了这个问题，但这通常只在您使用内置的 Windows VPN 客户端时才会发生。受影响的 VPN 设备包括 Ubiquiti、SonicWall、Cisco Meraki 和 WatchGuard 防火墙，显然，WatchGuard 客户端也受到相同问题的影响。</p>
+
+<p>现在，解决这个问题最快的方法似乎是从你的电脑上卸载更新。你可以去控制面板进入<strong>程序</strong> - &gt; <strong>查看已安装的更新</strong>来完成。从这里，选择此 Patch Tuesday 中的 Windows 更新，该更新标记为 KB5009566(对于 Windows 11)或 KB5009543(对于 Windows 10)。它应该在页面的微软视窗部分的顶端。您需要管理员权限来完成此操作。</p>
+
+
+
+<p>如果您在商业环境中，这不是最新的星期二补丁更新引起的唯一主要问题。根据一份单独的<a href="https://www.bleepingcomputer.com/news/microsoft/new-windows-server-updates-cause-dc-boot-loops-break-hyper-v/"> <em>出血计算机报告</em> </a>，最新的 Windows 服务器更新导致不断重启，无法使用 Hyper-V，以及无法访问 ReFS 驱动器等问题。为了解决这些问题，您还需要卸载最新的更新。</p>
+
+<p>希望微软尽快发布修复程序。有时，更新的问题可以使用所谓的已知问题回滚来解决，这种方法只禁用更新中有问题的部分，而不删除它包含的所有安全修复。在撰写本文时，该公司尚未在其已知问题列表中承认该问题。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

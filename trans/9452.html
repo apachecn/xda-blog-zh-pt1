@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Microsoft turns off Excel 4.0 macros by default due to malware attacks</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>由于恶意软件的攻击，微软默认关闭 Excel 4.0 宏</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/microsoft-excel-4-0-macros-disabled/#0001-01-01">https://www.xda-developers.com/microsoft-excel-4-0-macros-disabled/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Microsoft Excel 的第一个版本是在 35 年前发布的，从那时起，我们对计算机安全有了更多的了解。Excel 宏的第一次迭代可以调用并执行计算机上的其他程序，这在数字处理的早期很有帮助，但此时它在企业环境中主要只是恶意软件的攻击载体。经过多年的安全问题，默认情况下，Excel 不再运行旧的宏。</p>
+
+  
+<p>Excel 4.0 宏，也称为<a href="https://outflank.nl/blog/2018/10/06/old-school-evil-excel-4-0-macros-xlm/"> XLM 宏</a>，通常被用于在企业环境中分发恶意软件。在大多数情况下，发送到工作电子邮件的文档会要求收件人单击 Excel 中的“启用编辑”和“启用内容”按钮，以便恶意软件运行。微软已经允许管理员默认关闭 XLM 宏(甚至完全阻止它们)，但是<a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-disables-excel-40-macros-by-default-to-block-malware/"> <em>哔哔声电脑</em>报道</a>公司正在为每个人打开开关。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-13-22-49-Microsoft-disables-Excel-4-0-macros-by-default-to-block-malware.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;XLS document with an Excel 4.0 macro (Source: &lt;a href=\&quot;https:\/\/www.bleepingcomputer.com\/news\/microsoft\/microsoft-disables-excel-40-macros-by-default-to-block-malware\/\&quot;&gt;&lt;em&gt;Bleeping Computer&lt;\/em&gt;&lt;\/a&gt;)&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-13-22-49-Microsoft-disables-Excel-4-0-macros-by-default-to-block-malware.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-13-22-49-Microsoft-disables-Excel-4-0-macros-by-default-to-block-malware.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-13-22-49-Microsoft-disables-Excel-4-0-macros-by-default-to-block-malware.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-13-22-49-Microsoft-disables-Excel-4-0-macros-by-default-to-block-malware.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="Excel 4.0 macro" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-13-22-49-Microsoft-disables-Excel-4-0-macros-by-default-to-block-malware.jpg" src="../Images/61a342bcccdcc199197deee9dd9720bd.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-13-22-49-Microsoft-disables-Excel-4-0-macros-by-default-to-block-malware.jpg"/> </picture> <figcaption class="body-img-caption">XLS document with an Excel 4.0 macro (Source: <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-disables-excel-40-macros-by-default-to-block-malware/"><em>Bleeping Computer</em></a>)</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>Excel 4.0 宏允许在 Excel 文档中实现复杂的自动化和工作流，但没有容器化，并且可以完全访问计算机的应用程序和 Windows 上的 Win32 API。Excel 5.0 包含了<a href="https://en.wikipedia.org/wiki/Visual_Basic_for_Applications">Visual Basic for Applications(VBA)</a>作为编写宏的新选项(<a href="https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-dreaded">在 2020 年被 Stack Overflow 的调查</a>列为最可怕的编程语言)，它有更多的限制来防止安全问题，但在最新版本的 Excel 中仍然支持原始宏，以避免破坏文档。</p>
+
+<p><em>哔哔声电脑</em>报告称，XLM 宏在 Excel 版本 16.0.14527.20000 及更新版本中被默认禁用，该版本于 10 月在当前频道推出，12 月在每月企业频道推出。半年度企业渠道(预览版)和半年度企业渠道将分别在 3 月和 7 月进行更改。</p>
+
+<p>这并没有完全取消对旧宏的支持，只是显示了一个带有“启用内容”提示的安全警告。许多管理员已经启用了安全警告，但(非恶意软件)XLM 宏的使用似乎已经减少到了微软增加额外路障的程度。Excel 4.0 宏从未在 Excel 的 web 或移动版本中可用。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

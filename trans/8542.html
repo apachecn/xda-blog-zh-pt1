@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Android Studio's Emulator is having issues on Windows 11</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android Studio 的模拟器在 Windows 11 上有问题</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-studio-emulator-bug-windows-11/#0001-01-01">https://www.xda-developers.com/android-studio-emulator-bug-windows-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Android Studio 开发 SDK 最重要的组件之一是 Android 模拟器，它允许开发人员在广泛的虚拟化硬件上测试他们的应用程序。然而，Android 模拟器似乎还没有为 Windows 11 的发布做好准备，因为在使用 Hyper-V 时，模拟器会出现错误报告。谢天谢地，开发中也有一个修复。</p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_1"><p><strong>更新 1(<strong data-blaze-="" data-blaze-type="datetime" data-blaze-attributes="[{&quot;name&quot;:&quot;time/date format&quot;,&quot;fillIn&quot;:false,&quot;positional&quot;:true,&quot;raw&quot;:&quot;MM/DD/YYYY&quot;,&quot;value&quot;:&quot;MM/DD/YYYY&quot;}]">11/11/21</strong>@<strong data-blaze-="" data-blaze-type="datetime" data-blaze-attributes="[{&quot;name&quot;:&quot;time/date format&quot;,&quot;fillIn&quot;:false,&quot;positional&quot;:true,&quot;raw&quot;:&quot;hh:mm&quot;,&quot;value&quot;:&quot;hh:mm&quot;}]">12:35</strong>ET):</strong>Android Studio Emulator 31 . 1 . 2 现已发布<a href="https://issuetracker.google.com/issues/202188690#comment45">并对 Windows 11 上的 Hyper-V 进行了修复</a>。它应该很快就会作为更新出现在 Android Studio 中。发表于【T11 月<strong data-blaze-="" data-blaze-type="datetime" data-blaze-attributes="[{&quot;name&quot;:&quot;time/date format&quot;,&quot;fillIn&quot;:false,&quot;positional&quot;:true,&quot;raw&quot;:&quot;D&quot;,&quot;value&quot;:&quot;D&quot;}]">11</strong><strong data-blaze-="" data-blaze-type="datetime" data-blaze-attributes="[{&quot;name&quot;:&quot;time/date format&quot;,&quot;fillIn&quot;:false,&quot;positional&quot;:true,&quot;raw&quot;:&quot;YYYY&quot;,&quot;value&quot;:&quot;YYYY&quot;}]">2021</strong>的文章保留如下。</p> </div></section>
+<p>至少有<a href="https://issuetracker.google.com/issues/202188690">几十份报告</a>在网上称，当使用微软在 Windows 中的原生虚拟机管理程序 Hyper-V 时，Android 模拟器无法在 Windows 11 上启动(T2 通过米沙·拉赫曼在 Twitter 上发布)。该问题会影响采用英特尔或 AMD 处理器的电脑，但使用 AMD 处理器的虚拟机管理程序驱动程序而不是 Hyper-V 的模拟器不会受到影响。运行 Windows 10、Linux 或 macOS 的电脑也不会受到该漏洞的影响。</p>
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+<p>谢天谢地，修复程序已经在开发中了。微软的开发人员证实，该问题是 Windows 11 上 Hyper-V API 中与 XSAVE 相关的一个 bug，谷歌和微软正在努力解决该问题。如果你现在需要一个解决方案，你可以<a href="https://issuetracker.google.com/issues/202188690#comment18">删除 Android Studio 模拟器源代码中的一行，然后自己编译</a>，或者<a href="https://issuetracker.google.com/issues/202188690#comment27">用别人做的预编译版本</a>替换一个文件。</p>
+
+<p>即使 Android Studio 模拟器现在可能在 Windows 11 上(部分)崩溃，你仍然可以通过 Android 内置的 Windows 子系统在 Windows 11 上运行 Android 应用程序。事实上，有了<a href="https://www.xda-developers.com/how-to-sideload-android-apps-on-windows-11/">侧载应用</a>的能力，你甚至可以在 Windows 11 中测试你的 Android Studio 项目，而不用担心模拟器。谷歌的模拟器仍然是测试特定硬件功能的最佳选择，例如加速器运动、自定义 GPS 位置、可折叠界面等等。当然，如果你有一个实体的 Android 设备，你可以把它连接到你的电脑上来测试应用和游戏。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>OnePlus Nord 2 has a vulnerability that grants root shell access within minutes on a locked bootloader, without a data wipe</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>一加诺德 2 有一个漏洞，可在几分钟内授予锁定引导加载程序的根外壳访问权限，无需数据擦除</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/oneplus-nord-2-vulnerability-root-shell/#0001-01-01">https://www.xda-developers.com/oneplus-nord-2-vulnerability-root-shell/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>我们 XDA 的很多开发者最初第一次浏览论坛是在我们寻找安卓设备的时候。在那些日子里，人们通常依赖“一键 root”方法:包含有效负载的应用程序或脚本，这些有效负载针对现有固件的已知权限提升漏洞来获得 root 访问权限。随着加密、权限和隐私相关处理的改进和变化，现代 Android 设备相对安全，不会受到这种攻击媒介的影响，但总会有机会出现<a href="https://www.xda-developers.com/permissive-selinux-dangers-exploits/">漏洞</a>和<a href="https://www.xda-developers.com/mediatek-su-rootkit-exploit/">漏洞</a>。</p>
+
+  
+<p>一加可能已经在主要的安卓原始设备制造商中巩固了自己的名字，但是它的手机对于 T2 的安全漏洞来说并不陌生。这一次，该公司在<a href="https://www.xda-developers.com/oneplus-nord-2-review/">一加诺德 2 </a>发布后留下了一个相当有趣(阅读:令人担忧)的漏洞。尽管利用这个漏洞需要物理访问设备，但攻击者甚至可以在用户输入他们的凭证之前有效地获得不受限制的根外壳。值得注意的是，新发布的诺德 2 吃豆人版也受到了影响。</p>
+
+ 
+<h2 id="background">背景</h2>
+<p>如今，当我们谈论在 Android 智能手机上拥有 root 访问权限时，人们通常会想到<a href="https://www.xda-developers.com/how-to-install-magisk/">先用 Magisk </a>修补股票引导映像，然后在 bootloader 解锁后将修补后的映像闪存到目标设备。这样，最终用户可以通过管理器应用程序在监督下访问“su”二进制文件。还有一些其他的<a href="https://www.xda-developers.com/kernel-assisted-superuser-kernelsu/">实验方法</a>，但是它们很少被主流使用。</p>
+
+<p>然而，当涉及到前期制作时，情况就完全不同了。在准备设备固件时，工程师需要打开各种日志记录参数，包括 root 访问。即使在<a href="https://source.android.com/setup/develop/new-device#build-variants"> <em> userdebug </em> build </a>上，Android Debug Bridge Daemon (adbd)也以 root 用户身份运行，因此用户可以出于调试目的进行特权 shell 访问。当固件准备发货时，在推出之前必须关闭所有这些调试参数。</p>
+
+<p>但是，如果你忘记这样做，会发生什么呢？我们会看到，一加诺德 2 的官方 OxygenOS 版本也有这样的缺陷。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="oneplus-nord-2----root-shell-vulnerability">一加诺德 2 根外壳漏洞</h2>
+<p>三星等一些原始设备制造商在其零售设备的库存恢复中提供更新包侧装功能。在这种情况下，<code>adbd</code>二进制文件在侧加载时以相当高的特权运行，但是一旦更新过程结束，它就会自动关闭。除此之外，在 OEM 提供的恢复环境中不允许 ADB 访问。</p>
+
+<p>一加不再允许用户通过亚行 sideload 在其股票恢复过程中快速更新 ZIP 包。假设其他一切都配置妥当，常规一加设备的恢复环境应该不会受到攻击者使用 ADB 发送任何类型有效负载的攻击。不幸的是，在一加诺德 2 号项目中，并非一切都按计划进行。</p>
+
+<p>事实证明，<strong>任何人都可以在一加诺德 2 </strong>的恢复环境中以 root 权限生成一个 Android 调试 shell。一个关键的调试设置显然进入了生产版本，这导致了这个小故障。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="exploiting-the-flaw-on-the-oneplus-nord-2">利用一加诺德 2 号的漏洞</h2>
+<p>你所需要做的就是重启一加诺德 2 到它的恢复模式。攻击者可以拿起设备，使用简单的硬件按钮组合强制其进入恢复模式。事实上，没有必要到达实际的恢复菜单，因为易受攻击的部分在那之前。功劳归于 XDA 资深成员<a href="https://forum.xda-developers.com/m/androplus.5169444/">andro plus</a><a href="https://androplus.org/entry/oneplus-nord-2-review/">早在 2021 年 10 月就指出了</a>这个小故障的存在。</p>
+
+<ol> <li>当手机关机时，同时按下音量键和电源键，直到你在屏幕的左下角看到带有“恢复模式”横幅的一加标志。</li> <li>接下来，您应该会看到语言选择屏幕。无需继续，因为我们可以从这里启动亚行访问。</li> <li>现在使用 USB 线将手机连接到 PC(或 Mac)。如果你使用的是 Windows，你可以在设备管理器中看到一个新的 Android USB 调试界面弹出。你可能还需要安装一个合适的<a href="https://www.xda-developers.com/download-android-usb-drivers/">安卓 USB 驱动</a>，这样 Windows 才能识别新设备。另一方面，Linux 和 macOS 用户可以使用<code>lsusb</code>命令来检测新硬件接口的存在。</li> <li>考虑到您已经在 PC/Mac 上安装了最新版本的<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/"> ADB 和 Fastboot </a>实用程序，启动命令提示符/PowerShell/Terminal 实例并执行以下命令:<pre> <code class="hljs ">adb devices</code> </pre>它应该列出处于恢复模式的 Nord 2。这也非常有趣，因为这里不需要标准的 ADB 授权提示。你可能会得到一个“设备未经授权”的错误，但清除主机现有的亚行 RSA 密钥数据库，并重新启动亚行服务器，最终应该可以让你得到授权。</li> <li>现在指示<code>adbd</code>以 root 用户身份运行:<pre> <code class="hljs ">adb root</code> </pre>这个命令可能需要很长时间，并且您可能会得到一个超时错误。尽管如此，现在<code>adbd</code>应该以 root 身份运行。</li> <li>最后，使用以下命令验证 shell 的特权级别:<pre> <code class="hljs ">adb shell whoami</code> </pre></li> </ol>
+<p class="ad-odd"> </p>
+
+
+<h2 id="the-extent-of-the-flaw">缺陷的程度</h2>
+<p>这个安全漏洞的潜在滥用是可怕的。成功攻击一加诺德 2，攻击者可以转储设备的每个分区。因此，攻击者可以访问整个数据分区，包括存储在通常无法访问的应用程序私有数据目录中的文件。如果数据分区是加密的(因为用户设置了 PIN 或密码)，转储仍然可以用于取证分析。</p>
+
+<p>不仅如此，您可以将一个可执行文件推送到<code>/data/local/tmp</code>并从那里运行它。这是一个典型的攻击媒介，可用于链接加载另一个漏洞。此外，因为您现在可以以 root 用户身份调用<code>setprop</code>实用程序来修改各种属性值，所以您可以从技术上劫持一些特定于 OEM 的特权变量。最后但同样重要的是，即使你没有解锁开发者选项，在恢复中调用 ADB 并重启到常规 Android 环境后，手机也会自动提示 USB 调试访问，这意味着该漏洞的范围不仅限于恢复部分。</p>
+
+<p>请注意，您不能在恢复环境中使用 ADB 安装 APK 文件，因为在那里无法访问软件包管理器实用程序。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="how-to-check-if-your-oneplus-nord-2-is-affected-hint-it-is">如何检查你的一加诺德 2 是否受到影响？(提示:确实如此)</h2>
+<p>如前所述，你可以在一加诺德 2 的普通版和特别版吃豆人游戏中利用这个漏洞。简而言之，如果您输入一个根 shell(当 shell 符号从<code>$</code>变为<code>#</code>时，您将会知道)，那么您将会知道缺陷存在。</p>
+
+<p>我们已经成功获得了设备在<a href="https://www.xda-developers.com/oneplus-nord-2-oxygenos-november-2021-patches/">最新公开的印度和欧洲 OxygenOS 固件上的 root shell 访问权限，这意味着<strong>在撰写本文时，一加诺德 2 的每一个单元都存在漏洞</strong>。</a></p>
+
+<hr/>
+<p class="ad-odd"> </p>
+
+
+<h2 id="what-s-next">下一步是什么？</h2>
+<p>随着更多信息的获得，我们将继续关注此事。一加就此问题发表了以下声明:</p>
+
+<section class="emaki-custom-block emaki-custom-pullquote"><div class="emaki-custom pullquote" id="custom_block_23"><p>我们非常重视隐私和安全。我们正在优先处理此事，一旦我们有更多的信息，我们会尽快与大家分享。</p> </div></section>
+<p>虽然所有这些看起来都很可怕，但请记住，攻击者仍然需要物理访问电话才能获得 root shell 访问权限。在一加推出修补漏洞的更新之前，尽量让你的一加诺德 2 远离陌生人。虽然我们还没有遇到任何恶意使用的情况，但我们不能排除这种可能性，因为该漏洞已经存在至少 2 个月了。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

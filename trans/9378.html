@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Malicious websites can access some of your Google account details and recent browsing history on Safari</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>恶意网站可以访问您在 Safari 上的一些 Google 帐户详细信息和最近浏览历史记录</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/websites-access-google-account-recent-history-safari/#0001-01-01">https://www.xda-developers.com/websites-access-google-account-recent-history-safari/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">恶意网站可以访问您在 Safari 上的一些 Google 帐户详细信息和最近浏览历史记录</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">一个严重的 Safari 漏洞允许恶意网站访问您的一些 Google 帐户详细信息和最近的浏览历史。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p>苹果将自己标榜为一家注重隐私的公司，但没有一款联网设备是真正安全的。尽管它声称，该公司有时需要很长时间来修补报道的<a href="https://www.xda-developers.com/homekit-abused-reboot-iphones-endlessly/">漏洞</a>。最新的报告强调，恶意网站可以访问用户在 Safari 上的一些谷歌账户详细信息和最近的浏览历史。这个漏洞早在 11 月份就被分享给了苹果，至今仍未解决。</p>
+
+  
+<p><em> FingerprintJS </em>已经<a href="https://fingerprintjs.com/blog/indexeddb-api-browser-vulnerability-safari-15/">在最近的一篇博文中披露了</a>这个严重的 Safari bug(via<a href="https://9to5mac.com/2022/01/16/safari-bug-leak-browsing-history-info/">T5】9 to 5 MACT7)。苹果操作系统上 Safari 的 IndexedDB 实现允许网站读取其他域名的数据库名称。虽然这种实现并没有授予他们访问数据库实际内容的权限，但是名字本身可以透露用户的很多信息。例如，谷歌使用用户的唯一 id 作为数据库名称来存储登录帐户的数据。这使得网站能够访问更多的信息，因为 Google 用户 ID 用于发出 Google 服务 API 请求。解决这个问题的方法是限制网站查看其他域名的数据库名称。FingerprintJS 进一步解释道:</a></p>
+
+<blockquote>
+<p>请注意，这些泄漏不需要任何特定的用户操作。在后台运行的选项卡或窗口不断地查询 IndexedDB API 以获取可用的数据库，可以实时了解用户访问了哪些其他网站。或者，网站可以在 iframe 或弹出窗口中打开任何网站，以便为该特定网站触发基于 IndexedDB 的泄漏。</p>
+ </blockquote>
+<p>考虑到这个 bug 的严重性，目前还不清楚苹果为什么还没有打补丁。随着该漏洞公开发布，我们只能希望该公司在即将到来的 iOS 15.3 版本中修补它。与此同时，如果你在 macOS 上，你可以通过切换到另一个网络浏览器来保护自己。然而不幸的是，iOS 和 iPadOS 上的所有浏览器都受到了影响，因为它们基于苹果的 WebKit。</p>
+
+<p>您主要使用哪种网络浏览器，为什么？请在下面的评论区告诉我们。</p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

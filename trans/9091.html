@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>You can pentest your Android apps on Windows 11 using WSA</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>你可以使用 WSA 在 Windows 11 上测试你的 Android 应用</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/wsa-android-apps-pentesting-windows-11/#0001-01-01">https://www.xda-developers.com/wsa-android-apps-pentesting-windows-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>许多人会认为，在 Android 上执行移动应用渗透测试的最佳方式是将一堆 Android 智能手机物理连接到 PC 或 Mac 上，并对它们进行调试。这种组合确实为 pentesting 提供了过多的控制选项，并且对于许多测试场景，你无法从典型的 Android 模拟器获得更高程度的快速性。即使你无法使用多种设备，Android Studio 的内置虚拟设备(AVD)通常也是这类测试工作的首选。植根于 AVD 是可能的，它与调试器完美集成，所以一切都开箱即用。但是，如果你运行的是<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>，并且你想尝试一下 Android 应用 pentesting，你可以很容易地做到这一点，而不需要依赖模拟器或虚拟机，这要归功于<a href="https://www.xda-developers.com/how-to-run-android-apps-on-any-windows-11-pc/">Android Windows 子系统(WSA) </a>。</p>
+
+  
+<p>来自<a href="https://orangecyberdefense.com/"> Orange Cyberdefense </a>的<em> Michael Higgo </em>表示，人们有可能使用 WSA 进行 Android 安全测试，就像在物理 Android 设备上一样。<em>sense post 首席安全分析师 Higgo </em>最近发表了一篇博文，提供了一些关于如何在 WSA 上进行 Android 应用安全测试的一般细节。当评估 Android 应用程序的安全状况时，利用运行时移动探索工具包，如<a href="https://github.com/sensepost/objection"> Objection </a>结合 Android 的 Windows 子系统，使安全研究人员的工作变得非常简单。</p>
+
+
+
+<p>Windows 11 的<a href="https://www.xda-developers.com/android-apps-windows-11-dev-channel/"> Android 子系统采用的技术与第二代 Linux </a>的<a href="https://www.xda-developers.com/windows-subsystem-linux-microsoft-store-windows-11/"> Windows 子系统相同。由于无缝的 Hyper-V 辅助虚拟化，</a><a href="https://www.xda-developers.com/wundows-subsystem-android-benchmarks-solid-performance/"> WSA 比其他任何 Android 模拟器都要快得多。此外，你可以</a><a href="https://www.xda-developers.com/how-to-sideload-android-apps-on-windows-11/">在 WSA </a>上下载应用，甚至修改底层系统镜像，以便<a href="https://www.xda-developers.com/how-to-install-google-play-store-windows-subsystem-for-android/">安装 Play Store 和其他谷歌应用</a>。简而言之，使用 Android 的 Windows 子系统作为一个统一的、可复制的测试平台是完全有意义的。</p>
+
+<p>如果你对流量拦截感兴趣，那么你会很高兴地知道<em> Higgo </em>的文章也涵盖了这个角度。在<a href="https://www.xda-developers.com/windows-subsystem-for-android-launcher-app/">在 WSA </a>中安装一个启动器后，你可以访问 Android 层的网络设置部分。接下来，您可以安装一个认证机构，并设置自定义代理来使用 web 漏洞扫描工具(如<a href="https://portswigger.net/burp"> Burp suite </a>)拦截流量。</p>
+
+
+
+<p>要了解更多关于使用 WSA 的 Android 安全测试，请看一下迈克尔·希戈的博客文章。无论您是专业的安全研究人员，还是仅仅想修补 Android 的 Windows 子系统，这都是探索 Android 应用程序渗透测试世界的好方法。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

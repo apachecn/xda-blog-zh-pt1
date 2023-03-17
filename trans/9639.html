@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>You might not need another PC to set up a Raspberry Pi soon</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>你可能不需要另一台电脑来设置树莓派很快</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/raspberry-pi-network-install/#0001-01-01">https://www.xda-developers.com/raspberry-pi-network-install/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Raspberry Pi 单板计算机由于其多功能性和低成本，多年来取得了巨大的成功。从为 DIY 电子项目供电，到作为学习编程的廉价 PC，Raspberry Pi 系列可以扮演许多角色。然而，您总是需要一台单独的计算机来创建引导驱动器，如果您不容易访问另一台台式计算机，这将是一个问题——移动设备通常无法将磁盘映像写入 SD 卡或 USB 驱动器。这种情况终于改变了。</p>
+
+  
+<p>Raspberry Pi 电脑通常从 SD 卡运行其操作系统，你需要一台台式电脑将操作系统的磁盘映像闪存到 sd 卡上——要么使用官方的<a href="https://www.youtube.com/watch?v=ntaXWS8Lk34"> Raspberry Pi Imager </a>，要么使用其他工具。Raspberry Pi 项目背后的开发人员旨在通过 Raspberry Pi 引导加载程序中的网络安装支持来改变这种情况，如果互联网连接可用，这将允许 Pi 安装自己的操作系统。</p>
+
+<p>Raspberry Pi 在<a href="https://www.raspberrypi.com/news/network-install-beta-test-your-help-required/">的一篇博文</a>(<a href="https://arstechnica.com/gadgets/2022/02/raspberry-pi-bootloader-enables-os-installs-with-no-separate-pc-required/">via<em>Ars Technica</em></a>)中写道，“现在有一个测试版的 Raspberry Pi bootloader 实现了网络安装，我们希望你能帮忙测试一下。新的网络安装功能可用于在 Raspberry Pi 4 或 Raspberry Pi 400 上直接启动 Raspberry Pi 成像仪应用程序，方法是使用以太网电缆从互联网下载。Raspberry Pi Imager 应用程序将在您的 Raspberry Pi 上的内存中运行，然后可以用来将操作系统闪存到空白的 SD 卡或 USB 磁盘上，就像平常一样。”</p>
+
+
+
+
+
+<p>beta bootloader 会搜索已安装的操作系统(在 SD 卡、USB 驱动器或其他位置)，但如果找不到，它会显示一个新的网络安装屏幕。如果您确认安装，并用以太网电缆将 Pi 连接到互联网，它会将官方的 Raspberry Pi 成像仪下载到 RAM 中。从那里，您可以将操作系统安装到您选择的 SD 或 USB 驱动器上，就像您可以在另一台 PC 上安装 Raspberry Pi Imager 一样。</p>
+
+<p>这将大大有助于让树莓派更容易使用，尤其是对那些不经常有另一台电脑的人来说。它并不完美，因为还没有 Wi-Fi 支持，但希望 Raspberry Pi 团队会继续努力。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

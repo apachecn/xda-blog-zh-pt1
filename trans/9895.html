@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>GrapheneOS brings its camera and PDF viewer apps to the Play Store</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>GrapheneOS 将其相机和 PDF 浏览器应用程序带到 Play Store</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/grapheneos-camera-pdf-viewer-google-play-store/#0001-01-01">https://www.xda-developers.com/grapheneos-camera-pdf-viewer-google-play-store/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>谷歌 Play 商店上当然不缺相机应用。如果你已经是 Android 生态系统的一部分，无论时间长短，你可能已经尝试了除 OEM 以外的几种不同的相机应用程序。虽然可能有很多可供选择——包括社区最喜欢的<a href="https://www.xda-developers.com/google-camera-port-hub/">谷歌摄像头端口</a>——但这些应用中的绝大多数都是闭源的，它们不一定会把你的隐私放在第一位。现在，专注于隐私的 GrapheneOS 项目背后的团队旨在通过向谷歌 Play 商店发布他们的相机应用程序来填补空白。</p>
+
+  
+<p>GrapheneOS 相机应用程序被称为<strong>安全相机</strong>，安装后仅占用 5MB 空间。它利用了谷歌的 CameraX Android 库，因此相机应用程序可以无缝地利用供应商的扩展。例如，如果三星在其手机中安装了 CameraX 夜间模式扩展，GrapheneOS 相机将能够使用它。在谷歌 Pixel 系列等受支持的设备上，通过捏放或缩放滑块进行缩放可以利用现成的广角和长焦传感器。该应用程序还支持二维码和条形码扫描。</p>
+
+
+
+
+
+<p>如前所述，隐私是石墨烯的一大焦点，所以让我们来讨论一下。以下是安全摄像头应用程序中的隐私功能列表:</p>
+
+<ul> <li>唯一需要的就是拍照许可。</li> <li>图像和视频是使用 MediaStore API 存储的，因此不需要媒体和存储权限。</li> <li>录制视频需要麦克风权限，但当您不需要录制音频时，可以将其关闭。</li> <li>仅当事先明确启用了位置标记时，才需要位置权限。</li> <li>默认情况下，已捕捉图像的 EXIF 元数据剥离是打开的。</li> </ul>
+
+<p>此外，开发人员还将 GrapheneOS PDF viewer 应用程序上传到了 Play Store。它被恰当地命名为<strong>安全 PDF 浏览器</strong>，将隐私提升到一个全新的水平。app 的基础是基于 pdf.js 和内容提供商。为了最大限度地减少安全问题，PDF 流被输入沙盒 WebView，但不允许它访问内容或文件。因此，该应用程序不需要任何权限即可运行。</p>
+
+<p>我们不会看到一个定制的 ROM 发行版将他们所有的第一方应用程序推送到 Play Store，但这对他们中的许多人来说肯定是有意义的。以 GrapheneOS 的行为为例，他们没有理由将核心收件箱应用程序包的更新限制为 OTA 更新。这导致开发人员需要花费更长的时间来向用户发布错误修复和新功能，如果有人一直在忍受应用程序中令人讨厌的错误或安全缺陷，这可能是一件大事。</p>
+
+<p>如果你对这些石墨烯应用感兴趣，你可以通过下面的链接从谷歌 Play 商店下载。对于任何阅读这篇文章的应用开发者来说，他们是<a href="https://github.com/GrapheneOS/Camera">开放</a> <a href="https://github.com/GrapheneOS/PdfViewer">源代码</a>，所以你可以看看代码库，提交新的补丁，或者只是自己编译应用。</p>
+
+ 
+
+
+
+ 
+
+
+
+<hr/>
+
+<p><strong>来源:</strong>推特上的石墨烯(<a href="https://twitter.com/GrapheneOS/status/1498831066051850248"> 1 </a>，<a href="https://twitter.com/GrapheneOS/status/1498843971463884809"> 2 </a>)</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

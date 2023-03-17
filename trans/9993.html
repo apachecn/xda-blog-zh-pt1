@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Google could be integrating Air Raid Alerts into Play Services</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌可能会将空袭警报整合到游戏服务中</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/apk-teardown-google-air-raid-alerts/#0001-01-01">https://www.xda-developers.com/apk-teardown-google-air-raid-alerts/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>在当前入侵乌克兰的事件中，几家大型科技公司纷纷向俄罗斯施加不同程度的压力。我们已经看到苹果完全停止在该地区销售其产品，我们已经看到 Meta 和抖音阻止访问国家新闻广播公司 RT 和 Sputnik，我们甚至看到谷歌甚至暂停在俄罗斯境内的视频货币化。谷歌还一直在推动乌克兰用户安装乌克兰警报应用程序，以便接收空袭警报，尽管 APK 的一次拆卸显示，谷歌可能正在努力将这些空袭警报直接集成到游戏服务中。</p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_1"><p>APK 拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+
+<h2 id="google-could-be-integrating-air-raid-alerts-in-google-play-services">谷歌可能会在 Google Play 服务中整合空袭警报</h2>
+<p>从我们可以看到，谷歌在 Google Play 服务 v22.06.15 中添加了许多与空袭警告相关的字符串。虽然我们在下面发布了英文字符串，但这些字符串在乌克兰和俄罗斯地区的应用程序中也存在。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_ealert_details_key"</span>&gt;</span>Air Raid Warning Details Preference Key<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_ealert_settings_detected_text"</span>&gt;</span>You may get a notification when the air raid alert is issued, and another notification when the air raid alert is canceled. The Government of Ukraine provides all air raid alert information.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_ealert_settings_detected_title"</span>&gt;</span>If you are in an area where the Government of Ukraine has issued an air raid alert<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_ealert_settings_how_it_works_body_2_text"</span>&gt;</span>" Keep in mind:<br/>"<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>There may not be an official alert for all air raids.<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>"<br/>"<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>You may not receive a notification every time an alert is issued or canceled.<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>"<br/>"<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>You should not rely on the notifications as your sole source of information.<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>"<br/>"<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_ealert_settings_how_it_works_body_text"</span>&gt;</span>This feature uses only your device’s approximate location to send notifications about potential air raids. Google does not use this location information to track or identify you.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_ealert_settings_how_it_works_title"</span>&gt;</span>How it works<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_ealert_settings_switch_key"</span>&gt;</span>Air Raid Alerts Main Switch Key<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_location_settings_ealert_activity_label"</span>&gt;</span>Сповіщення про повітряні тривоги в Україні<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_location_settings_ealert_activity_label_en"</span>&gt;</span>Ukraine air raid alerts<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_notification_alert_text"</span> <span class="hljs-attr">formatted</span>=<span class="hljs-string">"false"</span>&gt;</span>"The Government of Ukraine issued an alert for %s at %s. Take shelter immediately. Tap to change settings."<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_notification_alert_title"</span>&gt;</span>Air raid alert<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_notification_all_clear_text"</span> <span class="hljs-attr">formatted</span>=<span class="hljs-string">"false"</span>&gt;</span>"The Government of Ukraine canceled the alert for %s at %s. Tap to change settings."<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_notification_all_clear_title"</span>&gt;</span>Air raid alert canceled<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_notification_header"</span>&gt;</span>Government of Ukraine alert<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_notification_high_importance_channel_name"</span>&gt;</span>Air Raid Alerts<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"arw_notification_low_importance_channel_name"</span>&gt;</span>Air Raid All Clear<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>将这一功能作为 Google Play 服务的一部分的好处是，绝大多数 Android 用户应该能够在手机上收到提醒，即使没有该应用程序。这是因为 Play 服务几乎嵌入了每一部安卓智能手机。它将使用户无需安装一个完全独立的应用程序，这可能会对那些不经常使用手机、可能没有见过谷歌 Play 商店上的乌克兰警报或可能不精通技术的人有用。</p>
+
+<p>当然，这并不意味着谷歌肯定会为用户推出它。很明显，它现在正在测试中，但即使如此，如果没有使用乌克兰警报应用程序的用户通过 Play 服务获得即将到来的空袭通知，它可能会挽救生命。APK 拆卸的本质是，有时，我们发现未发布的功能，而这些未发布的功能并不总是能进入人们的设备。</p>
+
+<p>我们已经联系谷歌征求意见，如果有回音，我们会更新这篇文章。</p>
+
+<hr/>
+<p class="ad-odd"> </p>
+
+
+<h2 id="update-google-confirms-that-users-in-ukraine-will-get-air-raid-alerts-via-google-play-services">更新:谷歌确认乌克兰用户将通过 Google Play 服务获得空袭警报</h2>
+<p>谷歌<a href="https://twitter.com/davey_burke/status/1501996358412079105">证实</a>“在乌克兰政府的要求和帮助下”，Android 智能手机用户将通过 Google Play 服务接收空袭警报。该系统利用了谷歌为地震警报建立的延迟警报机制。该空袭系统是对该国现有空袭警报系统的补充，并使用相同的触发器。该公司还表示，将在“未来几天”向所有乌克兰安卓智能手机用户推出这款手机。</p>
+
+<hr/>
+
+<p><em>精选图片:<a href="https://commons.wikimedia.org/wiki/File:Flag_of_Ukraine.jpg">乌克兰国旗</a>由维基媒体用户 UP9 使用，<a title="w:en:Creative Commons" href="https://en.wikipedia.org/wiki/en:Creative_Commons">知识共享</a>T5】授权共享 3.0 未授权许可</em></p>
+
+<p><strong>来源:</strong> <a href="https://blog.google/inside-google/company-announcements/helping-ukraine/">谷歌</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,218 @@
+<html>
+<head>
+<title>How to Elevate App Permissions using Shizuku library</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何使用滴库提升应用权限</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/implementing-shizuku/#0001-01-01">https://www.xda-developers.com/implementing-shizuku/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>通常授予您的应用程序的权限可能不够，原因有很多。也许你和我一样，喜欢创建滥用 Android API 的黑客应用程序。我使用的一些 API 被锁定在特殊权限之后。有时只有 shell 用户(ADB)或系统可以访问它们。不过有一个解决方案——滴。</p>
+
+  
+<p>滴允许你几乎直接调用系统 API，而且完全用 Java 或 Kotlin。本指南将向您展示如何实现和使用滴。</p>
+
+ 
+<h2 id="what-is-shizuku">什么是滴？</h2>
+<p>在我们开始使用滴之前，知道它到底是什么可能会有所帮助。如果你熟悉 Magisk，那么滴也差不多。但是它不是管理 root 访问，而是管理 shell 访问。</p>
+
+<p>滴使用 shell 级别的权限运行自己的进程。用户如何激活这个过程取决于他们的设备、Android 版本和选择。滴可以通过 ADB、通过设备上的无线 ADB(Android 11 上的<a href="https://www.xda-developers.com/android-11-developer-preview-3-announced/">和之后的</a>)或通过 root 访问来激活。实现滴的应用程序可以请求使用该进程来执行提升的操作。</p>
+
+ 
+
+
+<p class="ad-odd"> </p>
+
+
+<h2 id="why-shizuku">为什么是滴？</h2>
+<p>虽然对系统的外壳级访问不能让你像根用户那样做很多事情，但它仍然给你比普通应用程序更多的访问权限。最重要的是，滴的工作方式让你可以像平常一样使用 Android APIs。您不必依赖 shell 命令(尽管如果您愿意的话也可以)。</p>
+
+<p>如果你的应用程序需要特殊权限，只能通过亚行(或 root)授予，滴和 Android 11 是一个很好的配对。您可以只使用滴授予特殊权限完全在设备上。</p>
+
+<p>即使在没有安装 Android 11 的设备上，滴也很有用。该应用程序为用户提供了说明和脚本，所以你不必。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="integration">综合</h2>
+<p>将滴添加到你的应用程序中不是最简单的，但也不难。不幸的是，<a href="https://github.com/RikkaApps/Shizuku-API">开发者文档</a>并不完全完整，但是这篇文章已经涵盖了。以下是如何将滴集成到您的应用程序中。</p>
+
+<h3 id="dependencies">属国</h3>
+<p>第一步是添加滴依赖项。在模块级 build.gradle 中，将以下内容添加到 dependencies 块中。</p>
+
+<pre> <code class="hljs bash">def shizuku_version = <span class="hljs-string">'11.0.3'</span><br/><br/>implementation <span class="hljs-string">"dev.rikka.shizuku:api:<span class="hljs-variable">$shizuku_version</span>"</span><br/>implementation <span class="hljs-string">"dev.rikka.shizuku:provider:<span class="hljs-variable">$shizuku_version</span>"</span></code> </pre>
+<p>如果需要，请确保更新版本。11.0.3 是撰写本文时的最新版本。</p>
+
+<h3 id="provider">供应者</h3>
+<p>为了让滴正常工作，您需要向您的应用程序清单中添加一个提供者块。打开 AndroidManifest.xml 并在应用程序块中添加以下内容。</p>
+
+<pre> <code class="hljs bash">&lt;provider<br/>    android:name=<span class="hljs-string">"rikka.shizuku.ShizukuProvider"</span><br/>    android:authorities=<span class="hljs-string">"<span class="hljs-variable">${applicationId}</span>.shizuku"</span><br/>    android:multiprocess=<span class="hljs-string">"false"</span><br/>    android:enabled=<span class="hljs-string">"true"</span><br/>    android:exported=<span class="hljs-string">"true"</span><br/>    android:permission=<span class="hljs-string">"android.permission.INTERACT_ACROSS_USERS_FULL"</span> /&gt;</code> </pre>
+<h3 id="permission">许可</h3>
+<p>对于授权，滴使用运行时权限。我们一会儿将讨论如何授予这种许可。现在，将其添加到 Manifest 块内的 AndroidManifest.xml 中。</p>
+
+<p>现在所有这些都已添加完毕，基本的集成工作也完成了。让 Gradle 做一个项目同步，并继续使用。</p>
+
+<hr/>
+<p class="ad-odd"> </p>
+
+
+<h2 id="usage">使用</h2>
+<h3 id="checking-availability">检查可用性</h3>
+<p>在讨论如何使用滴之前，让我们先讨论一下如何确保它确实可用。</p>
+
+<p>在检查权限是否被授予之前，以及在通过滴进行 API 调用之前，您可以使用以下方法确保这些检查和调用将会成功:</p>
+
+<p><code>Shizuku.pingBinder()</code></p>
+
+<p>如果滴安装并运行，这将返回<strong>真</strong>。否则，它将返回 false。</p>
+
+<h3 id="granting-permission">授予许可</h3>
+<p>因为滴使用运行时权限，所以在你可以用 shell 访问做任何事情之前，它必须被授予你的应用程序。还有两个 API 版本在流通，有不同的授予方式。本节将向您展示如何处理这两个问题。</p>
+
+<p/><h4>检查</h4>
+
+<p>在你请求许可之前，最好的办法是检查你是否已经有了许可。如果你这样做了，你可以继续做你需要做的事情。否则，您需要在继续之前请求它。</p>
+
+<p>要检查您是否有权限使用滴，您可以使用以下内容。这段代码假设您正在一个活动中运行它。</p>
+
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs javascript">val isGranted = if (Shizuku.isPreV11() || Shizuku.getVersion() &lt; 11) {<br/>    checkSelfPermission(ShizukuProvider.PERMISSION) == PackageManager.PERMISSION_GRANTED<br/>} <span class="hljs-keyword">else</span> {<br/>    Shizuku.checkSelfPermission() = PackageManager.PERMISSION_GRANTED<br/>}</code> </pre>
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs java"><span class="hljs-keyword">boolean</span> isGranted;<br/>if (Shizuku.isPreV11() || Shizuku.getVersion() &lt; 11) {<br/>    isGranted = checkSelfPermission(ShizukuProvider.PERMISSION) == PackageManager.PERMISSION_GRANTED;<br/>} <span class="hljs-keyword">else</span> {<br/>    isGranted = Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED;<br/>}</code> </pre>
+<p/><h4>要求</h4>
+
+<p>如果您需要申请使用滴的许可，以下是方法。</p>
+
+<p>下面使用的<strong> SHIZUKU_CODE </strong>变量应该是一个具有稳定值的整数(静态变量)。</p>
+
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs javascript">if (Shizuku.isPreV11() || Shizuku.getVersion() &lt; 11) {<br/>    <span class="hljs-selector-tag">requestPermissions</span>(<span class="hljs-selector-tag">arrayOf</span>(<span class="hljs-selector-tag">ShizukuProvider</span><span class="hljs-selector-class">.PERMISSION</span>), <span class="hljs-selector-tag">SHIZUKU_CODE</span>)<br/>} <span class="hljs-keyword">else</span> {<br/>    <span class="hljs-selector-tag">Shizuku</span><span class="hljs-selector-class">.requestPermission</span>(<span class="hljs-selector-tag">SHIZUKU_CODE</span>)<br/>}</code> </pre>
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs javascript">if (Shizuku.isPreV11() || Shizuku.getVersion() &lt; 11) {<br/>    requestPermissions(<span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>[] { ShizukuProvider.PERMISSION }, SHIZUKU_CODE);<br/>} <span class="hljs-keyword">else</span> {<br/>    <span class="hljs-selector-tag">Shizuku</span><span class="hljs-selector-class">.requestPermissions</span>(<span class="hljs-selector-tag">SHIZUKU_CODE</span>);<br/>}</code> </pre>
+<p>为了监听结果，您需要覆盖 Activity 的<strong>onRequestPermissionsResult()</strong>方法。你还需要实现<strong>滴。OnRequestPermissionResultListener</strong>。我将要展示的例子假设您的活动实现了那个接口，但是如果您愿意，您可以在一个变量中实现它。</p>
+
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs xml"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleActivity</span> :</span> AppCompatActivity, Shizuku.OnRequestPermissionResultListener {<br/>    ...<br/><br/>    override <span class="hljs-keyword">void</span> onRequestPermissionsResult(requestCode: Int, <span class="hljs-attr">permissions</span>: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">String</span>&gt;, <span class="hljs-attr">grantResults</span>: IntArray) {<br/>        permissions.forEachIndexed { index, permission -&gt;<br/>            if (permission == ShizukuProvider.PERMISSION) {<br/>                <span class="hljs-selector-tag">onRequestPermissionResult</span>(<span class="hljs-selector-tag">requestCode</span>, <span class="hljs-selector-tag">grantResults</span><span class="hljs-selector-attr">[index]</span>)<br/>            }<br/>       }<br/>    }<br/><br/>    <span class="hljs-function">override <span class="hljs-keyword">void</span> <span class="hljs-title">onRequestPermissionResult</span><span class="hljs-params">(requestCode: Int, grantResult: Int)</span> </span>{<br/>        val isGranted = grantResult == PackageManager.PERMISSION_GRANTED<br/>        //<span class="hljs-keyword">Do</span> <span class="hljs-keyword">stuff</span> based <span class="hljs-keyword">on</span> the result.<br/><br/>    }<br/>}</code> </pre>
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Shizuku</span>.<span class="hljs-title">OnRequestPermissionResultListener</span> </span>{<br/>    ...<br/><br/>    <span class="hljs-meta">@Override</span><br/>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRequestPermissionsResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, @NonNull String[] permissions, @NonNull <span class="hljs-keyword">int</span>[] grantResults)</span> </span>{<br/>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; permissions.length; i++) {<br/>            <span class="hljs-built_in">String</span> permission = permissions[i];<br/>            <span class="hljs-keyword">int</span> result = grantResults[i];<br/><br/>            <span class="hljs-selector-tag">if</span> (<span class="hljs-selector-tag">permission</span><span class="hljs-selector-class">.equals</span>(<span class="hljs-selector-tag">ShizukuProvider</span><span class="hljs-selector-class">.PERMISSION</span>) {<br/>                onRequestPermissionResult(requestCode, result);<br/>            }<br/>        }<br/>    }<br/><br/>    <span class="hljs-meta">@Override</span><br/>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRequestPermissionResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, <span class="hljs-keyword">int</span> grantResult)</span> </span>{<br/>        <span class="hljs-keyword">boolean</span> isGranted = grantResult == PackageManager.PERMISSION_GRANTED;<br/>        //<span class="hljs-keyword">Do</span> <span class="hljs-keyword">stuff</span> based <span class="hljs-keyword">on</span> the result.<br/>    }<br/>}</code> </pre>
+<h3 id="using-apis">使用 API</h3>
+<p>既然已经设置了滴并授予了权限，您就可以开始使用滴实际调用 API 了。这里的过程与您可能习惯的略有不同。不要调用<code>getSystemService()</code>并转换成类似<code>WindowManager</code>的东西，你必须使用这些内部 API(例如<code>IWindowManager</code>)。</p>
+
+<p>滴包括一个绕过 Android 的隐藏 API 黑名单，所以你在使用它的时候不需要担心。如果你想知道如何自己绕过它，看看我以前的教程。</p>
+
+<p>这里有一个简单的例子(使用反射),展示了如何获得一个<code>IPackageManager</code>的实例，并使用它授予一个应用程序运行时权限。</p>
+
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs bash">val iPmClass = Class.forName(<span class="hljs-string">"android.content.pm.IPackageManager"</span>)<br/>val iPmStub = Class.forName(<span class="hljs-string">"android.content.pm.IPackageManager\$Stub"</span>)<br/>val asInterfaceMethod = iPmStub.getMethod(<span class="hljs-string">"asInterface"</span>, <span class="hljs-attr">IBinder</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>.<span class="hljs-title">java</span>)</span><br/>val grantRuntimePermissionMethod = iPmClass.getMethod(<span class="hljs-string">"grantRuntimePermission"</span>, String::class.java , String::class.java , Int::class.java )<br/><br/>val iPmInstance = asInterfaceMethod.invoke(<span class="hljs-literal">null</span>, ShizukuBinderWrapper(SystemServiceHelper.getSystemService(<span class="hljs-string">"package"</span>)))<br/><br/><span class="hljs-selector-tag">grantRuntimePermissionMethod</span><span class="hljs-selector-class">.invoke</span>(<span class="hljs-selector-tag">iPmInstance</span>, "<span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.zacharee1</span><span class="hljs-selector-class">.systemuituner</span>", <span class="hljs-selector-tag">android</span><span class="hljs-selector-class">.Manifest</span><span class="hljs-selector-class">.permission</span><span class="hljs-selector-class">.WRITE_SECURE_SETTINGS</span>, 0)</code> </pre>
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs java">Class<span class="php"><span class="hljs-meta">&lt;?</span>&gt; iPmClass = <span class="hljs-class"><span class="hljs-keyword">Class</span>.<span class="hljs-title">forName</span>("<span class="hljs-title">android</span>.<span class="hljs-title">content</span>.<span class="hljs-title">pm</span>.<span class="hljs-title">IPackageManager</span>");</span></span><br/>Class<span class="php"><span class="hljs-meta">&lt;?</span>&gt; iPmStub = <span class="hljs-class"><span class="hljs-keyword">Class</span>.<span class="hljs-title">forName</span>("<span class="hljs-title">android</span>.<span class="hljs-title">content</span>.<span class="hljs-title">pm</span>.<span class="hljs-title">IPackageManager</span>$<span class="hljs-title">Stub</span>");</span></span><br/>Method asInterfaceMethod = iPmStub.getMethod(<span class="hljs-string">"asInterface"</span>, IBinder<span class="hljs-class">.<span class="hljs-keyword">class</span>)</span>;<br/>Method grantRuntimePermissionMethod = iPmClass.getMethod(<span class="hljs-string">"grantRuntimePermission"</span>, <span class="hljs-built_in">String</span>.class, <span class="hljs-built_in">String</span>.class, int.class);<br/><br/>val iPmInstance = asInterfaceMethod.invoke(<span class="hljs-literal">null</span>, <span class="hljs-keyword">new</span> ShizukuBinderWrapper(SystemServiceHelper.getSystemService(<span class="hljs-string">"package"</span>)));<br/><br/><span class="hljs-selector-tag">grantRuntimePermissionMethod</span><span class="hljs-selector-class">.invoke</span>(<span class="hljs-selector-tag">iPmInstance</span>, "<span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.zacharee1</span><span class="hljs-selector-class">.systemuituner</span>", <span class="hljs-selector-tag">android</span><span class="hljs-selector-class">.Manifest</span><span class="hljs-selector-class">.permission</span><span class="hljs-selector-class">.WRITE_SECURE_SETTINGS</span>, 0);</code> </pre>
+<p>其他 API 的过程类似。获取对该类及其存根子类的引用。获取对存根类的<code>asInterface</code>方法的引用。从类本身获取对所需方法的引用。然后，调用您拥有的<code>asInterface</code>方法引用，用您需要的任何服务替换上面的<code>"package"</code>。然后可以传递该实例进行方法调用。</p>
+
+<p>如果你安装了一个修改过的 SDK，你可以完全避免使用反射。<a href="https://github.com/anggrayudi/android-hidden-api">查看 anggrayudi 的 GitHub 库</a>获取修改后的 SDK 和安装说明。安装了这个之后，上面的代码(Kotlin)就变得简单多了。</p>
+
+<pre> <code class="hljs javascript">val iPm = IPackageManager.Stub.asInterface(ShizukuBinderWrapper(SystemServiceHelper.getService(<span class="hljs-string">"package"</span>))))<br/><span class="hljs-selector-tag">iPm</span><span class="hljs-selector-class">.grantRuntimePermission</span>("<span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.zacharee1</span><span class="hljs-selector-class">.systemuituner</span>", <span class="hljs-selector-tag">android</span><span class="hljs-selector-class">.Manifest</span><span class="hljs-selector-class">.permission</span><span class="hljs-selector-class">.WRITE_SECURE_SETTINGS</span>, 0)<br/></code> </pre>
+<p>任何基于 AIDL 的 API 都可以在你的应用中的任何地方使用这种方法，只要滴正在运行并且你的应用有权限。</p>
+
+<h3 id="user-service">用户服务程序</h3>
+<p>虽然 Binder 方法涵盖了大多数用例，但有时您可能需要一个没有直接 Binder 接口的 API。在这种情况下，您可以使用滴的用户服务功能。</p>
+
+<p>这种方法的工作方式类似于 Android 中的普通服务。您“启动”它，通过使用 ServiceConnection 绑定到它来进行通信，并在 service 类中运行您的逻辑。不同的是，你没有使用 Android 的服务，服务内的任何东西都是在 ADB 许可下运行的。</p>
+
+<p>现在有一些限制。用户服务在一个完全独立的进程和用户中运行，所以除了通过你自己的 AIDL 回调和绑定器，你不能与你的应用程序的其他部分交互。由于它也没有在正确的应用程序进程中运行，一些事情，如绑定 Android 服务，可能无法正常工作。</p>
+
+<p>这也需要滴版本 10 或更高版本。虽然目前大多数应用程序的源代码都是版本 11，但是您仍然应该包含版本检查，这将包含在示例中。</p>
+
+<p/><h4>定义 AIDL</h4>
+
+<p>首先，您需要创建一个新的 AIDL 文件。你可以在 Android Studio 中这样做，右击 Android 文件视图中的任何东西，悬停在“新建”选项上，然后选择“AIDL”选项。输入文件名(如“IUserService”)，Android Studio 将为您创建一个模板文件。</p>
+
+<p>如果你不熟悉 AIDLs 是如何工作的，一定要看看谷歌的文档。</p>
+
+<p>从 AIDL 中删除模板方法，然后为滴添加一个具有适当 ID 的<code>destroy()</code>方法。当滴终止用户服务时，这个函数将被调用，并且应该被用来清理你拥有的任何引用或正在进行的逻辑。</p>
+
+<p>AIDL 的例子:</p>
+
+<pre> <code class="hljs java"><span class="hljs-selector-tag">package</span> <span class="hljs-selector-tag">tk</span><span class="hljs-selector-class">.zwander</span><span class="hljs-selector-class">.shizukudemo</span>;<br/><br/><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IUserService</span> </span>{<br/>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">destroy</span><span class="hljs-params">()</span> </span>= <span class="hljs-number">16777114</span>;<br/><br/>    <span class="hljs-keyword">void</span> grantPermission(<span class="hljs-built_in">String</span> packageName, <span class="hljs-built_in">String</span> permission, int userId) = <span class="hljs-number">1</span>; <br/>}</code> </pre>
+<p/><h4>实施 AIDL</h4>
+
+<p>接下来要做的是实际实现 AIDL。</p>
+
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserService</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">IUserService</span>.<span class="hljs-title">Stub</span> </span>{<br/>    <br/>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UserService</span><span class="hljs-params">()</span> </span>{<br/>    }<br/><br/>    <span class="hljs-meta">@Override</span><br/>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">destroy</span><span class="hljs-params">()</span> </span>{<br/>        <br/>        System.<span class="hljs-keyword">exit</span>(<span class="hljs-number">0</span>);<br/>    }<br/><br/>    <span class="hljs-meta">@Override</span><br/>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">grantPermission</span><span class="hljs-params">(String packageName, String permission, <span class="hljs-keyword">int</span> userId)</span> </span>{<br/>        <br/>        <span class="hljs-selector-tag">IPackageManager</span><span class="hljs-selector-class">.Stub</span><span class="hljs-selector-class">.asInterface</span>(<span class="hljs-selector-tag">SystemServiceHelper</span><span class="hljs-selector-class">.getService</span>("<span class="hljs-selector-tag">package</span>"))<span class="hljs-selector-class">.grantRuntimePermission</span>(<span class="hljs-selector-tag">packageName</span>, <span class="hljs-selector-tag">permission</span>, <span class="hljs-selector-tag">userId</span>);<br/>    }<br/>}</code> </pre>
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserService</span> :</span> IUserService.Stub {<br/>    <br/>    <span class="hljs-keyword">constructor</span>() {<br/>    }<br/><br/>    <span class="hljs-function">override fun <span class="hljs-title">destroy</span><span class="hljs-params">()</span> </span>{<br/>        <br/>        System.<span class="hljs-keyword">exit</span>(<span class="hljs-number">0</span>)<br/>    }<br/><br/>    override fun grantPermission(packageName: <span class="hljs-built_in">String</span>, <span class="hljs-attr">permission</span>: <span class="hljs-built_in">String</span>, <span class="hljs-attr">userId</span>: Int) {<br/>        <br/>        <span class="hljs-selector-tag">IPackageManager</span><span class="hljs-selector-class">.Stub</span><span class="hljs-selector-class">.asInterface</span>(<span class="hljs-selector-tag">SystemServiceHelper</span><span class="hljs-selector-class">.getService</span>("<span class="hljs-selector-tag">package</span>"))<span class="hljs-selector-class">.grantRuntimePermission</span>(<span class="hljs-selector-tag">packageName</span>, <span class="hljs-selector-tag">permission</span>, <span class="hljs-selector-tag">userId</span>)<br/>    }<br/>}</code> </pre>
+<p>上面的例子假设你已经安装了<a href="https://github.com/anggrayudi/android-hidden-api"> Android Hidden API </a> SDK。</p>
+
+<p/><h4>设置服务连接</h4>
+
+<p>既然已经定义并实现了用户服务，那么是时候设置它以供使用了。您应该做的第一件事是定义一个您想要与之通信的 ServiceConnection(例如，从您的应用程序中的主活动)。</p>
+
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs java"><span class="hljs-keyword">private</span> IUserService binder = <span class="hljs-keyword">null</span>;<br/><br/><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> ServiceConnection connection = <span class="hljs-keyword">new</span> ServiceConnection() {<br/>    <span class="hljs-meta">@Override</span><br/>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onServiceConnected</span><span class="hljs-params">(ComponentName componentName, IBinder binder)</span> </span>{<br/>        <span class="hljs-keyword">if</span> (binder != <span class="hljs-literal">null</span> &amp;&amp; binder.pingBinder()) {<br/>            binder = IUserService.Stub.asInterface(binder);<br/>        }<br/>    }<br/><br/>    <span class="hljs-meta">@Override</span><br/>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onServiceDisconnected</span><span class="hljs-params">(ComponentName componentName)</span> </span>{<br/>        binder = <span class="hljs-literal">null</span>;<br/>    }<br/>}</code> </pre>
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> binder: IUserService? = <span class="hljs-keyword">null</span><br/><br/><span class="hljs-keyword">private</span> val connection = object : ServiceConnection {<br/>    <span class="hljs-function">override fun <span class="hljs-title">onServiceConnected</span><span class="hljs-params">(componentName: ComponentName, binder: IBinder?)</span> </span>{<br/>        <span class="hljs-keyword">if</span> (binder != <span class="hljs-literal">null</span> &amp;&amp; binder.pingBinder()) {<br/>            binder = IUserService.Stub.asInterface(binder)<br/>        }<br/>    }<br/><br/>    <span class="hljs-function">override fun <span class="hljs-title">onServiceDisconnected</span><span class="hljs-params">(componentName: ComponentName)</span> </span>{<br/>        binder = <span class="hljs-literal">null</span>;<br/>    }<br/>}</code> </pre>
+<p><code>binder</code>变量是您将用来从应用程序与用户服务通信的变量。要检查它是否可用，只需检查它不为空，并且<code>pingBinder()</code>返回<strong> true </strong>，就像上面的代码示例一样。</p>
+
+<p/><h4>创建用户服务参数</h4>
+
+<p>在控制用户服务之前，您需要定义一些参数，供滴在启动和停止它时使用。这些包括实际告诉滴服务的类名，指定进程后缀，是否可调试，以及版本。</p>
+
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs javascript"><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Shizuku.UserServiceArgs serviceArgs = <span class="hljs-keyword">new</span> Shizuku.UserServiceArgs(<br/>    <span class="hljs-selector-tag">new</span> <span class="hljs-selector-tag">ComponentName</span>(<span class="hljs-selector-tag">BuildConfig</span><span class="hljs-selector-class">.APPLICATION_ID</span>, <span class="hljs-selector-tag">UserService</span><span class="hljs-selector-class">.class</span><span class="hljs-selector-class">.getName</span>()))<br/>        .processNameSuffix(<span class="hljs-string">"user_service"</span>)<br/>        <span class="hljs-selector-class">.debuggable</span>(<span class="hljs-selector-tag">BuildConfig</span><span class="hljs-selector-class">.DEBUG</span>)<br/>        <span class="hljs-selector-class">.version</span>(<span class="hljs-selector-tag">BuildConfig</span><span class="hljs-selector-class">.VERSION_CODE</span>);</code> </pre>
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs python"><span class="hljs-keyword">private</span> val serviceArgs = Shizuku.UserServiceArgs(<br/>    <span class="hljs-selector-tag">ComponentName</span>(<span class="hljs-selector-tag">BuildConfig</span><span class="hljs-selector-class">.APPLICATION_ID</span>, <span class="hljs-selector-tag">UserService</span><span class="hljs-selector-class">.class</span><span class="hljs-selector-pseudo">::java.getName()))</span><br/>        .processNameSuffix(<span class="hljs-string">"user_service"</span>)<br/>        <span class="hljs-selector-class">.debuggable</span>(<span class="hljs-selector-tag">BuildCOnfig</span><span class="hljs-selector-class">.DEBUG</span>)<br/>        <span class="hljs-selector-class">.version</span>(<span class="hljs-selector-tag">BuildConfig</span><span class="hljs-selector-class">.VERSION_CODE</span>)</code> </pre>
+<p/><h4>启动、停止和绑定用户服务</h4>
+
+<p>开始和绑定操作以及停止和解除绑定操作在滴是统一的。没有单独的开始和绑定方法或者停止和解除绑定方法。</p>
+
+<p>下面是如何<strong>启动和绑定</strong>用户服务。</p>
+
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs javascript">if (Shizuku.getVersion &gt;= 10) {<br/>    <br/>    <span class="hljs-selector-tag">Shizuku</span><span class="hljs-selector-class">.bindUserService</span>(<span class="hljs-selector-tag">serviceArgs</span>, <span class="hljs-selector-tag">connection</span>);<br/>} <span class="hljs-keyword">else</span> {<br/>    <br/>}</code> </pre>
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs javascript">if (Shizuku.getVersion() &gt;= 10) {<br/>    <br/>    <span class="hljs-selector-tag">Shizuku</span><span class="hljs-selector-class">.bindUserService</span>(<span class="hljs-selector-tag">serviceArgs</span>, <span class="hljs-selector-tag">connection</span>)<br/>} <span class="hljs-keyword">else</span> {<br/>    <br/>}</code> </pre>
+<p>下面是如何<strong>停止和解除</strong>用户服务的绑定。</p>
+
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs javascript">if  (Shizuku.getVersion &gt;= 10) {<br/>    Shizuku.unbindUserService(serviceArgs, connection, <span class="hljs-literal">true</span>);<br/>}</code> </pre>
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs javascript">if (Shizuku.getVersion &gt;= 10) {<br/>    Shizuku.unbindUserService(serviceArgs, connection, <span class="hljs-literal">true</span>)<br/>}</code> </pre>
+<p/><h4>调用用户服务</h4>
+
+<p>一旦用户服务启动，您就可以开始使用它了。只需检查<code>binder</code>变量是否为非空且可 ping 通，然后进行方法调用。</p>
+
+<p><strong> Java </strong>:</p>
+
+<pre> <code class="hljs javascript"><span class="hljs-keyword">if</span> (binder != <span class="hljs-literal">null</span> &amp;&amp; binder.pingBinder()) {<br/>    <span class="hljs-selector-tag">binder</span><span class="hljs-selector-class">.grantPermission</span>("<span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.zacharee1</span><span class="hljs-selector-class">.systemuituner</span>", <span class="hljs-selector-tag">android</span><span class="hljs-selector-class">.Manifest</span><span class="hljs-selector-class">.permission</span><span class="hljs-selector-class">.WRITE_SECURE_SETTINGS</span>, 0);<br/>}</code> </pre>
+<p><strong>锅炉</strong>:</p>
+
+<pre> <code class="hljs javascript"><span class="hljs-keyword">if</span> (binder?.pingBinder() == <span class="hljs-literal">true</span>) {<br/>    <span class="hljs-selector-tag">binder</span>?<span class="hljs-selector-class">.grantPermission</span>("<span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.zacharee1</span><span class="hljs-selector-class">.systemuituner</span>", <span class="hljs-selector-tag">android</span><span class="hljs-selector-class">.Manifest</span><span class="hljs-selector-class">.permission</span><span class="hljs-selector-class">.WRITE_SECURE_SETTINGS</span>, 0)<br/>}</code> </pre>
+<hr/>
+<p class="ad-even"> </p>
+
+
+<h2 id="conclusion">结论</h2>
+<p>如果您遵循了所有这些，您现在应该有一个工作的滴集成。只要记得告诉你的用户安装滴，并在尝试使用它之前正确检查滴是可用的。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

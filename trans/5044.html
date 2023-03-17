@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Android 12's audio-coupled haptic effect is even cooler than it sounds</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android 12 的音频耦合触觉效果比听起来更酷</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-12-audio-coupled-haptic-effect/#0001-01-01">https://www.xda-developers.com/android-12-audio-coupled-haptic-effect/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>如果你关注我们的博客，那么我不认为我需要告诉你谷歌上周发布了第一个<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>版本(说真的，我们已经向<a href="https://www.xda-developers.com/tag/android-12/">发布了大量关于它的</a>)。虽然我们主要关注于揭示未发布的功能，但今天我们后退一步，测试新操作系统的<a href="https://www.xda-developers.com/android-12-developer-preview-1/">官方宣布的功能</a>。Android 12 中最酷的功能之一是音频耦合触觉效果，这一功能有效地承诺根据正在进行的音频会话振动你的手机。谷歌表示，它将让开发者创造更多身临其境的游戏和音频体验，在看到它的实际操作后，我们不得不同意这一点。</p>
+
+  
+<p>开发者<a href="https://forum.xda-developers.com/m/kdrag0n.7291478/"> kdrag0n </a>，他最近让我们第一次看到了<a href="https://www.xda-developers.com/android-12-wallpaper-theming-system-leak/"> Android 12 基于壁纸的主题系统</a>，他想尝试一下新的音频耦合触觉效果功能，所以他快速开发了一个应用程序，看看哪些 Pixel 手机支持该功能。根据<a href="https://developer.android.com/reference/android/media/audiofx/HapticGenerator"> HapticGenerator </a> API 的文档，“HG 是一个音频后处理器，它基于音频通道生成触觉数据。生成的触觉数据与音频数据一起发送到音频 HAL，这将要求设备支持音频耦合触觉回放。”不幸的是，看起来谷歌最新的 Pixel 手机——即 Pixel 4a 5G 或 Pixel 5——都不支持 HapticGenerator。谷歌 2018 款 Pixel 3 似乎也不支持(诚然，我们只测试了 XL 型号)，但幸运的是，谷歌 2019 款 Pixel 4 支持。</p>
+<div class="body-img portrait"><div class="responsive-img image-expandable img-article-item-portrait" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/Android-12-HapticGenerator-Test-768x1024.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Google's Pixel 4 supports Android 12's audio-coupled haptic effect feature. Image credits: XDA Senior Member &lt;a href=\&quot;https:\/\/forum.xda-developers.com\/m\/cstark27.2712580\/\&quot;&gt;cstark27&lt;\/a&gt;&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/Android-12-HapticGenerator-Test-768x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/Android-12-HapticGenerator-Test-768x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="600px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/Android-12-HapticGenerator-Test-768x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="360px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/Android-12-HapticGenerator-Test-768x1024.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/Android-12-HapticGenerator-Test-768x1024.jpg" src="../Images/a9bbec51f0ff0a8d71240e6e83d76d5b.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/02/Android-12-HapticGenerator-Test-768x1024.jpg"/> </picture> <figcaption class="body-img-caption">Google's Pixel 4 supports Android 12's audio-coupled haptic effect feature. Image credits: XDA Senior Member <a href="https://forum.xda-developers.com/m/cstark27.2712580/">cstark27</a></figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>在确认 Pixel 4 支持它之后，kdrag0n 使用 HapticGenerator API 快速创建了另一个应用程序。这个应用程序根据设备上正在播放的音乐产生振动，结果比我们预期的要好。这里有两个视频，都是由 XDA 资深会员<a href="https://forum.xda-developers.com/m/cstark27.2712580/"> cstark27 </a>录制的，展示了音频耦合触觉效果:</p>
+
+<p>蠢朋克:再来一次</p>
+
+ 
+<p class="w-rich w-youtube" id="uaobNgmtgF8">  </p>
+
+
+<p>愚蠢的朋克:太阳能水手 _ 由漂亮的灯光混合)</p>
+
+ 
+<p class="w-rich w-youtube" id="EvY5bWQ40O4">  </p>
+
+
+<p>谷歌过去曾尝试过音频耦合触觉技术，但 Android 12 的新功能远比我们以前从该公司看到的任何功能都更加通用。对于 Pixel 3，谷歌<a href="https://twitter.com/MishaalRahman/status/1053686158130065409">准备了定制的振动模式</a>来匹配每一种股票铃声，但显然他们不可能为扬声器发出的每一种声音都创建定制的振动。</p>
+
+<p>这就是为什么我认为 Android 12 的新音频耦合触觉可能是该操作系统最酷的功能之一，也是为什么谷歌最新的 Pixel 手机似乎缺乏对它的支持是不幸的。触觉反馈，如果做得正确，真的可以提升智能手机的体验。而我却看不到有多少人用这个来进行音乐播放(有多少人在播放音乐的时候把手机拿在手里？)，我可以看到它将如何让游戏在移动设备上更加身临其境。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

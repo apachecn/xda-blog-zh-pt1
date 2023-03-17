@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Rooted devices can bring back volume control for Cast speaker groups</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>根设备可以恢复 Cast 扬声器群组的音量控制</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/cast-speaker-groups-root/#0001-01-01">https://www.xda-developers.com/cast-speaker-groups-root/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">根设备可以恢复 Cast 扬声器群组的音量控制</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">根深蒂固的 Android 设备有可能恢复通过音量按钮控制演职人员扬声器组的能力。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p>2020 年 1 月，Sonos 对谷歌提起了两起诉讼，称该公司窃取了其多房间扬声器技术，侵犯了 100 项专利。本月早些时候，美国国际贸易委员会裁定<a href="https://www.xda-developers.com/google-violated-sonos-patents-blocking-imports/">谷歌确实侵犯了 Sonos 专利</a>，由于谷歌(到目前为止)不愿意支付专利许可费，Android 手机和平板电脑上用音量按钮控制 Cast 扬声器的功能被取消。然而，似乎有一种方法可以恢复这些功能——只要你的 Android 设备是 rooted 的。</p>
+
+  
+<p><a href="https://blog.esper.io/android-12-cast-volume-changes-explained"> <em>斯珀</em>周五发表了米沙·拉赫曼(Mishaal Rahman)撰写的博客文章</a>，详细介绍了谷歌如何改变 Android 中的音量按钮行为。谷歌为避免专利侵权而未能成功做出的第一个改变是<a href="https://android.googlesource.com/platform/frameworks/base/+/88c09af9ad786cdb342cdfd717ea0d1ca5b10bfd%5E%21/">在 7 月下旬向 AOSP</a>(Android 开源项目)承诺，如果使用 Cast 设备，则阻止音量键按键被发送到媒体会话(播放音频或视频的应用程序)。</p>
+
+<p>谷歌后来在 Android 12 Release 26 中再次改变了音量控制，这是作为 2022 年 1 月<a href="https://www.xda-developers.com/january-2022-android-security-update/">安全补丁</a>的一部分推送到谷歌手机上的(Pixel 6 的所有者仍在等待)。音量键可以再次控制单个扬声器，但控制扬声器组仍然被阻止。“config _ volumeAdjustmentForRemoteGroupSessions”标志是控制这种行为的标志——谷歌在 Pixel 手机上关闭了它，但在 AOSP 默认情况下是启用的，想必许可 Sonos 专利的公司(或者一开始就没有侵权)可以让它开着。</p>
+
+<p>好消息是，只要您有一个根设备，覆盖这个标志并不太困难。谷歌正在 Pixel 设备上使用运行时资源覆盖(RRO)来改变音量调整标志的值，因此<a href="https://source.android.com/devices/architecture/rros#static-rros">创建一个具有更高优先级的 RRO，并将标志设置为 true】应该可以解决这个问题。如果谷歌没有修补创建覆盖图的非 root 方法，</a><a href="https://twitter.com/MishaalRahman/status/1482015219056582656"> root 甚至都没有必要</a>。下面的链接提供了更改标志的 Magisk 模块。</p>
+
+<p/><p><strong> <a href="https://github.com/MishaalRahmanGH/Android-12-Speaker-Group-Volume-Adjustment-Fix/releases/tag/v1.0">下载 Magisk 模块为 Android 12 扬声器群组音量调节修复</a> </strong></p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

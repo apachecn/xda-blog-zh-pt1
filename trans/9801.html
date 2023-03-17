@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Google details SDK Runtime design proposal for the Android Privacy Sandbox</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌详细说明了 Android 隐私沙箱的 SDK 运行时设计方案</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-details-sdk-runtime-design-proposal-android-privacy-sandbox/#0001-01-01">https://www.xda-developers.com/google-details-sdk-runtime-design-proposal-android-privacy-sandbox/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>最近，我们看到苹果和谷歌都在努力创造一个更注重隐私的广告生态系统。苹果推出了一个按钮来防止应用程序跟踪你，谷歌推出了安卓隐私沙盒计划。虽然在声明期间信息很少，但围绕“SDK 运行时”的更多细节已经出现，它包含了谷歌广告和隐私解决方案的一部分。</p>
+
+  
+<p>Android 隐私沙箱由两个主要组件组成 SDK 运行时和隐私保护 APIs 它们将作为模块化系统组件分发，您可能记得这是<a href="https://www.xda-developers.com/android-project-mainline-modules-explanation/">项目主线</a>。此后，谷歌发布了围绕 SDK 运行时的开发人员文档，以及它将如何进一步增强用户隐私。该公司表示，SDK 运行时将允许第三方 SDK 在<a href="https://www.xda-developers.com/android-13"> Android 13 </a>的专用运行时环境中运行，远离应用程序的代码。</p>
+
+<p>在 Android 中，每个应用程序都运行在一个沙盒中，拥有自己的权限，并根据被授予的访问权限而改变对系统的访问权限。<a href="https://source.android.com/security/app-sandbox">正如谷歌所说的</a>，“如果应用程序 A 试图做一些恶意的事情，比如读取应用程序 B 的数据或未经许可拨打电话，它会被阻止这样做，因为它没有适当的默认用户权限。”SDK 运行时进一步扩展了沙箱，在专用的运行时环境中执行第三方 SDK，远离任何特定的应用程序。</p>
+
+ 
+<h2 id="why-the-sdk-runtime-exists">SDK 运行时存在的原因</h2>
+<p>谷歌希望阻止广告商 SDK 收集其不应恶意(甚至无意)访问的数据，因为共享了主机应用的沙箱。当在应用内部执行广告 SDK 时，它也可以访问应用所做的一切，而应用开发者可能并不完全知道实际上有多少访问权限。通过删除广告代码并在自己的运行时执行，它只能访问开发人员明确与其共享的数据。</p>
+
+<p>因此，谷歌表示，SDK 运行时在用户数据收集和共享方面提供了以下更强大的保护和保证:</p>
+
+<ul> <li>修改后的执行环境</li> <li>针对 SDK 的明确定义的权限和数据访问权限</li> </ul>
+
+<p>SDK 运行时的第一个版本完全专注于广告相关的 SDK，包括支持广告服务、广告测量、广告欺诈和滥用检测的 SDK。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="how-the-sdk-runtime-works">SDK 运行时如何工作</h2>
+<p>目前，如果没有 SDK 运行时，应用程序进程将调用 SDK，该 SDK 将在与应用程序其余代码相同的沙箱中执行。谷歌希望开发者拥有一个在应用前台工作的 SDK 接口，然后这个接口可以连接到正在使用的 SDK，并与其来回共享特定数据。</p>
+
+<h3 id="before">以前</h3>
+
+
+<h3 id="after">在...之后</h3>
+
+
+<p>“before”图(第一个)显示了 SDK 调用代码，以及从该代码接收调用的 SDK，都驻留在应用程序的进程中。这意味着 SDK 可以访问应用程序可以访问的所有数据。“之后”图(第二个)显示，在应用的前台进程中，SDK 调用代码与 SDK 接口进行通信。然后，这些接口跨越流程边界进入 SDK 运行时流程，以调用 SDK 本身。这意味着正在使用的 SDK 不能只是访问它想要的任何东西，它只能从它旁边运行的应用程序获得信息。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="new-trusted-distribution-model-for-sdks">一种新的 SDK 可信分发模型</h2>
+<p>目前，当你下载一个带有第三方软件开发工具包的应用程序时，开发者会将这些工具包包含在应用程序中，并在谷歌 Play 商店上上传和分发。相反，谷歌希望当你在手机上安装一个使用这些 SDK 的应用程序时，它们会从应用程序本身单独下载。这意味着 SDK 开发人员可以对他们的 SDK 进行不间断的更改(也就是说，不对 API 或其语义进行更改)，并将它们分发到设备上，而无需应用程序开发人员的参与。</p>
+
+<p>反过来，可以部署或回滚不间断的 SDK 更改，而不必等待应用程序开发人员使用新的 SDK 重新构建他们的应用程序，或者等待最终用户更新他们的应用程序。改变 API 及其语义的突破性更改仍需要由应用程序开发人员进行更新，但 SDK 开发人员可以更快、更统一地向更多人发布最新的非突破性更改和修复，而不需要依赖应用程序开发人员在新的 SDK 中更新他们的应用程序和包。</p>
+
+<h3 id="before">以前</h3>
+
+
+<h3 id="after">在...之后</h3>
+
+
+<p>“之前”的图表准确地显示了现在应用程序是如何通过 SDK 分发的。它们被打包成一个应用程序，这个应用程序就是提交给谷歌 Play 商店的东西。在“之后”图中，SDK 开发者不再将他们的 SDK 直接放入应用程序中；相反，SDK 开发人员会上传 SDK 并将其发布到谷歌 Play 商店。然后，谷歌 Play 商店将处理应用程序以及任何 SDK 依赖项向最终用户设备的分发。谷歌还有意在其图表中使用“应用商店”一词，因为它是一个开放的通用解决方案，可以跨其他商店工作。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="changes-to-how-sdks-and-apps-are-built-run-and-distributed">SDK 和应用构建、运行和分发方式的变化</h2>
+<p>SDK 运行时的最初提案提出了跨五个关键领域的一系列变化:</p>
+
+<ul> <li>接近</li> <li>执行</li> <li>通信</li> <li>发展</li> <li>分配</li> </ul>
+
+<p>Google 希望为 SDK 运行时定义以下权限集:</p>
+
+<ul> <li><a href="https://developer.android.com/reference/android/Manifest.permission#INTERNET"> <code dir="ltr" translate="no">INTERNET</code> </a>:接入互联网能够与网络服务进行通信。</li> <li><a href="https://developer.android.com/reference/android/Manifest.permission#ACCESS_NETWORK_STATE"> <code dir="ltr" translate="no">ACCESS_NETWORK_STATE</code> </a>:访问网络信息。</li> <li>访问<a href="https://developer.android.com/design-for-safety/ads/introduction#privacy-preserving-apis">隐私保护 API</a>的权限，这些 API 提供核心广告功能，无需访问跨应用标识符。权限名称尚未最终确定，但这些 API 将由应用程序对这些权限的访问来控制。</li> <li><a href="https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient.Info#public-string-getid"> <code dir="ltr" translate="no">AD_ID</code> </a>:能够请求广告 ID。这也将受到应用程序对该权限的访问的限制。</li> <li><code dir="ltr" translate="no">BIND_GET_INSTALL_REFERRER_SERVICE</code>:能够使用<a href="https://developer.android.com/google/play/installreferrer"> Google Play 安装引用 API </a>来确定应用程序安装的来源。</li> </ul>
+
+<p>该公司还希望限制 SDK 对正在运行的应用程序内存的访问，同时防止应用程序访问 SDK 自己的数据。应用程序将无法直接访问其 SDK 存储，反之亦然，外部存储不会对 SDK 开放，并且既有所有 SDK 都可以访问的存储，也有给定 SDK 专用的存储。</p>
+
+<p>至于 SDK 将如何运行，它们的运行优先级将略低于应用本身。也就是说，如果出现需要系统关闭的情况，很可能在 SDK 运行时终止后不久，应用就会被终止。在没有同时终止的情况下，或者在有不同原因的情况下，该提案向应用程序开发人员提供相关的生命周期回调方法，以便他们处理该异常并重新初始化 SDK 运行时。运行时 SDK 将无法使用通知 API 在任何时间点发送用户通知。</p>
+
+<p>最后，谷歌指出，这是一个普遍的建议，并不是任何特定的应用商店所独有的。虽然它可能会被内置到谷歌 Play 商店中，但没有理由为什么其他应用商店不能采用类似的结构。谷歌表示，以下好处显而易见:</p>
+
+<ul> <li>确保 SDK 的质量和一致性。</li> <li>简化面向 SDK 开发人员的发布。</li> <li>加快已安装应用的 SDK 次要版本更新的推出。</li> </ul>
+<p class="ad-even"> </p>
+
+
+<h2 id="the-android-privacy-sandbox-looks-promising">Android 隐私沙盒看起来很有前景</h2>
+<p>谷歌的发布时间表是，2022 年的 Q1 涉及最初的设计提案和设计反馈和迭代。开发者预览版将在今年晚些时候推出，测试版将在年底推出。最后，2023 年将开始大规模测试。这些预览版和测试版将独立于 Android 13 的发布节奏。一旦推出，设置应用程序中也会有面向用户的控件。</p>
+
+<p>在我看来，Android 隐私沙盒<em>看起来</em>很有前景，但我们必须等待，看看公司如何实现它。完全有可能开发人员不喜欢它，或者它实际上会导致比它解决的问题更多的问题。开发人员被鼓励阅读谷歌发布的文档，以更好地感受 Android 隐私的未来。</p>
+
+<p>这只是一个提议，并不是对未来 Android 版本中会发生什么的明确展望，但很可能会非常接近。我们将密切关注任何进一步的发展！</p>
+
+<hr/>
+
+<p><strong>来源:</strong> <a href="https://developer.android.com/design-for-safety/ads/sdk-runtime">安卓开发者文档</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

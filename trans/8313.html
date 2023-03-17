@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>How to sideload Android apps on Windows 11's Subsystem for Android</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何在 Windows 11 的 Android 子系统上下载 Android 应用</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/how-to-sideload-android-apps-on-windows-11/#0001-01-01">https://www.xda-developers.com/how-to-sideload-android-apps-on-windows-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>所以你只需在你的<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a> PC 上为 Android 设置<a href="https://www.xda-developers.com/android-apps-available-windows-11-beta-channel/"> Windows 子系统。你迫不及待地想在你的电脑上运行你最喜欢的</a><a href="https://www.xda-developers.com/best-android-apps/">安卓应用</a>，但是有一个问题！微软已经与亚马逊合作，将亚马逊应用商店与微软商店整合，这意味着你不能在 Windows 的原生安卓子系统上正式访问谷歌 Play 商店庞大的应用和游戏库。雪上加霜的是，目前并非所有亚马逊 Appstore 应用都可以在 Windows 11 上使用— <a href="https://www.xda-developers.com/amazon-appstore-windows-11-small-selection-android-apps/">名单目前仅限于 50 个精选应用</a>。</p>
+
+  
+<p/><p><strong> <a href="https://www.xda-developers.com/hands-on-android-apps-windows-11/">在 Windows 11 上用安卓应用动手</a> </strong></p>
+
+<p>幸运的是，微软为 Android 环境提供了一个有效的调试选项。因此，您可以使用常规的<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/"> Android 调试桥(ADB) </a>二进制文件从主机 Windows 11 OS 访问和调试底层 Android 层。由于我们可以<a href="https://www.xda-developers.com/how-to-sideload-install-android-app-apk/">使用 ADB 安装任何标准的 Android 应用安装包</a> (APK)，所以也可以在 Android 的 Windows 子系统上下载亚马逊应用商店中没有的应用。</p>
+
+<hr/>
+
+
+<h2 id="how-to-sideload-apps-on-the-windows-subsystem-for-android">如何在 Android 的 Windows 子系统上下载应用程序</h2>
+<p>请记住，Android 的整个 Windows 子系统都是测试版软件。亚马逊和微软策划的应用程序可能会针对环境进行大量优化，这就是为什么他们在第一批中成功获得了席位。话虽如此，许多其他 Android 应用程序开箱后应该也能正常运行。测试兼容性的唯一方法是侧装它们，这也是本教程派上用场的地方。</p>
+
+<p>要在 Windows 11 的 Android 子系统上下载任何 Android 应用程序，请按照以下步骤操作:</p>
+
+<ol> <li>从可靠的来源下载您想要的应用程序或游戏的 APK 文件。请记住，您不必坚持使用 x86(-64)版本的 APK，因为得益于<a href="https://www.intel.com/content/www/us/en/newsroom/news/intel-tech-unleashes-windows-experience.html">英特尔桥技术</a>，WSA 可以在 x86 平台上模拟原生 ARM(64)应用。话虽如此，如果你有一个 ARM 笔记本电脑上的<a href="https://www.xda-developers.com/best-windows-on-arm/"> Windows，那么总是选择 ARM(64) APK 以获得最佳性能。</a><ol> <li>如果这是一个社区开发的项目，在<a href="https://forum.xda-developers.com/"> XDA 论坛</a>或类似平台上查看各自的主题。</li> <li>开源应用的 apk 通常可以通过 GitHub repo 找到，或者在像 F-Droid 这样的商店里找到。</li> <li>最后，还有第三方 APK 托管资源，如<a href="https://www.apkmirror.com/"> APK 镜像</a>和<a href="https://apkpure.com/"> APKPure </a>，值得寻找。</li> </ol> Keep in mind that you don't have to stick with the x86(-64) variant of the APK, as WSA can emulate native ARM(64) apps on x86 platforms, thanks to </li> <li>一旦你拿到了 APK 文件，启动 Android 环境下的 Windows 子系统。单击“开始”菜单，然后单击“所有应用程序”按钮，找到名为“android™️. windows 子系统”的快捷方式你也可以在搜索框中输入“子系统”来加快搜索速度。</li> <li>此时，您应该会看到 Android 设置屏幕的 Windows 子系统。向下滚动并启用“开发者模式”切换。</li> <li>由于这个特定的 Android 实例与主机 Windows 内核一起运行，我们可以通过 localhost (127.0.0.1)接口访问它。事实上，Android 层也将自己绑定到一个来自 172.30.0.0/24 私有网络的随机 IP，这可以在 IP 地址字段下看到。<ul> <li>如果您无法看到 172.30.x.x 形式的 IP 地址，请单击设置屏幕顶部的“文件”选项，通过打开其集成的文件资源管理器应用程序来启动 Android 层。然后单击“刷新”按钮以获得列出的 IP 地址。你现在可以通过点击一个按钮来复制它。</li> </ul> </li> <li>Android 层一运行，我们就可以从主机 Windows 11 OS 使用 ADB 连接。您可以使用端口为 58526 的 localhost (127.0.0.1)或设置窗口中显示的 IP 地址来建立连接。考虑到您已经将 ADB 设置为<a href="https://www.xda-developers.com/adb-fastboot-any-directory-windows-linux/">在您的 PC 上的任何位置使用它</a>，打开一个新的 Windows 终端窗口并键入以下内容之一:<pre> <code class="hljs css"><span class="hljs-selector-tag">adb</span> <span class="hljs-selector-tag">connect</span> 127<span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.1</span><span class="hljs-selector-pseudo">:58526</span></code> </pre>或<pre> <code class="hljs xml">adb connect <span class="hljs-tag">&lt;<span class="hljs-name">IP</span> <span class="hljs-attr">address</span>&gt;</span></code> </pre>(IP 地址是您在上一步中复制的地址)</li> <li>现在，我们可以通过亚行安装我们想要的 APK。命令应该是这样的:<pre> <code class="hljs xml">adb install <span class="hljs-tag">&lt;<span class="hljs-name">full_path_to_the_APK_file</span>&gt;</span></code> </pre>如果你想要的应用程序是以 AAB/APKS/APKM/XAPK 这样的应用程序捆绑包的形式提供的，而不是常规的 APK 文件，那么看看我们的<a href="https://www.xda-developers.com/how-to-sideload-install-android-app-apk/#adb"> Android 应用程序侧装教程</a>来安装它。</li> <li>如果一切顺利，Android 应用程序的快捷方式将在 Windows 的开始菜单下创建——就像任何常规的 Windows 应用程序一样。点击快捷方式启动应用程序。<ul> <li>如果您找不到 Android 应用程序的快捷方式，您可以使用以下命令手动运行它:<pre> <code class="hljs xml">%LOCALAPPDATA%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\WsaClient.exe /launch wsa:</code> </pre>例如，要运行 Subway Surfers，请在 Windows 的运行提示中输入以下内容:<pre> <code class="hljs javascript">%LOCALAPPDATA%\Microsoft\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForAndroid_8wekyb3d8bbwe\WsaClient.exe /launch wsa:</code> </pre></li> <li>您也可以从连接的 ADB shell 窗口直接调用应用:<pre> <code class="hljs xml">adb shell monkey -p <span class="hljs-tag">&lt;<span class="hljs-name">PACKAGENAME</span>&gt;</span> 1</code> </pre>例如，要启动地铁冲浪者，命令应该是:<pre> <code class="hljs css"><span class="hljs-selector-tag">adb</span> <span class="hljs-selector-tag">shell</span> <span class="hljs-selector-tag">monkey</span> <span class="hljs-selector-tag">-p</span> <span class="hljs-selector-tag">com</span><span class="hljs-selector-class">.kiloo</span><span class="hljs-selector-class">.subwaysurf</span> 1</code> </pre></li> <li>另一种访问侧装应用的简单方法是<a href="https://www.xda-developers.com/windows-subsystem-for-android-launcher-app/">在 Android 的 Windows 子系统上安装一个启动器</a>。</li> </ul> </li> <li>就是这样！</li> </ol>
+
+<p>请注意，侧装应用程序将可以访问网络，这意味着你可以在 Android 的 Windows 子系统中安装和使用 Firefox 等流行浏览器的 Android 版本，然后直接使用它下载应用程序。Windows 11 还允许你对 Android 应用应用防火墙规则。虽然可以侧载一个依赖谷歌服务的应用程序，但由于缺乏谷歌服务，它会在试图运行时崩溃，尽管你可以尝试使用 microG 作为一种可能的解决方法。</p>
+
+<hr/>
+
+<hr/>
+
+<p><strong>如何看待 Windows 11 上 Android 的 Windows 子系统？你已经开始用它在你的电脑上玩你最喜欢的安卓游戏了吗？请在下面的评论区告诉我们。</strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

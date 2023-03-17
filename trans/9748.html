@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Google drops plans to make NNAPI drivers updatable through Google Play Services</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌放弃了通过 Google Play 服务更新 NNAPI 驱动程序的计划</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-drops-plans-nnapi-drivers-updatable/#0001-01-01">https://www.xda-developers.com/google-drops-plans-nnapi-drivers-updatable/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">谷歌放弃了通过 Google Play 服务更新 NNAPI 驱动程序的计划</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">据报道，谷歌已经放弃了通过 Google Play 服务更新 NNAPI 的计划。不过，该公司没有透露任何有关这一变化的细节。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p>在去年的 I/O 开发者大会上，<a href="https://www.xda-developers.com/google-machine-learning-faster-more-consistent-across-android/">谷歌宣布</a>它正在与高通合作，从<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>开始，通过 Google Play 服务使支持 Android 中 AI/ML 功能的神经网络 API(NNA pi)可更新。此举背后的想法是减少碎片，并允许开发人员对运行不同版本 Android 的设备使用相同的 NNAPI 规范。在宣布之后，Android ML 团队悄悄地将可更新的 NNAPI 平台驱动程序计划推迟到了<a href="https://www.androidauthority.com/android-13-features-3089673/"> Android 13 </a>。现在，据报道，该团队已经完全放弃了这一努力。</p>
+
+  
+<p>根据最近来自<a href="https://blog.esper.io/google-abandons-updatable-nnapi-drivers-android-13/"><em/></a>的报道，Android ML 团队已经<a href="https://android-review.googlesource.com/c/platform/packages/modules/NeuralNetworks/+/1984241">在本周向 AOSP Gerrit 提交了</a> <a href="https://android-review.googlesource.com/c/platform/hardware/interfaces/+/1985407">新补丁</a>，这表明谷歌正在放弃通过 Google Play 服务更新 NNAPI 驱动程序的计划。新的补丁旨在删除任何与 NNAPI 可更新性相关的代码，因为 Android ML 团队没有推进其可更新性计划。</p>
+
+
+
+
+
+<p/><p><em>补丁从 NNAPI 运行时和 HAL 中删除 isUpdatable 查询</em></p>
+
+<p>正如提交描述所解释的:<em>“nn API 最初计划通过 GMSCore 交付更新的平台驱动程序。这些可更新的驱动程序将通过 NN sAIDL 实用程序代码进行检索，并且已知可通过 Manager.cpp 的 Device::I updatable 查询进行更新。然而，NNAPI 最终没有推进其可更新性计划。</em></p>
+
+<p>谷歌没有提供这一举动背后的任何推理，所以我们不能肯定地说为什么 Android ML 团队放弃了努力。然而，这种变化并不一定意味着 Google 不会让 NNAPIs 可更新。该公司可能会在未来选择不同的方法，但我们可以肯定的是，这不会发生在 Android 12 或 Android 13 中。</p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

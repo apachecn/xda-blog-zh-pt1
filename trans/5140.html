@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Flutter 2.0 introduces production-quality support for building web apps</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Flutter 2.0 引入了对构建 web 应用程序的生产质量支持</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/flutter-2-0-web-stable/#0001-01-01">https://www.xda-developers.com/flutter-2-0-web-stable/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>Flutter 2.0 已经发布到稳定，有了它，就有了稳定的 web 支持。这意味着 Flutter 现在可以安全地用于生产质量的 web 项目。</p>
+
+  
+<p>说了这么多，让我们看看 Web 的 Flutter 需要什么。</p>
+
+
+
+
+<h2 id="renderers">渲染器</h2>
+<p>Flutter for Web 有两种方式可以在浏览器中显示您的应用程序。它可以使用 HTML、CSS 和 Canvas 来呈现它，也可以使用 CanvasKit。各有各的优势。HTML 渲染器使用更多的基本元素，因此下载和加载速度更快。CanvasKit 渲染器有点重，但当屏幕上有很多内容时，它可以提供更好的性能。</p>
+
+<p>默认情况下，Flutter web 应用程序会根据客户端设备自动选择使用哪个渲染器。移动设备将被发送 HTML 渲染器，而桌面设备将获得 CanvasKit。如果您想使用特定的渲染器，Google 提供了总是使用其中一个的选项。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/Flutter-Architecture-Overview.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;An architectural overview of Flutter. Source: Google&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/Flutter-Architecture-Overview.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/Flutter-Architecture-Overview.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/Flutter-Architecture-Overview.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/Flutter-Architecture-Overview.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="Flutter 2.0 architecture" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/Flutter-Architecture-Overview.jpg" src="../Images/8f5941ccb43feafe9b903a2a581723fd.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/Flutter-Architecture-Overview.jpg"/> </picture> <figcaption class="body-img-caption">An architectural overview of Flutter. Source: Google</figcaption> </figure> </div>
+
+
+ </div>
+
+<p class="ad-odd"> </p>
+
+
+<h2 id="web-specific-features">特定于 Web 的功能</h2>
+<p>尽管 Flutter 是跨平台的，但仍然有一些东西是特定于每个支持的平台的。这是因为有些东西只存在于一个平台上，或者以某种需要特殊 API 的方式工作。网络也不例外。</p>
+
+<p>Flutter 2.0 增加了对定制 URL 策略、web 应用深度链接和适当 PWA 支持等的支持。当您为 web 项目创建 Flutter 时，将会为您生成一个 Web 清单和服务工作者模板。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="gestures-amp-keyboard">手势和键盘</h2>
+<p>要真正实现跨平台，框架需要考虑它的目标。如果它运行在桌面平台上，它应该响应键盘快捷键。在手机上，它应该响应点击和滑动手势。</p>
+
+<p>嗯，Web 的 Flutter 做了这两件事。通过网络，它的目标是桌面和移动设备。随着 Flutter for Web 的稳定发布，将支持本地手势，具体取决于客户端平台和输入源。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="plugins">插件</h2>
+<p>像任何好的语言一样，Flutter 支持库，或者插件。作为一种安全措施，插件需要指定它们的平台兼容性。由于 Flutter for Web 是一个相对较新的框架，很多插件，包括谷歌自己的，都不支持它。</p>
+
+<p>随着 Flutter 2.0 的发布，一大堆谷歌的 Flutter 插件，包括 Firebase 套件(T1)，都被标记为网络兼容。</p>
+
+<hr/>
+
+<p>虽然这看起来不是很多，但这些是相当大的功能。Flutter 2.0 获得了一个完整的平台，为了将 Flutter for Web 集成到框架的其余部分，做了大量的工作。</p>
+
+<p>你对 Web 的 Flutter 有什么看法？对于 web 开发来说是一个好的选择吗？让我们知道！</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>You can now connect USB devices in Windows Subsystem for Linux under Windows 11</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>现在可以在 Windows 11 下的 Windows 子系统 for Linux 中连接 USB 设备了</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/wsl-connect-usb-devices-windows-11/#0001-01-01">https://www.xda-developers.com/wsl-connect-usb-devices-windows-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>微软不久前推出了用于 Linux 的 Windows 子系统(WSL ),它支持直接在 Windows 系统上运行 Linux 应用程序。作为一个如此复杂的兼容层，WSL 有一些限制。最初的实现甚至没有使用成熟的 Linux 内核，因此一些应用程序面临兼容性问题。版本 2 做了很多改进，但仍然缺少一些东西:对连接物理 USB 设备的支持。</p>
+
+  
+<p>如果您是 Windows Subsystem for Linux 的活跃用户，并且希望直接从运行在 WSL 下的 Linux 实例访问 USB 设备，那么您会很高兴地知道在这方面已经取得了重大进展。感谢微软对开源项目 usbipd-win 的贡献，你现在可以在 WSL 中享受 USB 直通访问了。这意味着最终用户可以在 Linux 的 Windows 子系统下执行像刷新 Android 设备这样的任务，否则 Linux 子系统不会支持这些任务。</p>
+
+ 
+<h2 id="what-is-usbipd-win">什么是 usbipd-win？</h2>
+<p>usbipd-win 项目的目的是创建一个解决方案，将本地连接的 USB 设备共享给其他机器，包括 Hyper-V guest 和 WSL2。然而，官方的 WSL2 Linux 内核过去缺乏对<a href="https://www.kernel.org/doc/html/latest/usb/usbip_protocol.html"> USB/IP 协议</a>的支持，需要用户自己构建内核。</p>
+
+<p>由于 WSL 内核版本为 5.10.60.1，所需的参数是开箱即用配置的，因此不需要手动重新编译。微软还为该项目贡献了一个命令行界面，既可以让 USB 设备在 Windows 上共享，又可以从 WSL 中无缝连接。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="connect-usb-devices-under-windows-subsystem-for-linux">连接 Linux 的 Windows 子系统下的 USB 设备</h2>
+<p>在开始之前，确保你运行的是<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>并且已经安装了<a href="https://www.xda-developers.com/windows-subsystem-linux-microsoft-store-windows-11/">所有的 WSL 更新</a>。如前所述，您需要一个 WSL 2 Linux 发行版来实现这一点。</p>
+
+<ol> <li>从 WSL 中运行以下命令:<pre> <code class="hljs ">uname -a</code> </pre>它应该报告 5.10.60.1 或更高版本的内核版本，如下所示:</li> <li>负责 usbipd-win 项目的 GitHub repo。然后<a href="https://github.com/dorssel/usbipd-win/releases/latest">下载并安装最新版本</a>。<ul> <li>最新版本的 usbipd-win 支持静默驱动程序安装，这要归功于 Windows 硬件兼容性计划认证的驱动程序。它还支持 Windows 11 的<a href="https://www.xda-developers.com/windows-11-build-22494-mute-button/"> Dev channel builds </a>。</li> <li>除了 GitHub 上的发布页面，你还可以使用<a href="https://github.com/microsoft/winget-cli"> Windows 包管理器 CLI </a>(又名 winget)来安装和更新应用。<pre> <code class="hljs sql">winget <span class="hljs-keyword">install</span> </code> </pre></li> </ul> </li> <li>安装 USB/IP 用户空间工具和 USB 硬件标识符数据库。如果你在 WSL 上运行 Ubuntu，执行下面的命令:<pre> <code class="hljs css"><span class="hljs-selector-tag">sudo</span> <span class="hljs-selector-tag">apt</span> <span class="hljs-selector-tag">install</span> <span class="hljs-selector-tag">linux-tools-5</span><span class="hljs-selector-class">.4</span><span class="hljs-selector-class">.0-77-generic</span> <span class="hljs-selector-tag">hwdata</span></code> </pre><ul> <li>对于其他发行版，请参考相关软件包管理工具的文档。</li> </ul> </li> <li>现在我们需要修改 sudo 选项，以允许 root 用户找到<code>usbip</code>命令。为此，使用<code>sudo visudo</code>编辑<code>/etc/sudoers</code>文件，并将<code>/usr/lib/linux-tools/5.4.0-77-generic</code>添加到<code>secure_path</code>的开头。它应该如下所示:<pre> <code class="hljs javascript">Defaults        secure_path=<span class="hljs-string">"/usr/lib/linux-tools/5.4.0-77-generic:/usr/local/sbin:..."</span></code> </pre></li> <li>以管理员身份打开一个新的终端实例，并键入以下命令以列出所有连接到 Windows 的 USB 设备。<pre> <code class="hljs php">usbipd wsl <span class="hljs-keyword">list</span></code> </pre></li> <li>记下您想要连接到 WSL 的 USB 设备的 BUSID 值。接下来，运行以下命令来启动附加过程。WSL 会提示您输入密码来运行 sudo 命令。<pre> <code class="hljs xml">usbipd wsl attach --busid <span class="hljs-tag">&lt;<span class="hljs-name">busid</span>&gt;</span></code> </pre>例如，这里我们将 Android 设备的快速启动接口从主机 Windows 11 实例附加到 WSL:</li> <li>现在打开一个新的 WSL 2 实例并运行<code>lsusb</code>命令来查看可用的 USB 设备。它应该列出连接的设备。</li> <li>就是这样！您现在可以直接从 WSL 使用您的 USB 设备。</li> </ol>
+
+<p>完成后，您可以使用下面显示的命令分离设备。再次，从作为管理员运行的终端实例运行它。</p>
+
+<pre> <code class="hljs xml">usbipd wsl detach --busid <span class="hljs-tag">&lt;<span class="hljs-name">busid</span>&gt;</span></code> </pre>
+<p>要了解更多信息，请看一下<a href="https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/">官方公告</a>和<a href="https://github.com/dorssel/usbipd-win/wiki/WSL-support"> usbipd-win 的 GitHub Wiki 部分</a>。</p>
+
+ 
+<p class="w-rich w-youtube" id="I2jOuLU4o8E">  </p>
+
+
+<hr/>
+
+<p><em>感谢 XDA 资深会员<a href="https://forum.xda-developers.com/m/some_random_username.8234677/"> Some_Random_Username </a>的提示！</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

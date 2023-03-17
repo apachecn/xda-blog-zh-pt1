@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>What's new in Mozilla Firefox 90 for desktop and Android</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>桌面版和安卓版的 Mozilla Firefox 90 有什么新功能</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/firefox-90-changelog/#0001-01-01">https://www.xda-developers.com/firefox-90-changelog/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">Firefox 90 在桌面和安卓系统上都有大量的改进</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">Firefox 90 现在正在 Windows、macOS、Linux 和 Android 上推出，具有令人印象深刻的性能提升和更好的自动填充功能。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p/><p>Firefox 是少数几个拥有自己渲染引擎的浏览器之一，Opera、Brave、Edge 和其他浏览器现在都使用谷歌的 Chromium 引擎。这意味着 Mozilla 可以尝试谷歌可能不感兴趣的新改进和渲染变化，随着浏览器的更多部分用 Rust 编程语言重写，Firefox 变得越来越快。Mozilla 现在正在桌面和安卓平台上推出 90 版 Firefox 浏览器，并做了一些有益的改进。</p>
+
+  
+<p>桌面上的 Firefox 90 增加了保存、管理和自动填写信用卡信息的功能，这是多年来在 Chrome 和 T4 Safari 上已经有的功能。此次更新还推出了 WebRender(也称为<a href="https://wiki.mozilla.org/Platform/GFX/Quantum_Render"> Quantum Render </a>)，这是一种用 Rust 编写的速度更快的页面合成器，适用于大多数电脑。除了 Chromebooks 和芯片组使用 PowerVR 和 Adreno 4(骁龙 808，骁龙 415 等)的手机/平板电脑，所有 Android 设备上都已经可以使用 WebRender。)图形。今年早些时候 Chrome<a href="https://www.xda-developers.com/chrome-88-password-protections-tab-search/"/>中也移除了 Firefox 90 中的 FTP 支持。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_2"><h3 id="firefox-90-desktop-changelog">Firefox 90 桌面变更日志</h3><ul> <li>在 Windows 上，当 Firefox 没有运行时，<a href="https://support.mozilla.org/kb/enable-background-updates-firefox-windows">更新现在可以在后台</a>应用。</li> <li>Firefox for Windows 现在提供了一个新的页面<a href="https://support.mozilla.org/kb/identify-problems-third-party-modules-firefox-windows">关于:第三方</a>来帮助识别由第三方应用程序引起的兼容性问题</li> <li><a href="https://support.mozilla.org/kb/https-only-prefs">仅 HTTPS 模式的例外情况</a>可在“关于:首选项#隐私”中管理</li> <li>打印到 PDF 现在产生工作超链接</li> <li>“在新标签中打开图像”上下文菜单项现在默认在背景标签中打开图像和媒体</li> <li>大多数没有硬件加速 WebRender 的用户现在将使用软件 WebRender。</li> <li>改进的软件 web 渲染性能</li> <li>FTP 支持已被移除</li> <li>Firefox 的 SmartBlock 功能第二版进一步改善了隐私浏览。第三方脸书脚本被屏蔽，以防止你被跟踪，但现在，如果你决定在任何网站上“用脸书登录”，它们会“及时”自动加载。</li> <li>DevTools 中提供了对私有字段的支持(<a href="https://github.com/tc39/proposal-class-fields#private-fields"> TC39 提案</a>，阶段 3)。支持包括:对象检查、自动完成、表达式求值、变量工具提示和漂亮的打印(<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1650188"> bug </a>)</li> <li>支持<a href="https://blog.mozilla.org/security/2021/07/12/firefox-90-supports-fetch-metadata-request-headers/">获取元数据请求头</a>，这允许 web 应用程序更好地保护自己和用户免受各种跨来源的威胁。</li> <li>添加了使用存储在硬件令牌或操作系统存储中的客户端身份验证证书的功能。</li> <li>网络面板在响应标签中显示了对字体的 HTTP 请求的预览(<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=872078"> bug </a>)</li> <li>各种<a href="https://www.mozilla.org/security/advisories/mfsa2021-28/">安全修复</a></li> </ul> </div></section>
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_3"><h3 id="firefox-90-android-changelog">火狐 90 安卓变更日志</h3><ul> <li>Firefox 现在可以<a href="https://support.mozilla.org/kb/automatically-fill-credit-card-information-firefox">为你保存、管理和自动填写信用卡信息</a>，让在 Firefox 上购物更加方便。</li> <li>现在，使用卸载事件侦听器的网页启用了后退/前进缓存(也称为 BFCache ),使得这些页面上的后退和前进导航速度更快。</li> <li>需要导入用户 Android 证书的用户可以通过<a href="https://github.com/mozilla-mobile/fenix/wiki/%22Secret-settings%22-debug-menu-instructions">秘密设置</a>进行导入</li> <li>各种稳定性和<a href="https://www.mozilla.org/security/advisories/mfsa2021-28/">安全性修复</a></li> </ul> </div></section>
+<p>与此同时，<a href="https://www.mozilla.org/en-US/firefox/android/90.0/releasenotes/"> Android 版 Firefox </a>也获得了同样的信用卡自动充值支持。Mozilla 还为一些页面推出了后退/前进缓存(BFCache)，这是<a href="https://www.xda-developers.com/back-forward-google-chrome-faster-bfcache/">去年在 Android 版 Chrome 中出现的</a>(谷歌<a href="https://www.xda-developers.com/google-chrome-desktop-back-forward-cache/">仍在桌面浏览器上测试它</a>)。不幸的是，Firefox 90 for Android 不包括期待已久的通用扩展支持<a href="https://www.androidpolice.com/2020/09/03/firefox-update-faces-backlash-due-to-missing-features-and-few-supported-extensions/">的回归——你仍然必须从应用程序设置中的少数可用选项中进行选择。</a></p>
+
+<p>可以从<a href="https://www.mozilla.org/en-US/firefox/new">浏览器官网</a>下载桌面平台的 Firefox。安卓版本在谷歌 Play 商店的<a href="https://play.google.com/store/apps/details?id=org.mozilla.firefox">有售。</a></p>
+
+ 
+
+
+</div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

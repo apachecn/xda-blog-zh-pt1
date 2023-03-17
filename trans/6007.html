@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Future Pixel phones won't get unlimited Google Photos backups</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>未来的 Pixel 手机不会获得无限制的 Google 相册备份</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/pixel-phones-unlimited-google-photos-backups-with-storage-saver-option/#0001-01-01">https://www.xda-developers.com/pixel-phones-unlimited-google-photos-backups-with-storage-saver-option/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_0"><p><strong>更新 1 (05/06/2021 @ 08:56 PM ET): </strong>看起来“存储节省器”只是 Google 相册中现有“高质量”选项的新名称。<a href="#update1">点击这里了解更多信息。今天早些时候发表的这篇文章保留在下面。</a></p> </div></section>
+<p/><p>从下个月开始，Google 相册<a href="https://www.xda-developers.com/google-photos-unlimited-free-storage-expires-next-month/">将不再为存储“高质量”照片提供免费的无限存储空间</a>。这意味着在 2021 年 6 月 1 日之后上传到 Google 相册的任何新照片，无论是“高质量”、“原始质量”还是“快速质量”，都将计入分配给你的 Google 帐户的 15GB 限制。如果你用完了这个限额，你将不得不为 Google One 付费。幸运的是，目前的谷歌 Pixel 手机不受此影响，将继续终身获得无限制的高质量上传。有报道称，谷歌不打算在未来的像素上提供这项额外待遇。该公司甚至正式证实，未来的 Pixel 手机确实<a href="https://www.xda-developers.com/future-pixel-phones-reportedly-wont-get-unlimited-google-photos-backups/">不会获得无限的高质量照片备份</a>。但谷歌似乎仍然可以在未来的 Pixel 手机上提供某种形式的无限备份。</p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_2"><p>APK 拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p>在谷歌照片应用 v5.4.1 中，我们发现了一个新的存储保护照片质量选项的证据，该选项可以允许未来的 Pixel 手机进行无限备份。</p>
+
+<p>目前，Google 相册提供三种备份选项:原始、高质量和快速质量(在特定市场)。但以下新字符串表明，谷歌正在努力增加一个新的存储保护选项，似乎可以让你备份照片的质量略有下降。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_autobackup_particle_items_left_with_saver_storage_policy"</span>&gt;</span>{count, plural, =1{1 item left • Storage saver} other{# items left • Storage saver}}<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_backup_settings_saver_title_with_description"</span>&gt;</span>Storage saver (slightly reduced quality)<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>新的存储保护选项将允许 Pixel 手机免费上传无限的照片和视频。由于现有的 Pixel<a href="https://www.xda-developers.com/google-photos-preps-same-day-prints-7-eleven-storage-management-features/">已经拥有无限的高质量备份特权</a>，我们猜测这一变化很可能适用于未来的 Pixel 手机。或者，谷歌也可能只是将现有的“高质量”选项更名为“存储节省程序”，因为它们在描述中都提到了同一个“质量略有下降”的短语。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_cloudstorage_strings_impl_saver_learn_more_footer_pixel"</span>&gt;</span>Unlimited storage in Storage saver only applies to photos <span class="hljs-symbol">&amp;amp;</span> videos backed up from this Pixel device. <span class="hljs-symbol">&amp;lt;</span>a href=help:&gt;Learn more<span class="hljs-symbol">&amp;lt;</span>/a&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_cloudstorage_strings_impl_saver_learn_more_footer_pixel_express"</span>&gt;</span>Unlimited storage in Storage saver or Express only applies to photos <span class="hljs-symbol">&amp;amp;</span> videos backed up from this Pixel device. <span class="hljs-symbol">&amp;lt;</span>a href=help:&gt;Learn more<span class="hljs-symbol">&amp;lt;</span>/a&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_cloudstorage_strings_impl_storage_meter_progress_pixel_unlimited_saver"</span>&gt;</span>Backing up in Storage saver quality from your %s is free and unlimited<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_cloudstorage_strings_saver_title"</span>&gt;</span>Storage saver<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_pixel_offer_full_pixel_saver_backup_quality_description"</span>&gt;</span>New items will back up in Storage saver backup quality (slightly reduced quality). Items uploaded before %s will remain free at Original quality.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_pixel_offer_full_pixel_updated_backup_saver_quality_summary"</span>&gt;</span>New photos will back up in Storage saver backup quality<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_quotamanagement_summary_free_hq_storage_pixel_saver_backup"</span>&gt;</span>You’re backing up in Storage saver quality from your %s, which is free <span class="hljs-symbol">&amp;amp;</span> unlimited<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_quotamanagement_summary_free_saver_storage_pixel_ab_off"</span>&gt;</span>Storage saver quality on this device is free <span class="hljs-symbol">&amp;amp;</span> unlimited. Turn on in <span class="hljs-symbol">&amp;lt;</span>a href=backup_settings&gt;backup settings<span class="hljs-symbol">&amp;lt;</span>/a&gt;.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"photos_quotamanagement_summary_free_saver_storage_pixel_oq_backup"</span>&gt;</span>Backing up in Storage saver quality on this device is free <span class="hljs-symbol">&amp;amp;</span> unlimited. Change in <span class="hljs-symbol">&amp;lt;</span>a href=backup_settings&gt;backup settings<span class="hljs-symbol">&amp;lt;</span>/a&gt;.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>这个新的存储保护选项还没有在 Google 相册中推出。如果我们发现任何新的证据，我们将更新这个帖子的更多细节。</p>
+
+<hr/>
+
+
+<h2 id="update-1-storage-saver-isn-t-a-new-backup-tier-in-google-photos">更新 1:“存储保护程序”不是 Google 相册中的新备份层</h2>
+<p>谷歌发言人联系了我们，并发表了以下声明:</p>
+
+<blockquote>
+<p/><h4>“我们之前宣布的关于 Pixel 设备的 Google 相册存储没有变化。我们正在为我们的照片备份选项探索新的名称，并且没有计划引入额外的存储选项。”</h4>
+ </blockquote>
+<p>因此，“存储保护程序”并不是 Google 相册中的新备份层，而是现有“高质量”层的新名称。谷歌正计划对更名进行 A/B 测试，这是有道理的，因为“高质量”和“原始质量”之间的区别可能会让一些人感到困惑。不幸的是，未来的 Pixel 手机仍将不受即将到来的存储政策变化<a href="https://www.xda-developers.com/google-photos-unlimited-free-storage-expires-next-month/">的影响，该变化将于下月</a>生效。</p>
+
+<p><em>本文更新于美国东部时间 2021 年 5 月 7 日下午 2:16，谷歌发言人发表声明。</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

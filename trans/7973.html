@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Outlook users are having issues with email apps, but there's a workaround</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Outlook 用户在使用电子邮件应用程序时遇到问题，但有一个解决方法</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/outlook-issues-email-apps-workaround/#0001-01-01">https://www.xda-developers.com/outlook-issues-email-apps-workaround/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>Outlook(或 Hotmail)电子邮件帐户的用户在使用第三方电子邮件应用程序时遇到了一些问题，导致他们无法使用这些应用程序收发电子邮件。9 月 24 日,<a href="https://answers.microsoft.com/en-us/outlook_com/forum/all/hotmail-account-not-downloading-email-as-of-sep-24/783b3b24-a305-41ef-af02-121a8eb15bd4">向微软</a>报告了这个问题，微软表示正在调查这个问题。该公司甚至提供了一个解决方案，包括将账户设置为 Exchange 账户，但这并不适用于所有人。</p>
+
+  
+<p><a href="https://forum.emclient.com/t/hotmail-not-working/44691/20">多份报告</a>也出现在 eM Client 的社区论坛上，这是一款 Windows 的第三方电子邮件应用，在那里我们可以找到更多答案。事情是这样的:在用第三方应用程序设置电子邮件帐户时，你经常会被要求提供帐户凭据。通过使用一种叫做 OAuth 的标准，电子邮件客户端可以与电子邮件提供商(在这种情况下是 Outlook)通信，并获得必要的信息以从服务器接收您的电子邮件数据。正如微软论坛上的一些用户和 eM 客户端社区上的<a href="https://forum.emclient.com/t/not-receiving-outlook-emails/76015/2">用户 Gary</a>所报告的那样，微软提供的 OAuth 证书是这里的问题，因为它不允许 Outlook 帐户通过这些应用程序连接到电子邮件服务器。</p>
+
+<p>上面提到了微软最初提供的一个解决方案——将你的电子邮件帐户添加为 Exchange 帐户，而不是 IMAP 帐户，IMAP 帐户是更“标准”的电子邮件协议。但是，免费的 Hotmail/Outlook 帐户无法连接到 Exchange 服务器，因此这只适用于商业帐户。</p>
+
+<p>然而，eM 客户端用户 Gary 为免费/个人 Outlook 帐户提供了另一种解决方案。由于 OAuth 不允许电子邮件客户端从 Outlook 服务器获取数据来接收电子邮件，所以用户只需手动设置电子邮件服务器。根据您的电子邮件客户端，执行此操作的步骤自然会有所不同，但您需要设置帐户以使用以下服务器:</p>
+
+<ul> <li><strong>收到的电子邮件/IMAP:</strong>imap-mail.outlook.com</li> <li><strong>外发电子邮件/SMTP:</strong>smtp-mail.outlook.com</li> </ul>
+
+<p>除了你的 Outlook 凭据之外，这将允许你继续使用第三方应用程序收发电子邮件，至少在微软修复其与 OAuth 的持续问题之前是如此。如果这在你的电子邮件客户端不起作用，微软有一个更详细的设置列表，你需要使用它来手动设置第三方电子邮件应用。同样值得指出的是，由于未知的原因，Android 的 Gmail 应用程序似乎仍然可以很好地连接到 Outlook 帐户，<a href="https://www.neowin.net/news/microsofts-outlook-imap-login-issue-is-affecting-several-third-party-email-clients/">根据<em>Neowin</em>T5】的说法，我们也可以使用 Mozilla Thunderbird 连接，没有任何问题。Thunderbird 默认不使用 OAuth，这大概是它工作的原因。</a></p>
+
+<p>截至今天，<a href="https://answers.microsoft.com/en-us/outlook_com/forum/osecurity-oother/imap-xoauth2-login-failure-several-clients/3ad3b3f9-77c2-4239-b168-1af5a3bbb6b9?messageId=4c916654-b310-432e-9011-f00653f5c485">该公司表示</a>它仍在调查电子邮件问题的全部程度，并认识到交换协议(正如它所建议的)并不是每个人都可行的选择。希望修复能早一点而不是晚一点，这些步骤将变得没有必要。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

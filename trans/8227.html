@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>A new Windows 11 build is out with redesigned emojis</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>新的 Windows 11 版本推出了重新设计的表情符号</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/a-new-windows-11-build-is-out-with-redesigned-emojis/#0001-01-01">https://www.xda-developers.com/a-new-windows-11-build-is-out-with-redesigned-emojis/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>今天，微软<a href="https://blogs.windows.com/windows-insider/2021/10/14/announcing-windows-11-insider-preview-build-22478/">向开发者频道发布了</a> <a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a> build 22478，在你过于兴奋之前，并没有太多新的东西。最大的新特点是它包括重新设计的表情符号，使用流畅的设计。新的 Windows 11 表情符号早在 7 月份就宣布了，但现在你可以使用它们了。</p>
+
+  
+
+
+<p>这些新表情符号实际上有两个部分。首先，Windows 11 中所有现有的表情符号都经过了重新设计，但在此基础上，还有新的表情符号 13.1 角色，如心在火上、脸有螺旋眼等等。</p>
+
+<p>也有一些小的变化。一个是，你现在可以通过带有面部识别功能的红外摄像头登录关闭的笔记本电脑。显然，你会为此使用一个外部摄像头，这并不罕见，因为有很多人在家工作。您还会发现，如果您在将鼠标悬停在音量滑块上时使用鼠标滚轮，就可以调整音量。</p>
+
+<p>该版本还增加了对更新堆栈包的支持。这些可以在下载和安装功能或质量更新之前添加到 Windows Update 体验中。</p>
+
+<p>和往常一样，Windows 11 Insider 预览版 build 22478 中有一堆修复和已知问题。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_6"><h3 id="windows-11-insider-preview-build-22478-fixes">Windows 11 内部预览版内部版本 22478 修复</h3><p><strong>【开始】</strong></p><ul> <li>如果在开始中打开用户配置文件弹出按钮后按 ESC 键，键盘焦点将不再丢失。</li> <li>更新了从 UWP 应用程序中锁定开始时的提示文本，所以它现在简单地说“你想锁定开始吗？”。</li> </ul><p><strong>【任务栏】</strong></p><ul> <li>解决了在最近的版本中导致通知中心陷入停止启动状态的问题。</li> <li>使用阿拉伯语和希伯来语时，当鼠标悬停在任务栏中的任务视图图标上时，添加新桌面的加号图标现在会正确显示。</li> <li>从任务栏中调出一个应用程序的跳转列表后，右击应用程序名称应该会显示正确的 pin 启动图标(一个 Pin 图标)。</li> <li>左键和右键同时点击任务栏不再会导致 explorer.exe 崩溃。</li> </ul><p><strong>【文件浏览器】</strong></p><ul> <li>修复了当导航到文件夹时命令栏进行不必要的计算，导致性能意外提高的问题。这也被认为是使用拖动选择文件以及使用箭头键在某些文件夹中导航时性能问题的根本原因。</li> <li>当多个文件资源管理器窗口打开时,“显示隐藏项目”选项不再会失去同步。</li> </ul><p><strong>【微件】</strong></p><p>以下两个问题已经在 Microsoft Edge 版本 95 中得到解决，目前为<a href="https://www.microsoftedgeinsider.com/"> Microsoft Edge Insiders </a>提供，因此我们将它们从已知问题列表中删除:</p><ul> <li>小部件面板可能显示为空。</li> <li>外接显示器上的小工具可能会以错误的尺寸显示。</li> </ul><p><strong>【搜索】</strong></p><ul> <li>当鼠标悬停在任务栏中的搜索图标上时，最近搜索弹出按钮不会在管理窗口处于焦点时立即消失。</li> </ul><p><strong>【输入】</strong></p><ul> <li>当使用任务栏设置为自动隐藏的平板电脑时，将焦点设置为文件资源管理器中的搜索框不应该使触摸键盘调用并立即消失。</li> <li>修正了手写面板在书写中文时无法插入文字的问题。</li> <li>缓解了 ctfmon 中可能发生的内存泄漏，该泄漏会随着时间的推移导致意外的资源使用。</li> <li>解决了少数用户在设置任何文本字段的焦点时导致 TextInputHost.exe 崩溃的问题。</li> </ul><p><strong>【设置】</strong></p><ul> <li>修复了当单选按钮更新时导致设置崩溃的问题，例如，如果您在设置中的声音页面打开时连接了额外的音频端点。</li> <li>改进了加载个性化设置中显示的主题的性能。</li> <li>如果一个非管理员用户在语言设置中改变了他们的显示语言，我们将不再显示可点击的退出按钮，因为它会弹出一个 UAC 对话框并引起混乱。</li> <li>在德语等语言中,“设置”中系统页面顶部的 Windows Update 条目不应再与其他选项(当显示时)错位。</li> <li>“讲述人”用户设置中的盲文选项现在应该与盲文输入/输出模式的实际状态同步。</li> <li>进行了更改，以帮助解决升级后网络和共享中心中的“媒体流选项”会意外恢复为默认设置的问题。</li> <li>提高了快速设置启动的可靠性。这一改变也应该有助于解决导致窗口不能完全呈现(只是一个细长的矩形)的问题。</li> <li>解决了一个问题，如果你点击快速设置中的媒体控制区域，在某些情况下，它不会将应用程序显示在前台。</li> <li>修复了一个问题，快速设置中的项目颜色可能会卡住，不能反映该状态下的正确颜色，特别是在使用对比主题时。</li> <li>将用于管理音频端点的快速设置页面从“音量”更新为“声音输出”。</li> <li>当列出多个设备时，在快速设置中打开管理音频端点的页面不应再导致音频播放短暂中断。</li> </ul><p><strong>【开窗】</strong></p><ul> <li>缓解了一个使用 ALT + Tab 会导致 explorer.exe 崩溃的问题。</li> <li>按住 ALT + Tab 后再按 F4 不会再让 explorer.exe 崩溃。</li> <li>当使用阿拉伯语或希伯来语显示语言时，将应用程序窗口拖到不同的桌面应该会显示缩略图现在正朝着正确的方向移动。</li> </ul><p><strong>【其他】</strong></p><ul> <li>修复了在某些情况下导致 LP.cab 文件被意外删除的大小写问题，这可能会导致您的显示语言发生变化，直到您在设置中添加所需的显示语言。</li> <li>解决了导致一些用户看到错误“KERNEL_SECURITY_CHECK_ERROR”的错误检查的问题。</li> <li>缓解了导致 SysMain 服务在最近的构建中使用意外电量的问题。</li> <li>如果 BCD 设置中的显示顺序丢失，则不会再导致升级失败。</li> <li>修正了在某些应用程序中标题在错误的偏移位置绘制的问题。</li> <li>缓解了导致与 audiosrv.dll 相关的崩溃的问题。</li> <li>如果使用阿拉伯语或希伯来语显示语言浏览 OOBE，音量和辅助功能按钮现在应该显示在屏幕的正确一侧。</li> </ul><p><em>注意:在积极开发分支的 Insider Preview 版本中提到的一些修复可能会成为 10 月 5 日正式发布的 Windows 11 版本的服务更新。</em></p> </div></section>
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_7"><h3 id="windows-11-insider-preview-build-22478-known-issues">Windows 11 内部预览版内部版本 22478 已知问题</h3><p><strong>【常规】</strong></p><ul> <li>从版本 22000.xxx 或更早版本更新到使用最新开发频道<a href="https://aka.ms/wipISO"> ISO </a>的较新开发频道版本的用户可能会收到以下警告消息:<em>您尝试安装的版本是 Flight Signed。要继续安装，请启用航班签名。</em>如果您收到此消息，请按下启用按钮，重启电脑，然后重试更新。</li> <li>一些用户可能会经历他们的屏幕和睡眠超时减少。我们正在调查更短的屏幕和睡眠超时对能耗的潜在影响。</li> </ul><p><strong>【开始】</strong></p><ul> <li>在某些情况下，使用“从开始”或任务栏搜索时，您可能无法输入文本。如果遇到此问题，请按键盘上的 WIN + R 启动“运行”对话框，然后关闭它。</li> </ul><p><strong>【任务栏】</strong></p><ul> <li>切换输入法时任务栏有时会闪烁。</li> <li>我们正在修复一个问题，该问题导致工具提示在悬停在任务栏角落后出现在意外位置。</li> </ul><p><strong>【搜索】</strong></p><ul> <li>单击任务栏上的搜索图标后，搜索面板可能不会打开。如果出现这种情况，请重新启动“Windows 资源管理器”进程，并再次打开搜索面板。</li> <li>搜索面板可能显示为黑色，并且在搜索框下方不显示任何内容。</li> </ul><p><strong>【快速设置】</strong></p><ul> <li>我们正在调查来自内部人士的报告，即音量和亮度滑块在快速设置中显示不正确。</li> </ul> </div></section>
+<p>虽然今天的新预览版是一个非常小的变化，但新的 Windows 11 表情符号集可能是自 Windows 11 发布以来开发频道中最大的新功能。事实上，尽管更加不稳定，这些构建中的大部分只是看到修复。现在 Windows 11 出来了，我们将开始看到测试中的新功能，比如 Android 应用支持。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

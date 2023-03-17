@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>SafetyNet’s hardware attestation feature is here to stay</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>SafetyNet 的硬件证明功能将继续存在</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/safetynet-hardware-attestation-feature-here-to-stay/#0001-01-01">https://www.xda-developers.com/safetynet-hardware-attestation-feature-here-to-stay/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">SafetyNet 的硬件证明功能将继续存在</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">在去年测试该功能后，谷歌终于让开发者可以使用 SafetyNet API 中的硬件证明。请继续阅读！</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p/><p>早在 2020 年 5 月，谷歌通过在一些设备上悄无声息地引入硬件支持的安全网响应认证，震惊了 Android 修改社区。由于谷歌的服务器没有完全停止接受“基本”评估报告来检查远程设备的软件环境的完整性，硬件支持的密钥认证的出现看起来更像是一个实验。然而，当时谷歌称他们是“...<em>评估和调整设备的合格标准...，</em>”表示大规模推广的潜力。嗯，谷歌终于做到了这一点。</p>
+
+  
+<p>根据<a href="https://groups.google.com/g/safetynet-api-clients/c/-6-w069c5a4/m/rEeRo0dcAgAJ">最近在谷歌“安全网 API 客户端”小组上的一篇帖子</a>，安全网认证 API 响应中的“评估类型”字段现在已经成为官方支持的功能。对于开发人员来说，这意味着每当您想要验证设备的软件环境是否被以任何方式篡改时，您可以利用 Google Play 服务将使用设备的可信执行环境(TEE)或专用硬件安全模块(HSM)生成的未经修改的密钥库证书发送到 SafetyNet 服务器。然而，人们不应该过度使用该功能，因为它仅适用于已经使用“ctsProfileMatch”参数的应用程序，这些应用程序需要最高级别的设备完整性保证，正如官方文档所建议的<a href="https://developer.android.com/training/safetynet/attestation#evaluation-types">。</a></p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/06/SafetyNet-Response-BASIC-and-HARDWARE_BACKED-300x123.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;SafetyNet Attestation API response with evaluationType returning \&quot;BASIC\&quot; and \&quot;HARDWARE_BACKED.\&quot; Credits: XDA Senior Member &lt;a href=\&quot;https:\/\/forum.xda-developers.com\/m\/displax.6345368\/\&quot;&gt;Displax&lt;\/a&gt;&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/06/SafetyNet-Response-BASIC-and-HARDWARE_BACKED-300x123.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/06/SafetyNet-Response-BASIC-and-HARDWARE_BACKED-300x123.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/06/SafetyNet-Response-BASIC-and-HARDWARE_BACKED-300x123.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/06/SafetyNet-Response-BASIC-and-HARDWARE_BACKED-300x123.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="SafetyNet Response BASIC and HARDWARE_BACKED" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/06/SafetyNet-Response-BASIC-and-HARDWARE_BACKED-300x123.jpg" src="../Images/a9b33209c653df9581a4531822f53891.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2020/06/SafetyNet-Response-BASIC-and-HARDWARE_BACKED-300x123.jpg"/> </picture> <figcaption class="body-img-caption">SafetyNet Attestation API response with evaluationType returning "BASIC" and "HARDWARE_BACKED." Credits: XDA Senior Member <a href="https://forum.xda-developers.com/m/displax.6345368/">Displax</a></figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>几周前就有迹象表明这种情况发生了，当时人们注意到 Google Play 服务已经开始在许多情况下优先考虑 CTS 配置文件验证的硬件证明，即使选择了基本证明。请记住，在这种情况下,<a href="https://www.xda-developers.com/bypass-safetynet-hardware-attestation-unlocked-bootloader-magisk-module/">仍然有可能利用</a>硬件证明例程的机会主义性质并通过基本证明。虽然这不是一个永久的解决办法(之前也没有被证明是)，但它应该允许人们绕过 SafetyNet，直到谷歌决定完全放弃基本评估。然而，对于我们的爱好者和开发者社区来说，谷歌首先采取这些措施是一种耻辱。</p>
+
+<p>如果谷歌继续实施硬件支持的证明，这可能意味着高级用户可以通过使用屏蔽技术结合 root 访问运行 Google Pay 和其他基于安全网的应用程序的日子结束了。由于形势仍在发展，事情可能比表面上看起来更复杂。如果这件事有新的进展，我们会及时通知我们的读者。</p>
+
+<p><em>感谢 XDA 会员<a href="https://forum.xda-developers.com/m/some_random_username.8234677/"> Some_Random_Username </a>的提示！</em></p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

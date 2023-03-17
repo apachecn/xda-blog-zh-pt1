@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>WhatsApp may soon ask users to verify their identity to make payments [Update: Statement]</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>WhatsApp 可能很快会要求用户验证身份以进行支付[更新:声明]</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/whatsapp-verify-identity-make-payments/#0001-01-01">https://www.xda-developers.com/whatsapp-verify-identity-make-payments/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p/><p class="emaki-custom note"><b>更新 1(</b><b>2021 年 10 月 26 日</b><b>@</b><b>08:07</b><b>ET):</b>WhatsApp(印度)伸手要声明。滚动到底部了解更多信息。下面保留了 2021 年 10 月 25 日发表的文章。</p>
+
+  
+<p/><p>WhatsApp 可能很快会要求用户验证身份，以便在该平台上进行支付。在最新的 WhatsApp 测试版中发现的新字符串表明，messenger 将要求用户上传验证文件，以继续在 WhatsApp 上使用支付。</p>
+
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_2"><p>APK 拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p>目前，当你<a href="https://www.xda-developers.com/how-to-use-whatsapp-pay/">在印度</a>设置 WhatsApp Pay 时，该服务仅验证与你的银行账户关联的电话号码，以实现基于 UPI 的交易。在巴西，信使<a href="https://www.pagbrasil.com/news/whatsapp-pay-is-launched-in-brazil/">使用脸书支付来验证用户的信用卡或借记卡</a>以方便支付。目前，这项服务不要求用户提交任何身份验证文件来进行支付。然而，这种情况可能很快就会改变。</p>
+
+<p>WhatsApp v2.21.22.6 测试版包括一些新的字符串，表明用户可能必须提交身份验证文件才能继续使用支付。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"notification_payment_document_reupload_step_up_required_message"</span>&gt;</span>"Your identity couldn't be verified. Try uploading the documents again."<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"notification_payment_document_reupload_step_up_required_title"</span>&gt;</span>WhatsApp Support<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"notification_payment_document_upload_step_up_required_message"</span>&gt;</span>Verify your identity to continue using payments on Whatsapp.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"notification_payment_document_upload_step_up_required_title"</span>&gt;</span>WhatsApp Support<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>虽然我们不确定 WhatsApp 为什么会希望用户验证身份进行支付，但我们认为这可能是由于几个不同的原因。</p>
+
+<h3 id="speculation-why-whatsapp-could-ask-for-identity-verification-to-make-payments">猜测:为什么 WhatsApp 可以要求身份验证来进行支付</h3>
+<ul> <li>信使可能正准备在一个新的地区推出 WhatsApp Pay。上面字符串中提到的身份验证可能只是该地区的法律要求。如果是这样的话，印度和巴西的 WhatsApp Pay 用户将不会被要求提交任何文件。</li> <li>身份验证可能仅限于那些使用 WhatsApp Pay 接收业务付款的人。</li> <li>基于 UPI 的应用程序，像 Google Pay，PhonePe，甚至 WhatsApp Pay 都不需要用户提交任何文件来转账或收款。然而，像 PayTM 这样的钱包应用程序确实要求按照 RBI 指南进行 KYC 验证。这让我们相信 WhatsApp 可能正在为 WhatsApp Pay 开发钱包功能，这将要求用户提交身份证明文件。但到目前为止，我们还没有看到其他与钱包特征相关的证据。</li> </ul>
+
+<p>WhatsApp 尚未就这一变化发表官方声明。由于新的字符串刚刚进入测试版，公司透露任何细节可能还需要一段时间。一旦我们有了更多的信息，我们会尽快通知你。</p>
+
+<hr/>
+
+
+<h2 id="update-statement-from-whatsapp">更新:来自 WhatsApp 的声明</h2>
+<p>WhatsApp 印度公司发言人就这篇文章发表了如下声明:</p>
+
+<p/><p><em>“在印度，在 WhatsApp 上支付不需要任何验证文件。WhatsApp 上的支付由印度国家支付公司批准，由 BHIM 合众国际社提供支持，可以与合法的银行合作伙伴进行交易。与其他合众国际社支付应用一样，用户需要确保手机号码与他们的银行账户关联的号码相同，才能通过 WhatsApp 上的支付开始发送和接收资金。</em></p>
+
+<p>他们是对的。WhatsApp Pay 目前在印度不需要任何验证文件。然而，我们的文章涉及一种未来的可能性，这种可能性在声明中既没有肯定也没有否认。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

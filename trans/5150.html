@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Windows 10 disk corruption bug gets fixes via latest Insider Preview update</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 10 磁盘损坏错误通过最新的内幕预览更新获得修复</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-10-ntfs-disk-corruption-bug/#0001-01-01">https://www.xda-developers.com/windows-10-ntfs-disk-corruption-bug/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">Windows 10 bug 可以用一个命令破坏驱动器，在最新的 Insider build 上打了补丁</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">最近发现，Windows 10 的一个错误将您的 NTFS 格式化磁盘驱动器标记为损坏，从而不允许用户访问该驱动器。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p/><p>Windows 10 目前面临着另一个可能损坏 NTFS 格式驱动器的错误。只要访问一个特定的路径或打开一个特制的文件，就可以触发这个 bug。有报道称，微软本应在上个月推出一个补丁。然而，它只成功地为 Windows 10 内部版本的用户发布了相同的版本。</p>
+
+  
+<p>这个漏洞是上个月由<a href="https://www.bleepingcomputer.com/news/security/windows-10-bug-corrupts-your-hard-drive-on-seeing-this-files-icon/"> <i>电脑</i> </a>发现的。据报道，它允许几乎任何用户，包括低权限用户，只需一行命令就能破坏 NTFS 格式的硬盘。一旦执行，Windows 试图访问该路径，却以“文件或目录损坏且不可读”的错误结束，最终将驱动器标记为损坏并需要修复。根据<em>漏洞计算机</em>所做的测试，一行代码可以隐藏在 Windows 快捷方式文件、ZIP 存档、批处理文件或其他各种载体中，以触发破坏文件系统索引的硬盘错误。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/windows-10-ntfs-corruption-bug-1024x657.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Image credits: BleepingComputer&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/windows-10-ntfs-corruption-bug-1024x657.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/windows-10-ntfs-corruption-bug-1024x657.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/windows-10-ntfs-corruption-bug-1024x657.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/windows-10-ntfs-corruption-bug-1024x657.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="Windows 10 NTFS corruption bug" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/windows-10-ntfs-corruption-bug-1024x657.jpg" src="../Images/b24dbafefe034fd2a6844fa0dfeb029a.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/windows-10-ntfs-corruption-bug-1024x657.jpg"/> </picture> <figcaption class="body-img-caption">Image credits: BleepingComputer</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>然后，Windows 会要求用户重新启动计算机并运行 chkdsk 来修复损坏的硬盘。根据微软的说法，驱动器实际上并没有坏，Windows chkdsk 应该可以解决这个问题。但是，测试表明 chkdsk 并没有解决这个问题；因此，Windows 无法启动。</p>
+
+<p>预计微软将通过二月份的补丁解决这个问题。虽然这并没有发生，<a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-windows-10-drive-corruption-bug-what-you-need-to-know/">报道</a>现在表明，新的 Windows 10 内部版本 21322 确实包括一个未记录的问题修复程序。Windows 10 现在报告“目录名无效”，不再将 NTFS 卷标记为损坏。预计微软最终会为所有 Windows 10 用户发布类似的修复程序。</p>
+
+<p>上个月，微软<a href="https://www.xda-developers.com/windows-10-kb5001028-emergency-update-wifi/">为 Windows 10 推出了新的紧急更新</a>,以修复连接 Wi-Fi 网络时导致 BSOD(蓝屏死机)的漏洞。该问题仅专门针对较新的 WPA3 安全性；本质上，只有少数用户受到影响。</p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

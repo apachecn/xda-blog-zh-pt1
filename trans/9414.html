@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Microsoft releases new Windows 11 preview with better voice access</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>微软发布新的 Windows 11 预览版，提供更好的语音访问</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/microsoft-releases-windows-11-preview-voice-access-improvements/#0001-01-01">https://www.xda-developers.com/microsoft-releases-windows-11-preview-voice-access-improvements/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>今天是周三，这只能说明一件事。是时候推出新的<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>内部预览版了。本周的版本号是<a href="https://blogs.windows.com/windows-insider/2022/01/19/announcing-windows-11-insider-preview-build-22538/">22538</a>，和往常一样，改动非常小。</p>
+
+  
+<p>主要的新特性是对语音访问的改进，这在 build 22518 中首次出现。这项功能正在被添加到触摸键盘上，所以你可以用它来拼写单词，输入数字，输入标点符号，甚至输入表情符号。你只需要说，“显示键盘”，然后说点击对应于一个键的数字。</p>
+
+<p>还有一些其他的变化。build 22518 发生的另一件事是，微软引入了一个新的显示天气的 Widgets 图标，但与 Dev 频道向用户承诺的不同，它只对一些内部人士可用。现在每个注册的人都可以测试最新的功能。</p>
+
+<p>在更新的设计中，ALT + TAB、任务视图和对齐助手都将在焦点矩形中显示您的强调色。还有一些其他的低层次的东西，如 Hyper-V 第二代虚拟机的 HTTPS 启动。</p>
+
+<p>和往常一样，有一长串的修复、改进和需要注意的已知问题。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_5"><h3 id="windows-11-build-22538-fixes">Windows 11 内部版本 22538 修复程序</h3><p><strong>【常规】</strong></p><ul> <li>对于一些内部人士来说，按下音量增大/减小的硬件按钮应该不会再导致 explorer.exe 崩溃。</li> <li>我们认为，在之前的飞行中导致一些内部人员在设置和其他地方看到混淆的文本的问题在这个版本中应该不会再出现了。</li> <li>修复了使用扫描模式时导致讲述人在文本框中崩溃的问题。</li> <li>缓解了某些电脑从睡眠或休眠状态恢复后，视频播放会立即恢复，但音频可能需要 10 秒钟才能开始播放的问题。</li> </ul><p><strong>【文件浏览器】</strong></p><ul> <li>名为“高级”的文件夹不应再意外打开“设置”中的“高级共享设置”页面。</li> </ul><p><strong>【搜索】</strong></p><ul> <li>我们已经做了一些工作来解决一个问题，即当从开始使用搜索时或在单击搜索图标任务栏后键入内容，实际上不会开始搜索，因为没有文本输入。如果您在升级后仍遇到此问题，请在反馈中心的桌面环境&gt;搜索下提交新的反馈。</li> </ul><p><strong>【任务栏】</strong></p><ul> <li>任务栏的长格式日期和时间不再会在辅助显示器上被切断。</li> </ul><p><strong>【设置】</strong></p><ul> <li>在蓝牙&amp;设备下不应该再有随机的空白条目。</li> <li>修复了讲述人在 Windows Update 页面中将“简历更新”按钮读为“检查更新”的问题。</li> <li>进入系统&gt;显示&gt; HDR 时，设置不再崩溃。</li> <li>修正了一个问题，这个问题被认为是使用清除位置历史选项时设置崩溃的根本原因。</li> <li>缓解了一些内部人员在查看 Wi-Fi 网络属性时导致设置崩溃的问题。</li> <li>网络属性中的“私有”和“公共”控件对于有双卡的人应该不会再闪烁了。</li> <li>如果你搜索“网络重置”，设置页面会出现在搜索结果中。</li> <li>在“快速设置”中查看可用 Wi-Fi 网络列表时，信号强度指示器现在应该反映正确的信号强度，而不是全部显示全强度。</li> </ul><p><strong>【输入】</strong></p><ul> <li>删除了个性化&gt;文本输入&gt;自定义主题中的“尝试你的设置”框，因为它不起作用。</li> <li>“设置&gt;个性化&gt;文本输入&gt;自定义主题”中的自定义文本颜色现在应该实际应用于候选窗/剪贴板历史记录/表情符号面板中的文本。</li> <li>缓解了在快速来回切换输入时影响内部人员使用新输入切换器的性能的问题。</li> <li>在触摸键盘的表情输入区点击搜索框应该不会再导致触摸键盘在切换输入语言后第一次这样做时立即关闭。</li> <li>修复了停靠时触摸键盘侧边和屏幕边缘之间意外的 1 像素间隙。</li> <li>向 WIN +句点的常规标点符号部分添加了缺失的倒置 interrobang (⸘)。</li> </ul><p><strong>【开窗】</strong></p><ul> <li>对于那些在设置&gt;个性化&gt;颜色中使用自定义模式的人来说，ALT + Tab、任务视图和 Snap Assist 的背景现在应该遵循默认的 Windows 模式(亮或暗)，而不是默认的应用程序模式。</li> <li>使用阿拉伯语或希伯来语显示语言时，在任务视图中拖放窗口现在应该可以再次向正确的方向拖动了。</li> <li>当关闭包含 3 或 4 个应用程序的快照组时，exe 现在不应该崩溃。</li> </ul><p><strong>【微件】</strong></p><ul> <li>我们修复了当你改变任务栏对齐方式时，会导致窗口小部件按钮从任务栏上消失的问题。</li> <li>当多台显示器连接到您的电脑时，任务栏上的小工具内容不应在显示器之间失去同步。</li> </ul><p><strong>【语音接入】</strong></p><ul> <li>修复了最近移除的麦克风显示为选定麦克风的问题。</li> <li>已解决一个问题，以确保向屏幕阅读器用户宣布麦克风状态更改。</li> <li>修复了一个问题，以确保在首次设置语音访问时，在麦克风选择页面上为屏幕阅读器用户读出麦克风名称。</li> <li>修复了确保麦克风标签为屏幕阅读器用户传达当前麦克风状态的问题。</li> <li>修正了一个问题，重复的数字标签显示在微软边缘主页上的命令“显示数字”。</li> <li>修正了命令“小写前一个字符”不能正常工作的问题。</li> <li>修正了一个问题，语音接入会给出一个错误的消息说“语音接入唤醒”，即使没有麦克风连接。</li> <li>修复了当两个 Microsoft Edge 窗口打开且其中一个最大化时，命令“切换到 Edge”不提示输入的问题。</li> <li>修正了在 Microsoft Word 中“转到字体”命令不能给出预期结果的问题。</li> <li>解决了一个问题，即命令“语音访问唤醒”不激活语音访问麦克风时，你连续说话没有任何停顿。</li> <li>解决了听写在桌面和文件资源管理器上不能正常工作的问题。</li> <li>解决了命令“显示数字”在焦点窗口上不显示数字标签的问题。</li> </ul><p><strong>【任务管理器】</strong></p><ul> <li>修正了一个影响任务管理器可靠性的问题。</li> <li>将任务管理器中的应用历史选项卡列名称从“磁贴更新”更新为“通知”。</li> </ul><p><em>注意:在积极开发分支的 Insider Preview 版本中提到的一些修复可能会成为 Windows 11 发布版本的服务更新，该版本将于 2021 年 10 月 5 日正式发布。</em></p> </div></section>
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_6"><h3 id="windows-11-build-22538-known-issues">Windows 11 内部版本 22538 已知问题</h3><p><strong>【任务栏】</strong></p><ul> <li>切换输入法时任务栏有时会闪烁。</li> </ul><p><strong>【搜索】</strong></p><ul> <li>单击任务栏上的搜索图标后，搜索面板可能不会打开。如果出现这种情况，请重新启动“Windows 资源管理器”进程，并再次打开搜索面板。</li> </ul><p><strong>【输入】</strong></p><ul> <li>在 UAC 提示符下，IME 候选窗口不会出现。</li> </ul><p><strong>【微件】</strong></p><ul> <li>任务栏左对齐时，温度等信息不会显示。这将在未来的更新中得到解决。</li> </ul> </div></section>
+<p>像往常一样，如果你在 Dev 频道上，可以通过 Windows Update 获得这个版本。如果您不是，您可以通过“设置”中的 Windows Insider 计划页面注册。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

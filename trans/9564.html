@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Scrcpy's latest update brings keyboard and mouse passthrough without USB debugging</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Scrcpy 的最新更新带来了无需 USB 调试的键盘和鼠标直通</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/scrcpy-update-keyboard-mouse-passthrough/#0001-01-01">https://www.xda-developers.com/scrcpy-update-keyboard-mouse-passthrough/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>scrcpy(scrcpy "<strong>SCR</strong>een<strong>c</strong>o<strong>py</strong>")工具可以让你将安卓设备的屏幕镜像到 PC 或 Mac 上。在过去的几个月里，这个广受欢迎的开源项目一直在稳步增加新的特性和功能。回到去年 7 月，这款应用<a href="https://www.xda-developers.com/scrcpy-screen-mirroring-android-12/">带来了对 Android 12 </a>的支持，引入了在 Linux 上使用视频流作为网络摄像头的能力，等等。现在 scrcpy 背后的开发团队发布了一个新的更新，增加了对 OTG 模式的支持，改善了整体用户体验，并修复了多个令人讨厌的错误。</p>
+
+  
+<p>scrcpy v1.22 版本的主要亮点是引入了物理键盘和鼠标模拟，被称为<em> OTG 模式</em>。虽然从 1.20 版本开始，<a href="https://github.com/Genymobile/scrcpy/pull/2632"> HID 键盘模拟</a>就已经被这个工具支持，但是最新的更新终于启用了<a href="https://github.com/Genymobile/scrcpy/pull/2916"> HID 鼠标支持</a>。因此，您现在可以使用 PC 的键盘和鼠标来控制 Android 智能手机，就好像它们通过 OTG 电缆直接连接到目标设备一样。</p>
+
+<p>在 OTG 模式下，屏幕镜像功能将不可用。相反，您将看到一个带有 scrcpy 徽标的窗口，当获得焦点时，它会将键盘和鼠标事件转发到远程设备。值得注意的是，这个特性目前只适用于 Linux。</p>
+<div class="body-img portrait"><div class="responsive-img image-expandable img-article-item-portrait" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/02/scrcpy-OTG-mode-window.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;The OTG mode window of scrcpy&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/02/scrcpy-OTG-mode-window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/02/scrcpy-OTG-mode-window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="600px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/02/scrcpy-OTG-mode-window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="360px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/02/scrcpy-OTG-mode-window.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="scrcpy OTG mode window" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/02/scrcpy-OTG-mode-window.jpg" src="../Images/e88bcc7e2590da0dc1e843d332cf179f.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/02/scrcpy-OTG-mode-window.jpg"/> </picture> <figcaption class="body-img-caption">The OTG mode window of scrcpy</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>scrcpy 的键盘和鼠标直通实现最有趣的部分可能是它不需要 ADB 访问。这意味着您甚至可以在禁用 USB 调试的设备上使用该功能。当您需要处理触摸屏损坏的智能手机时，这尤其有用，因为您可以模拟输入事件并启用 USB 调试。接下来，您可以备份您的个人文件，或者可以正常运行 scrcpy 来远程控制设备。</p>
+
+<p>scrcpy v1.22 的完整变更日志如下:</p>
+
+<ul> <li>添加 HID 鼠标支持</li> <li>添加 OTG 模式(仅 HID)</li> <li>在 Windows 上默认启用 DPI 感知</li> <li>使用较低的 MediaCodec 错误定义自动重试</li> <li>在 Windows 上添加快捷方式“在此打开终端”</li> <li>向 scrcpy.exe 添加图标</li> <li>添加服务器选项以发送原始 H.264 视频流</li> <li>(主要)修复 Windows 7 上的流程执行</li> <li>修复由于信号屏蔽导致的 adb 服务器挂起</li> <li>修正一些自定义 rom 的输入注入</li> <li>修复复制粘贴时可能出现的溢出</li> <li>在 Windows 版本中将 SDL 升级到 2.0.20</li> <li>在 Windows 64 位版本中将 FFmpeg 升级到 5.0</li> <li>各种技术重构和修复</li> </ul>
+
+<p>如果您已经通过软件包管理器安装了 scrcpy，您可以通过它检查更新。如果您没有安装旧版本，您可以从<a href="https://github.com/Genymobile/scrcpy">项目的 GitHub repo </a>中获取最新版本。</p>
+
+<p/><p><strong> <a href="https://github.com/Genymobile/scrcpy/releases/latest">下载 scrcopy</a></strong></p>
+
+<hr/>
+
+<p><em> <strong>你用过 scrcpy 吗？你看呢?在下面的评论中分享你的想法吧！</strong>T3】</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

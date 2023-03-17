@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Yet another Print Spooler vulnerability found in Windows</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>在 Windows 中发现的另一个打印后台程序漏洞</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/print-spooler-vulnerability-found-windows/#0001-01-01">https://www.xda-developers.com/print-spooler-vulnerability-found-windows/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>在 Windows 10 安全漏洞的世界里，这是艰难的几周。一个名为 PrintNightmare 的打印假脱机问题被一个认为已经被修补的组织曝光。微软<a href="https://www.xda-developers.com/windows-10-printnightmare-patch/">发布带外补丁</a>修复。唯一的问题是累积更新实际上没有正确修复它。</p>
+
+  
+<p>现在，又有一个 Windows 后台打印程序<a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34481">漏洞</a>(通过<a href="https://www.bleepingcomputer.com/news/security/microsoft-defender-for-identity-now-detects-printnightmare-attacks/">电脑</a>)被发现。该漏洞为 CVE-2021-34481，摘要如下:</p>
+
+<blockquote>
+<p>当 Windows 后台打印程序服务不正确地执行特权文件操作时，存在一个特权提升漏洞。成功利用此漏洞的攻击者可以使用系统权限运行任意代码。然后，攻击者可以安装程序；查看、更改或删除数据。或者创建具有完全用户权限的新帐户。</p>
+<p>攻击者必须能够在受害系统上执行代码来利用此漏洞。</p>
+<p>此漏洞的解决方法是停止并禁用后台打印程序服务。</p>
+ </blockquote>
+<p>幸运的是，这似乎不像 print 梦魇那样严重，现在仍然如此。攻击向量是本地的，这意味着利用此漏洞的恶意参与者需要访问机器。但是，这被列为低攻击复杂性和所需的低特权。</p>
+
+<p>微软没有说新的后台打印程序问题的修复程序何时可用。补丁星期二刚刚过去，所以这个月给大家修复有点晚了。如果愿意，该公司可以发布另一个带外更新，或者可以在本周的可选累积更新中修复这个问题。</p>
+
+<p>如果您认为您可能会受到此问题的影响，建议您关闭后台打印程序服务。当然，这将导致您的本地或远程打印能力出现问题。您可以通过在 PowerShell 中运行以下命令来关闭打印假脱机程序:</p>
+
+<p><code>Stop-Service -Name Spooler -Force</code></p>
+
+<p>set-Service-Name Spooler-startup type 已禁用</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Google will expand the permission auto-reset feature to Android 6.0+ devices in 2022</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌将在 2022 年将权限自动重置功能扩展到 Android 6.0+设备</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-expand-permission-auto-reset-feature-android-6-0-devices-2022/#0001-01-01">https://www.xda-developers.com/google-expand-permission-auto-reset-feature-android-6-0-devices-2022/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Android 12 是这一季的<a href="https://www.xda-developers.com/android-12-review/">甜点，但这并不意味着旧版本不能分享一些乐趣。Android 作为一个操作系统在过去的十年里已经变得越来越成熟，在很多情况下，向更广泛的用户群提供功能变得比在新软件版本上引入新功能更重要，而新软件版本需要数年的传播时间。谷歌正在做前者，因为它希望将权限自动重置功能扩展到 Android 6.0 和更高版本的设备上。今天的公告将最初的推出承诺从 2021 年 12 月推迟到 2022 年 1 月。</a></p>
+
+ 
+<h2 id="what-is-permission-auto-reset">什么是权限自动重置？</h2>
+<p>在 2020 年的 Android 11 中，Google 对运行时权限模型进行了一些更改，值得看一下快速总结。在 Android 10 和更低版本中，对于“危险”权限(也就是有很大滥用空间的权限)，应用程序可以请求一次权限，只要应用程序仍然安装，或者用户手动撤销或清除应用程序数据，应用程序就可以保留权限。应用程序请求这样的权限是很常见的，即使它们需要这样的权限来实现非核心和可选的功能。考虑到普通用户不了解他们授予的权限范围，并且大多数用户不会定期检查这些权限，最终结果是太多的应用程序可以访问太多的权限，即使应用程序本身没有被使用。</p>
+
+<p>Android 11 引入了一次性权限和权限自动重置来解决这个问题。一次性权限就是这样——它们允许应用程序在非常短的时间内访问，允许应用程序在用户请求时完成其非核心功能。如果您经常需要应用程序来执行这个非核心功能，您仍然可以选择授予更长时间的权限。另一方面，权限自动重置解决了曾经被授予频繁使用权限的应用程序不再频繁使用的情况。如果 Android 检测到用户有一段时间没有使用某个应用程序，它会自动撤销所有授予的权限。该应用程序现在可以在后台启动这些功能。当用户下次使用该应用程序时，他们将有机会再次授予这些权限。</p>
+
+
+
+
+<p class="ad-odd"> </p>
+
+
+<h2 id="bringing-auto-reset-permissions-to-older-os-versions">将自动重置权限引入旧版本的操作系统</h2>
+<p>几个月前，<a href="https://www.xda-developers.com/android-11-auto-reset-permissions-coming-to-android-6-0/">谷歌宣布</a>它将为所有运行 Android 6.0 及以上版本的设备带来 Android 11 的权限自动重置功能。在发布公告时，谷歌提到该功能将于 2021 年 12 月开始推广到安装了 Google Play 服务的 Android 6.0 及以上设备。今天发布的新闻值得一提的是，该功能将于下个月，即 2022 年 1 月开始推出。</p>
+
+<p>从之前的公告中，我们知道针对 Android 11 (API 级别 30)或更高版本的应用程序将默认启用该功能。对于 API 级别为 23 到 29 的应用程序，用户必须从设置中手动启用它。该功能将不适用于设备管理员应用程序，并且由企业策略固定的权限也不会被撤销。如果需要，应用程序开发人员还可以要求用户禁用自动重置权限功能。如果你的应用目标是 API 级别 30 或以上，并且你希望要求用户禁用权限自动重置，那么你需要使用新的跨平台 API，它是<a href="https://developer.android.com/jetpack/androidx/releases/core"> Jetpack Core </a>库-<em>androidx . Core . content . packagemanagercompat . getunuseapprestrictionstatus()</em>和<em>androidx . Core . content . intent compat . createmanageunusedprestrictionintent()</em>的一部分。这样做有助于主要在后台运行的应用程序，如智能手表的配套应用程序。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

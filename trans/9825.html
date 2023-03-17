@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Windows 11 is getting a new app picker for opening files</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11 获得了一个新的打开文件的应用程序选择器</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-app-picker-build-22563/#0001-01-01">https://www.xda-developers.com/windows-11-app-picker-build-22563/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>当你试图在 Windows 11 中打开文件时，微软正在为应用程序选择器 UI 进行新的设计。在 Dev 频道向内部人士发布的最新版本中，<a href="https://www.xda-developers.com/windows-11-build-22563/"> build 22563 </a>，你可以启用新的 UI，它看起来与 Windows 11 的其余部分更加一致。</p>
+
+  
+<p>新的设计用一个新的窗口取代了尖角和不透明的白色背景，该窗口使用半透明的背景和圆角，并遵循系统的亮/暗主题设置。这是继<a href="https://www.xda-developers.com/windows-11-build-22557-touch-gestures-start-folders/"> Windows 11 build 22557 </a>中添加的新任务管理器之后，使操作系统在视觉上更加一致的又一步。</p>
+
+
+
+<p>为了启用该功能，您需要使用一个名为<a href="https://github.com/thebookisclosed/ViVe/releases"> ViVeTool </a>的程序，该程序允许您在 Windows 中配置功能 id。特性 id 用于启用或禁用某些特性，通常在特性完全可用之前添加。微软还使用功能 id 来 A/B 测试某些功能，其中一些用户将看到一种行为，而其他用户将看到另一种行为。最新版本中特性 ID 变化的完整列表可以在 GitHub 上找到，由<a href="https://github.com/riverar/mach2/commit/daec91fcad056d97eb6f661d27c458853302cbec">开发者 Rafael Rivera </a>分享。</p>
+
+<p>要启用新的 Windows 11 应用程序选择器，请下载并提取 ViVeTool，然后在该文件夹中运行提升的命令提示符。然后，使用命令<strong>vive tool add config 36302090 2</strong>启用该功能。完成后，您可以尝试打开一个文件并查看新的应用程序选择器。请记住，应用程序选择器仅显示尚未设置默认文件关联的文件扩展名，或者如果您最近安装了能够处理特定文件或协议的新应用程序。</p>
+
+<p>值得注意的是，篡改特性 id 可能会导致不稳定，甚至比通常 Windows Insider 版本更不稳定。虽然这是一个相对较小的变化，但它可能会导致一些问题。很可能这个新的应用程序选择器将很快对所有内部人员开放。</p>
+
+<hr/>
+
+<p>来源:<a href="https://twitter.com/XenoPanther/status/1496967263198527492"> Xeno(推特)</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

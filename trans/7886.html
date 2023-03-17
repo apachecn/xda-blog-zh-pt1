@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Xiaomi's blacklist of phrases sounds scary, but it may not be what it seems</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>小米的短语黑名单听起来很吓人，但可能不是表面看上去的那样</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/xiaomi-secret-blacklist-explained/#0001-01-01">https://www.xda-developers.com/xiaomi-secret-blacklist-explained/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>由于地缘政治原因，中国智能手机制造商经常受到严格审查，首当其冲受到批评的公司是华为。然而，像小米这样的其他公司也并非没有受到影响，因为世界头号智能手机供应商最近不得不击退美国政府试图给它贴上“<a href="https://www.xda-developers.com/xiaomi-us-government-chinese-military-blacklist/">共产主义中国军事公司</a>”的标签。现在，该公司再次成为头条新闻，因为立陶宛国家网络安全中心敦促公民不要使用该公司的产品。立陶宛 NCSC 表示，原因是小米智能手机具有“审查功能”。</p>
+
+  
+<p>根据<a href="https://www.nksc.lt/doc/en/analysis/2021-08-23_5G-CN-analysis_env3.pdf"> NCSC </a>的报道，据称小米智能手机下载了一个名为“MiAdBlacklistConfig”的文件，其中包含许多“各种宗教和政治团体以及社会运动的头衔、名称和其他信息”。它说 MiAdBlacklistConfig 文件中有 449 条记录。此外，该报告称,“当确定此类内容包含列表中的关键词时，设备会阻止该内容。人们认为这种功能会对信息的自由获取造成潜在威胁。”NCSC 表示，该文件是在运行 MIUI Global 12.0.10 的小米 10T 上发现的。</p>
+
+<p>“我们的建议是不要购买新的中国手机，并以合理的速度尽快淘汰那些已经购买的手机”，据路透社 报道，国防部副部长玛吉里斯·阿布凯维丘斯说。</p>
+
+ 
+<h2 id="dissecting-the-miadblacklistconfig">剖析 miad 黑名单配置</h2>
+<p>我有一台小米 Mi 11 Ultra 运行在最新的小米. eu ROM 上。虽然 Xiaomi.eu 是 MIUI 的解块版本，但它仍然基于 MIUI 的中文版本，我认为这将是检测我的智能手机上是否存在 MiAdBlacklistConfig 文件的主要候选文件。经过调查，我在 Mi 视频应用程序(虽然不是 Mi 浏览器)中找到了它，并通过 root 访问检索了该文件。文件<em>是否包含宗教和政治团体的名称；然而，它还包含了比这更多的<em>地段</em>。该报告还指出，在 MiAdBlacklistConfig 文件中有 449 条记录——在我的文件中，有 2210 条记录，其中大部分是与任何种类的政治或宗教团体无关的<em>。</em></em></p>
+
+<p>在分析文件时，我发现绝大多数记录实际上都与性、色情和其他智能手机品牌有关。书中提到了西藏、香港和其他宗教团体，但是也提到了 CCP 和“中国”(尽管相对而言，提到中国和中国政治家的次数要少得多)。有人可能会想，如果这是一份用来审查可能与中国共产党相悖的内容的名单，那么所有提及“中国”的内容都不会在网上被审查。以下是我从文件中精选的一些单词和短语:</p>
+
+<ul> <li>中兴通讯股份有限公司（Zhongxing Telecommunication Equipment Corporation 的缩写）</li> <li>Infinix</li> <li>中国</li> <li>xxx</li> <li>三星电子</li> <li>oneplus</li> <li>下载视频</li> <li>下载宝莱坞歌曲</li> <li>台湾团结联盟</li> <li>索尼爱立信</li> <li>大音阶的第三音</li> <li>小米 mi5</li> <li>小米手机</li> </ul>
+
+<p>这些是从列表中选择的几个短语，但它绝不是广泛的。还有无数色情和性相关的术语，大多数智能手机品牌都有代表。有趣的是，如果这个<em>是</em>一个审查列表，请注意我上面展示的最后三个条目:为什么小米要审查网上对自己的提及？</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="advertisements-and-how-xiaomi-deals-with-them">广告，以及小米如何应对</h2>
+<p>正如 NCSC 指出的，该代码在该公司在欧盟销售的手机中并不活跃。看看下面的代码片段，从 NCSC 报告中检索。</p>
+
+
+
+<p>研究人员对这种特殊的功能做了如下描述。</p>
+
+<blockquote>
+<p/><h4>据信，该功能允许小米设备对进入电话的目标多媒体内容进行分析；基于从服务器接收的 list 黑名单列表搜索关键字。一旦设备确定内容包含某些关键字，设备就会对该内容进行过滤，用户就看不到它了。[...]需要强调的是，该功能由制造商远程激活。”</h4>
+ </blockquote>
+<p>鉴于我在 Mi 视频应用程序中找到了 MiAdBlacklistConfig 文件，我从我的设备中提取了 APK，并亲自将其拆解。我发现研究人员可能犯了一个相当大的错误；上面的代码过滤了一个名为“INativeAd”的对象。在拆解小米视频应用时，我发现 INativeAd 是小米全球广告软件开发包(SDK)中的一个方法。虽然我找不到这个方法本身，但我找到了许多关于它和它所能执行的功能的参考资料。</p>
+
+
+
+<p>上面可以看到，“INativeAd”是专门用来显示广告的，我在其他的任何地方都找不到引用<em>的黑名单文件。以下是 INativeAd 的一些方法:</em></p>
+
+<ul> <li>AdOnClickListener</li> <li>onbannerclosedlsitener</li> <li>印象倾听者</li> <li>OnAdCompletedListener</li> <li>OnAdRewardedListener</li> <li>OnAdDismissedListener</li> </ul>
+
+<p>我认为很明显过滤器是专门用来过滤广告的，我也认为为什么需要它是很明显的。看看下面的两个广告。它们于 2019 年 4 月在小米红米 Note 7 Pro 上展示。</p>
+
+
+
+
+
+<p>小米过去在广告内容上有过重大问题。事实上，该公司在 2019 年承诺<a href="https://www.xda-developers.com/xiaomi-remove-obnoxious-ads-miui-add-new-features/">删除“低俗”广告</a>，并防止它们被展示给用户。仍有<a href="https://www.reddit.com/r/Xiaomi/comments/gbkamo/about_obscene_popup_ads_on_redmi_xiaomi/">偶尔报道</a>低俗和不恰当的广告出现在小米设备上，但这远不像以前那样是个大问题。事实上，我认为列表中的一些条目在这种背景下看起来完全有意义。看看我从列表中挑选的其他一些:</p>
+
+<ul> <li>每个女孩在新婚初夜想的 5 件事</li> <li>用家庭方法检查怀孕</li> <li>拍摄-查看照片</li> </ul>
+
+<p>所有这三个都非常具体——以至于我认为这个过滤器有时是针对非常具体的 T2 广告的。然而，它也非常适合作为一个总括——过滤器中有“最热”一词，这意味着上面的广告说“本季度最热的视频！”理论上，将不再被展示。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="what-s-happening">发生什么事了？</h2>
+<p>从我自己的分析来看，我的小米 Mi 11 Ultra 和我的小米 11T Pro 上的 EU ROM 中的 Mi 浏览器都没有引用这个文件。在我的小米 11 Ultra 上，小米视频应用程序引用了它，但仅用于广告过滤。我还从 APKMirror 下载了最新的 Mi 浏览器版本，同样，没有找到对 MiAdBlacklistConfig 文件的引用。</p>
+
+<p>那是不是意味着以后就不能用于审查了？不可否认，但关键是我找不到任何证据表明它现在被用于审查。举一个非常明显的例子，假设列表中包含单词“mi”，那么如果网页内容<em>被</em>过滤，你甚至无法在官方 mi 浏览器中访问小米自己的网站。鉴于“AdBlacklist”就在名字中，我认为这个文件的用途是非常清楚的。</p>
+
+<p>在研究人员展示的一份解密数据中，他们透露他们使用的是 Mi 浏览器的 12.4-g 版本。报告中使用的小米 10T 基于 MIUI Global 12.0.10，运行欧洲经济区版本。MIUI 的 EEA 版本不包含广告，我无法像在 Mi Video 中那样在最新 Mi 浏览器的存储中找到该文件。但是，在 12.4-g 版本中，我发现了对 MiAdBlacklistConfig 的引用，而不是文件本身。我甚至下载了最新中文版的米浏览器来确认，我也找不到那个文件。再者，在同一个解密的数据片中，研究人员使用的 MIUI 版本实际上与开篇表格中所列的不同。当研究人员说他们使用“V12.0.10.0.QJDEUXM”时，它显示为“V12.0.18.0.QJDEUXM”</p>
+
+<p>我看了研究人员的其他一些声明，其中一个特别引起了我的注意。</p>
+
+<blockquote>
+<p/><h4>“研究表明，当用户选择使用小米云服务时，用户的手机号码被注册在位于新加坡的服务器上。这是通过设备向一个特殊的电话号码发送加密的短信来实现的。”</h4>
+ </blockquote>
+<p>没有引用给读者指出显示这种行为的“研究”。</p>
+
+<p>我在过去的一个月里配置了两款小米智能手机——小米 Mi 11 Ultra 和小米 11T Pro。我向我的运营商核实，以确保我这个月没有发出任何国际短信，我没有。不过，我已经在两部智能手机上都登录了我的小米云账户。我不知道研究人员做了什么让小米 10T 发送“一条加密的短信到一个特殊的电话号码”，但这在我本月安装的两个设备上都没有发生。</p>
+
+<p>我没有全面调查任何其他索赔。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="should-you-be-worried">你应该担心吗？</h2>
+<p>就我所见，没什么好担心的。鉴于小米成功地争取将其从美国的“共产主义中国军事公司”名单中删除，没有多少证据来证实一些更具阴谋性的说法。虽然这种情况可能会在未来发生变化，但我认为现在<em>没有理由担心。我不禁想知道研究人员是如何得出他们得出的结论的，他们是如何设法在两台小米设备上重现我无法做到的行为的。</em></p>
+
+<p>虽然我的小米 11 Ultra 现在运行的是去模糊定制 ROM，但我安装了最新的小米官方应用进行测试，观察到的行为在我的小米 11T Pro 上保持不变。此外，在换成 Xiaomi.eu ROM 之前，我工厂重置了 Mi 11 Ultra on <em> stock </em> MIUI，当我配置它时，我的运营商应该已经识别出正在发送的国际短信。我检查了一下，以确保短信不是发给一个爱尔兰号码的，但是所有我发过短信的号码我都认识。</p>
+
+<p>所有这些都是说，我相信小米设备目前在安全方面没有问题。小米在联系到路透社 发表评论时，给了<a href="https://www.reuters.com/world/europe/xiaomi-says-its-devices-do-not-censor-users-following-lithuania-report-2021-09-22/"> <em>以下声明。</em></a></p>
+
+<blockquote>
+<p/><h4 data-test="">“小米从未也永远不会限制或阻止我们智能手机用户的任何个人行为，如搜索、通话、网页浏览或使用第三方通信软件。小米充分尊重和保护所有用户的合法权利。”</h4>
+ </blockquote>
+<p/><p data-test="">我们已经联系了立陶宛 NCSC 来澄清这份报告，如果有回音，我们会更新这篇文章。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

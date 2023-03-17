@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Windows 11 build 22454 is out in the Dev channel with minor changes</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11 build 22454 已在开发频道中发布，略有改动</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-build-22454-is-out-in-the-dev-channel-with-minor-changes/#0001-01-01">https://www.xda-developers.com/windows-11-build-22454-is-out-in-the-dev-channel-with-minor-changes/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>今天，微软<a href="https://blogs.windows.com/windows-insider/2021/09/09/announcing-windows-11-insider-preview-build-22454/">在开发频道发布了</a>一个新的<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>内部预览版本，版本号达到 22454。不出所料，没有太多新东西。你看，Dev 频道是关于 rs_prerelease 版本的，这意味着虽然它首先获得新特性，但它并不依赖于操作系统的特定特性版本。由于 Windows 11 的第一个版本还没有发货，我们在开发频道没有看到太多的新功能。</p>
+
+  
+<p>Windows 11 build 22454 有一些小改动。首先，如果你右击回收站，你会看到一个新的、更现代的上下文菜单。这主要包括选项旁边的新图标，但也有“显示更多选项”选项来扩展菜单。这是 Windows 11 中普遍存在的问题。</p>
+
+
+
+<p>说到新的上下文菜单，你不必点击文件浏览器中的“显示更多选项”来添加快速访问。这些新的上下文菜单实际上是基于这样的想法设计的，即常用的命令应该放在最前面和中间，而很少使用的命令应该额外点击才能到达。</p>
+
+<p>最后，有一个新版本的韩国 IME，增加了丙烯酸，黑暗模式支持，等等。</p>
+
+<p>除了这些小的新特性，还有许多修复、改进和已知问题。以下是修复的内容:</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_6"><h3 id="windows-11-build-22454-fixes">Windows 11 内部版本 22454 修复程序</h3><p><strong>【常规】</strong></p><ul> <li><strong>我们修复了导致启用了</strong> <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview"> <strong> Windows Defender 应用防护</strong></a><strong>【WDAG】的电脑不断进行错误检查的问题。启用了 WDAG 的电脑现在应该收到内部版本 22454。</strong></li> </ul><p><strong>【开始】</strong></p><ul> <li>右键单击开始按钮(WIN + X)时，会再次列出 Windows 终端。</li> <li>旁白现在应该更可靠地宣布开始发射。</li> </ul><p><strong>【任务栏】</strong></p><ul> <li>当通过任务视图按钮进行项目导航扫描时，桌面弹出按钮现在应该为讲述人用户正确关闭。</li> <li>修复了桌面预览缩略图在某些纵横比下无法正确渲染的问题。</li> <li>修正了一个舍入问题，使得音量图标提示在某些情况下显示错误的数字。</li> <li>当弹出型按钮打开时，输入指示器、快速设置和通知中心图标工具提示将不再显示在它们后面。</li> <li>解决了导致任务栏中显示声音的音量图标被静音的潜在问题。</li> <li>修复了一个可能导致任务栏在与任务栏预览交互后意外卡在全屏应用程序(如 PowerPoint 演示文稿)顶部的问题。</li> <li>使用对比主题时，当你将鼠标悬停在任务栏图标上时，它们不再闪烁。</li> <li>修正了一个问题，应用程序图标偶尔会意外地在任务栏上显示，而不是从下面显示。</li> <li>按住 Shift 键并单击任务栏中的应用程序图标，可以启动该应用程序的新实例(对于支持多个实例的应用程序而言),现在该应用程序又可以运行了。</li> <li>做了一些工作，以解决一个问题，即应用程序图标可能会卡在任务栏中的警告状态，即使有问题的应用程序是关闭的。</li> </ul><p><strong>【输入】</strong></p><ul> <li>修复了第一次调用手写面板后导致候选文本不出现的问题。</li> <li>减轻了当点击文本字段来调用触摸键盘时动画中的停顿。</li> <li>修正了一个导致某些人无法显示剪贴板历史的错误。</li> <li>在输入指示器中显示 3 个<sup> rd </sup> party IME 图标现在应该更可靠了。</li> <li>解决了在使用触摸键盘时改变窗口焦点时可能发生的 explorer.exe 崩溃。</li> <li>修正了一个导致某些游戏崩溃的问题。</li> <li>修正了使用触摸键盘时语音输入的提示无法连接到麦克风按钮的问题。</li> <li>解决了一个问题，触摸键盘可能会进入一种状态，其中关键标签将是不可见的，由于错误的背景颜色被使用。</li> <li>缓解了导致触摸键盘设置弹出按钮有时白底白字的问题。</li> <li>做了一些工作来解决一个问题，即在触摸键盘上与表情输入按钮交互可能会导致候选区域的布局被破坏。</li> </ul><p><strong>【文件浏览器】</strong></p><ul> <li>改进了上下文菜单调用的可靠性。</li> <li>缓解了使用文件浏览器时导致泄漏的几个问题。</li> <li>当在文件资源管理器中启用了单击打开内容的选项时，上下文菜单现在不会立即消失。</li> <li>如果您按 F11 进入全屏文件资源管理器，然后使用 WIN + Shift +左/右来更改窗口显示的屏幕，再次按 F11 将不再使窗口跳回原始屏幕。</li> </ul><p><strong>【设置】</strong></p><ul> <li>缓解了在设置中将某些第 3 <sup>第</sup>方 ime 输入搜索框时，可能导致候选窗口呈现在屏幕上的其他位置(不与搜索框关联)和/或插入搜索框的字符不显示的问题。</li> <li>我们做了一些工作，以帮助解决一个问题，使 Windows Insider 程序页面在设置中有时出现空白。</li> <li>对于阿拉伯语和希伯来语显示语言，辅助功能&gt;鼠标指针和触摸下的鼠标指针不再不可见。</li> <li>系统&gt;存储&gt;显示更多类别&gt;其他不应再总是说它由组策略管理，即使它不是。</li> <li>在“设置”中添加了一些“查找我的设备”的链接，以帮助您了解更多关于隐私资源的信息。</li> <li>当使用对比主题设置焦点时，在这些时间内焦点辅助&gt;下的开始时间和结束时间选择器现在可见。</li> <li>解决了使用声音设置时可能发生的崩溃问题。</li> <li>修正了快速设置中音量滑块的一个问题，该问题导致音量有时与实际设置略有不同。</li> </ul><p><strong>【登录和认证】</strong></p><ul> <li>修正了当网络图标在登录界面上更新状态时可能发生的崩溃。</li> </ul><p><strong>【开窗】</strong></p><ul> <li>进行了更改，以解决当应用程序最大化时，当鼠标移动到屏幕顶部时，标题栏选项(包括关闭、最小化和最大化)在某些应用程序中不会按预期出现的问题。</li> </ul><p><strong>【其他】</strong></p><ul> <li>改进了搜索悬停弹出按钮中某些应用程序的图标渲染。</li> <li>解决了导致某些语言的共享窗口中文本重叠的问题。</li> <li>当切换到任务管理器的细节标签时，做了一些性能改进。</li> <li>如果在切换到黑暗模式时打开了 Windows 安全应用程序，UI 元素现在应该会有更好的响应，并且不会有不可读的文本。</li> <li>如果在 Windows 安全应用程序的病毒和威胁防护下列出了大量的排除项，它现在会在加载它们时显示一个进度指示器。</li> <li>修复了在使用辅助功能设置中的选项来增加文本大小时，Windows 安全应用程序中的一些文本剪辑。</li> <li>缓解了导致某些应用程序中使用的<a href="https://docs.microsoft.com/en-us/windows/win32/controls/wm-ctlcolorstatic"> WM_CTLCOLORSTATIC 消息</a>被忽略的问题，因此某些地方的颜色不会正确显示。</li> <li>修复了桌面背景设置为幻灯片时的漏洞，随着时间的推移影响性能，直到 explorer.exe 重新启动。</li> <li>缓解了导致一些电脑在现代待机状态下进行错误检查的问题。</li> <li>修复了启用 Hyper-V 并创建外部 V-Switch 后导致 Wi-Fi 速度变慢的问题。</li> <li>当动画在系统中被禁用时，当从闪屏过渡到应用程序内容时，UWP 应用程序(如设置或反馈中心)中不应再有渐变动画。</li> </ul><p><em>注意:在 10 月 5 日<sup>日</sup>全面上市后，来自积极开发分支的 Insider Preview builds 中提到的一些修复可能会成为 Windows 11 发布版本的服务更新。</em></p> </div></section>
+<p>以下是仍然存在的问题:</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_8"><h3 id="windows-11-build-22454-known-issues">Windows 11 内部版本 22454 已知问题</h3><p><strong>【常规】</strong></p><ul> <li>我们正在修复一个问题，该问题导致一些 Surface Pro X 出现 WHEA _ 不可纠正 _ 错误的错误检查。</li> </ul><p><strong>【开始】</strong></p><ul> <li>在某些情况下，使用“从开始”或任务栏搜索时，您可能无法输入文本。如果遇到此问题，请按键盘上的 WIN + R 启动“运行”对话框，然后关闭它。</li> <li>右键单击开始按钮(WIN + X)时系统丢失。</li> </ul><p><strong>【任务栏】</strong></p><ul> <li>切换输入法时任务栏有时会闪烁。</li> <li>我们正在调查这个版本中的一个问题，即任务栏中的应用程序图标被“显示隐藏图标”按钮切断，并且在使用多个显示器时没有居中。</li> </ul><p><strong>【搜索】</strong></p><ul> <li>单击任务栏上的搜索图标后，搜索面板可能不会打开。如果出现这种情况，请重新启动“Windows 资源管理器”进程，并再次打开搜索面板。</li> <li>搜索面板可能显示为黑色，并且不显示搜索框下方的任何内容。</li> </ul><p><strong>【文件浏览器】</strong></p><ul> <li>如果您在文件资源管理器中右键单击 OneDrive 位置中的文件，当您将鼠标悬停在打开子菜单的条目上时，上下文菜单将意外关闭，例如“打开方式”</li> </ul><p><strong>【微件】</strong></p><ul> <li>小部件面板可能显示为空。要解决此问题，您可以注销，然后重新登录。</li> <li>外接显示器上的小工具可能会以错误的尺寸显示。如果您遇到这种情况，您可以首先在实际的 PC 显示器上通过触摸或 WIN + W 快捷方式启动小工具，然后在辅助显示器上启动。</li> </ul><p><strong>【Windows 沙盒】</strong></p><ul> <li>我们正在调查一个问题，在升级到此版本后，Windows Sandbox 可能无法为某些内部人员启动。</li> </ul><p><strong>【微软商店】</strong></p><ul> <li>我们将继续努力提高商店中的搜索相关性。</li> </ul> </div></section>
+<p>至于显著的新功能何时出现，应该很快。我们仍在等待 Android 应用程序的支持，微软刚刚推出了一款新的照片应用程序。还有其他新的收件箱应用程序需要测试，它们可能不会出现在 Windows 11 的初始版本中。</p>
+
+<p>和往常一样，如果你在开发频道，你可以通过 Windows Update 获得今天的版本。如果您不是，可以转到“设置”中的“Windows Insider 程序”选项卡开始。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

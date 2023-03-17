@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Android 12's Fabricated Overlay API brings back rootless themes</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android 12 捏造的覆盖 API 带回了无根的主题</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-12s-fabricated-overlay-api-brings-back-rootless-themes/#0001-01-01">https://www.xda-developers.com/android-12s-fabricated-overlay-api-brings-back-rootless-themes/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>全面稳定的 Android 12 版本即将发布，谷歌甚至在 AOSP 的回购中发布了源代码。在 Android 12 中有一个<a href="https://www.xda-developers.com/android-12/">的新功能，包括一个叫做人造覆盖的资源覆盖。本来是用来帮助系统管理动态变化的 API，你和 monet 可能会变成更大的东西——至少在 Android 13 发布之前。</a></p>
+
+ 
+<h2 id="background">背景</h2>
+<p>米沙·拉赫曼发现了这个新的 API，并引起了我的注意。他一直在使用 shell 命令来测试 Android 12 中不同的资源值，而不必手动编译覆盖 apk，他认为这可能会成为根设备的一个有趣的应用程序想法。当他引起我的注意时，我看了很多 Android 12 的源代码，注意到一些我认为非常有趣的东西。我测试了我所发现的，现在我们在这里——事实证明，捏造的覆盖 API 可以用来带回无根的主题。在我深入了解这里发生的事情之前，我先解释一下什么是人造叠加。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="what-are-fabricated-overlays">什么是人造覆盖？</h2>
+<p>人造覆盖是 Android 12 中引入的新功能。它们类似于 Android 已经使用了几年的经典运行时资源覆盖(rro)。rro 和制造的覆盖层都可以覆盖不同应用的不同资源。您可以将布尔值从 false 更改为 true(反之亦然)，设置状态栏的大小，等等。</p>
+
+<p>不过，人造覆盖层确实与 rro 有一些显著的不同。首先，你不需要生成一个叠加 APK，然后安装它。相反，你只需告诉 Android 你想为哪个应用程序更改哪些值，它就会将你的更改注册为一个覆盖图，然后你就可以启用它了。</p>
+
+<p>它们也比 rro 更受限制。在 Android 11 之前，rro 可以覆盖几乎任何资源:布尔值、整数、维度、属性、布局，甚至原始数据文件。Android 11 对 rro 的工作方式做了一些改变，使得覆盖布局不再可行，尽管它确实使 rro 整体上更加稳定。</p>
+
+<p>另一方面，虚构的覆盖图只能覆盖可以用整数表示的值。这包括整数(duh)、维度、布尔和颜色。您不能使用它们来覆盖原始数据资源、布局、字符串或数组——至少不容易。这在某种程度上是 API 中的任意限制:它只接受由 TypedValue 类定义的整数值和资源类别。TypedValue】支持字符串和其他资源类型，但只是引用它们的资源，而不是保存它们的实际数据。</p>
+
+<p>然而，这些限制对于人造叠加的预期目的来说并不算什么:材质你和莫奈效果。制作的覆盖图使系统可以轻松地动态生成和应用颜色和尺寸覆盖图，而无需重新启动或等待 APK 编译。</p>
+
+<p>现在，通常情况下，这只是另一个整洁的 API，供有根设备的人利用。除非存在制造商制造的漏洞(就像 Synergy 在三星设备上利用的漏洞)，否则覆盖只能由具有 root 访问权限的第三方安装。不过，这是最棒的部分——谷歌忘了修补 Android 12 的一个漏洞。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="fabricated-overlays-without-root">无根部的人造覆盖层</h2>
+<p>Android 8 引入了新的覆盖管理器服务(或 OMS) API，人们很快发现覆盖 apk 可以作为普通应用程序安装，然后使用 ADB 启用。可悲的是，谷歌在 Android 9 中修补了这一点，从此以后，只有用与系统相同的密钥签名的覆盖图才能动态安装。</p>
+
+<p>事实证明，Android 12 的人造覆盖层有一个漏洞，让人想起 Android 8 中存在的漏洞:它们不需要 root 访问权限或签名级别的权限。他们只需要一些作为 shell 用户运行的东西(例如，ADB)来注册他们。</p>
+
+<p>很明显，谷歌的意图是，只有根用户和系统用户才能访问伪造的覆盖图。有一个 ADB 命令实现来创建它们，如果执行用户不是 root 用户，它就不会运行。漏洞是检查只在命令中，而不是在实际的 API 中，这意味着我们可以通过一点工作来利用它。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="adb-on-device">ADB On-设备</h2>
+<p>很长一段时间以来，Android 都有无线 ADB 功能。这使得计算机(或任何具有 ADB 二进制和网络接入的设备)无线连接到设备。它主要面向没有用户可访问的 USB 连接的 Android 设备，如智能手表和电视。此外，在 Android 11 之前，您需要有线 ADB 连接来激活无线模式。</p>
+
+<p>Android 11 正式将无线 ADB 引入手机和平板电脑。它比经典的无线 ADB 复杂一点，有配对和认证码，但它可以由用户完全在设备上激活，只要设备连接到 WiFi。这意味着可以从您的设备通过 ADB 连接到您的设备，您需要的只是一个 WiFi 连接。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="using-elevated-apis-in-an-app">在应用中使用提升的 API</h2>
+<p>你可能有很多理由想在你的应用中使用受限的 API。通常，这是因为它们提供了一些您需要的特殊功能。只要您需要的 API 有 shell 命令实现，从应用程序中使用它就相当容易。您需要做的就是以 root(或 ADB)身份创建一个 shell 进程，运行正确的命令，并解析结果(如果有的话)。</p>
+
+<p>如果 API 没有 shell 实现，或者 shell 实现缺少了您需要的东西怎么办？如果你在一个根设备上，你可以使用类似于<a href="https://github.com/Chainfire/librootjava"> libRootJava </a>的东西。libRootJava 允许您与 Android 框架 API 进行交互，就像您的应用程序以 root 用户身份运行一样。这比运行 shell 命令更方便、更快，因为它们都是用同一种语言编写的，您不必担心手动解析字符串。它确实有一些限制，但在大多数情况下，它工作得很好。</p>
+
+<p>libRootJava API 非常灵活。您可以修改它，使其作为 shell 用户而不是 root 用户运行。谢天谢地，你不必这么做，因为已经有人做了，它叫做<a href="https://shizuku.rikka.app">滴</a>。滴几乎就像是 Magisk Manager 和 libRootJava 的结合体。</p>
+
+<p>滴管理器应用程序会引导您设置一个以滴可以访问的 shell 用户身份运行的进程。滴 API 库可以实现到应用程序中，让它们像 shell 用户一样访问系统 API。这是一个比 libRootJava 更集中的过程，因为滴只需要设置一次，每个实现滴 API 库的应用程序就可以使用它。如果你对滴如何工作以及如何将它集成到你的应用中感兴趣，<a href="https://www.xda-developers.com/implementing-shizuku/">我这里有一个指南</a>。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="shizuku-and-fabricated-overlays">滴和人造覆盖层</h2>
+<p>到现在为止，你可能已经明白这是怎么回事了。我们可以使用像滴这样的服务作为外壳用户访问虚构的覆盖 API，我们可以使用 Android 11 的无线 ADB 功能获得外壳级访问，所有这些都在设备上。由于 root 用户限制只存在于虚构的覆盖 shell 命令中，而不存在于实际的 API 中，因此作为 shell 用户运行就足以直接使用它。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="implementation-library-and-sample-app">实现:库和示例应用程序</h2>
+<p>实现细节呢？好吧，我也帮你搞定了。</p>
+
+<p>为此，我制作了一个<a href="https://github.com/zacharee/FabricateOverlay">库和一个使用该库的全功能示例应用程序</a>。</p>
+
+<p>图书馆本身主要是为了方便。它包装了一些隐藏的系统 API，并为您提供了一些处理滴权限的方便方法。它也很灵活，所以如果有其他方法检索它，您可以提供自己的 IOverlayManager API 实例。</p>
+
+<p>样例应用程序展示了如何使用滴实现这个库。这也是一个功能齐全且有用的应用程序。主页面显示了通过它创建的当前注册的人造叠加图，并按目标应用程序分组。您也可以在那里启用、禁用和删除它们。</p>
+
+<p>点击底部的“添加覆盖”按钮，你会看到所有可覆盖应用的列表。搜索或滚动找到您需要的，然后点击它。然后，您可以按屏幕底部的“添加”按钮，查看可在该应用程序中覆盖的资源列表。选择一个资源，设置其值，并根据您想要更改的值重复上述操作。点击“保存”按钮，输入一个名字，确认，你将回到主屏幕，现在显示新的覆盖，准备启用。</p>
+
+<p>这里有一些应用程序的截图，感谢米沙·拉赫曼。</p>
+
+
+
+
+
+<p>作为一个旁注，我也有一个通用的叠加管理应用程序称为...叠加管理器。预编译的应用程序本身<a href="https://patreon.com/zacharywander">只在我的 Patreon </a>上可用，但是<a href="https://github.com/zacharee/OverlayManager">的源代码对任何想编译或修改它的人都是免费的</a>。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="conclusion">结论</h2>
+<p>Android 12 中新制作的叠加 API 非常棒，主要是因为它不需要 root。它可能不像完整的 RRO APK 那样复杂，但是它在没有 root 访问权限的情况下为您提供了更多的灵活性。</p>
+
+<p/><p><strong> <a href="https://github.com/zacharee/FabricateOverlay">查看 GitHub 上的制作叠加应用</a> </strong></p>
+
+<p>如果你有一台运行 Android 12 的设备，并且你想尝试一下，请查看上面链接的 GitHub 库。发布部分将有一个 APK 可供下载和使用。使用 JitPack，这个库应该很容易包含在您自己的应用程序中。</p>
+
+<p>当然，你不应该期望这个特性会持续很长时间。谷歌真的不喜欢第三方覆盖，所以这几乎肯定会在 Android 13 发布时得到修复。不过，与此同时，享受它吧！</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

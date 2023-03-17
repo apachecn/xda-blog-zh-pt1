@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>[Update: Should arrive in Android 12L instead] Android 13 may add a toggle to disable Android's new background app limitations</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>[更新:应该会在 Android 12L 中出现] Android 13 可能会添加一个切换来禁用 Android 的新后台应用程序限制</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-13-phantom-process-toggle/#0001-01-01">https://www.xda-developers.com/android-13-phantom-process-toggle/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_0"><p><b>更新 1(</b><b>2021 年 12 月 15 日</b><b>@</b><b>07:10</b><b>ET):</b>看起来 Android 12L 将会推出禁用虚拟进程的新 toggle。滚动到底部了解更多信息。下面保留了 2021 年 12 月 14 日发表的文章。</p> </div></section>
+<p>Android 12 是一次大规模更新，带来了一系列变化，从 Android 5.0 以来最大的视觉改革到隐私指示器和新的隐私仪表盘等增强功能。虽然大多数这些变化都是受欢迎的，但最新的 Android 版本也引入了一些颇具争议的变化。其中一个变化是引入了一个非常激进的后台进程杀手，叫做“幻影进程”上个月，我们报道了<a href="https://www.xda-developers.com/android-12-background-app-limitations-major-headache/">的<em>虚拟进程杀手</em>如何对像 Termux </a>这样的应用造成破坏。但看起来谷歌将在未来的 Android 版本中让用户禁用这种任意的后台应用程序策略。</p>
+
+  
+<p>正如米莎尔·拉赫曼所发现的，谷歌已经向 AOSP 提交了一个补丁，在开发者选项中增加了一个开关来关闭虚拟进程监控。</p>
+
+ 
+
+
+
+<p>对于外行人来说，<em> PhantomProcesskiller </em>是 Android 12 中的一个新机制，如果应用程序使用过多的 CPU，而它们的父应用程序进程也在后台，它会杀死应用程序启动的分叉子进程。此外，这一变化只允许最多 32 个子进程，因此极大地限制了一个应用程序在后台可以完成的操作数量。但看起来谷歌将在未来的 Android 版本中增加一个新的选项来关闭幻影进程黑仔——可能是<a href="https://www.xda-developers.com/google-android-13-t-tiramisu-dessert-name/"> Android 13 </a>。</p>
+
+<p>补丁的描述如下:</p>
+
+<blockquote>
+<p>添加设置以在开发选项中切换虚拟流程监控</p>
+<p>对于高级用户来说，可以将对虚拟进程的监控</p>
+<p>从设置-&gt;开发者选项-&gt;功能标志中关闭。</p>
+ </blockquote>
+<p>开发人员和高级用户将能够通过导航到设置&gt;开发人员设置&gt;功能标志来禁用虚拟进程。一旦禁用，使用太多 CPU 的分叉子进程将不会被终止，也不会受到 32 个子进程的限制。但是，这种豁免仅适用于子进程，不适用于主应用程序进程。</p>
+
+<p>关闭虚拟进程监控的开关可能会在 Android 13 中添加。谷歌还可以在<a href="https://www.xda-developers.com/android-12l/"> Android 12L </a>中添加该选项，这是专为可折叠、平板电脑和大屏幕设备设计的 Android 12 功能。</p>
+
+<hr/>
+
+
+<h2 id="update-commit-has-been-merged">更新:提交已被合并</h2>
+<p>据谷歌<a href="https://issuetracker.google.com/u/1/issues/205156966#comment28">京基</a>称，在开发者选项中增加一个禁用幻影处理的切换的承诺已经被合并，<em>称“它应该能做成 Android 12L。”</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

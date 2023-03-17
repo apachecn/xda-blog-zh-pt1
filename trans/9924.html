@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Windows Package Manager 1.2 now installs the right apps on ARM PCs</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 软件包管理器 1.2 现在可以在 ARM 电脑上安装正确的应用程序</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-package-manager-1-2-arm-pc/#0001-01-01">https://www.xda-developers.com/windows-package-manager-1-2-arm-pc/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>今天，微软发布了 Windows 包管理器(也称为 winget)的更新，使其版本达到 1.2。这个<a href="https://www.xda-developers.com/microsoft-releases-windows-terminal-1-0-package-manager-announces-linux-gui-app-support-gpu-acceleration-subsystem-linux-wsl-2/">包管理器是在大约两年前</a>推出的，它的意思是给用户一个更接近于<a href="https://chocolatey.org">巧克力</a>或者 Linux 的包管理体验。这个版本有一些改进，但最值得一提的是对 Surface Pro X 等 ARM 设备的支持。</p>
+
+  
+<p>通过此更新，Windows 包管理器将根据您的硬件体系结构安装正确版本的应用。如果你有一台 ARM PC，这意味着 Windows 包管理器将更喜欢设计为在 ARM64 上本地运行的包。如果没有原生 ARM 版本的应用程序，它会选择下一个最佳选项，即 x64(技术上是 x86-64)应用程序，然后是 x86 版本。这可确保您的系统总能获得性能最佳的应用版本。</p>
+
+<p>Windows Package Manager 1.2 中的其他改进不太明显，但仍然受到欢迎。对错误处理进行了改进，以便更容易理解“神秘的”错误代码。开发人员可以使用应用程序清单在安装程序中的错误代码和 Windows 包管理器理解的一组代码之间创建链接，从而为最终用户提供更清晰的错误消息。</p>
+
+<p>最后，有一个新的选项来启用或禁用 Windows 包管理器中的本地清单，以防您想测试从本地源安装应用程序。这对于在将应用程序提交到官方公共应用程序库之前进行测试非常有用。Microsoft 建议始终在虚拟机或 Windows 沙盒中测试本地清单，以防止损坏你的电脑。</p>
+
+<p>Windows 包管理器 1.2 可通过 Microsoft 商店作为更新获得。像往常一样，它应该作为应用安装程序包更新的一部分，内置于 Windows 10 和 11 中。如果你想为开发做贡献，你也可以在 GitHub 上查看<a href="https://github.com/microsoft/winget-cli">项目的页面。</a></p>
+
+<hr/>
+
+<p>来源:<a href="https://devblogs.microsoft.com/commandline/windows-package-manager-1-2/">微软</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Latest Tap, Tap update brings Android 12 'Columbus' gesture code implementation, Material You theming, and more</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>最新的点击，点击更新带来了 Android 12 '哥伦布'手势代码的实现，你的主题材料，等等</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/tap-tap-update-android-12-columbus-material-you/#0001-01-01">https://www.xda-developers.com/tap-tap-update-android-12-columbus-material-you/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>随着 Android 12 的更新，谷歌为某些 Pixel 智能手机带来了一个名为“快速点击”的非常酷的功能。一旦激活，Quick Tap 可以让你双击手机背面来触发谷歌助手，截图，播放或暂停媒体，或打开你选择的应用程序。谷歌最初在 Android 11 开发者预览版开始研究这种代号为“哥伦布”<a href="https://www.xda-developers.com/google-pixel-android-11-double-tap-rear-gestures/">的手势机制，但决定将其搁置到 Android 12。这一功能的第三方开源重新实现已经有一段时间了，不过是以 XDA 知名开发商</a><a href="https://forum.xda-developers.com/member.php?u=3563640"> Quinny899 </a>的<a href="https://www.xda-developers.com/tap-tap-brings-ios-14-android-11-back-tap-gesture-any-android-device/"> Tap，Tap app </a>的形式。该应用程序现在已经达到了第一个稳定的里程碑，带来了新的用户界面，大量的新功能和许多错误修复。</p>
+
+  
+<p>据开发者称，谷歌的 Android 11 时代的双击手势代码完全驻留在 SystemUI 中，但 Android 12 版本采用了全新的架构。点击检测逻辑已经被移动到一个新的“<a href="https://source.android.com/devices/contexthub">CHRE</a>”(<strong>C</strong>上下文<strong>H</strong>ub<strong>R</strong>untime<strong>E</strong>环境)模块中，运行在支持<a href="https://support.google.com/pixelphone/thread/139017006/">的像素设备</a>的低功耗 CPU 上，称为 Nanoapp。由于 nanoapps 是专门为 CPU 和固件构建的，将它们移植到另一个平台几乎是不可能的任务。为了解决这种情况，Tap，Tap 现在支持两种模式:一种是用于非像素智能手机的传统方法，在应用程序本身中运行检测，另一种是通过官方支持的设备上的低功耗 nanoapp 的原生方法。就目前而言，后者可以在没有根访问权限的情况下使用滴来完成，但谷歌可能会在 Android 13 中让它变得困难。</p>
+
+<p>新的更新还解锁了使用<a href="https://www.xda-developers.com/snapchat-partner-google-pixel-6-series/">像素专有的“快速点击以捕捉”功能的能力</a>任何带有加速度计和陀螺仪传感器的 Android 7.0+设备，但 root 访问对于此端口是强制性的<a href="https://github.com/KieronQuinn/TapTap/wiki/Quick-Tap-to-Snap">。此外，Tap，Tap 应用程序的整个 UI 已经重写，将一长串设置分成单独的页面，以便于导航。设计语言遵循你</a>设计的<a href="https://www.xda-developers.com/material-you/">材质，因此应用程序可以根据你的壁纸颜色同步调整其外观。</a></p>
+<div class="body-img portrait"><div class="responsive-img image-expandable img-article-item-portrait" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Tap-Tap-old-versus-new-Material-You-design.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Left: Old design, Right: New design&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Tap-Tap-old-versus-new-Material-You-design.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Tap-Tap-old-versus-new-Material-You-design.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="600px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Tap-Tap-old-versus-new-Material-You-design.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="360px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Tap-Tap-old-versus-new-Material-You-design.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="Tap, Tap old versus new Material You design" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Tap-Tap-old-versus-new-Material-You-design.jpg" src="../Images/fb76568a4cd4e0394704e1693af8f9a4.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2022/01/Tap-Tap-old-versus-new-Material-You-design.jpg"/> </picture> <figcaption class="body-img-caption">Left: Old design, Right: New design</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>Tap，Tap 1.0 的完整发布说明可以在<a href="https://medium.com/@KieronQuinn/tap-tap-v1-0-restarting-from-scratch-2b87c241d176">这里</a>找到。开发人员已经推出了一个快速修复程序(build 1.0.1)，其变更日志如下所示:</p>
+
+<ul> <li>修复各种崩溃，包括 Snapchat，应用程序快捷方式和网络问题。</li> <li>改进了用于型号推荐的设备规格查找</li> <li>对通知和快速设置展开/折叠操作的改进</li> <li>不被支持的动作和关卡现在会给出它们被支持的原因</li> <li>增加了电池保护门</li> </ul>
+
+<p>如前所述，Tap，Tap 是一款开源 app，所以你可以在 GitHub 上关注它的开发<a href="https://github.com/KieronQuinn/TapTap">。试用一下，让我们知道它在您的设备上的效果如何！</a></p>
+
+<p/><p><strong> <a href="https://github.com/KieronQuinn/TapTap/releases/latest">下载 Tap 最新版本，Tap</a>| |<a href="https://forum.xda-developers.com/t/4140573/">Tap，Tap</a>XDA 讨论帖</strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

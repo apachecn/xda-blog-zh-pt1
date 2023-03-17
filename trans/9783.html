@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>ytcast lets you cast YouTube videos to your TV using command line</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>ytcast 允许您使用命令行将 YouTube 视频投射到电视上</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/ytcast-cast-youtube-videos-command-line/#0001-01-01">https://www.xda-developers.com/ytcast-cast-youtube-videos-command-line/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>如今，将智能手机的屏幕无线投射到电视等其他设备上并不是什么难事。事实上，当从手机或平板电脑向智能电视播放 YouTube 视频时</p>
+
+  
+
+
+<p>icon 负责一切—从设备发现到无缝上下文切换。但是如果你是一个命令行爱好者，你可能希望看到幕后，并通过 CLI 控制整个转换程序。这正是 Marco Lucidi 所做的，他发明了一个叫做<strong> ytcast </strong>的便捷工具。</p>
+
+ 
+<h2 id="what-is-ytcast">什么是 ytcast？</h2>
+<p>自称为<em>20 多岁的计算机科学爱好者</em>，在 GitHub 上化名<a href="https://github.com/MarcoLucidi01"> MarcoLucidi01，他将 ytcast 实用程序编码为 cast 按钮的独立替代品。据开发者称，任何人都可以使用该程序直接从命令行界面复制“在电视上播放”按钮的功能。它是用 Go 编写的，可以在 Windows、Linux 和 macOS 上运行。</a></p>
+
+ 
+<p class="w-rich w-youtube" id="07aWOpi8DVk">  </p>
+
+<p class="ad-odd"> </p>
+
+
+<h2 id="how-ytcast-works">ytcast 如何工作</h2>
+<p>在幕后，ytcast 使用由网飞和谷歌开发的<a href="http://www.dial-multiscreen.org/" rel="nofollow"> DIAL(发现和启动)</a>协议来处理设备发现和应用程序启动事件。对于不再使用拨号协议(如 Chromecast)的目标，该程序还提供了手动配对选项，由 YouTube on TV 应用程序的“<a href="https://support.google.com/youtube/answer/3230451">链接和代码</a>功能提供支持。接下来是屏幕识别部分，开发人员依赖于反向工程的 YouTube Lounge API。最后，它将视频 URL 从源设备传递到目标屏幕。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="limitations">限制</h2>
+<p>由于这个项目还处于起步阶段，所以有几个缺点。会话处理有时是偶然的，尤其是由于使用了未记录的 API。开发人员还没有找到一种可靠的方法来通过 ytcast 传递 YouTube 播放列表的 URL，但是有一种解决方法涉及到 youtube-dl 可执行文件。最后但同样重要的是，你可能在设置&gt;链接设备菜单下找不到 ytcast。</p>
+
+<p>不用说，ytcast 项目对高级用户非常有用。这是一个巨大的潜力，我们必须记住，在这一点上，它显然是一个测试质量的软件。一旦它达到稳定的里程碑，它可能是任何对脚本和自动化感兴趣的人的最佳选择。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="download-ytcast">下载 ytcast</h2>
+<p>您可以通过访问<a href="https://github.com/MarcoLucidi01/ytcast">项目的 GitHub 资源库</a>开始使用 ytcast。“Releases”部分包含预编译的二进制文件。请务必提供一些反馈，以帮助 Marco 完善此计划。</p>
+
+<p/><p><strong> <a href="https://github.com/MarcoLucidi01/ytcast/releases/latest">下载 ytcast </a> </strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

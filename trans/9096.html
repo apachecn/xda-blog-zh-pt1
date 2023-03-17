@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>CodeWeavers is helping DirectX 12 Windows games to run on Linux</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>CodeWeavers 正在帮助 DirectX 12 Windows 游戏在 Linux 上运行</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/codeweavers-directx-12/#0001-01-01">https://www.xda-developers.com/codeweavers-directx-12/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>CodeWeavers <a href="https://www.codeweavers.com/crossover"> CrossOver </a>是在其他操作系统上运行 Windows 应用程序最流行的方式之一。它结合了开源<a href="https://www.winehq.org/"> Wine 项目【CrossOver 的开发人员为其贡献代码)的出色工作，以及更易于使用的界面和前端。CodeWeavers 早在 8 月</a>就发布了 CrossOver 21 <a href="https://www.xda-developers.com/crossover-21-update/">，现在该公司分享了其将现代游戏支持引入 Linux 和 Mac 的工作细节。</a></p>
+
+  
+<p>最近的许多 Windows 游戏(和其他图形密集型应用程序)都依赖于 DirectX 12，这是微软 DirectX 图形库的最新版本<a href="https://en.wikipedia.org/wiki/DirectX">，它使用较低级别的 API 来实现更快的性能。DirectX 仅在 Windows(和 Xbox 控制台)上可用，因此 Wine 兼容层使用 VKD3D 图形库在 Vulkan(在 Linux、Windows 和其他平台上都可用)之上执行 Direct3D 调用。VKD3D 库是</a><a href="https://github.com/ValveSoftware/vkd3d">主要由 Valve 软件</a>为其<a href="https://www.protondb.com/">质子兼容层</a>开发的，Vkd3d 上的快速进步是现在这么多 Windows 游戏可以在 Linux 上玩的主要原因。</p>
+
+<p>根据一篇新的<a href="https://www.codeweavers.com/blog/cjsilver/2021/12/22/were-getting-there-crossover-support-for-directx-12">博客文章</a>，尽管 CrossOver 已经包含 VKD3D，但 CrossOver 并不正式支持 DirectX 12 游戏，而其开发者正在解决一些性能问题:</p>
+
+<blockquote>
+<p>CrossOver 用 VKD3D 运行 DirectX 12 游戏。VKD3D 是建立在<a href="https://www.vulkan.org/#latest-vulkan-api-extensions-and-additions"> Vulkan </a>之上的 3D 图形库。目前，人们正在做大量的工作来提高 VKD3D 的性能。在 Vulkan <a href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/VK_EXT_descriptor_indexing.html">描述符索引扩展</a>的帮助下，它允许类似于 DirectX 12 描述符堆的功能，Vulkan 描述符的写入频率更低，使用的 GPU 内存也更少。因此，VKD3D 可以支持使用足够多的描述符来要求来自第 2 层和第 3 层硬件的资源的游戏。</p>
+ </blockquote>
+<p>CrossOver 计划在 2022 年正式开始支持 Linux 上的 DirectX 12 游戏和应用，未来发布 CrossOver 22。然而，该公司并不确定 VKD3D 何时能在 Mac 上运行。苹果在 macOS(或 iOS)上根本不支持 Vulkan，而是要求开发者使用其<a href="https://developer.apple.com/metal/">金属图形库</a>。这是 CrossOver 的一个问题，博客文章接着说:</p>
+
+<blockquote>
+<p>一般来说，Metal 以不同的方式进行细分，并且缺少几何体着色器和变换反馈。具体到 DirectX 12 和 Metal，存在资源限制的问题。通常，游戏需要访问至少一百万个着色器资源视图(SRV)。对这么多 SRV 的访问需要第 2 层的资源绑定。Metal 每个参数缓冲区只支持大约 500，000 个资源，所以第二层资源绑定是不可能的。Metal 的 50 万限制对于 Vulkan 描述符索引是足够的，但是对于 D3D12 就不够了。这一限制意味着 CrossOver Mac 无法支持第 2 层绑定，因此许多 DirectX 12 游戏将无法运行。</p>
+ </blockquote>
+<p>尽管面临这些挑战，CodeWeavers 希望 DirectX 12 游戏和应用程序可以在未来的 CrossOver 23 更新中在 Mac 上运行。跨界车的主要新版本通常每年都会出现，所以很可能是在 2023 年。</p>
+
+<p>即使不使用 CrossOver，CodeWeavers 开发的大部分兼容性改进都会提交回 Wine 项目。这意味着该公司的工作可能有助于改善 Lutris 上的 Windows 游戏、<a href="https://www.xda-developers.com/valves-steamdeck-is-a-switch-like-gaming-pc-starting-at-399/"> Steam Deck 控制台</a>、PlayOnLinux 和其他基于葡萄酒的项目。也就是说，一旦全面支持 DirectX 12，CrossOver 可能是在 Steam 之外的 Linux 上玩 Windows 游戏的一个令人信服的选择。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

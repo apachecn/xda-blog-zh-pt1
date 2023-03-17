@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Here's how to install a launcher app on Windows Subsystem for Android</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>以下是如何在 Android 的 Windows 子系统上安装启动器应用程序</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-subsystem-for-android-launcher-app/#0001-01-01">https://www.xda-developers.com/windows-subsystem-for-android-launcher-app/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p><a href="https://www.xda-developers.com/android-apps-available-windows-11-beta-channel/">Android 的 Windows 子系统</a>无疑是<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>的一个优秀特性，可以尽可能原生地在你的 PC 上运行 Android 应用。无论你是一名正在寻找无缝调试环境的应用程序开发人员，还是一名试图在运行常规 Windows 程序的同时运行他们最喜欢的<a href="https://www.xda-developers.com/best-android-apps/">Android 应用程序</a>的普通用户，Windows 的集成 Android 层都非常方便。</p>
+
+  
+<p/><p><strong> <a href="https://www.xda-developers.com/how-to-run-android-apps-on-any-windows-11-pc/">在 Windows 11 </a> </strong>上获取安卓应用不需要成为 Windows Insider</p>
+
+<p>当谈到界面时，微软从自己的<a href="https://www.xda-developers.com/windows-subsystem-linux-microsoft-store-windows-11/"> Linux 子系统</a>中借用了设计线索，这意味着 Android 应用程序的呈现方式与现代 Windows 应用程序相同。虽然 Windows 11 在某种程度上简化了 Android 应用程序管理过程，只要你<a href="https://www.xda-developers.com/how-to-bypass-amazon-appstore-region-lock-windows-subsystem-for-android/">使用 ADB </a>从亚马逊 Appstore 或<a href="https://www.xda-developers.com/how-to-sideload-android-apps-on-windows-11/"> sideload 下载它们，就会在开始菜单中自动创建相关的快捷方式，但 Android 的 Windows 子系统并不提供专用的主屏幕来访问已安装的应用程序。</a></p>
+
+<p/><p><strong> <a href="https://www.xda-developers.com/hands-on-android-apps-windows-11/">在 Windows 11 上用安卓应用动手</a> </strong></p>
+
+<p>这种设计背后的理念非常明显:微软希望你对待 Android 应用程序与传统的 Windows 程序没有什么不同。问题是，不是每个人都同意这个提议。如果 Windows 无法创建应用程序快捷方式，您必须修改 WsaClient 可执行文件来从头创建它，或者直接从 ADB shell 调用它。你甚至可能希望有一个集中的空间来存放所有的 Android 应用程序，就像 Linux 中的桌面环境一样，在那里你可以自由地访问核心设置模块，并自定义它的每个角落。嗯，对于 Android 的 Windows 子系统来说，这并不是完全不可能的。你需要做的就是侧装一个启动器应用(<a href="https://twitter.com/MishaalRahman/status/1450918565285179396">H/T<em>@米沙拉赫曼</em> </a>)。</p>
+
+<hr/>
+
+
+<h2 id="how-to-install-a-launcher-app-in-the-windows-subsystem-for-android">如何在 Android 的 Windows 子系统中安装启动器应用程序</h2>
+<ol> <li>抓取你想要的启动器程序的 APK 文件。既然有数百个，请务必提前查看我们的综合列表<a href="https://www.xda-developers.com/best-android-launchers/">最佳 Android 发射器</a>。</li> <li>一旦你手里有了 APK 的文件，<a href="https://www.xda-developers.com/how-to-sideload-android-apps-on-windows-11/">在<a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">亚行</a>的帮助下把它放到</a>。命令应该是:<pre> <code class="hljs xml">adb install <span class="hljs-tag">&lt;<span class="hljs-name">full_path_to_the_APK_file</span>&gt;</span></code> </pre></li> <li>从“开始”菜单运行刚刚安装的启动程序的快捷方式。</li> <li>瞧啊。</li> </ol>
+<div class="body-img portrait"><div class="responsive-img image-expandable img-article-item-portrait" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/10/WSA-launcher-app-settings.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Microsoft Launcher running inside Windows Subsystem for Android on Windows 11&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/10/WSA-launcher-app-settings.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/10/WSA-launcher-app-settings.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="600px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/10/WSA-launcher-app-settings.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="360px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/10/WSA-launcher-app-settings.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="WSA launcher app settings" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/10/WSA-launcher-app-settings.jpg" src="../Images/5471fc4eca2e54259af1fcefb1d2362a.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/10/WSA-launcher-app-settings.jpg"/> </picture> <figcaption class="body-img-caption">Microsoft Launcher running inside Windows Subsystem for Android on Windows 11</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>安装 Android 启动程序后，你注意到的第一件事是主屏幕的可用性。从那里，您可以访问应用抽屉以及 Android 实例的底层设置应用。想要整理已安装的应用程序吗？创建一些文件夹，并将相似的文件夹堆叠在一起。通过从设置中清除数据来修复故障应用程序？继续吧。见鬼，你甚至可以在 Android 主屏幕上添加一些很酷的小部件，并与 Windows 11 自己的小部件窗格结合使用。</p>
+
+<p>请记住，微软用 Windows 的等效链接替换了许多 Android 设置应用程序的意图链接。这意味着在点击 Android layer 的设置应用程序的一些部分后，你可能会被重定向到 Windows 11 的设置应用程序。这完全正常，没什么好担心的。</p>
+
+<hr/>
+
+<p><strong>您计划将哪个启动器应用程序用于 Android 的 Windows 子系统？请在下面的评论区告诉我们。</strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

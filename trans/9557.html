@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>PowerToys 0.55 brings another new tool to help you locate the mouse cursor easily</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>PowerToys 0.55 带来了另一个新工具，帮助您轻松定位鼠标光标</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/microsoft-powetoys-0-55-0-new-mouse-utility/#0001-01-01">https://www.xda-developers.com/microsoft-powetoys-0-55-0-new-mouse-utility/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">PowerToys 0.55 带来了另一个新工具，帮助您轻松定位鼠标光标</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">Microsoft PowerToys 的最新更新带来了另一个鼠标实用程序，可以帮助您轻松地在屏幕上定位鼠标光标。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p>去年 10 月，微软<a href="https://www.xda-developers.com/powertoys-049-find-mouse/">发布了其 PowerToys 套件的重大更新</a>。此次更新包括一个新的“查找我的鼠标”工具，它可以帮助用户通过聚光灯照射鼠标来轻松定位屏幕上的鼠标光标。微软<a href="https://www.xda-developers.com/microsoft-powertoys-0-51-mouse-highlighter/">随后发布了一款带有 PowerToys 0.51 的鼠标荧光笔工具</a>，它在鼠标按钮点击时用黄色圆圈高亮显示光标，便于用户在演示过程中显示点击。微软现在推出了另一款鼠标工具 PowerToys 0.55.0，旨在通过一种略有不同的方法帮助用户在屏幕上定位光标。</p>
+
+  
+<p>PowerToys 0.55.0 中新的鼠标指针十字准线实用程序会在屏幕上以鼠标指针为中心绘制一个十字准线(通过<a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-powertoys-adds-mouse-and-file-explorer-utilities/"> <em>发出哔哔声的计算机</em> </a>)。您可以使用默认的 Ctrl+Alt+P 键盘快捷键来启用它(或者设置一个自定义快捷键),并通过转至新的“鼠标指针十字光标”设置下的外观&amp;行为部分来自定义它的外观。正如你在附加的截图中看到的，你可以改变十字准线的颜色，不透明度，中心半径，厚度，边框颜色和边框大小。</p>
+
+
+
+<p>与“查找我的鼠标”实用程序不同，在“查找我的鼠标”实用程序中，聚光灯会在几秒钟后消失，而新的鼠标指针十字准线是持久的。这意味着它会一直留在你的屏幕上，直到你用快捷键禁用它。因此，对于有某种形式视觉障碍的用户来说，它应该更有用一些。PowerToys 团队表示，新的十字准线实用程序是与微软的辅助工具团队共同开发的。</p>
+
+<p>除了新的鼠标指针十字线工具，PowerToys 0.55.0 还通过两个新的文件资源管理器插件为预览窗格和 STL 格式缩略图生成带来了对 150 多种开发人员文件的预览支持。该更新还包括许多错误修复、改进和更改。更多细节请查看下一节中的完整变更日志。</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_5"><h3 id="microsoft-powertoys-0-55-0-changelog">微软 PowerToys 0.55.0 变更日志</h3><ul> <li>一般<ul> <li>。NET 运行时现在是 5，我们的下一个版本将升级到。NET 6。移动到。NET 5 和随后的 6 帮助我们在一个版本中减少了活动部件，所以我们走了这条路。这很重要，因为这是 ARM64 支持所需的主要工作项目之一。此外，这应该有助于提供一个速度提升，一旦我们开始。NET 6。</li> <li>@jsoref 的拼写插件帮助</li> </ul> </li> <li>总是在上面<ul> <li>修正了两个边框中的一个显示错误。</li> <li>现在边框默认为 OS 强调色。谢谢@davidegiacometti</li> <li>CPU / GPU 活动减少。虽然我们没有改进，但我们知道我们可以做得更好。</li> </ul> </li> <li>梦幻地带<ul> <li>修正了更新后不会丢失区域的错误</li> <li>修正了中文编辑页边空白问题。感谢@niels9001</li> </ul> </li> <li>文件资源管理器附件<ul> <li>GCode 缩略图现在有了透明度。谢谢@pedrolamas</li> <li>文件资源管理器预览窗格的新实用程序开发人员文件。这将总共添加大约 150 个文件扩展名。我们使用 Monaco 编辑器来增强这种体验。感谢@aaron-junker！</li> <li>新的实用工具- STL 缩略图添加！预览窗格支持已经在 Windows 中。谢谢@pedrolamas！</li> </ul> </li> <li>Image Resizer<ul> <li>修正了元数据过多的错误。感谢@CleanCodeDeveloper</li> <li>修正了在保持长宽比不变的情况下调整高度的错误。感谢@CleanCodeDeveloper</li> </ul> </li> <li>鼠标实用程序<ul> <li>新的实用工具-通过 Ctrl+Alt+P 在指针上画十字准线。这个功能是与微软的可访问性团队共同开发的。感谢@niels9001 帮忙图标！</li> </ul> </li> <li>电源重命名<ul> <li>文件排序现在如何文件资源管理器排序。</li> </ul> </li> <li>电动玩具跑<ul> <li>提高了速度，修正了窗口漫游插件的错误。感谢@htcfreek</li> <li>Window Walker 将显示升级应用的路径。谢谢@davidegiacometti</li> <li>在系统命令中添加了 UEFI 命令。感谢@htcfreek</li> <li>修正了 EnvironmentHelper 类的崩溃错误。感谢@htcfreek</li> <li>修正^:.的 URI 插件错误感谢@franky920920</li> <li>VS 代码插件不显示最新代码版本的工作空间已被纠正。感谢@ricardosantos9521</li> <li>修正了导致插件无法加载的错误。谢谢@davidegiacometti</li> <li>修正了 Uri 插件和网页搜索插件的崩溃。感谢@cyberrex5！</li> </ul> </li> <li>设置<ul> <li>修复了从管理员移动到非管理员时设置被重置的回归</li> </ul> </li> <li>视频会议静音<ul> <li>修正了 Zoom 和其他客户端的崩溃错误。我们找到了一个可以远程调试的人，来识别真正的崩溃部分。</li> <li>行为改变:当离开会议时，VCM 现在会让您的麦克风保持原来的状态。这模拟了 VCM 不存在时应用程序的行为。</li> <li>行为改变:当您退出 PowerToys 时，您当前的麦克风状态将保持不变。</li> </ul> </li> </ul> </div></section>
+<p>你可以在微软商店或者从<a href="https://github.com/microsoft/PowerToys/releases/tag/v0.55.0"> PowerToys GitHub 页面</a>下载 PowerToys 0.55.0。</p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

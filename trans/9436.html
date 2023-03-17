@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Flock could be Twitter's answer to Instagram's Close Friends feature</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Flock 可能是 Twitter 对 Instagram 密友功能的回应</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/twitter-flock-close-friends/#0001-01-01">https://www.xda-developers.com/twitter-flock-close-friends/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">Flock 可能是 Twitter 对 Instagram 密友功能的回应</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">即将推出的 Twitter Flock 功能将允许你将你的推文的可见性限制在少数人范围内。请继续阅读，了解更多信息。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p>去年 7 月，Twitter <a href="https://www.xda-developers.com/twitter-concept-trusted-friends-facets-reply-preferences/">展示了三个概念功能</a>，旨在给用户更大的灵活性和对其推文和个人资料的控制。其中一个功能旨在帮助用户让他们的推文只对一小部分人可见，就像 Instagram 的“密友”功能一样。当时，Twitter 将这一功能称为“可信任的朋友”。但它可能很快会以一个新名字——Twitter Flock——走向用户。</p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_1"><p>APK 拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p>Android 版本 9.27.0-beta.2 的 Twitter 拆除揭示了指向即将到来的功能的新字符串。字符串清楚地表明，该功能将允许用户将其推文的可见性限制在一小部分人的范围内。像 Instagram 的密友功能一样，Twitter 将为用户提供将用户添加到他们的“Twitter 群体”的选项，只有群体成员才能看到和回复推文。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friend_tab_label_inner_circle"</span>&gt;</span>Inner Circle<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friend_tab_label_recommended"</span>&gt;</span>Recommended<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_add_button_label"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_appbar_back"</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_appbar_done"</span>&gt;</span>Done<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_focal_message"</span>&gt;</span>You can see and reply to this Tweet because %s has added you to their Twitter Flock<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_list_management_description"</span>&gt;</span>People won’t be notified when you edit your Twitter Flock.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_list_management_description_label_link"</span>&gt;</span>How it works<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_remove_button_label"</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_timeline_message"</span>&gt;</span>You can see this Tweet because %s has added you to their Twitter Flock<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_timeline_reply"</span>&gt;</span>Everyone in %s’s Twitter Flock can see this reply<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_timeline_title"</span>&gt;</span>You’re in the Twitter Flock<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trusted_friends_title"</span>&gt;</span>Twitter Flock<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>多产的应用程序逆向工程师 Alessandro Paluzzi 在发布前成功启用了该功能，并分享了以下截图。正如你所看到的，这个功能可以让你添加多达 150 人到你的 Twitter 群，并与他们私下分享推文。只有群中的成员才能查看和回复这些推文。用户还可以选择在任何时候添加或删除群组中的成员，并且当成员从群组中删除时不会收到通知。然而，正如前面提到的字符串所揭示的，当用户将他们添加到一个群中时，Twitter 会通知他们。</p>
+
+ 
+
+
+
+<p>该功能目前正在开发中，在最新的推特版本中还没有上线。到目前为止，推特还没有分享任何关于推广的官方信息，但是我们会确保在即将到来的测试版更新中一出现就会告诉你。</p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

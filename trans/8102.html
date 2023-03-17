@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Live Transcribe prepares to let you transcribe speech while offline</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>实时转录准备让您在离线时转录语音</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/live-transcribe-speech-offline/#0001-01-01">https://www.xda-developers.com/live-transcribe-speech-offline/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">实时转录准备让您在离线时转录语音</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">APK 对 Live Transcribe 应用程序的拆除显示，谷歌正在为该应用程序添加离线转录功能。请继续阅读，了解更多信息。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p/><p>谷歌<a href="https://www.xda-developers.com/live-transcribe-sound-amplifier-google-hearing-impaired/">早在 2019 年就推出了</a>Live transcripte 应用程序，以帮助听力受损者进行社交互动。该应用程序通过实时将语音转换为文本，使日常对话变得更加简单。它支持 70 多种语言和方言，它还让用户可以选择添加谷歌可能不认识的特定单词，如果附近有人叫他们的名字，<a href="https://www.xda-developers.com/google-assistant-action-blocks-live-transcribe-sound-amplifier-wheelchair-access/">会提醒他们。虽然这些功能使该应用程序成为听力受损者的一个很好的工具，但它有一个小问题。该应用程序目前需要有效的互联网连接才能执行所有这些功能。但谷歌正准备在未来的更新中解决这个问题。</a></p>
+
+ 
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_1"><p>APK 拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p>Live Transcribe 应用程序 4.6 版本的拆除表明，谷歌正在为该应用程序添加离线转录支持。关于开发中功能的新字符串显示，它将允许用户下载语言包进行离线转录。下载语言包后，用户将能够用该语言进行实时转录，即使在离线时也是如此。</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"downloading_offline_pack_from_scribe"</span>&gt;</span>downloading_offline_pack_from_scribe<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"language_pack_button_available_content_description"</span>&gt;</span>Downloaded %s<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"language_pack_button_downloadable_content_description"</span>&gt;</span>Download %s to transcribe without internet<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"language_pack_button_downloading_content_description"</span>&gt;</span>Downloading %s<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"language_pack_downloading_no_network_error"</span>&gt;</span>"Can't download. No internet connection."<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"param_transcribe_offline_off"</span>&gt;</span>off<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"param_transcribe_offline_on"</span>&gt;</span>on<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"pref_offline_transcription"</span>&gt;</span>pref_offline_transcription<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"speech_offline_enabled"</span>&gt;</span>App is offline. Transcriptions and sound events are still available.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"speech_offline_enabled_sound_events_off"</span>&gt;</span>App is offline. Transcriptions are still available.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>正如字符串中提到的，该功能将允许用户下载多个语言包，这将证明对多语言用户是有益的。请注意，该功能仍在开发中，谷歌目前尚未公布发布时间表。我们将确保在未来更新中该功能开始推出时尽快通知您。</p>
+
+
+
+
+
+<p>值得注意的是，Live Transcribe v4.6 在<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>上带来了 Material You 动态上色支持。然而，它不包括你设计的任何其他材料的变化。</p>
+
+ 
+
+
+</div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

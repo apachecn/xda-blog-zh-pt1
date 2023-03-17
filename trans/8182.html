@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Finding randomly installed apps on your phone? Blame it on ads</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>在手机上查找随机安装的应用程序？归咎于广告</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/apps-installed-without-consent-ads/#0001-01-01">https://www.xda-developers.com/apps-installed-without-consent-ads/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>广告非常令人讨厌，许多游戏和应用程序都充斥着广告，而不是提供付费的选择。然而，用户现在报告说，一些广告可以绕过谷歌 Play 商店，在未经你同意的情况下在你的智能手机上安装应用程序。显而易见，这是不好的，广告应该永远无法逃离自己的沙箱，与智能手机的其他部分进行交互。</p>
+
+ 
+
+
+
+
+<p>在<a href="https://www.reddit.com/r/androiddev/comments/q4nltn/ads_are_now_able_to_bypass_google_play_to_install/"> /r/Androiddev subreddit </a>上首次披露，原来这些特定的广告是由 Digital Turbine 的需求侧平台(DSP)提供的。在这种情况下，DSP 是一种允许广告商在自动化的帮助下购买广告的系统。</p>
+
+<p>在 Android 上，系统级应用程序可以访问包管理器来安装应用程序，而无需请求用户许可。通常，原始设备制造商和谷歌 Play 商店是 Android 智能手机上唯一真正利用这种能力的应用程序，然而，Digital Turbine 的软件也可以安装在系统层面上。似乎当天气应用程序的这个特定广告显示时，它会检测是否安装了 Digital Turbine 的软件。如果是，那么它似乎利用 DT Ignite 来绕过 Play Store。DT Ignite <a href="https://www.digitalturbine.com/">作为系统应用程序预装在许多智能手机上，由 AT &amp; T、威瑞森、克拉罗和新加坡电信</a>等运营商提供。</p>
+
+<p>Reddit 用户<a href="https://www.reddit.com/r/androiddev/comments/q4nltn/ads_are_now_able_to_bypass_google_play_to_install/"> /u/omniuni </a>在/r/Androiddev 帖子上帮助解释了这个问题，Digital Turbine 联系他们澄清了一些问题。首先，Digital Turbine 显然表示，Ignite 不应该在没有用户交互的情况下安装应用程序。/u/omniuni 被告知，他们自己的文档规定，单击“x”或关闭对话框不应该安装任何东西。其次，Digital Turbine 坚持认为，通过 Ignite ads 分发的应用程序在安装前后都经过了验证，并在 Google Play 上注册，而且是通过安全连接交付的。据报道，该公司还告诉用户，他们正在研究一个更官方的回应。</p>
+
+<p>值得一提的是，未经用户同意，应用程序不应该安装在 Android 智能手机上。不要担心道德问题，但是过去在 Android 上有许多关于恶意应用的问题。问题是，像这样的广告框架是预装在许多 Android 智能手机上的，滥用系统的情况可能会发生。运营商用它来安装膨胀软件，在许多人看来这已经是不自量力了。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

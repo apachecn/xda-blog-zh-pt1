@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Fixes for AMD issues on Windows 11 are now available to everyone</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11 上 AMD 问题的修复程序现已对所有人开放</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/amd-fix-preferred-core-windows-11/#0001-01-01">https://www.xda-developers.com/amd-fix-preferred-core-windows-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>当几周前推出 Windows 11 时，新版操作系统存在一些值得注意的问题。特别是两个，得到了最多的关注，这<a href="https://www.xda-developers.com/amd-cpus-slower-windows-11-fix-is-coming/">具体影响了 AMD 处理器</a>。一个降低了 AMD 处理器中 L3 缓存的性能，另一个影响了这些 CPU 的“首选核心”功能。如今，这两个问题的修复程序已经面向公众发布，AMD 针对 Windows 11 上的首选核心问题发布了一个全新的修复程序。</p>
+
+  
+<p>通常，处理器可以检测当前可用的最佳内核，并为其分配一个线程。虽然一个 CPU 中的不同核心应该是相同的，但总会有细微的差异，这种称为“首选核心”的功能允许 CPU 为任何给定的任务选择性能最佳的核心。Windows 11 更新后，AMD 处理器不能再使用首选核心功能，而是将任务分配给随机核心，这可能导致仅使用一个或几个核心的任务性能略有下降。</p>
+
+<p>随着新的 AMD 锐龙芯片组驱动程序更新，版本 3.10.08.506，这个问题现在应该得到解决，线程应该再次分配到适当的核心。虽然驱动程序更新主要针对 Windows 11，但如果你愿意，你仍然可以在 Windows 10 上安装它。如果你已经安装了它，你可以检查 Windows 11 设置应用程序中的<em>应用程序&amp;功能</em>页面。您应该看到 AMD 芯片组软件 3.10.08.506 的列表，表明您拥有最新版本。你可以<a href="https://www.amd.com/en/support/kb/release-notes/rn-ryzen-chipset-3-10-08-506">在这里</a>下载更新的驱动。</p>
+
+<p>至于 L3 缓存问题，这只是访问 AMD 处理器内置的缓存时延迟增加的问题。虽然上周 Windows 内部人士获得了一个修复程序<a href="https://www.xda-developers.com/windows-11-fix-amd-performance-beta-channel-insiders/">，但你现在可以手动下载并安装在稳定的 Windows 11 版本上。该更新被标记为</a><a href="https://support.microsoft.com/en-us/topic/october-21-2021-kb5006746-os-build-22000-282-preview-03190705-0960-4ba4-9ee8-af40bef057d3"> KB5006746 </a>，并将内部版本号更改为 22000.282，与 Windows 内部人员获得的版本相同。你可以<a href="https://www.catalog.update.microsoft.com/Search.aspx?q=KB5006746">在这里</a>手动下载更新，或者在你的 Windows 11 PC 上查看可选更新列表。该更新也将包括在下个月的补丁星期二更新，这是强制性的。</p>
+
+<p>自 Windows 11 发布以来，在 Windows 11 中又发现了一些问题，其中一个问题可能会导致 Windows 11 在试图在打印服务器上打印任何东西时要求用户具有管理员权限。除了对 AMD 处理器上的 L3 缓存问题的修复，上周在测试版频道中为 Windows Insiders 提供的更新包括了更多的修复，但这个特殊的问题仍有待解决。</p>
+
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_5"><p><strong>更新:</strong>本文已经更新，包括了 L3 缓存问题的修复，现在每个人都可以使用。</p> </div></section></div>
+
+
+</div>    
+</body>
+</html>

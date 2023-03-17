@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>PowerToys 0.56 is out with FancyZones and mouse utility improvements</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>PowerToys 0.56 推出了 FancyZones 和鼠标工具的改进</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/powertoys-0-56-improvements/#0001-01-01">https://www.xda-developers.com/powertoys-0-56-improvements/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>微软发布了其 PowerToys 工具套件的新版本，使其版本达到 0.56.1。这次更新不太关注全新的功能，但它确实为现有功能带来了一些显著的改进，如 FancyZones 和鼠标实用程序，特别是 Find My Mouse。另一个值得注意的变化是，新的 PowerToys 更新现在包括发行说明，所以你不必按照 GitHub 发布页面来了解每个更新中的新内容。</p>
+
+  
+<p>正如我们上面提到的，FancyZones 正在通过 PowerToys 0.56.1 进行一些升级。最值得一提的是，你现在可以使用 FancyZones 创建多达 128 个区域，比之前的最多 40 个有了很大的提高。FancyZones 是一个窗口管理器，它可以让你创建自定义布局来组织所有的窗口。大多数用户似乎不太可能需要超过 40 个区域，但是如果您有一个大规模的多显示器设置，这可能对您有用。</p>
+
+<p>此外，FancyZones 现在正式支持子窗口和弹出窗口。已经可以将这些窗口分配到一个特定的区域，但这被认为是一个缺陷，而不是一个特性。然而，微软表示，一旦它被修复，许多用户要求它回来，所以现在它可以在 PowerToys 内的 FancyZones 设置中启用。</p>
+
+
+
+<p>与此同时，由 PowerToys 0.49 推出的 Find My Mouse 实用程序现在可以通过摇动鼠标光标来触发，这非常有意义。以前，你必须按下<strong> Ctrl </strong>两次来高亮鼠标光标，但是当试图找到他们的鼠标时，摇动是最可能做的自然动作。默认行为保持不变，但您可以在设置中启用新选项。</p>
+
+<p>另一个值得注意的新功能是 PowerToys Run，这是 PowerToys 内置的应用程序启动器和搜索引擎。有一个新的时区转换插件，所以你可以很快找到不同时区的具体时间。</p>
+
+<p>除了这些更大的升级，PowerToys 中的几乎每个工具都得到了一些改进和修复。您可以在下面找到完整的变更列表:</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_7"><h3 id="what-s-new-in-powertoys-0-56">PowerToys 0.56 的新功能</h3><p><strong>永远在顶端</strong></p><ul> <li>启用时修复了 GPU / CPU 的超额使用</li> <li>如果边界有焦点，则无法通过 F4 关闭</li> <li>更改现有窗口的边框大小应能正确调整大小</li> <li>Outlook 模式窗口不再使用边框</li> </ul><p><strong>颜色选择器</strong></p><ul> <li>主题改变时不再崩溃</li> </ul><p><strong> FancyZones </strong></p><ul> <li>区域限制从 40 个增加到 128 个。</li> <li>FancyZones 的子窗口和弹出窗口支持。要启用，请转到设置→FancyZones→Windows。我们修复了这些错误，却没有意识到它对大多数人来说是一个有用的特性。</li> </ul><p><strong>文件浏览器</strong></p><ul> <li>开发者文件预览修复:(感谢<a href="https://github.com/Aaron-Junker">@亚伦-勇克</a>)<ul> <li>修复未设置的对象引用。</li> <li>修正编码 UTF-8。</li> <li>文件的修复程序正在使用中。</li> <li>修正文件太大的问题。</li> </ul> </li> </ul><p><strong>图像缩放器</strong></p><p><strong>鼠标实用程序</strong></p><ul> <li>“查找我的鼠标”现在可以通过改变设置来摇动鼠标激活了！</li> <li>“立即查找我的鼠标”可以排除应用程序。</li> <li>修复十字准线厚度由于抗锯齿而看起来奇怪的问题</li> <li>修正了十字准线硬崩溃的问题(这是 0.55 版本的补丁)</li> </ul><p><strong>电源重命名</strong></p><ul> <li>将不再对文件名进行拼写检查。感谢<a href="https://github.com/niels9001"> @niels9001 </a></li> <li>自动完成结果框以不遮挡应用按钮。感谢<a href="https://github.com/niels9001"> @niels9001 </a></li> <li>正则表达式修复</li> </ul><p><strong>电动玩具运行</strong></p><ul> <li>PowerToys 的时区转换插件运行！感谢<a href="https://github.com/TobiasSekan"> @TobiasSekan </a></li> <li>计算器插件现在支持十六进制和二进制数字。这是不久前添加的，我们想对<a href="https://github.com/gsuberland"> @gsuberland </a>致以迟来的感谢</li> <li>终端插件性能提升。感谢<a href="https://github.com/htcfreek"> @htcfreek </a>！</li> <li>现在可以通过程序插件再次找到终端。</li> <li>Shutdown 命令现在使用混合快速参数进行关闭</li> <li>使用 VS 代码工作区插件支持 VSCodium。感谢<a href="https://github.com/makeProjectGreatAgain"> @makeProjectGreatAgain </a></li> </ul><p><strong>视频会议静音</strong></p><ul> <li>英伟达广播软件不会再崩溃了</li> </ul><p><strong>设置</strong></p><ul> <li>OOBE 升级说明</li> <li>修复设置丢失的问题(这是 0.55 版本的修复程序)</li> <li>UX 改进。感谢<a href="https://github.com/niels9001"> @niels9001 </a></li> </ul><p>安装人员</p><ul> <li>相信我们已经修复了长期以来令人讨厌的“app.dark.png 丢失”错误。感谢<a href="https://github.com/robmen"> @robmen </a>有一个很棒的博客！</li> <li>由于 UAC 提示安装，安装程序将在适当的权限下启动 PowerToys，而不是 Admin(这是 0.55 的修复程序)</li> <li>如果安装在不同的用户下，PowerToys 将会启动</li> </ul><p><strong>开发</strong></p><ul> <li>ARM64 -我们移除了最后一个。NET Framework 依赖项。感谢<a href="https://github.com/snickler"> @snickler </a>帮助穿过终点线！</li> <li>。NET 6 升级，现在最新最热。NET 运行时</li> <li>代码分析器已经升级！感谢<a href="https://github.com/CleanCodeDeveloper"> @CleanCodeDeveloper </a>！</li> <li>符号又回来了！</li> <li>代码重构，感谢<a href="https://github.com/CleanCodeDeveloper"> @CleanCodeDeveloper </a>和<a href="https://github.com/cyberrex5"> @cyberrex5 </a>在此帮忙！</li> <li>我们现在收看的是 VS 2022。NET 6 升级。</li> </ul> </div></section>
+<p>如果你还没有，你可以从 GitHub 下载 PowerToys 0.56，在那里你可以很容易地找到以前发布版本的历史。如果你想帮忙的话，这里也是为项目做贡献的理想场所。你也可以在微软商店找到它，尽管它仍然是从 GitHub 外部安装的。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

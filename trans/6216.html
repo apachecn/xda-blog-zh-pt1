@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Android 12 makes it easier for developers to know how powerful a device is</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android 12 让开发者更容易知道一个设备有多强大</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-12-performance-class/#0001-01-01">https://www.xda-developers.com/android-12-performance-class/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>Android 设备有各种形状和形式。我们有更便宜的规格较弱的智能手机，也有更贵的内部结构更好的智能手机。作为一名用户，你只需在网上查找这些规格，就可以明显看出你的智能手机是否可以被视为“强大”。但是在你的设备上运行的应用程序怎么知道呢？理论上，它可以将你的设备名称与数据库进行匹配，然后从中提取规格，检查 SoC 零件号/RAM 容量等系统属性，或者调用列出分辨率等信息的 Android APIs。，但没有简单、统一的方法来判断 Android 设备能提供什么样的性能。如果有一种快速的方法将设备分类，那么应用程序可以提供针对每类设备优化的不同体验，这将非常有用。为此，谷歌在 2021 年的 I/O 大会上推出了他们所谓的“性能等级”，从<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>开始。</p>
+
+  
+<p><a href="https://android-developers.googleblog.com/2021/05/whats-new-in-android-12-beta.html">根据 Google </a>的说法，这个标准“定义了一组超越 Android 基线要求的能力。满足性能等级要求的设备可以支持更苛刻的使用环境，并提供更高质量的内容。”应用程序开发人员可以在运行时检查设备的性能等级，然后定制应用程序，以提供充分利用设备性能的体验。最初，谷歌表示，它“将性能级能力集中在媒体用例上，要求包括相机启动延迟、编解码器可用性和编码质量，以及最小内存大小、屏幕分辨率和读写性能。”</p>
+
+<p>在 Android 开发者页面上，谷歌表示每个版本的 Android 都有其相应的性能等级，这意味着 Android 12 有一个性能等级，Android 13、14 等也会有一个。性能类别将在特定 Android 操作系统版本的兼容性定义文档(CDD)中定义(注意:Android 12 的 CDD 尚未公开)，设备是否实际满足该性能类别由兼容性测试套件(CTS)强制执行，这是一组验证与 Android 操作系统版本兼容性的自动化测试。</p>
+
+
+
+
+
+<p>性能类别是向前兼容的，这意味着设备可以升级到新的 Android 版本而不改变其性能类别，但这也意味着设备可以改变其类别，如果它们满足新的操作系统版本的要求。虽然 Android 12 引入了性能类的概念，但谷歌表示，它也将为 Android 11 定义一个性能类。这意味着，从 Android 11 升级到 Android 12 的高性能设备，如果满足 Android 11 的性能等级要求，但不满足 Android 12 的性能等级要求，仍然可以通知应用程序它们是高性能设备。</p>
+
+<p>虽然谷歌没有分享 Android 12 的性能等级要求的确切细节，但我们做了一些挖掘，发现了一些要求。它们包括:</p>
+
+<ul> <li>至少 6GB 内存</li> <li>至少 400dpi 和 1080p 分辨率</li> <li>至少 150MB/s 顺序写入、250MB/s 顺序读取、10MB/s 随机写入和 40MB/s 随机读取速度</li> </ul>
+
+<p>以及对并发视频解码器和编码器会话的最大数量、低编解码器初始化等待时间、低回放帧丢失量等的其他要求。</p>
+
+<p>该功能不仅有助于应用程序开发人员改善符合“性能等级”规格的设备的整体体验，也有助于低端手机。如果应用程序检测到手机不符合“性能级”设备的要求，他们可以关闭某些要求更高的功能或视觉效果，以改善应用程序在低端手机上的工作方式。同样，他们可以在性能类设备上添加低端手机通常不支持的功能，而不会影响这些用户的体验。</p>
+
+ 
+<p class="w-rich w-youtube" id="pX00lybwwIk">  </p>
+
+</div>
+
+
+</div>    
+</body>
+</html>

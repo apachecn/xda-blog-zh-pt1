@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Developer ports Android 12 to the Raspberry Pi 4 B, Pi 400, and Compute Module 4</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>开发者将 Android 12 移植到 Raspberry Pi 4 B、Pi 400 和计算模块 4</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/raspberry-pi-4-b-pi-400-compute-model-4-android-12-port/#0001-01-01">https://www.xda-developers.com/raspberry-pi-4-b-pi-400-compute-model-4-android-12-port/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Android 12 现在到处流传——无论是来自<a href="https://www.xda-developers.com/oneplus-oxygenos-12-android-12-update-tracker/">OEM</a>的官方<a href="https://www.xda-developers.com/samsung-one-ui-4-android-12-update-tracker/">更新</a>还是通过<a href="https://www.xda-developers.com/android-12-custom-rom/">社区定制的 rom</a>。在售后移植场景中，我们经常遇到一些有创意的开发人员，他们喜欢跨越形式障碍，试图在一开始就不打算运行 Android 的设备上启动最新版本的 Android。XDA 资深成员 KonstaT 就是这样一位开发者，他现在已经成功地将 Android 12 移植到 Raspberry Pi 4 系列设备上。</p>
+
+  
+<p/><p><strong> <a href="https://forum.xda-developers.com/raspberry-pi">树莓派 XDA 论坛</a> </strong></p>
+
+<p>如果你有一个<a href="https://www.xda-developers.com/raspberry-pi-4-8gb-ram/"> Raspberry Pi 4 Model B </a>或一个<a href="https://www.xda-developers.com/raspberry-pi-400-personal-computer-keyboard/"> Pi 400 个人电脑套件</a>，你现在可以在它们上面启动 Android 12，这要感谢 KonstaT 编译的非官方 LineageOS 19.0 ROM。<a href="https://www.xda-developers.com/raspberry-pi-compute-module-4-launched-32-variants/">计算模块 4 </a>也与该端口兼容，尽管您应该选择 2 GB RAM 变体并将其连接到兼容的载板，以释放 ROM 的全部潜力。请记住，LineageOS 团队还没有在<a href="https://www.xda-developers.com/android-12-source-code/"> AOSP 12 代码库</a>的基础上合并其大部分独家功能，因此在这一点上事情还很简单。</p>
+
+
+
+<p>在开箱即用的产品中，您会发现音频/视频输出、硬件加速图形、Wi-Fi、蓝牙和以太网联网都工作得很好。摄像头驱动部分实现，即支持 Motion JPEG 格式的 UVC USB 网络摄像头也应该工作。然而，你可能会发现 USB 启动有时出现故障，而硬件视频编码和解码现在根本不工作。换句话说，如果你知道你在做什么，并且为了修修补补有一个备用的 SD 卡，我们只会建议你尝试这样做。</p>
+
+<p>该只读存储器工作特性的完整列表可在下面找到:</p>
+
+<ul> <li>音频(HDMI、3.5 毫米插孔、USB 麦克风、蓝牙扬声器/耳机等。)</li> <li>音频 DAC(使用 GPIO DACs，例如 Hifiberry DAC+)</li> <li>蓝牙(和蓝牙共享)</li> <li>GPIO</li> <li>GPS(使用外部 USB 模块，如 U-Blox 7)</li> <li>以太网</li> <li>硬件加速图形(V3D、OpenGL 和 Vulkan)</li> <li>HDMI 显示器(和 HDMI-CEC)</li> <li>I2C</li> <li>红外遥控器(使用外部 GPIO 红外模块，如 TSOP4838)</li> <li>RTC(使用外部 GPIO I2C 模块，如 DS3231)</li> <li>传感器(使用外部 GPIO I2C 模块，例如 MPU6050、LSM6DS3、LSM303DLHC 和 BME280/BMP280 加速度计/陀螺仪/磁力计/温度/压力/湿度)</li> <li>串行控制台(使用外部 GPIO 串行控制台适配器，例如 PL2303)</li> <li>精力</li> <li>触摸屏/多点触控(USB 触摸屏、Waveshare SPI 触摸屏)</li> <li>USB(鼠标、键盘、存储等。)</li> <li>USB-C(亚洲开发银行、MTP、PTP、USB 网络共享)</li> <li>无线网络(和无线网络共享)</li> </ul>
+
+<p>如果你是一个正在寻找对应于这个端口的内核源代码的开发者，你可以在开发者的 GitHub 概要文件下面找到它<a href="https://github.com/lineage-rpi/android_kernel_brcm_rpi/tree/lineage-19.0">。我们希望这些资源的可用性将为其他</a><a href="https://www.xda-developers.com/most-popular-custom-roms-android/">流行的基于 Android 的定制 rom</a>移植到 Raspberry Pi 系列设备铺平道路。要了解更多，请查看下面链接的 XDA 主题。</p>
+
+<p/><p><strong> <a href="https://forum.xda-developers.com/t/4356891/">非官方 LineageOS 19.0 基于 Android 12 为树莓 Pi 4 型号 B/Pi 400/Compute Module 4 </a> </strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Android 12 adds an option to disable 2G modem on phones that ship with it</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android 12 增加了一个选项，可以在手机上禁用 2G 调制解调器</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-12-disable-2g-modem/#0001-01-01">https://www.xda-developers.com/android-12-disable-2g-modem/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>我们现在已经听说了<a href="https://www.xda-developers.com/android-13"> Android 13 </a>，包括我们的<a href="https://www.xda-developers.com/android-13-tiramisu-exclusive-first-look/">先看看它</a>，但这并不意味着我们已经不再关注<a href="https://www.xda-developers.com/android-12"> Android 12 </a>。随着更新向更多设备推出，以及更多新手机搭载这一最新版本的 Android，我们发现了新的变化。现在已经发现了一个这样的变化，因为 Android 12 带有一个选项，可以禁用手机上的 2G 调制解调器。</p>
+
+  
+<p>随着<a href="https://www.eff.org/deeplinks/2022/01/victory-google-releases-disable-2g-feature-new-android-smartphones"> <em>电子前沿基金会(EFF) </em>报道</a>(via<a href="https://twitter.com/MishaalRahman/status/1481775166397030400"><em>mishal Rahman</em></a>)，Android 12 已经悄然增加了在调制解调器层面禁用 2G 的选项。</p>
+
+
+
+<p>这听起来可能是一个非常小的变化，但它确实有一些严重的影响，你可能应该考虑在你的设备上关闭它。正如最初的报告指出的，2G 是第二代移动通信，创建于 1991 年，它的年龄显示了许多漏洞。2G 在塔和设备之间使用弱加密，这可以被攻击者实时破解，以拦截电话和短信。手机也不需要对信号塔进行身份验证，从而可以模拟真正的 2G 信号塔。蜂窝基站模拟器，又名“黄貂鱼”利用这些方法来拦截通信。他们可以把你的连接从 4G 降级到 2G，然后应用上面的攻击。因此，如果你重视自己的隐私和其他权利，尽可能避开 2G 就变得很重要。</p>
+
+<p>不过，这里有一些<strong>限制</strong>你应该知道。正如 Mishaal 指出的那样，这项功能需要对 Radio HAL 进行更新，由于 GRF(谷歌要求冻结)，许多从 Android 11 升级到 Android 12 的旧设备将会跳过该功能。搭载 Android 12 的设备将能够向用户展示这一变化。正如 EFF 指出的，在较新的 Pixels 和三星设备上(有些甚至在 Android 11 上，因为三星也有这个 Android 版本的实现)，你可以通过切换设置&gt;网络&amp;互联网&gt;模拟人生&gt;允许 2G 来禁用 2G。但据我们所知，这样做会在三星设备上呈现一个相当烦人且持续的通知。</p>
+
+
+
+<p>此外，<strong>禁用 2G 还会导致在只有 2G 服务的地区无法获得紧急服务</strong>，如果你问我，这是一个相当沉重的代价。虽然大多数运营商已经在他们的大部分基础设施中采用了 4G，但仍有一些口袋仍然只能使用 2G -所以请非常小心，并评估这对你和你周围的人可能产生的影响。</p>
+
+<p>如果您的设备上没有该选项，您可以探索一些选项。像 Android 的安全发行版<a href="https://grapheneos.org/"> Graphene OS </a>这样的定制 rom 为用户提供了一种<a href="https://grapheneos.org/usage#lte-only-mode">纯 LTE 模式</a>，以此来减少设备上的攻击面。</p>
+
+
+
+
+
+<p>您也可以使用<a href="https://www.xda-developers.com/android-secret-codes/"> Android 拨号器代码</a>，即<em> *#*#4636#*#* </em>，导航到电话信息 1，并将您的首选网络类型设置为 LTE (4G)或 NR/LTE (5G/4G)，但请记住，该设置将在重启时重置。请注意，这些仅支持 LTE 的选项也会关闭 3G，但您可以通过采用与您的网络区域相关的 3G 选项来保留拨号器代码中的 3G 使用。此外，请记住，如果你的网络运营商不支持 VoLTE，如果你只采用 LTE，你将失去通话和短信服务。如上所述，有很多限制，所以做出对你最有意义的决定。</p>
+
+<hr/>
+
+<p><a href="https://icons8.com/icon/tx9EKlrzKRcV/2g" target="_blank" rel="noopener"> 2g </a>图标由<a href="https://icons8.com" target="_blank" rel="noopener">图标 8 </a>组成</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

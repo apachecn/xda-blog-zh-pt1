@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Nokia, OnePlus, Oppo, and others will support Android 12 dynamic themes</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>诺基亚、一加、Oppo 和其他公司将支持 Android 12 动态主题</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-12-oem-themes/#0001-01-01">https://www.xda-developers.com/android-12-oem-themes/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>在<a href="https://www.xda-developers.com/android-12"> Android 12 </a>中最令人印象深刻的新功能之一是自动<a href="https://www.xda-developers.com/material-you/"> Material You </a>主题化系统，它可以根据当前壁纸改变你设备的外观(具体来说，某些界面元素的颜色)。代号为“莫奈”的主题化系统目前只适用于谷歌自己的像素设备，但现在我们知道至少有一些制造商正计划支持它的一些变体。</p>
+
+  
+<p>在谷歌的材料组件库中，一个新的<a href="https://github.com/material-components/material-components-android/commit/59ca95b76565ff02c83910cfbdd44fb94e77c610">代码提交</a> ( <a href="https://twitter.com/MishaalRahman/status/1458889821791924225">通过米莎尔·拉赫曼在推特上</a>)名为“添加支持动态颜色的制造商列表”，至少揭示了一些将支持动态系统主题的制造商。目前的名单包括 OPPO、Realme、一加、Vivo、小米、摩托罗拉、Itel、Tecno Mobile、Infinix、HMD Global(诺基亚品牌 Android 设备制造商)、夏普、索尼、TCL、联想、谷歌和 Roboelectric。</p>
+
+<pre> <code class="hljs javascript">private <span class="hljs-keyword">static</span> final <span class="hljs-built_in">Set</span>&lt;<span class="hljs-built_in">String</span>&gt; DYNAMIC_COLOR_SUPPORTED_MANUFACTURERS =<br/>  <span class="hljs-keyword">new</span> HashSet&lt;&gt;(Arrays.asList(<br/><span class="hljs-string">"oppo"</span>, <span class="hljs-string">"realme"</span>, <span class="hljs-string">"oneplus"</span>, <span class="hljs-string">"vivo"</span>, <span class="hljs-string">"xiaomi"</span>, <span class="hljs-string">"motorola"</span>, <span class="hljs-string">"itel"</span>, <span class="hljs-string">"tecno mobile limited"</span>,<br/><span class="hljs-string">"infinix mobility limited"</span>, <span class="hljs-string">"hmd global"</span>, <span class="hljs-string">"sharp"</span>, <span class="hljs-string">"sony"</span>, <span class="hljs-string">"tcl"</span>, <span class="hljs-string">"lenovo"</span>, <span class="hljs-string">"google"</span>,<br/><span class="hljs-string">"robolectric"</span>));</code> </pre>
+<p>谷歌已经证实，在 Android 12 首次发布后的某个时候，Monet 的代码将被添加到 Android 开源代码库 AOSP。然而，目前还不清楚除了谷歌之外，是否还有其他制造商对支持动态主题感兴趣，因为他们中的许多人都有自己的 Android 皮肤和自己的设计语言。</p>
+
+<p>主要问题是，从你的壁纸生成的调色板可能与谷歌自己的 Monet 实现不同，因为制造商可能完全创建自己的算法。例如，OPPO Find X3 Pro 的 Android 12 测试版有自己的系统 UI 动态主题实现，OPPO 很可能会利用这个引擎来实现动态主题，而不是实现 monet 引擎。</p>
+
+<p>此外，正如开发人员 Kieron Quinn 在 Twitter 上指出的那样，在库中拥有原始设备制造商的列表而不是 Android 的 API 可能意味着应用程序不会支持新的制造商，直到他们在代码中更新材料组件库。</p>
+
+ 
+
+
+
+<p>有趣的是，名单上少了一个名字:三星。尽管三星的 One UI 4 Betas 版<a href="https://twitter.com/AraWagco/status/1458913072916094981">包括动态颜色功能</a>，但目前没有证据表明它会插入材料组件库，因此至少一些第三方应用程序不会使用它们。不过，在材料组件更新准备就绪之前，可能会有更多的制造商被添加到列表中。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

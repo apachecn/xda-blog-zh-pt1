@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>How to open the full right-click menu by default on Windows 11</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何在 Windows 11 上默认打开完整的右键菜单</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/how-to-open-full-right-click-menu-by-default-windows-11/#0001-01-01">https://www.xda-developers.com/how-to-open-full-right-click-menu-by-default-windows-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>经过六年多的 Windows 10，PC 用户现在获得了一个重大的 Windows 更新，即 Windows 11。最新版本的 Windows 拥有<a href="https://www.xda-developers.com/windows-11-review/">一些最大的视觉点心</a>，有居中的开始菜单和任务栏，圆角等等。作为 UI 改革的一部分，微软还推出了一个比 Windows 10 更简洁的现代化右键上下文菜单。</p>
+
+ 
+
+
+
+
+<p>许多人似乎喜欢<a href="https://blogs.windows.com/windowsdeveloper/2021/07/19/extending-the-context-menu-and-share-dialog-in-windows-11/">新的极简方式</a>，特别是当你仍然可以通过点击底部的<em>显示更多选项</em>按钮或者使用 Shift+F10 键盘快捷键来选择老式的扩展菜单时。然而，其他人发现这种设计非常烦人，因为每当他们需要访问额外的选项时，他们必须执行一次额外的鼠标点击。</p>
+
+<p>如果你和后一类人在同一条船上，并且希望在 Windows 11 上恢复旧的右键快捷菜单，那么这个教程就是为你准备的。请记住，微软没有提供官方方法来禁用现代的右键上下文菜单，但有一种本地方法可以在 Windows 11 中为您提供完整的上下文菜单，而无需使用任何第三方软件。</p>
+
+<p><strong>浏览这篇文章:</strong></p>
+
+
+
+<hr/>
+
+
+<h2 id="how-to-disable-show-more-options-and-get-the-full-right-click-context-menu-in-windows-11">如何在 Windows 11 中禁用“显示更多选项”并获得完整的右键上下文菜单</h2>
+<p>人们可以通过 Windows 注册表创建一个<a href="https://www.reddit.com/r/Windows11/comments/pu5aa3/howto_disable_new_context_menu_explorer_command/">手动覆盖来强制 Explorer 返回到经典的完整菜单。不需要修改任何系统文件，这意味着该方法即使在安装了</a><a href="https://www.xda-developers.com/windows-11-update-tracker/"> Windows 11 的累积更新</a>后也应该工作。</p>
+
+<h3 id="the-command-line-way">命令行方式</h3>
+<ol> <li>使用 Windows PowerShell 或命令提示符打开 Windows 终端。您不需要以管理员身份启动它，因为覆盖将基于每个用户进行设置。</li> <li>将以下命令复制并粘贴到 Windows 终端中，然后按 Enter: <pre> <code class="hljs javascript">reg add <span class="hljs-string">"HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32"</span> /f /ve</code> </pre>如果一切正常，应该会显示“操作成功完成”</li> <li>关闭 Windows 终端。</li> <li>重新启动 explorer 进程，或注销并登录，或重新启动 PC 以使覆盖键生效。</li> </ol>
+
+<h3 id="the-graphical-way">图形化的方式</h3>
+<ol> <li>启动注册表编辑器。您可以在运行提示符下执行<code>regedit</code>命令来打开应用程序。</li> <li>导航到<code>HKEY_CURRENT_USER\SOFTWARE\CLASSES\CLSID\</code>并创建一个名为<code>{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}</code>的新注册表项。</li> <li>在<code>{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}</code>下创建另一个名为<code>InprocServer32</code>的键。</li> <li>在<code>InprocServer32</code>中找到(默认)键，将其值设置为空，然后点击确定。</li> <li>关闭注册表编辑器。</li> <li>重新启动 explorer 进程，或注销并登录，或重新启动 PC 以使覆盖键生效。</li> </ol>
+
+<hr/>
+<p class="ad-odd"> </p>
+
+
+
+<p>如果您想恢复到原始设计，请从注册表编辑器中删除<code>{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}</code>项(包括<code>InprocServer32</code>子项)。您也可以在 Windows 终端上执行以下一行程序来获得相同的结果:</p>
+
+<pre> <code class="hljs javascript">reg <span class="hljs-keyword">delete</span> <span class="hljs-string">"HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"</span> /f</code> </pre>
+
+
+<p>删除覆盖密钥后，请确保重新启动或注销并重新登录。</p>
+
+<hr/>
+
+<p>我们希望您能够在 Windows 11 上使用上述方法默认打开完整的右键菜单。如果你有任何问题或疑问，请在下面的评论区留言。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

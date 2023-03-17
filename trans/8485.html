@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Android 12's lovely wallpaper-based themes will crash your games if you use automated wallpapers</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如果你使用自动壁纸，Android 12 可爱的基于壁纸的主题会让你的游戏崩溃</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-12-game-crashing-automated-wallpapers/#0001-01-01">https://www.xda-developers.com/android-12-game-crashing-automated-wallpapers/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Android 12 有大量的视觉变化，其中最大的变化是物质的你。Material You 的动态颜色功能利用了 monet，这是 Android 12 中引入的一个新的主题引擎，以及目前专属于 Pixel 手机的<a href="https://www.xda-developers.com/android-12-1-monet-open-source/"/>——从你的壁纸中提取颜色，并生成丰富的柔和颜色调色板。然后，应用程序可以以各种方式将这些颜色应用到它们的用户界面上，这就是包含你通常会做的内容的应用程序。然而，事实证明，当涉及到游戏时，引入材料 You 可能会产生意想不到的副作用。</p>
+
+  
+<p>在谷歌问题追踪器上，<a href="https://issuetracker.google.com/issues/199995249">已经打开了一个错误报告</a>，报告称在玩<em>狂野裂痕</em>或<em>精灵宝可梦 Go </em>时，背景中不断变化的壁纸会导致游戏崩溃。虽然用户通常不会为了更换壁纸而关闭游戏，但那些使用自动壁纸更换器的用户肯定会受到影响。从我自己的测试来看，大多数应用似乎都能很好地应对这一变化，但游戏却很难。我在我的谷歌 Pixel 6 Pro 上测试了<em> Genshin Impact </em>、<em>使命召唤:手机</em>、<em> PUBG Mobile </em>和<em>《我的世界》</em>，所有这些游戏都在后台更换壁纸时崩溃。</p>
+
+<p>问题的根本原因似乎是一个无法阻止的 Android 配置更改。通常情况下，游戏会忽略 Android 上的“<a href="https://developer.android.com/guide/topics/resources/runtime-changes">配置更改</a>，那些“配置更改”包括黑暗模式、屏幕旋转和区域设置更改等。谷歌，<a href="https://cs.android.com/android/_/android/platform/frameworks/base/+/49a4a1dfceeebc4b94022827b7e68cc971689c84">在被<a href="https://twitter.com/cketti/status/1454628312186241029"> @cketti </a>(通过<a href="https://commonsware.com/blog/2021/10/31/android-12-wallpaper-changes-recreate-activities.html"> CommonsWare </a>)发现的提交</a>中，在 Android 12 中引入了一项改变，当壁纸改变时，强制重新创建活动。提交内容如下:</p>
+
+<p><em>“活动将通过常规生命周期安排重启。这类似于配置更改，但由于 ApplicationInfo 更改级别太低，我们不允许应用选择退出。”</em></p>
+
+<p>可悲的是，似乎没有太多的办法。更糟糕的是，对于开发者来说，这似乎天生就不可能实现。谷歌没有向开发者提供选择退出的选项，因为这很可能是不可能的，这种潜在的不可避免的行为很可能是 Android 12 的 rro 实际工作方式的副产品。因此，这意味着游戏玩家在玩游戏时不能更换壁纸，否则他们喜爱的游戏可能会崩溃。我们将密切关注这一点，看看是否有新的东西出现，但现在，如果你在智能手机上玩游戏，你可能需要禁用任何自动壁纸切换。</p>
+
+<p>谢谢艾尔文的提示！</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

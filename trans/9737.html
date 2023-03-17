@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>SIM Number Setter is an Xposed module to edit the subscriber number of a SIM</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>SIM 卡号码设置器是一个用于编辑 SIM 卡用户号码的公开模块</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/sim-number-setter-xposed-module/#0001-01-01">https://www.xda-developers.com/sim-number-setter-xposed-module/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>虽然 eSIM 的采用一直在稳步增长，但实体 SIM 卡还远未消失。远程配置是 eSIM 架构的关键优势，这意味着通过安装所需的运营商配置文件，可以轻松对嵌入式 SIM 进行编程。然而，对物理 SIM 卡进行编程是一项困难的工作。例如，如果你有一个 SIM 卡，在 Android 系统设置中的 SIM 卡属性的<em>电话号码下显示“未知”值，没有简单的方法来改变它。</em></p>
+
+  
+
+
+<p>像往常一样，XDA 的改装社区来救援。Kieron Quinn，又名 XDA 认可的开发者<a href="https://forum.xda-developers.com/m/quinny899.3563640/"> Quinny899 </a>，已经发布了一个方便的 Xposed 模块，可以填充 SIM 卡上的“订户号码”字段。<strong> SIM 卡号码设置器</strong>是一个名副其实的应用程序，它调用 Android 系统级代码，否则这些代码不会被用来以永久的方式将电话号码(准确地说，GSM 电话的<a href="https://developer.android.com/reference/android/telephony/TelephonyManager#getLine1Number()"> MSISDN </a>)写入 SIM 卡。在将一个号码移植到不同的 SIM 卡后，或者为了整洁起见，简单地替换掉在谷歌消息等应用程序上看到的 SIM 卡的工厂定义的“未知”标签，这一点特别有用。</p>
+
+
+
+<p>要设置新的“订户号码”，您可以在栏中输入任何内容，只要数字字符或加号(“+”)不超过 20 个即可。由于该号码被写入 SIM 卡的存储器中，所以即使没有暴露的模块，该改变也将继续存在。正如开发者所描述的:</p>
+
+<blockquote>
+<p/><h4>如果你没有根设备，或者不想根你的主设备，你可能希望考虑根一个旧设备，并暂时将你的 SIM 卡放入该设备，使用该应用程序，然后将其放回你的主设备-固定号码将随之移动</h4>
+ </blockquote>
+<p>请记住，该模块不能更改 SIM 芯片上的任何其他标识符。既不能改变实际的电话号码，也不能修改与该号码相关的订购参数。此外，SIM 卡号码设置将不会帮助您解锁网络封锁的 SIM 卡。</p>
+
+<p>如果你有兴趣玩 SIM 卡号码，看看下面的应用程序线程。SIM 号码设置器是开源的，开发者的 GitHub 个人资料上有这个模块的源代码。</p>
+
+<p/><p><strong> SIM 号码设置器:<a href="https://github.com/KieronQuinn/SIMNumberSetter/releases/latest">下载</a>| |<a href="https://forum.xda-developers.com/t/4400131/">XDA 讨论线程</a> </strong></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Microsoft blocks Edge redirect tool in Windows 11, but there's another option</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>微软在 Windows 11 中屏蔽了边缘重定向工具，但还有另一个选择</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/microsoft-edge-redirect-windows-11/#0001-01-01">https://www.xda-developers.com/microsoft-edge-redirect-windows-11/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>微软强迫 Windows 用户将 Edge 作为默认浏览器的尝试一直有些问题。由于在 Windows 10 生命周期的相对早期，来自 Windows search 和 Cortana 的链接被定向到 Edge，这种情况今天仍在发生。随着<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a>的出现，这一点变得更加突出，因为<a href="https://www.xda-developers.com/windows-11-widgets/">窗口小部件窗格</a>中的链接也被设计成指导用户使用 Edge 而不是他们的默认浏览器。对抗这种情况的一种方法是一种叫做<a href="https://github.com/da2x/EdgeDeflector"> EdgeDeflector </a>的工具，它在 Windows 10 和 11 上代替 Edge 处理这些自定义链接，将它们重定向到用户的默认浏览器。</p>
+
+  
+<p>然而，随着上周 11 月 3 日发布的<a href="https://www.xda-developers.com/windows-11-build-22494-mute-button/"> Windows 11 build 22494 </a>，微软开始阻止 EdgeDeflector。根据用户在<a href="https://github.com/da2x/EdgeDeflector/issues/141"> GitHub 知识库上对应用</a>的报告，将链接重定向到默认浏览器不再适用于这个版本。EdgeDeflector 的开发者插话证实，微软做出了一些突破性的改变，目前没有任何“非破坏性”的解决办法。</p>
+
+<p>令人欣慰的是，另一名开发人员 Robert Maehl 设计了自己的 Edge redirect 工具来应对这一变化。简称为<a href="https://github.com/rcmaehl/MSEdgeRedirect"> MSEdgeRedirect </a>，这款新应用采用了一种新的方法来解决这个问题。梅尔说，这个新工具“过滤并传递微软 edge 进程的命令行参数到你的默认浏览器”，而不是像 EdgeDeflector 那样处理<em>微软 edge:// </em>协议。开发者还指出，这应该提供对未来更新的弹性，所以微软不能轻易阻止这个工作。</p>
+
+<p>这很简单。exe 文件，只要该程序正在运行，任何通常只能在 Windows 11(或 10)上的 Edge 中打开的链接都将被重定向到您的默认浏览器。你也可以将该程序设置为从 Windows 11 开始，这样它就会一直将链接重定向到正确的浏览器，而无需你每次都运行该程序。如果您感兴趣，可以使用下面的链接下载 MSEdgeRedirect。</p>
+
+<p/><p><strong> <a href="https://github.com/rcmaehl/MSEdgeRedirect/releases/latest/download/MSEdgeRedirect.exe">从 GitHub </a>下载 MSEdgeRedirect】</strong></p>
+
+<p>不幸的是，这不是微软第一次偷偷摸摸地用 Windows 11 将用户推向 Edge 浏览器。该公司明显加大了在 Windows 11 中更改默认浏览器的难度，促使 Mozilla 通过逆向工程操作系统来解决这一问题，并毫不费力地将 Firefox 设置为默认浏览器。希望该公司能听取粉丝的意见，重新给予用户更多的选择自由。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

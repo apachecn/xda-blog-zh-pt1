@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Android 12's wallpaper-based themes can be abused to make phones laggy and unusable</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android 12 基于壁纸的主题可能会被滥用，使手机变得迟钝和不可用</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-12-material-you-lagging/#0001-01-01">https://www.xda-developers.com/android-12-material-you-lagging/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Android 12 有大量的视觉变化，其中最大的变化是物质的你。Material You 的动态颜色功能利用了 monet，这是 Android 12 中引入的一个新的主题引擎，以及目前专属于 Pixel 手机的<a href="https://www.xda-developers.com/android-12-1-monet-open-source/"/>——从你的壁纸中提取颜色，并生成丰富的柔和颜色调色板。然后，应用程序可以以各种方式将这些颜色应用到它们的用户界面上，这就是包含你通常会做的内容的应用程序。然而，事实证明，你可以滥用材料变色的能力，让手机慢下来。</p>
+
+  
+<p>首先，你需要建立某种系统来自动改变背景中的壁纸。我用的是谷歌 Play 商店上的“<a href="https://play.google.com/store/apps/details?id=viet.dev.apps.autochangewallpaper&amp;hl=en_IE&amp;gl=US">自动换壁纸</a>”app。安装它并将一些图像导入相册。确保你告诉它把壁纸也应用到你的锁屏上，并且设置一个较短的时间来更换壁纸——大约 10 秒钟就可以了。我在谷歌 Pixel 6 Pro 上测试了这一点，它使我的手机几乎无法使用。如果你使用自动壁纸切换器，这并不是你的壁纸主题的第一个问题，因为它也可能是<a href="https://www.xda-developers.com/android-12-game-crashing-automated-wallpapers/">玩家的一个主要问题</a>。</p>
+
+ 
+<p class="w-rich w-youtube" id="v8VKdsnMHK4">  </p>
+
+
+<p>现在，我知道这是一个非常不可能的用例，但你可以很容易地对你的智能手机做些什么，使它处于不可用的边缘。我唯一能解决这个问题的方法是进入设置，通过应用程序选择来卸载“自动更换壁纸”应用程序。在上面的视频中，我一直在试图下拉状态栏，过了相当长的时间，我的手机才真正让我下拉。此外，Pixel Launcher 一直死机并拒绝工作，手机本身也严重滞后。像素启动器不断刷新，以应用 monet 引擎选择的新颜色主题。</p>
+
+<p>总而言之，我不会认为有人想频繁更换手机壁纸是不寻常的，即使每 10 秒钟更换一次有点过分。考虑到这可能在电话上造成的破坏程度(尤其是在不知情的情况下对朋友造成的)，值得指出的是，作为材料中的一个潜在缺陷，<em>可能</em>给<em>一些</em>人带来问题。如果你的手机太慢，无法卸载应用程序，我建议在测试之前启用 USB 调试，以防你需要使用 adb 卸载应用程序。要卸载 adb 应用程序，只需运行以下命令:</p>
+
+<pre> <code class="hljs css"><span class="hljs-selector-tag">adb</span> <span class="hljs-selector-tag">uninstall</span> <span class="hljs-selector-tag">viet</span><span class="hljs-selector-class">.dev</span><span class="hljs-selector-class">.apps</span><span class="hljs-selector-class">.autochangewallpaper</span></code> </pre>
+<p>如果您决定用另一个应用程序来尝试，请确保检查应用程序的包名。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

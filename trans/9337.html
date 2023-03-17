@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Ubuntu Linux 22.04 will be faster than ever on Raspberry Pi computers</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Ubuntu Linux 22.04 在 Raspberry Pi 电脑上会比以往更快</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/ubuntu-22-04-raspberry-pi/#0001-01-01">https://www.xda-developers.com/ubuntu-22-04-raspberry-pi/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Raspberry Pi 系列单板电脑可能是有史以来最受欢迎的基于 Linux 的电脑，这要归功于它们超低的价格、教育资源和多功能性。由于低功率处理器和有限的 RAM，最初的几款机型在功能上不如台式电脑，但更新的版本(如 8GB RAM 的<a href="https://www.xda-developers.com/raspberry-pi-4-8gb-ram/">Raspberry Pi 4</a>)是完全有能力的经济型电脑。Ubuntu 是最流行的桌面 Linux 发行版之一，现在正在为即将到来的 Ubuntu 22.04 版本准备一些特定于 Pi 的性能调整。</p>
+
+  
+<p>Canonical 的产品经理 Oliver Smith 在<a href="https://ubuntu.com/blog/how-low-can-you-go-running-ubuntu-desktop-on-a-2gb-raspberry-pi-4">的一篇博客文章</a>中宣布，Ubuntu Desktop 的下一个版本将对 Raspberry Pi 板进行新的性能增强。他们说，“到目前为止，我们一直建议用户坚持使用 4GB 或 8GB 内存的型号，以确保它的性能良好。我们对于即将到来的 Ubuntu 22.04 LTS 版本的目标之一就是降低门槛。这意味着目标是在 Raspberry Pi 4 2GB 机型上实现可行的桌面体验。”</p>
+
+<p>主要的变化是，Raspberry Pi 上的 Ubuntu 将默认使用 Linux 内核的<a href="https://en.wikipedia.org/wiki/Zswap"> zswap </a>特性，该特性压缩内存块，而不是完全依赖于交换文件(RAM 内容在内部存储的交换区域进出)。这减少了可能发生的 I/O 操作的数量，当大多数 Raspberry Pi 所有者使用简单的 SD 卡作为主驱动器时，这是很重要的。然而，内存压缩也会增加 CPU 的使用，这大概就是为什么在 CPU 功能较弱的老式 Raspberry Pi 主板上不会启用内存压缩的原因。</p>
+
+<p>Canonical 还更进一步，增加了可以压缩的对象数量(使用一个名为 z3fold 的分配器)并使用不同的压缩算法(<a href="http://lz4.github.io/lz4/"> lz4 </a>)。Canonical 表示，这些变化，加上使用 zswap，意味着 Ubuntu Desktop 现在可以在 2GB 的 Raspberry Pi 4 上使用。</p>
+
+<p>Ubuntu 22.04 计划于 4 月发布，这些变化将默认在所有 Raspberry Pi 4 设备上启用(包括<a href="https://www.xda-developers.com/raspberry-pi-400-personal-computer-keyboard/"> Pi 400 </a>)。你也可以按照<a href="https://ubuntu.com/blog/how-low-can-you-go-running-ubuntu-desktop-on-a-2gb-raspberry-pi-4">博客文章</a>中的说明，在现有的 Ubuntu 系统上尝试调整。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

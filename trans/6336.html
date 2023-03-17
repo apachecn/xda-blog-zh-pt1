@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Android will soon get better support for Sony's awesome PS5 controller</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Android 将很快获得对索尼令人敬畏的 PS5 控制器的更好支持</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/android-ps5-controller-support-getting-better/#0001-01-01">https://www.xda-developers.com/android-ps5-controller-support-getting-better/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>众所周知，Android 运行在 Linux 内核之上，这意味着每当有新的 Linux 内核特性时，它(应该)最终会渗透到 Android 设备上。虽然 PS5 控制器——官方名称为 DualSense 无线控制器——<a href="https://www.xda-developers.com/the-sony-playstation-5s-dualsense-controller-works-with-android-devices-and-pcs/">在许多 Android 设备上开箱即可使用</a>,但它的两个最佳功能(即它的高级触觉反馈系统和自适应触发器)不被 Linux 内核和 Android 所支持。尽管如此，Linux 内核仍将增加对更多 PS5 控制器功能的支持。</p>
+
+  
+<p>去年年底，<em> Phoronix </em> <a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Sony-HID-PlayStation-PS5">发现了</a>一个由索尼工程师提交的<a href="https://patchwork.kernel.org/project/linux-input/cover/20201219062336.72568-1-roderick@gaikai.com/#23856985">新 Linux 内核驱动</a>，当通过 USB 或蓝牙连接时，它增加了对 DualSense 游戏控制器的支持。内核驱动程序添加了所有关键控制器功能，包括 led、运动传感器、触摸板、读取电池电量、灯条和隆隆声。据触觉公司 Lofelt 称，驱动程序<a href="https://medium.com/lofelt/exploring-new-haptics-features-in-android-12-27844dba9635#:~:text=Better%20support%20for%20the%20DualSense%20controller">将允许</a> Android 应用程序独立控制左右致动器，尽管它们只能<a href="https://www.xda-developers.com/android-12-better-game-controller-rumble/">控制强度</a>而不是振动的频率或波形。此外，驱动程序“尚不支持”的关键功能包括自适应触发器和基于 VCM 的触觉，不幸的是，由于 Linux 的<a href="https://www.kernel.org/doc/html/latest/input/ff.html">力反馈</a>框架的限制，这些功能无法得到支持。</p>
+
+<p>尽管如此，内核驱动程序<a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Sony-PS5-DualSense-Linux-5.12">在 Linux 5.12 中被合并</a>，并且正在移植到 Android 通用内核的过程中。它已经被合并到<a href="https://android-review.googlesource.com/q/topic:hid-playstation-for-android12-5.4"> android12-5.4 </a>和<a href="https://android-review.googlesource.com/q/topic:hid-playstation-for-5.10"> android12-5.10 </a>分支，所以运行<a href="https://www.xda-developers.com/android-12/"> Android 12 </a>的旗舰骁龙 888 设备应该会获得新的驱动程序。谷歌即将推出的 Pixel 6 系列<a href="https://android-review.googlesource.com/c/kernel/common/+/1645927/4#message-4cd7a972c777df987af2fa9741d6d2839ddbdfb1">可能会推出</a> Linux 内核版本 5.10，因此它也可能会为 PS5 控制器提供新的 Linux 内核驱动程序。该驱动程序还被反向移植到<a href="https://android-review.googlesource.com/q/topic:hid-playstation-for-android-4.9-q"> android-4.9-q </a>、<a href="https://android-review.googlesource.com/q/topic:hid-playstation-for-android-4.14-stable"> android-4.14-stable </a>和<a href="https://android-review.googlesource.com/q/topic:hid-playstation-for-android-4.19-stable"> android-4.19-stable </a>分支，让 OEM 可以选择挑选补丁。</p>
+
+<p>如果你还没有机会尝试 DualSense 控制器，我强烈建议你尝试一下。它很快成为我有史以来最喜欢的游戏控制器。它非常符合人体工程学，它有很好的按钮反馈，并且它的触觉反馈，当正确实施时，<a href="https://www.xda-developers.com/sony-dualsense-wireless-controller-preview/">感觉难以置信地身临其境</a>。“当正确实施时”是关键问题，因为 Android 应用程序甚至不可能像 PS5 游戏那样精确地振动 DualSense 控制器。Android 也不支持控制器的自适应触发功能，这可以增加肩膀按钮按压的阻力，并且<a href="https://twitter.com/PlayStationEU/status/1338101865884561410">可以更好地识别从全按到半按的</a>。在 Windows 上，用户可以安装一个名为 DS4Windows 的程序，以支持更多的控制器功能，如 rumble support 和 lightbar，但迄今为止，只有新的<em> Metro Exodus 增强版</em> <a href="https://twitter.com/AndyPlaytonic/status/1396112580511518729">可以充分利用控制器的高级触觉反馈系统和自适应触发器</a>。</p>
+
+<p>在未来，我希望 Android 能够完全支持 PS5 控制器，这样我们就可以在家里和远程获得相同的游戏体验。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>How to enable tabbed File Explorer in Windows 11 previews</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何在 Windows 11 预览版中启用标签式文件浏览器</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/how-to-enable-tabbed-file-explorer/#0001-01-01">https://www.xda-developers.com/how-to-enable-tabbed-file-explorer/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>本周的<a href="https://www.xda-developers.com/windows-11/"> Windows 11 </a> Insider 预览版是 build 22572，虽然它是昨天发布的，但没过多久就有人发现了一个隐藏的、但被高度要求的功能。文件资源管理器现在可以支持标签。</p>
+
+  
+<p>当然，默认是不开的，也就是说还没准备好。然而，你可以自己打开它，就像 Windows 中的许多隐藏功能一样。</p>
+
+<p>在我们开始之前，有一些非常重要的事情我们应该先看一下。出于多种原因，你不应该这样做。首先，启用不应该启用的功能总是会给系统稳定性带来风险。重要的是，你要知道在这方面你将面临什么。当然，如果你运行的是 Dev 通道，无论如何你都不应该使用你的主机。</p>
+
+<p>另一方面，微软很有可能会在下周的 Windows 11 内部预览版中强调这一点。当然，这也有可能永远见不到天日。最后，从微软的角度来看，它不希望你这样做，因为这会干扰遥测技术。</p>
+
+<p>好吧，还在吗？让我们开始吧。</p>
+
+ 
+<h2 id="prerequisite-for-tabbed-file-explorer">选项卡式文件浏览器的先决条件:</h2>
+<ul> <li>运行内部版本 22572 的 Windows 11 PC</li> </ul>
+
+<h3 id="how-to-get-the-latest-windows-11-preview">如何获得最新的 Windows 11 预览版</h3>
+<p>为了开始，您需要加入 Windows Insider 计划。请注意，这是另一件牺牲系统稳定性的事情。你不应该在你的主机上这样做。</p>
+
+<ol> <li>在 Windows 11 中，进入设置-&gt; Windows Update-&gt; Windows Insider 程序。</li> <li>单击“开始”按钮，按照说明注册开发人员频道。</li> <li>出现提示时重新启动。</li> <li>转到设置-&gt; Windows Update -&gt;检查更新。</li> <li>内部版本安装后，出现提示时重新启动。</li> </ol>
+<p class="ad-odd"> </p>
+
+
+<h2 id="enabling-tabbed-file-explorer">启用选项卡式文件浏览器</h2>
+<p>启用隐藏功能，如标签式文件资源管理器，实际上非常容易。这比安装它所必需的 Windows 11 build 要省时得多。</p>
+
+<ol> <li>点击从<a href="https://github.com/thebookisclosed/ViVe/releases"> GitHub 下载 ViveTool 的最新版本。</a></li> <li>解压 ZIP 文件，最好解压到一个容易输入文件路径的地方。</li> <li>在管理员模式下打开命令提示符。您可以在按住 Shift 键的同时右键单击它来完成此操作。</li> <li>导航到 ViveTool 所在的文件夹。例如，您可以使用命令 cd\vivetool-v0.2.1，如果它存储在与我相同的位置。</li> <li>输入命令“vivetool addconfig 34370472 2”。34370472 是特性号，而数字 2 表示您想要启用它。您可以使用数字 1 运行相同的命令来停用它。</li> <li>重启你的电脑。</li> </ol>
+
+<p>之后，您应该能够打开文件资源管理器并找到一个选项卡式界面，就像在 web 浏览器中一样。希望微软很快会公开这一点，当然，希望它会把标签带到其他应用程序，如 Office 套件。</p>
+
+<p>请注意，该应用程序似乎有点问题。移动标签是不可能的，当我试图这样做时，事情开始冻结。这显然属于微软还没有宣布的原因。</p>
+
+<p>你打开标签式文件浏览器了吗？你对此有什么体验？</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

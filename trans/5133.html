@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>How to play Android games like PUBG Mobile with a controller</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何用一个手柄玩 PUBG Mobile 这样的安卓游戏</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/mantis-gamepad-keymapper-app/#0001-01-01">https://www.xda-developers.com/mantis-gamepad-keymapper-app/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>手机游戏在过去几年里有了巨大的飞跃。随着硬件和图形技术的改进以及各种软件创新，人们可以享受能够与市场上的一些游戏控制台相媲美(如果不是更好的话)的高质量游戏。我们还有各种游戏流媒体服务，包括 NVIDIA GeForce Now、Google Stadia、Xbox 游戏流媒体等。，让您只需通过高速互联网在智能手机上播放游戏，就能享受 AAA 级游戏。</p>
+
+  
+<p>对于手机游戏玩家来说，一个仍然很大的痛点是智能手机对物理控制器的支持。我们已经看到了一些 mod 和对某些控制器的支持，但它们都没有提供无缝的体验，除非你使用的是流媒体服务。更不用说一些最大的手游，包括<em> <a href="https://www.xda-developers.com/tag/playerunknown-bg/"> PUBG Mobile </a> </em>和<a href="https://www.xda-developers.com/tag/genshin-impact/"> <em> Genshin Impact </em> </a>，都没有官方提供对物理控制器的支持，至少在 Android 上没有。</p>
+
+<p>这就是螳螂游戏手柄专业版的用武之地。Mantis Gamepad 是一款 Android 键盘映射工具，声称可以保护你免受封禁，并承诺兼容几乎所有 Android 游戏。这款应用最棒的地方在于，你不需要启动你的设备就能让它工作。</p>
+
+ 
+<h2 id="what-is-mantis-gamepad-pro">螳螂游戏手柄 Pro 是什么？</h2>
+<p>Mantis Gamepad Pro 是一款 Android 键盘映射应用，号称“现代而安全”。目前在谷歌 Play 商店和该团队自己的网站上都有测试版，它具有“通用触摸映射”功能，让你可以用物理游戏控制器玩几乎任何 Android 游戏。</p>
+
+<p>据开发人员称，Mantis 的设计考虑到了数据的安全性和完整性。它不要求很多权限，开发者已经确保在应用程序本身中解释了每个权限的用途。在 Android 设备上使用游戏控制器时，最常见的问题之一是被禁止的风险，因为大多数控制器键盘映射程序都使用克隆。螳螂说，由于它的设计，你不会在任何游戏中被禁止。</p>
+
+<p>“对于一个应用程序/游戏来说，检测触摸映射是否正在执行几乎是不可能的。”据开发者称，通用触摸映射功能使用模拟触摸注入，系统将其视为与物理触摸输入相同。因此它应该与正常的敲击没有区别。Mantis 通过 Android 或 PC 启动一个 ADB shell 进程来实现这一点。虽然大多数应用程序都可以检测到覆盖，但无法检测到覆盖运行应用程序的身份。这意味着游戏不能禁止用户，因为有各种各样的应用程序包含覆盖用例。为了确保没有作弊，该应用程序也不提供添加任何宏的选项，这将在多人游戏中提供不公平的优势。</p>
+
+<p>例如，Octopus 等其他 keymapper 应用程序使用一种应用程序克隆方法，可以禁止用户帐户。这种键盘映射应用程序克隆游戏，并在自己的沙盒中运行。今天的大多数游戏可以很容易地检测出它们是否在沙盒中运行。据说螳螂还可以随时支持你所有的下一代控制器，在 Android 上实现精确控制的专业级游戏。这意味着微软<a href="https://www.xda-developers.com/sony-dualsense-wireless-controller-preview/">和索尼</a>的新控制器将真正兼容。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="how-to-setup-mantis-gamepad-pro">如何设置螳螂游戏手柄 Pro？</h2>
+<p>该应用程序需要一个小的激活过程，这是通过 ADB 使用 PC 或 Mac 完成的。以下是如何设置螳螂游戏手柄专业版:</p>
+
+<ol> <li>在你的安卓智能手机上从谷歌 Play 商店下载螳螂游戏手柄专业版应用程序。</li> <li>前往<a href="https://mantispro.app/buddy/">此链接</a>并在 Mac 或 Windows PC 上下载 MantisBuddy 软件包。</li> <li>在您的 Android 设备上启用 USB 调试。<ol> <li>前往“设置”&gt;“关于”&gt;反复点击内部版本号(或 MIUI 版本),直到它显示您是开发人员。</li> <li>返回并打开系统或附加设置下的开发者设置。</li> <li>打开 USB 调试。</li> </ol> </li> <li>通过 USB 线将您的 Android 设备连接到 PC/Mac。</li> <li>将 MantisBuddyForMacOS.zip 文件解压到任意文件夹中。您应该会看到一些 ADB 文件以及 MantisBuddy 文件。</li> <li>运行 ActivateBuddy.bat(用于 Mac 的 ActivateBuddy.command)，它应该会自动运行在您的设备上激活应用程序的整个过程。点击“允许/信任/确定”按钮，如果您的设备上出现调试授权弹出窗口，则勾选“始终允许此计算机使用”。</li> <li>一旦该过程完成，您应该会看到“螳螂伙伴已连接”的消息。</li> </ol>
+
+ 
+
+
+
+<h3 id="for-windows-users">对于 Windows 用户:</h3>
+<p>提取 MantisBuddyForWindows.rar 到任何文件夹。如果你使用的是 Windows 7 或更低版本/或者你正面临任何问题，请确保你首先安装了通用 ADB 驱动程序。如果 MantisBuddy 无法识别您的 Android 设备，您需要在 PC 上安装设备的相应 USB 驱动程序。</p>
+
+<h3 id="for-mac-users">对于 Mac 用户:</h3>
+<p>遵循与 Windows 相同的说明。第一次运行 ActivateBuddy.command 时，可能会遇到一个错误，说“ADB 无法打开，因为它来自一个身份不明的开发者”。如果是这样，请设定“系统偏好设置”&gt;“安全与隐私”&gt;“仍然打开”。如果此过程不起作用，请设置“系统偏好设置”&gt;“安全与隐私”&gt;“允许从以下位置下载应用程序”:任何地方。</p>
+
+<p>如果你在任何地方都没有看到<i/>选项，打开终端，输入<i> sudo spctl - master-disable </i>并点击返回，然后输入你的密码(不同于*****，这里你看不到你输入的任何东西)并返回。</p>
+
+<p>螳螂也是谷歌 Play 商店上唯一一个不需要个人电脑连接亚行的键盘映射程序。最新的更新现在允许您通过使用 USB 电缆连接到 Android 设备，通过 ADB 激活应用程序。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="experience">经验</h2>
+<p class="w-rich w-youtube" id="puxmop-wlk0">  </p>
+
+
+<p>我亲自用罗技 F310 有线控制器和新的<a href="https://www.xda-developers.com/sony-playstation-5-dualsense-controller-drift-issue-explained/">索尼 DualSense 无线控制器</a>通过蓝牙测试了 Mantis Gamepad Pro。整个过程相当简单，即使对于不了解亚行工作方式的人来说也是如此。用户界面简洁易懂。有一个深色主题选项，带有定义明确的说明和 FAQ 部分，帮助用户轻松排除故障。</p>
+
+
+
+
+
+<p>运行 Android 7.0 或更高版本的设备支持该应用程序。然而，我无法在目前运行 Android 10 的华硕 ROG 手机 II 上使用屏幕覆盖功能。我和开发人员谈过，被告知有几个用户报告了同样的问题，目前正在调查中。不过，我的一加 8 在 Android 11 上运行时没有遇到任何问题。我们在运行 Android 11 的 Pixel 4 上使用它也没有任何问题。</p>
+
+<p>校准是非常无缝的，其中你一个接一个地点击控制器上的所有按钮，包括分配各种功能的拇指棒。一旦配置了控制器，就必须将这些键映射到触摸屏控件上。这可以通过在应用程序中添加游戏并通过 Mantis 本身运行游戏来实现。一旦你通过螳螂添加并打开了一个游戏，假设<em> PUBG Mobile </em>，你应该会在左上角看到一个小的覆盖图。要映射您的控件，请打开游戏的基于触摸的控件布局，然后点击 Mantis 浮动小部件，并点击“+”号来添加 D-Pad、face 键或左右拇指棒，甚至不透明度。根据您拥有的控制器，您可以指定任意数量的按钮。映射每一个函数需要一段时间，但是一旦完成，加载它们就成了问题。</p>
+
+
+
+
+
+<p>我用罗技 F310 尝试了一下 PUBG Mobile，总体来说我没有遇到任何延迟问题。考虑到我一直用触摸控制玩游戏，当你转向物理控制时会有一个学习曲线。如果不回到触摸屏，你就无法完全浏览游戏菜单和各种其他选项。只有当你参加一场比赛时，身体控制器才真正对我有意义。</p>
+
+<p>我相信螳螂 Gamepad Pro 的开发者在应用程序上做得很好。除了一些问题，如与某些智能手机的兼容性，Mantis Gamepad Pro 可能很快成为其他键盘映射程序的榜样。你可以通过进入官方的<a href="https://forum.xda-developers.com/t/app-7-0-mantis-gamepad-pro-free-no-root-gamepad-mapper-for-android-now-live-on-google-play.4204243/"> XDA 论坛页面</a>来关注这个应用的发展。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

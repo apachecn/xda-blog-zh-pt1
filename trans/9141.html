@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Log4j 2.17.1 now available with more Log4Shell vulnerability fixes</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Log4j 2.17.1 现在提供了更多的 Log4Shell 漏洞修复</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/log4j-2-17-1-update/#0001-01-01">https://www.xda-developers.com/log4j-2-17-1-update/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>本月早些时候，<a href="https://www.xda-developers.com/log4j-security-vulnerability-minecraft-apple/">在流行的基于 Java 的日志包“Log4j”</a>中发现的一个安全漏洞成为无数公司和技术产品的一个大问题。《我的世界》、Steam、苹果 iCloud 和其他应用程序和服务不得不匆忙更新补丁版本，但 Log4j 的问题尚未完全修复。现在又有一个更新推出，旨在解决另一个潜在的安全问题。</p>
+
+  
+<p>阿帕奇软件基金会(Apache Software Foundation)周一发布了 Log4j 的 2.17.1 版本<a href="https://logging.apache.org/log4j/2.x/changes-report.html#a2.17.1">(通过<em>传呼计算机</em></a><a href="https://www.bleepingcomputer.com/news/security/log4j-2171-out-now-fixes-new-remote-code-execution-bug/">，主要解决了一个被标记为</a><a href="https://logging.apache.org/log4j/2.x/security.html#:~:text=CVE-2021-44832"> CVE-2021-44832 </a>的安全漏洞。如果攻击者能够控制 Log4j 日志记录配置文件，该漏洞可能允许使用 JDBC 附加器远程执行代码(RCE)。该问题的严重性评级为“中等”，低于引发这一切的漏洞<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228"> CVE-2021-44228 </a>，其评级为“严重”。Checkmarx 安全研究员 Yaniv Nizry <a href="https://twitter.com/YNizry/status/1475764153373573120">声称发现了漏洞</a>并将其报告给了 Apache 软件基金会。</p>
+
+<p>Apache 在漏洞描述中写道，<em>“Apache log4j 2 版本 2.0-beta7 到 2.17.0(不包括安全修复版本 2.3.2 和 2.12.4)容易受到远程代码执行(RCE)攻击，在这种攻击中，拥有修改日志记录配置文件权限的攻击者可以使用 JDBC 附加器构建恶意配置，其数据源引用可执行远程代码的 JNDI URI。通过在 Log4j2 版本 2.17.1、2.12.4 和 2.3.2 中将 JNDI 数据源名称限制为 java 协议，可以修复此问题。</em></p>
+
+<p>最初的 Log4j 漏洞利用，也称为“Log4Shell”，允许在许多使用 Log4j 进行数据记录的服务器或应用程序上执行恶意代码。Cloudflare 首席执行官 Matthew Prince 表示，该漏洞早在 12 月 1 日就被利用了，这比它被公开发现早了一周多，据 <em> <a href="https://www.washingtonpost.com/technology/2021/12/20/log4j-hack-vulnerability-java/">【华盛顿邮报】</a></em>报道，谷歌委派 500 多名工程师检查公司的代码，以确保没有漏洞。这个漏洞远没有那么严重，因为攻击者仍然需要能够修改属于 Log4j 的配置文件。如果他们能做到这一点，无论如何，很可能你有更大的问题。</p>
+
+<p>这一最新版本预计将是对最初漏洞的最终永久修复，许多公司已经自行修复了该漏洞。然而，我们也看到了一些其他的更新，从最初的一个到后来发现的漏洞。幸运的话，这应该是 Log4Shell 传奇的最终结局。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

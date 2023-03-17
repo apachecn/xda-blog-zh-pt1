@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>This WhatsApp vulnerability is pretty stupid, but it can lock you out of your account indefinitely</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>这个 WhatsApp 漏洞非常愚蠢，但它可以无限期地锁定你的帐户</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/whatsapp-vulnerability-lock-out-account/#0001-01-01">https://www.xda-developers.com/whatsapp-vulnerability-lock-out-account/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>安全研究人员在 WhatsApp 中发现了一个新的漏洞，该漏洞可能会促使更多用户<a href="https://www.xda-developers.com/best-whatsapp-alternatives/">退出脸书旗下的消息服务</a>。恶意行为者可以很容易地利用这个漏洞无限期地将你锁定在 WhatsApp 帐户之外，这对于 messenger 的 20 多亿用户来说不仅仅是一个小小的不便。但这还不是最糟糕的。</p>
+
+  
+<p>据研究人员路易斯·马奎兹·卡平德罗(Luis Márquez Carpintero)和埃内斯托·卡纳莱斯·佩雷拉(Ernesto Canales perea)(<a href="https://www.forbes.com/sites/zakdoffman/2021/04/10/shock-new-warning-for-millions-of-whatsapp-users-on-apple-iphone-and-google-android-phones/?sh=1624fafa7585">via<em>福布斯</em> </a>)称，攻击者不需要任何特殊的软件或培训就可以利用这一漏洞。他们只需要知道你的电话号码。一旦他们有了这一点，他们可以毫不费力地将你锁定在 WhatsApp 账户之外。它是这样工作的。</p>
+
+<p>每当你在新设备上登录时，WhatsApp 都要求双重认证。为此，该服务会向您的电话号码发送一个六位数的代码进行验证。如果你多次输入错误代码，WhatsApp 会自动暂停你的账户 12 小时。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-2FA-verification-process-2.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Phone number verification process (Image: Forbes)&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-2FA-verification-process-2.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-2FA-verification-process-2.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-2FA-verification-process-2.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-2FA-verification-process-2.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="WhatsApp 2FA phone number verification process" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-2FA-verification-process-2.jpg" src="../Images/8122529f67500c009ce9c8c49b77f407.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-2FA-verification-process-2.jpg"/> </picture> <figcaption class="body-img-caption">Phone number verification process (Image: Forbes)</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>攻击者可以通过在新设备上安装 WhatsApp，输入你的电话号码，并重复输入错误的代码来利用这种双因素认证系统。虽然这将阻止你在接下来的 12 个小时内登录新设备，但不会影响你当前的 WhatsApp 安装。它会像预期的那样继续工作。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-phone-number-verification-failed-incorrect-code.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Entering wrong code leads to 12-hour suspension (Image: Forbes)&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-phone-number-verification-failed-incorrect-code.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-phone-number-verification-failed-incorrect-code.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-phone-number-verification-failed-incorrect-code.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-phone-number-verification-failed-incorrect-code.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="WhatsApp phone number verification failed incorrect code" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-phone-number-verification-failed-incorrect-code.jpg" src="../Images/10eae36f92aaf6b514187e065c3d83a1.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-phone-number-verification-failed-incorrect-code.jpg"/> </picture> <figcaption class="body-img-caption">Entering wrong code leads to 12-hour suspension (Image: Forbes)</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>为了防止您无限期地登录新设备，攻击者只需重复上述步骤三次。在第三个 12 小时周期，应用程序的暂停计时器将中断，并开始显示“-1 秒”计时器。一旦这个错误出现，WhatsApp 根本不会让你在新设备上登录。但是，您当前的安装将继续工作。但是，漏洞利用并没有就此结束，因为它可以被向前链接，以大幅增加其影响。</p>
+<div class="body-img portrait"><div class="responsive-img image-expandable img-article-item-portrait" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/Whatsapp-1-seconds-suspsension-bug.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Phone number verification countdown bug showing -1 seconds (Image: Forbes)&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/Whatsapp-1-seconds-suspsension-bug.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="750px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/Whatsapp-1-seconds-suspsension-bug.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="600px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/Whatsapp-1-seconds-suspsension-bug.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="360px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/Whatsapp-1-seconds-suspsension-bug.jpg?q=50&amp;fit=crop&amp;dpr=1.5"/> <img class="lazyload" alt="-1 seconds login suspension bug on WhatsApp" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/Whatsapp-1-seconds-suspsension-bug.jpg" src="../Images/5680aae75f7bb0445a455b17c84b59b7.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/Whatsapp-1-seconds-suspsension-bug.jpg"/> </picture> <figcaption class="body-img-caption">Phone number verification countdown bug showing -1 seconds (Image: Forbes)</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>攻击者的最后一步也将破坏你当前的安装，你将被永久锁定帐户。为此，攻击者需要做的只是向 WhatsApp 发送一封电子邮件，要求该服务停用你的电话号码。WhatsApp 可能会发送自动回复，要求攻击者确认该号码，一旦他们确认，WhatsApp 会在你不知情的情况下自动停用你的账户。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-account-deactivation-email.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;Email to WhatsApp Support to deactivate account (Image: Forbes)&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-account-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-account-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-account-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-account-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="WhatsApp account deactivation email" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-account-deactivation-email.jpg" src="../Images/06bfc31cae38c8bda1820c829c276b91.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApp-account-deactivation-email.jpg"/> </picture> <figcaption class="body-img-caption">Email to WhatsApp Support to deactivate account (Image: Forbes)</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>然后，您当前的 WhatsApp 安装将突然停止工作，您将看到以下通知:<em>“您的电话号码不再在此手机上的 WhatsApp 中注册。这可能是因为您在另一部手机上注册了它。如果您没有这样做，请验证您的电话号码以重新登录您的帐户。”</em>现在，当你尝试验证你的电话号码时，你会看到“-1 秒”暂停计时器，你将根本无法登录。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApps-automated-response-to-deactivation-email.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;WhatsApp's automated response to deactivation email (Image: Forbes)&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApps-automated-response-to-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApps-automated-response-to-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApps-automated-response-to-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApps-automated-response-to-deactivation-email.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="WhatsApp's automated response to deactivation email" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApps-automated-response-to-deactivation-email.jpg" src="../Images/1554b357de63141a8667e191b5a3c43e.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/04/WhatsApps-automated-response-to-deactivation-email.jpg"/> </picture> <figcaption class="body-img-caption">WhatsApp's automated response to deactivation email (Image: Forbes)</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>由于这种攻击并不复杂，任何人只要能接触到你的电话号码，就能在几天内轻易地将你的 WhatsApp 账户锁定。因此，WhatsApp 需要立即解决这个突出的问题。</p>
+
+<hr/>
+
+<p>信使已经被警告了这个问题。作为对这一披露的回应，WhatsApp 的一位发言人告诉《福布斯》杂志(Forbes)的记者(T1)，<em>“提供一个包含两步验证的电子邮件地址，有助于我们的客户服务团队在人们遇到这种不太可能的问题时提供帮助。”【WhatsApp 认为这是一个“不太可能”的问题，这一事实足以让许多用户放弃这项服务。最重要的是，这位发言人补充说，那些试图利用漏洞的人将违反 WhatsApp 的服务条款。好像这样就能吓跑所有的黑客，防止恶作剧者试图利用一个不知情的用户。</em></p>
+
+<p>我们敦促我们的读者不要利用这个漏洞，不是因为违反 WhatsApp 的服务条款会让你坐牢，而是因为这是一件相当糟糕的事情。此外，如果你最终准备好切换到不同的服务，请查看我们关于 WhatsApp 替代品的<a href="https://www.xda-developers.com/best-whatsapp-alternatives/">深度指南</a>，它强调了切换到另一个平台的所有利弊。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

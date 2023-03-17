@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Latest Magisk Canary release adds support for Android 12, drops MagiskHide</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>最新的 Magisk Canary 版本增加了对 Android 12 的支持，取消了 MagiskHide</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/magisk-canary-release-android-12-support/#0001-01-01">https://www.xda-developers.com/magisk-canary-release-android-12-support/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>如果你认为自己是 Android 生态系统中的超级用户，那么“Magisk”这个名字绝对不需要介绍。多亏了吴炯，又名 XDA 资深公认开发者<a href="https://forum.xda-developers.com/m/topjohnwu.4470081/"> topjohnwu </a>的这一创造，<a href="https://www.xda-developers.com/root/">可以通过<a href="https://www.xda-developers.com/how-to-install-magisk/">修补其启动映像</a>轻松获得安卓设备</a>的 root 访问权限。然而，由于 Magisk 必须进行修改以提供无系统根接口，因此通常需要更新以兼容最新的 Android 版本。现在，Android 12 已经进入稳定渠道，topjohnwu 提出了一个新的 Magisk 金丝雀版本，可以扎根于 Android 的最新迭代。</p>
+
+  
+
+
+
+<p>Magisk 的上一个主要版本已经过去了五个多月，因此这次更新意义重大。这是吴炯<a href="https://www.xda-developers.com/magisk-developer-topjohnwu-leaves-apple-joins-google/">离开苹果加入谷歌的 Android 安全团队</a>后发布的第一个 Magisk 版本，除了为 Android 12 提供支持外，最初的 Canary 版本还永久淘汰了 MagiskHide 组件。正如<a href="https://www.xda-developers.com/magisk-development-continues-without-magiskhide/">在八月份由 topjohnwu </a>指出的那样，Magisk 应用程序中也删除了集中式 Magisk 模块 repo。</p>
+
+<p/><p><strong> <a href="https://www.xda-developers.com/best-magisk-modules/">最佳 Magisk 模块:通话记录器、字体管理器、1 控制器等等！</a>T3】</strong></p>
+
+<p>不过，对于 root 爱好者来说，有了一个新的玩法。“Zygisk”即 Android 的 Zygote 进程中的 Magisk 是 topjohnwu 和其他几位开发人员已经研究了一段时间的无系统界面的演变。有了这个 Canary 版本，您现在可以探索 Zygisk 的初步功能。如果您对模块创建感兴趣，那么您应该<a href="https://github.com/topjohnwu/zygisk-module-sample">看看 Zygisk API 和示例模块</a>。</p>
+
+<p>最新 Magisk Canary 版本(d7e7df3b - 23010)的<a href="https://cdn.jsdelivr.net/gh/topjohnwu/magisk-files@9537c5d8cedfc09ca723ae0392b1219e75d9b636/notes.md">完整变更日志</a>如下:</p>
+
+<ul> <li>[常规] MagiskHide 从 Magisk 中移除</li> <li>[常规]仅支持 64 位系统</li> <li>【常规】支持 Android 12</li> <li>[Zygisk]引入新特性:Zygisk</li> <li>[Zygisk]引入 DenyList 功能，以在使用选定进程时还原 Magisk 功能</li> <li>[MagiskBoot]支持修补 32 位内核 zImages</li> <li>[MagiskBoot]支持启动映像头 v4</li> <li>[MagiskInit]支持<code>/proc/bootconfig</code>加载引导配置</li> <li>[MagiskInit]更好地支持一些魅族设备</li> <li>[MagiskInit]更好地支持某些 Oppo/Realme 设备</li> <li>[MagiskSU]如果内核支持，请使用隔离的 devpts</li> <li>[resetprop]删除的属性现在会从内存中清除，而不只是取消链接</li> <li>[App]为所有 ABI 构建单一 APK</li> <li>[应用程序]切换到使用标准底部导航栏</li> <li>[应用程序]下载模块 Magisk 应用程序已移除</li> </ul>
+
+<p>要在 Android 12 上开始使用 root，<a href="https://raw.githubusercontent.com/topjohnwu/magisk-files/canary/app-debug.apk">下载最新的 Canary 版本</a>或在 Magisk 应用程序设置中切换到 Canary 版本频道，然后更新应用程序。如果你遇到任何问题，在<a href="https://github.com/topjohnwu/Magisk/issues">项目的 GitHub 库</a>上提交一份错误报告。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Linux kernel bug dubbed 'Dirty Pipe' can lead to root access, affects Android devices as well</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>被称为“脏管道”的 Linux 内核错误会导致根用户访问，也会影响 Android 设备</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/dirty-pipe-linux-vulnerability-root-android/#0001-01-01">https://www.xda-developers.com/dirty-pipe-linux-vulnerability-root-android/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Linux 内核的最大优点之一主要是它的开源特性，它允许利益相关者以适合他们特定需求的方式派生、修改和重新发布它。但是，当出现未打补丁的安全漏洞和相应的可利用场景时，开源的这一优势就像一把双刃剑。虽然开发人员和知名 OEM 正在努力提高 Linux 生态系统(也包括 Android)的整体安全性，但新的漏洞和利用不断涌现，并在雷达下溜走。这次的错误似乎相当严重，很不幸。</p>
+
+  
+<p>安全研究员马克斯·凯勒曼发现了池塘里最新的坏鱼。昵称为<strong>脏管道</strong>的漏洞允许覆盖任意只读文件中的数据。尽管它已经在主流 Linux 内核中修补过，但该漏洞可能会以特权升级的形式在运行 Linux 内核版本 5.8 或更高版本的每台设备上被利用。这也意味着一系列新发布的安卓智能手机，如<a href="https://www.xda-developers.com/samsung-galaxy-s22-ultra-review/">三星银河 S22 </a>和<a href="https://www.xda-developers.com/google-pixel-6/">谷歌像素 6 </a>也很容易受到攻击，直到每台设备都从各自的原始设备制造商那里收到合适的内核补丁。</p>
+
+<hr/>
+
+
+<h2 id="the-origin-of-dirty-pipe">不洁管道的起源</h2>
+<p>凯勒曼在 2021 年 4 月偶然发现了这个异常现象，但他又花了几个月的时间才想出一个概念验证的利用方法。该漏洞的正式目录为<strong> CVE-2022-0847 </strong>，它允许非特权用户注入和覆盖只读文件中的数据，包括以 root 用户身份运行的 SUID 进程。这个通俗的名字似乎是对臭名昭著的<a href="https://www.xda-developers.com/9-year-old-linux-kernel-bug-dubbed-dirty-cow-can-root-every-version-of-android/"> <em>脏牛</em> bug </a>和用于进程间消息传递的称为<a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">管道</a>的 Linux 机制的一种发挥，因为后者是在利用例程中使用的。</p>
+
+ 
+
+
+
+<hr/>
+<p class="ad-odd"> </p>
+
+
+<h2 id="how-serious-is-dirty-pipe-for-android-users">Dirty Pipe 对于安卓用户来说有多严重？</h2>
+<p>由于 Linux 内核版本 5.8(或更高版本)只是自 Android 12 以来的一个 Android 选项<a href="https://source.android.com/devices/architecture/kernel/android-common">，传统设备不受影响。然而，基于高通骁龙 8 Gen 1、联发科天玑 8000 和 Dimensity 9000、三星 Exynos 2200 和谷歌张量 SoC 的智能手机容易受到脏管道缺陷的影响，因为它们的启动内核构建。</a></p>
+
+ 
+
+
+
+<p>请记住，脏管道本身不是一种利用，而是一种漏洞。但是，此漏洞允许修改特权服务使用的二进制文件或创建具有 root 权限的新用户帐户。通过利用此漏洞，恶意用户空间进程可以在受害者的设备上获得不受限制的超级用户访问权限。</p>
+
+<hr/>
+<p class="ad-even"> </p>
+
+
+<h2 id="what-has-google-done-so-far-to-combat-dirty-pipe">到目前为止，谷歌在对抗“肮脏管道”方面做了些什么？</h2>
+<p>据凯勒曼称，谷歌<a href="https://android-review.googlesource.com/c/kernel/common/+/1998671">上个月将他的漏洞修复与安卓内核</a>合并，就在<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9d2231c5d74e13b2a0546fee6737ee4446017903">随着 Linux 内核版本 5.16.11、5.15.25 和 5.10.102 的发布而修复</a>之后。话虽如此，我们可能需要等待一段时间，原始设备制造商才开始推出包含修复的 Android 更新。例如，谷歌的内部 Pixel 6 仍然容易受到攻击，但高级用户可以通过安装售后补丁定制内核作为后备选项来缓解这一缺陷。</p>
+
+ 
+
+
+
+<hr/>
+<p class="ad-odd"> </p>
+
+
+<h2 id="closing-notes">结束语</h2>
+<p>尽管通过让更多的人来审核代码，遗漏一些极其严重的事情的可能性降低了，但脏管道在其他类型的利用中的出现(重新)确立了这样一个事实，即我们仍然是人，注定会犯错误。碎片化通常是这个问题的核心，因为这些漏洞在新的内核版本中得到了修补，但不幸的是，将永远不会在许多现有设备上部署。</p>
+
+<p>很大一部分责任在于 OEM 的冷漠，这种情况不太可能很快改变，尤其是在入门级智能手机市场。在 XDA，我们普遍欢迎用户获得 root 访问权限的能力，但我们不赞成存在这样的 root 漏洞，尤其是对最终用户有潜在危险的漏洞。</p>
+
+<p><em>你对 Dirty Pipe 和 Android 的安全现状有什么看法？请在下面的评论中告诉我们！</em></p>
+
+<hr/>
+
+<p><strong>来源:</strong> <a href="https://dirtypipe.cm4all.com/">马克斯·凯勒曼揭露的肮脏管道</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

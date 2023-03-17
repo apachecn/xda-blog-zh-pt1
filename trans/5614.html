@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Google is developing parts of Android in Rust to improve security</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>谷歌正在 Rust 中开发部分安卓系统以提高安全性</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-developing-android-rust/#0001-01-01">https://www.xda-developers.com/google-developing-android-rust/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>Android 作为一个完整的操作系统解决方案，涉及到许多移动部件。从广义上讲，这些部分是应用生态系统，然后是操作系统本身。作为一名开发人员，您选择的编程语言会根据您正在开发的 Android 的不同部分而有所不同。对于应用开发者来说，Java 和 Kotlin 是受欢迎的选择。对于操作系统及其底层的开发人员来说，C 和 C++是目前最受欢迎的选择。今天，谷歌为操作系统开发者增加了第三种选择，因为 Android 开源项目现在支持 Rust 编程语言来开发操作系统本身。</p>
+
+  
+
+
+
+<h2 id="limitations-of-c-and-c">C 和 C++的局限性</h2>
+<p>Android 操作系统的底层需要 C 和 C++这样的系统编程语言。这些语言为开发人员提供了控制和可预测性，这在访问低级系统资源和硬件时非常重要。</p>
+
+<p>不幸的是，C 和 C++无法提供内存安全保证，这使得它们容易出现错误和安全漏洞。开发人员负责管理这些语言的内存生存期，但是在复杂的多线程代码库中，说起来容易做起来难。</p>
+
+<p>C 和 C++共同构成了 Android 平台上数千万行代码。这些内存安全漏洞成为最难解决的代码错误来源，约占 Android 高严重性安全漏洞的 70%。仅仅修复这些错误不足以解决问题，更好的方法是从一开始就阻止它们。</p>
+
+<p>缺乏内存安全保证迫使开发人员在严格限制和无特权的沙箱中运行 Android 进程。但是沙箱在资源上是昂贵的，消耗额外的开销并引入延迟。沙盒也不能完全消除代码的漏洞，并且由于高错误密度，它的效率降低，进一步允许攻击者链接多个漏洞。</p>
+
+<p>另一个限制，虽然不是 C 和 C++独有的，但适用于所有的内存安全问题，即错误状态必须在检测代码中实际触发才能被检测到。因此，即使您的代码经过了出色的测试，实际的 bug 可能仍未被发现。当发现错误时，修复它们是另一项任务，涉及一个漫长而昂贵的过程，不一定总能得到正确的修复。因此，缺陷检测变得不可靠，鉴于这些限制，缺陷预防是更好的方法。</p>
+
+<p>这就是向 Rust 这样的内存安全语言转变的原因。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="rust-and-its-benefits">生锈及其好处</h2>
+<p>Rust 通过结合使用编译时检查和运行时检查来确保内存访问有效，从而提供了内存安全保证。这种安全性是在提供与 C 和 C++相当的性能的同时实现的。Rust 还减少了对沙盒的需求，允许开发人员有更多的开销空间来引入更安全、占用资源更少的新功能。</p>
+
+<p>虽然 Rust 确实有它的好处，但一夜之间将整个 Android 操作系统切换到 Rust 是不可行的。这甚至可能是不必要的，因为 Android 的大多数内存错误都发生在新的或最近修改的代码中，其中大约 50%的错误发生在不到一年前。谷歌认为，其内存安全语言的努力最好集中在新的开发上，而不是重写成熟的 C 和 C++代码。</p>
+
+<p>Rust 还侧重于防止错误，而不是严重依赖于错误的检测，从而提高代码的正确性。它有几个关键特性，比如内存安全、数据并发、更具表现力的类型系统、默认情况下不可变的引用和变量、更安全的整数处理、标准库中更好的错误处理等等。</p>
+<p class="ad-even"> </p>
+
+
+<h2 id="what-does-the-switch-to-rust-mean-for-android">转 Rust 对 Android 意味着什么？</h2>
+<p>谷歌表示，在过去的 18 个月里，它一直在为 Android 开源项目添加 Rust 支持。但是在 Android 平台上增加一门新语言是一项巨大的工程。一些工具链和依赖项需要维护，测试基础设施和工具必须更新，开发人员需要培训。</p>
+
+<p>谷歌有几个早期采用者项目，他们将在未来几个月分享。但即便如此，将 Rust 支持扩展到更多操作系统是一个多年项目，这一点已经很清楚了。</p>
+
+<p>从我们可以看到，谷歌已经在一些地方使用 Rust。Android 新的蓝牙堆栈重写代码名为“<a href="https://android.googlesource.com/platform/system/bt/+/master/gd/rust/"> Gabeldorsche </a>”正在 Rust 中编写。Gabeldorsche 的工作在 Android 11 的时候就开始了，但是现在还没有投入使用。Android 的<a href="https://android-review.googlesource.com/q/project:platform/system/security+.rs"> Keystore 2.0 </a>模块是用 Rust 编写的，Android 的 IPC 驱动程序 binder 的用户空间部分也是如此。虽然与 Android 无关，<a href="https://www.xda-developers.com/fuchsia-could-natively-run-android-linux-apps/"> Fuchsia </a>的新<a href="https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/src/connectivity/network/netstack3/"> netstack </a>也在 Rust 中编写。</p>
+
+<p>对于应用程序开发人员来说，这种转变不会改变你作为应用程序开发人员如何编写应用程序，也不会改变框架 API 如何工作。此开关只影响操作系统的编写方式。据 Android 开发者关系团队的一名成员称，谷歌目前也不打算发布 Rust NDK。应用程序开发支持的语言将继续是 Kotlin、Java、C 和 C++。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>7-Zip, the open source file archiver, is now available for Linux</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>开源文件归档器 7-Zip 现在可以在 Linux 上使用了</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/7-zip-linux-official-release/#0001-01-01">https://www.xda-developers.com/7-zip-linux-official-release/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>7-Zip 的正式版本现可用于 Linux x86、x86-64、ARMv7 和 ARM64 架构，将流行的开源文件压缩程序从运行微软 Windows 的 PC 扩展到数千台 Linux 驱动的设备，包括<a href="https://www.xda-developers.com/best-chromebooks/"> Chromebooks </a>和<a href="https://www.xda-developers.com/raspberry-pi-400-personal-computer-keyboard/"> Raspberry Pi </a>。</p>
+
+  
+<p>由于文件格式的<a href="https://www.7-zip.org/7z.html">开放架构，Linux 用户已经能够使用 7-Zip 存档(*.7z)一段时间了，使用像</a><a href="https://sourceforge.net/projects/p7zip/"> p7zip </a>这样的应用程序。但是自从 7-Zip 21.01 alpha 发布以来，开发人员、系统管理员和 Linux 爱好者可以直接从 7-Zip 的网站上获得该程序的 Linux 二进制文件，并享受原生支持。您可以在一个容器、一台远程机器，甚至是在【Linux 的 Windows 子系统(WSL) 下调用它。</p>
+<div class="body-img landscape"><div class="responsive-img image-expandable img-article-item" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/7-Zip-Linux-WSL-Windows-10-1024x644.jpg" data-modal-id="single-image-modal" data-modal-container-id="single-image-modal-container" data-img-caption="&quot;7-Zip Linux running under WSL 2 together with the Windows CLI version&quot;">
+ 
+<figure> <picture>  <source media="(min-width: 1024px)" sizes="1500px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/7-Zip-Linux-WSL-Windows-10-1024x644.jpg?q=50&amp;fit=crop&amp;w=1500&amp;dpr=1.5"/> <source media="(min-width: 768px)" sizes="943px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/7-Zip-Linux-WSL-Windows-10-1024x644.jpg?q=50&amp;fit=crop&amp;w=943&amp;dpr=1.5"/> <source media="(min-width: 481px)" sizes="767px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/7-Zip-Linux-WSL-Windows-10-1024x644.jpg?q=50&amp;fit=crop&amp;w=767&amp;dpr=1.5"/> <source media="(min-width: 0px)" sizes="480px" data-srcset="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/7-Zip-Linux-WSL-Windows-10-1024x644.jpg?q=50&amp;fit=crop&amp;w=480&amp;dpr=1.5"/> <img class="lazyload" alt="7-Zip Linux running under WSL on Windows 10" data-img-url="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/7-Zip-Linux-WSL-Windows-10-1024x644.jpg" src="../Images/161c9a98a50486f8e8368fd6fc67b132.png" data-original-src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2021/03/7-Zip-Linux-WSL-Windows-10-1024x644.jpg"/> </picture> <figcaption class="body-img-caption">7-Zip Linux running under WSL 2 together with the Windows CLI version</figcaption> </figure> </div>
+
+
+ </div>
+
+
+<p>7-Zip 的 21.01 alpha 版本(2021 年 3 月 9 日发布)的完整变更日志如下:</p>
+
+<ul> <li>Linux 的命令行版本 7-Zip 发布了。</li> <li>使用 AES、CRC-32、SHA-1 和 SHA-256 的硬件 CPU 指令来提高 ARM64 版本的速度。</li> <li>18.02 - 21.00 版本中的 bug 已修复:7-Zip 无法正确提取一些用 xz 压缩方法创建的 Zip 存档。</li> <li>一些错误被修复。</li> </ul>
+
+<p>随着 Linux 版本成为标准产品，您可以期待发布机制与官方的 7-Zip 版本保持一致。鉴于 p7zip <a href="https://sourceforge.net/projects/p7zip/files/p7zip/16.02/">最后一次更新是在 2016 年</a>，7-Zip 开发者伊戈尔·巴甫洛夫(Igor Pavlov)将事情掌握在自己手中并发布基于最新 7-Zip 代码库的官方 Linux 二进制文件确实是一个明智的举动。然而，开发者还没有公布这个版本的源代码。正如在发布讨论线程中提到的(<a href="https://www.bleepingcomputer.com/news/software/7-zip-developer-releases-the-first-official-linux-version/"> <em>通过哔哔声计算机</em> </a>)，巴甫洛夫自己承认<a href="https://sourceforge.net/p/sevenzip/discussion/45797/thread/cec5e63147/#94e9/2017/0774">不能与 Linux 一起工作，</a>这意味着一个正式的构建系统需要一些时间才能出现。尽管 p7zip 的构建脚本<a href="https://sourceforge.net/p/sevenzip/discussion/45797/thread/cec5e63147/#16f2/f81c">可以用来在 Linux 上编译</a> 7-Zip，但从长远来看，这可能不是一个合适的解决方案。</p>
+
+<p>如果你想试用 7-Zip 的官方 Linux 版本，你可以直接从<a href="https://sourceforge.net/p/sevenzip/discussion/45797/thread/cec5e63147/">公告线程</a>或者从其网站的<a href="https://www.7-zip.org/download.html">下载部分下载 alpha 版本。第一步是为您的 CPU 架构选择您需要的包。下载完成后，您必须解压*.tar.xz 归档文件以获得<code>7zz</code>可执行文件。值得注意的是，CLI 版本的第一方官方 GUI 前端还不可用。</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

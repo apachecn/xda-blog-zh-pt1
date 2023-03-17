@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Windows 11 is significantly slowing down some NVMe SSDs</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11 显著降低了一些 NVMe 固态硬盘的速度</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-ssd-performance-downgrade/#0001-01-01">https://www.xda-developers.com/windows-11-ssd-performance-downgrade/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>Windows 11 再次给用户带来了一些问题，这一次有大量报告称，使用该操作系统的 NVMe 固态硬盘性能下降。这些报告可以在多个<a href="https://www.reddit.com/r/Windows11/comments/pjkw81/windows_11_slows_nvme_writes_greatly_on_small/"> Reddit 线程</a>上找到，也可以在<a href="https://answers.microsoft.com/en-us/windows/forum/all/windows-11-only-has-45-of-random-write-speed-in/4de7b84f-5d43-4eb1-9036-f8d3b8f36837">微软的支持论坛</a>(通过<a href="https://www.neowin.net/news/windows-11-crippling-nvme-ssd-speeds-according-to-multiple-user-reports/"> <em> Neowin </em> </a>)上找到，它们实际上并不新。关于这个问题的报道可以追溯到几个月前，当时 Windows 11 还处于预览阶段，但在发布后的两个月内，投诉仍然存在。</p>
+
+  
+<p>根据这些报告，在 CrystalDiskMark 和 AS-SSD(流行的 PC 驱动器基准测试应用程序)的支持下，Windows 11 的性能在某些情况下可能会比 NVMe 驱动器慢几倍。该问题特别影响随机写入性能，而大多数其他指标不受影响，但差异仍然非常显著。下面的基准测试，<a href="https://www.reddit.com/r/Windows11/comments/pizp74/anyone_else_noticed_nvme_4k_write_speeds_almost/">由用户 mahtidrudi</a>在 Reddit 上分享，比较了运行 Windows 10 和 Windows 11 的相同 SSD。</p>
+
+
+
+<p>问题的根源尚未明确，但已经出现了一些可能的原因。用户最初指出的一点是，基于虚拟化的安全(VBS)导致 SSD 性能下降，但这并没有弥补 Windows 10 和 Windows 11 之间的全部差异。</p>
+
+<p>最近的发现表明，问题与哪个驱动器包含 Windows 11 安装有关。如果在辅助驱动器上运行基准测试，结果将与 SSD 的宣传值一致。下图由用户 PleasedPen25317 在<a href="https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_perf/general-random-write-disk-speed-degradation-in/3ff3d0af-6434-4ae8-b976-ec25ad9bd98d?page=4">微软支持论坛</a>上分享，展示了在同一台机器上比较两个 2TB 三星 980 Pro NVMe 固态硬盘的差异有多大。</p>
+
+
+
+<p>三星 980 Pro 是 PCIe 第四代固态硬盘，但旧的 PCIe 第三代驱动器也受到影响。这种差异在理论速度如此之高的驱动器上尤为明显，非 Windows 驱动器几乎快了五倍。</p>
+
+<p>另一份最近的报告称，最新的 Windows 11 更新，<a href="https://www.xda-developers.com/microsoft-releases-windows-11-build-22000-348-new-emojis/"> build 22000.348 </a>，略微提高了 SSD 的性能，尽管它与 Windows 10 上看到的仍然相去甚远。Reddit 上的一名微软工程师在三个月前 Windows 11 仍处于预览版时承认了这个问题，但似乎一个修复程序没有及时推出，两个月后，问题仍然存在。随着用户对潜在原因的更多关注，希望微软能更快地解决问题。</p>
+
+<p>Windows 11 已经受到了一些问题的影响，包括一些具体的<a href="https://www.xda-developers.com/amd-fix-preferred-core-windows-11/">降低了 AMD 处理器</a>的性能，加上一些<a href="https://www.xda-developers.com/some-windows-11-apps-arent-working-due-to-expired-certificates/">应用程序根本无法工作</a>。与此同时，这些问题已经得到了修复，所以我们只能希望同样的事情会在这里发生。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

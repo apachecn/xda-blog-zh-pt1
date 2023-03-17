@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Microsoft releases Windows 10 build 19043.1081 to Insiders</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>微软向内部人士发布 Windows 10 build 19043.1081</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/microsoft-windows-10-cumulative-update-19043-1081-insiders/#0001-01-01">https://www.xda-developers.com/microsoft-windows-10-cumulative-update-19043-1081-insiders/#0001-01-01</a></blockquote><div><header class="article_heading">
+
+
+<h1 class="heading_title">微软向内部人士发布 Windows 10 build 19043.1081 以下是新内容</h1>
+
+<p class="heading_sharing">  </p>
+
+
+<p class="heading_excerpt">微软正在为内幕计划的测试版和发布预览版发布新的 Windows 10 累积更新。</p>
+
+
+
+  </header>
+
+<section id="article-body" class="article-body" itemprop="articleBody">
+
+<div class="content-block-regular">
+<p/><p>今天，微软<a href="https://blogs.windows.com/windows-insider/2021/06/17/releasing-windows-10-build-19043-1081-21h1-to-beta-release-preview-channels/">在测试版和发布预览版频道为 Windows 内部人员发布了一个新的累积更新</a>。累积更新是 KB5003690，它使内部版本号达到 19043.1081 或 19042.1081，这取决于你是在 Windows 10 版本 21H1 还是 20H2 上。</p>
+
+  
+<p>事实上，虽然 Windows Insider 计划应该是关于接下来会发生什么，但在发布预览频道中仍有一些关于 Windows 10 的<em>前</em>版本。对于那些应该很快就会到来的内容(发布预览频道)，一个月前的 Windows 10 2021 年 5 月更新仍然只对选择加入的搜索者开放，因为出于某种原因，加入 Windows Insider 计划并不被视为明确选择加入。</p>
+
+<p>然而，如果你安装了新的累积更新，它会为你的<a href="https://www.xda-developers.com/best-laptops/">笔记本电脑</a>带来一大堆补丁。以下是修复的内容:</p>
+
+<blockquote>        <ul> <li>我们修复了一个问题，该问题导致某些显示配置的 Windows 任务栏上的新闻和兴趣按钮上的文本模糊。</li> <li>我们修复了在您启用“AppMgmt_COM_SearchForCLSID”策略后导致应用程序之间的通信停止的问题。</li> <li>我们修复了<strong> MultiByteToWideChar() </strong>函数在非英语地区使用时出现的性能问题。</li> <li>我们修复了在使用多个版本的国家语言支持(NLS)排序时，排序无法正常工作的问题。</li> <li>我们修复了一小部分用户在安装<a href="https://prod.support.services.microsoft.com/en-us/topic/march-29-2021-kb5000842-os-builds-19041-906-and-19042-906-preview-1a58a276-6a0a-47a5-aa7d-97af2d10b16d?preview=true"> KB5000842 </a>或更高版本后游戏性能低于预期的问题。</li> <li>我们修复了导致日语输入法编辑器(IME)在您打字时突然停止工作的问题。</li> <li>我们修复了当您尝试在离线模式下迁移时导致<strong>WMIMigrationPlugin.dll</strong>返回错误的问题。</li> <li>我们修复了<strong>Set-rule option</strong>PowerShell 命令无法为 Windows Defender 应用程序控制(WDAC)策略提供选项来将使用过期证书签名的文件视为未签名的问题。</li> <li>我们修复了导致 Windows 在使用 AppLocker 验证具有多个签名的文件时停止工作的问题。错误是 0x3B。</li> <li>我们修复了可能导致 BitLocker 在更新受信任的平台模块(TPM)固件后进入恢复模式的问题。当设置了“交互式登录:计算机帐户锁定阈值”策略并且有不正确的密码尝试时，会出现这种情况。</li> <li>我们修复了导致 Windows 生成许多 AppLocker 或 SmartLocker 成功事件的问题。</li> <li>我们修复了在启用凭据保护和远程凭据保护时对域控制器进行身份验证的问题。</li> <li>我们修复了一个问题，当虚拟机管理程序保护的代码完整性(HVCI)启用时，某些屏幕阅读器应用程序无法运行。</li> <li>我们修复了使用 PIN 登录失败的问题。错误消息是“发生了一些事情，您的 PIN 不可用。单击以再次设置您的 PIN。</li> <li>我们为某些支持安全启动的处理器添加了系统管理模式保护(固件保护 2.0 版)的 Windows 支持。</li> <li>我们修复了一个问题，在某些情况下，当你按下控制器上的 Windows 按钮时，会将你带出独占的虚拟现实(VR)应用程序，并返回到 Windows 混合现实主页。在此更新中，当您按下 Windows 按钮时，会出现 Windows 开始菜单。当你关闭开始菜单时，你会回到专属的 VR 应用程序。</li> <li>我们提高了 Microsoft 365 端点数据丢失防护(DLP)分类引擎中敏感数据分析的准确性和效率。</li> <li>我们修复了远程访问服务器(RAS)服务器上的 Internet 密钥交换(IKE) VPN 服务的问题。用户无法定期通过 IKE 协议将 VPN 连接到服务器。此问题可能在重新启动服务器或重新启动 IKEEXT 服务几个小时或几天后出现。一些用户可以连接，而许多其他用户无法连接，因为服务处于 DoS 保护模式，这限制了传入的连接尝试。</li> <li>我们修复了一个问题，该问题会导致 Wi-Fi 连接失败，因为如果启用了管理帧保护(MFP ),则在四次握手时会进行无效的消息完整性检查(MIC)。</li> <li>我们修复了续订用户自动注册证书后可能导致 VPN 失败的问题。错误消息是“没有更多的文件”。</li> <li>我们修复了隧道可扩展身份验证协议(TEAP)的一个问题，即使未选择或禁用身份隐私，该协议也会用“匿名”替换外部身份。</li> <li>我们修复了在启用用户数据报协议(UDP)时导致远程桌面会话停止响应的问题。</li> <li>我们增加了对<strong> USB 测试和测量类</strong>的支持。</li> <li>我们修复了<strong>Adamsync.exe</strong>中影响大型活动目录子树同步的问题。</li> <li>我们修复了当轻型目录访问协议(LDAP)绑定缓存已满，并且 LDAP 客户端库收到引用时发生的错误。</li> <li>我们修复了一个重定向器停止错误，该错误是由连接关闭时系统删除绑定对象时发生的竞争情况引起的。</li> <li>我们修复了一个阻止用户设置或查询 c 盘磁盘配额的问题。</li> <li>我们修复了一个问题，该问题导致在 NT 虚拟 DOS 机器(NTVDM)上运行的 16 位应用程序在您打开时停止工作。</li> </ul>
+<ul> <li>我们修复了导致<strong> fontdrvhost 的问题。</strong> <strong> exe </strong>安装压缩字体格式版本 2 (CFF2)字体时停止工作。</li> <li>我们修复了一个问题，由于字体回退设置，该问题可能会阻止最终用户定义的字符(EUDC)正确打印。</li> </ul>
+<ul> <li>我们修复了 Windows 任务栏上搜索框图形的一个问题，如果您使用任务栏的上下文菜单关闭新闻和兴趣，就会出现这个问题。使用黑暗模式时，这个图形问题尤其明显。</li> <li>我们修复了一个问题，该问题可能会导致在系统启动或从睡眠状态恢复后使用您的指纹登录失败。</li> <li>我们修复了一个问题，当您尝试在 Windows 10 设备上安装或启动 Xbox Game Pass 游戏时，可能会将您重定向到游戏服务的 Microsoft 商店页面。此外，您会收到错误 0x80073D26 或 0x8007139F。更多信息见<a href="https://prod.support.services.microsoft.com/en-us/topic/kb5004327-error-0x80073d26-or-0x8007139f-occurs-when-you-install-or-start-gaming-services-on-a-windows-10-device-a0a281bd-9b0d-4aa0-8c10-56f1bf9953af?preview=true"> KB5004327 </a>。</li> </ul>
+ </blockquote>
+<p>请注意，当非内部人员获得此累积更新时，它将显示为可选更新。这意味着你必须选择加入才能得到它。如果你没有，那么这些补丁将会在下个月的强制性补丁星期二更新中推出。</p>
+
+<p>当然，微软已经准备好在下周发布 Windows 11，所以它也需要服务。该公司届时将详细说明其计划。</p>
+
+ </div>
+
+
+<p id="article-waypoint"/>
+</section>
+
+
+        </div>    
+</body>
+</html>

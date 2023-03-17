@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Latest Galaxy Watch 4 update is breaking some watch faces</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>最新的 Galaxy Watch 4 更新打破了一些手表的外观</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/galaxy-watch-4-update-breaking-watch-faces/#0001-01-01">https://www.xda-developers.com/galaxy-watch-4-update-breaking-watch-faces/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p>本周，三星发布了针对<a href="https://www.xda-developers.com/samsung-galaxy-watch-4/"> Galaxy Watch 4 和 Galaxy Watch 4 Classic </a>的<a href="https://www.xda-developers.com/galaxy-watch-4-update-sleep-coaching-interval-target-feature/">新软件更新</a>。最新的更新带来了几个新的健康和保健功能，包括睡眠教练计划，新的间隔目标功能，以及新的身体成分见解。但似乎最新的更新并不能很好地与一些旧的表盘配合。</p>
+
+  
+<p>Reddit 用户<em> u/malbry </em> <a href="https://www.reddit.com/r/WearOS/comments/soivxf/some_older_watchfaces_may_not_work_correctly/">报告</a>(via<a href="https://www.androidpolice.com/latest-samsung-galaxy-watch4-update-inadvertently-breaks-some-watchfaces/"><em>Android Police</em></a>)在更新后的 Galaxy Watch 4 上，一些手表表面已经停止按预期工作。具体来说，除非用户手动轻按显示屏，否则在环境模式下，手表表盘将不再更新，因为“永远在线”显示屏(AOD)已打开。换句话说，像天气和时间信息这样的细节不会像它们应该的那样自动更新。你必须手动点击屏幕，以确保你看到的是最新的信息。</p>
+
+<blockquote>
+<p>在今天的系统更新之后，我使用了几年的最喜欢的手动编码表盘在我的三星 GW4 上无法正常工作。具体来说，在环境模式下，AOD 设置为打开时，除非触摸屏幕，否则表盘不会更新。</p>
+ </blockquote>
+<p>据 Redditor 称，该问题与负责在环境模式下更新手表屏幕的<em> onTimeTick </em> API 有关。在新的更新之后，当环境模式打开时，系统不再调用这个 API。因此，表盘数据不会定期刷新(每分钟一次)。</p>
+
+<p>幸运的是，这个 bug 只影响使用<a href="http://android-doc.github.io/reference/android/support/wearable/watchface/WatchFaceService.Engine.html"> WatchFaceService 的手表脸。发动机</a>。更新的 watch faces 不再依赖这个服务引擎，所以这个 bug 不太可能影响到所有人。然而，如果你有一个已经使用多年的旧表盘的收藏，你可能会想推迟更新最新的更新，因为你可能会遇到问题。</p>
+
+<p>目前还不清楚这种行为是有意的改变还是将在未来的更新中解决的错误。如果我们了解到关于这个问题的任何新的细节，我们一定会让你知道。</p>
+
+<p><em>在安装了最新的 Galaxy Watch 4 更新后，您的手表面部是否面临任何问题？请在下面的评论中告诉我们。</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

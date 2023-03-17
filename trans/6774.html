@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>How to replace AsyncTask with Kotlin's Coroutines</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>如何用 Kotlin 的协程替换 AsyncTask</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/asynctask-to-coroutines/#0001-01-01">https://www.xda-developers.com/asynctask-to-coroutines/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>很长一段时间以来，在 Android 中，如果你在制作应用程序时需要异步地做任何事情，你可能会使用 AsyncTask。AsyncTask 是 Android 框架中的一个 API，它使得在后台运行操作并在完成时返回值变得很容易。这很有道理。与 Kotlin 的协同程序不同，AsyncTask 已经存在了一段时间，而且是内置的。</p>
+
+  
+<p>然而，AsyncTask 的设计理念和实现都已经有些过时了。正因为如此，谷歌<a href="https://www.xda-developers.com/asynctask-deprecate-android-11/">否决了 AsyncTask API </a>。如果你愿意，你仍然可以使用它，但谷歌不建议这样做。幸运的是，AsyncTask 有一大堆替代品，包括 Kotlin 语言的一个特性——协程。</p>
+
+<p>Kotlin 的协同程序 API 是一个非常强大的框架，可以让你做很多事情。这篇文章只是触及了可能性的皮毛。我们将讨论从 AsyncTask 迁移到协程所需的基础知识。</p>
+
+ 
+<h2 id="adding-coroutines-support">添加协程支持</h2>
+<p>在开始使用协程之前，您需要将它们添加到您的项目中。</p>
+
+<h3 id="adding-kotlin-support">添加 Kotlin 支持</h3>
+<p>如果您已经实现了 Kotlin，请跳到下一节。否则，您需要在项目中添加 Kotlin 支持。查看我的关于将 Kotlin 添加到现有项目的教程，了解更多细节。</p>
+
+<h3 id="adding-coroutine-libraries">添加协程库</h3>
+<p>在您的模块级<code> build.gradle</code>中，包含以下依赖项。</p>
+
+<pre> <code class="hljs javascript">dependencies {<br/>    ...<br/>    implementation <span class="hljs-string">'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'</span><br/>    implementation <span class="hljs-string">'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'</span><br/>}</code> </pre>
+<p>同步您的项目，现在就可以使用 Kotlin 的协同程序了。</p>
+<p class="ad-odd"> </p>
+
+
+<h2 id="using-coroutines">使用协程</h2>
+<h3 id="implementing-a-coroutinescope">实现协同作用域</h3>
+<p>为了使用协程，您需要有一个可用的协程作用域实例。一个简单的方法是在你的包含类中实现它。</p>
+
+<p>例如，要在活动中实现协同作用域:</p>
+
+<pre> <code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeActivity</span> :</span> AppCompatActivity, CoroutineScope by MainScope() {<br/>        ...<br/><br/>        <span class="hljs-function">override fun <span class="hljs-title">onDestroy</span><span class="hljs-params">()</span> </span>{<br/>            <span class="hljs-keyword">super</span>.onDestroy()<br/>     <br/>           cancel()<br/>        }<br/>}</code> </pre>
+<p>这将使 SomeActivity 通过 MainScope 类实现 CoroutineScope 接口。MainScope 将处理协程 Scope 的所有实现逻辑，同时允许您使用协程 Scope 方法。在<code>onDestroy()</code>中调用<code>cancel()</code>确保在活动退出后没有异步逻辑继续运行。</p>
+
+<h3 id="replacing-asynctask-with-coroutines">用协程替换 AsyncTask</h3>
+<p>假设您在一个活动中有一个 AsyncTask，它在后台执行一个长时间运行的操作，并最终返回一个字符串。大概如下。</p>
+
+<pre> <code class="hljs python">private inner <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeTask</span> :</span> AsyncTask&lt;Void, Void, String&gt;() {<br/>    override fun doInBackground(vararg params: Void): <span class="hljs-built_in">String</span> {<br/>        <span class="hljs-keyword">try</span> {<br/>            <br/>            <span class="hljs-selector-tag">Thread</span><span class="hljs-selector-class">.sleep</span>(10000);<br/>        } <span class="hljs-keyword">catch</span> (e: InterruptedException) {}<br/>         <br/>        <span class="hljs-keyword">return</span> <span class="hljs-string">"SomeString"</span>;<br/>    }<br/><br/>    override fun onPostExecute(result: <span class="hljs-built_in">String</span>) {<br/>        val someTextView = findViewById(R.id.some_text_view)<br/>        someTextView.text = result<br/>    }<br/>}</code> </pre>
+<p>用协程替换它很容易。就用<code>async()</code>的方法。Kotlin 的<code>async()</code>可以在任何线程上运行，但是它是异步运行的。这意味着您可以更新视图等，而不必担心使用正确的线程。</p>
+
+<pre> <code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeActivity</span> :</span> AppCompatActivity(), CoroutineScope by MainScope() {<br/>    ...<br/><br/>    <span class="hljs-function"><span class="hljs-keyword">private</span> fun <span class="hljs-title">doOperation</span><span class="hljs-params">()</span> </span>{<br/>        <span class="hljs-keyword">async</span> {<br/>            <br/>            delay(10000)<br/><br/>            val someTextView = findViewById(R.id.some_text_view)<br/>            someTextView.text = <span class="hljs-string">"SomeString"</span><br/>        }<br/>    }<br/>}</code> </pre>
+<p>如您所见，使用协程比使用 AsyncTask 简单得多。不过，你不必只是调用<code>async()</code>并让它做自己的事情。您可以持有对它的引用，甚至等待它完成。</p>
+
+<pre> <code class="hljs javascript">val asyncJob = <span class="hljs-keyword">async</span> {<br/>    <br/>}<br/><br/>asyncJob.<span class="hljs-keyword">await</span>()<br/><br/><br/>doSomethingElse()</code> </pre>
+<h3 id="returning-values-with-async">使用异步返回值</h3>
+<p>如果你愿意，你甚至可以从<code>async()</code>返回一个值。所以最初的例子可能会变成这样。</p>
+
+<pre> <code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeActivity</span> :</span> AppCompatActivity(), CoroutineScope by MainScope() {<br/>    ...<br/>    <span class="hljs-function"><span class="hljs-keyword">private</span> fun <span class="hljs-title">doOperation</span><span class="hljs-params">()</span> </span>{<br/>        val asyncJob = <span class="hljs-keyword">async</span> {<br/>            <br/>            delay(10000)<br/><br/>            <br/>           <span class="hljs-string">"SomeString"</span><br/>        }<br/><br/>        val result = asyncJob.<span class="hljs-keyword">await</span>()<br/><br/>        val someTextView = findViewById(R.id.some_text_view)<br/>        someTextView.text = result<br/>    }<br/>}</code> </pre>
+<h3 id="using-withcontext">使用 withContext</h3>
+<p>为了方便，Kotlin 提供了<code>withContext()</code>。这内联了整个<code>await()</code>的东西，只是把值返回给你。</p>
+
+<pre> <code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeActivity</span> :</span> AppCompatActivity(), CoroutineScope by MainScope() {<br/>    ...<br/>    <span class="hljs-function"><span class="hljs-keyword">private</span> fun <span class="hljs-title">doOperation</span><span class="hljs-params">()</span> </span>{<br/>        <br/>        val result = withContext(Dispatchers.Main) {<br/>            delay(10000)<br/><br/>            <span class="hljs-string">"SomeResult"</span><br/>        }<br/><br/>        val someTextView = findViewById(R.id.some_text_view)<br/>        someTextView.text = result<br/>    }<br/>}</code> </pre><p class="ad-even"> </p>
+
+
+<h2 id="conclusion">结论</h2>
+<p>上面的例子只是 Kotlin 协程的一些基本用法，帮助您入门。您不必将协程局限于活动，甚至任何具有适当生命周期的事物。你可以在任何地方运行它们。还有更高级的操作，比如选择哪个线程应该运行异步逻辑。本指南主要展示如何用一个简单的协程替换一个简单的 AsyncTask。</p>
+
+<p>有关协程如何工作的更多细节，以及如何利用它们更高级的特性，请查看官方 Kotlin 文档。</p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

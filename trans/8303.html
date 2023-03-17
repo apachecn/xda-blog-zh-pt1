@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Windows 11 build 22483 rolls out to the Dev channel with a few more fixes</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Windows 11 build 22483 推出了开发频道，并进行了一些修复</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/windows-11-build-22483-dev-channel-fixes/#0001-01-01">https://www.xda-developers.com/windows-11-build-22483-dev-channel-fixes/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<p/><p>在为注册进入测试频道的 Windows 内部人员意外推出<a href="https://www.xda-developers.com/android-apps-available-windows-11-beta-channel/"> Android 应用程序后，微软现在</a><a href="https://blogs.windows.com/windows-insider/2021/10/20/announcing-windows-11-insider-preview-build-22483/">向开发频道的内部人员推出其每周版本的 Windows 11 </a>。这一周，我们得到了构建 22483，就像我们得到的大多数构建一样，这一个是关于修复和小的改进。</p>
+
+  
+<p>Windows 11 build 22483 中最值得注意的变化是，现在你可以右键单击开始菜单中的推荐和更多按钮来刷新那里显示的项目列表。如果您刚刚下载或保存了一个文件，但它还没有显示出来，这将非常有用。自 2014 年该计划开始以来，如果你一直是 Windows Insider，反馈中心应用程序中有一个新的庆祝徽章，庆祝该计划的七周年。</p>
+
+<p>除此之外，这都是关于修复。虽然 Android 应用程序支持现在正在推出，但它只在测试版频道提供，这似乎是一个有点奇怪的决定，考虑到开发频道通常是为了在其他任何人之前测试功能。微软表示，它希望用已经面向公众的 Windows 11 版本来测试这些功能，可能是因为该功能也将在下一次主要功能更新之前向公众推出，而下一次主要功能更新还有一年的时间。</p>
+
+<p>如果您想查看已修复的所有问题，可以查看以下列表:</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_4"><h3 id="fixes-and-improvements-in-windows-11-build-22483">Windows 11 build 22483 中的修复和改进</h3><p><strong>【搜索】</strong></p><ul> <li>修复了导致搜索显示为黑色并且在搜索框下不显示任何内容的问题。</li> </ul><p><strong>【设置】</strong></p><ul> <li>搜索“显示”现在将返回显示设置。</li> </ul><p><strong>【其他】</strong></p><ul> <li>在 ARM64 电脑上，尝试访问文件资源管理器导航窗格中的 WSL Linux 条目时，不应再弹出“wsl.localhost 不可用，资源不足”的错误消息。</li> <li>修复了在最近的开发频道版本中导致蜂窝数据在某些设备上无法工作的问题。</li> <li>解决了启用 USN 日志时 NTFS 的一个问题，即每次写入都会执行额外的不必要操作，从而影响 I/O 性能。</li> <li>对性能监视器的键盘导航和屏幕阅读器的使用做了一些小的改进。</li> <li>Webview2 进程现在应该与使用它的应用程序在任务管理器的进程选项卡中正确分组。</li> <li>修复了导致任务管理器中的发布者列无法检索发布者名称的问题。</li> </ul> </div></section>
+<p>像往常一样，该版本还附带了一个已知问题列表，这些问题可能会影响您的体验。当然，这是预发布软件的预期。以下是问题的完整列表:</p>
+
+<section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_6"><h3 id="known-issues-in-windows-11-build-22483">Windows 11 内部版本 22483 中的已知问题</h3><p><strong>【常规】</strong></p><ul> <li>从版本 22000.xxx 或更早版本更新到使用最新开发频道<a href="https://aka.ms/wipISO"> ISO </a>的较新开发频道版本的用户可能会收到以下警告消息:<em>您尝试安装的版本是 Flight Signed。要继续安装，请启用航班签名。</em>如果您收到此消息，请按下启用按钮，重启电脑，然后重试更新。</li> <li>一些用户可能会经历他们的屏幕和睡眠超时减少。我们正在调查更短的屏幕和睡眠超时对能耗的潜在影响。</li> <li>我们正在调查来自内部人士的报告，任务管理器中的进程选项卡有时是空白的。</li> <li>我们正在修复导致某些设备在更新时使用 SYSTEM _ SERVICE _ EXCPTION 进行错误检查的问题，从以前的版本开始。如果以前遇到这个问题，请尝试重新启动并重新尝试更新。</li> <li>我们正在调查来自内部人士的报告，Xbox Game Pass 游戏无法安装，错误为 0x00000001。</li> </ul><p><strong>【开始】</strong></p><ul> <li>在某些情况下，使用“从开始”或任务栏搜索时，您可能无法输入文本。如果遇到此问题，请按键盘上的 WIN + R 启动“运行”对话框，然后关闭它。</li> </ul><p><strong>【任务栏】</strong></p><ul> <li>切换输入法时任务栏有时会闪烁。</li> <li>我们正在修复一个问题，该问题导致工具提示在悬停在任务栏角落后出现在意外位置。</li> </ul><p><strong>【搜索】</strong></p><ul> <li>单击任务栏上的搜索图标后，搜索面板可能不会打开。如果出现这种情况，请重新启动“Windows 资源管理器”进程，并再次打开搜索面板。</li> </ul><p><strong>【快速设置】</strong></p><ul> <li>我们正在调查来自内部人士的报告，即音量和亮度滑块在快速设置中显示不正确。</li> </ul> </div></section>
+<p>提醒一下，Windows Insider 计划的开发频道通常正在测试 Windows 11 的未来更新，这些更新还远远没有最终确定。由于 Windows 11 的初始版本刚刚发布，下一次重大更新仍需一年时间，这意味着有足够的时间来添加新功能和变化。我们为预览版中可用的每个<a href="https://www.xda-developers.com/windows-11-features-in-preview/"> Windows 11 功能都提供了一个跟踪器，我们将随着新功能的推出而更新。</a></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>

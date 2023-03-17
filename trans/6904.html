@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Google Messages has a hidden RCS API for third-party apps</title>
+<link href="../Styles/Style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Google Messages 为第三方应用程序隐藏了一个 RCS API</h1>
+<blockquote>原文：<a href="https://www.xda-developers.com/google-messages-rcs-api-third-party-apps/#0001-01-01">https://www.xda-developers.com/google-messages-rcs-api-third-party-apps/#0001-01-01</a></blockquote><div><div class="content-block-regular">
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_0"><p><strong>更新 2 (07/09/2021 @美国东部时间下午 4:49):</strong>我们了解到该 RCS API 目前不打算由第三方应用程序使用。<a href="#update2">点击这里了解更多信息。</a></p><section class="emaki-custom-block emaki-custom-expandable"><div class="emaki-custom expandable" id="custom_block_0"><h3 id="previous-updates">以前的更新</h3><p><strong>更新 1 (07/09/2021 @ 02:53 PM ET): </strong>我们已经更新了这篇文章，说明该 API 只能在三星独家版的谷歌消息应用程序中找到。<a href="#update1">点击这里了解更多信息。</a></p> </div></section> </div></section>
+<p/><p>RCS 代表丰富的通信服务，通常被视为 SMS 的继任者。它支持群聊管理、更高质量的文件共享、阅读回执、打字指示器和端到端加密等功能。为了使用 RCS 协议进行聊天，它必须通过 API 得到网络、手机操作系统和手机消息应用程序的支持。美国运营商在采用 RCS 方面拖了太长时间，所以谷歌完全绕过他们，将他们自己的 RCS 后端添加到谷歌消息应用程序中。然而，在 Android 上，<em>只有</em>Google Messages 应用程序可以访问 Android 的 RCS API。如果谷歌开放其“安卓信息应用编程接口”，这种情况可能会改变。</p>
+
+  
+<p>回到 2019 年，<a href="https://www.xda-developers.com/google-rcs-api-3rd-party-apps/">我们了解到</a>谷歌正在致力于增加一个 RCS API。可悲的是，这些 API 对开发者是隐藏的，只能由隐藏的允许列表上的应用程序使用，包括谷歌消息应用程序。虽然谷歌消息应用程序最近变得更好，但它仍在更新基本功能<a href="https://www.xda-developers.com/google-messages-pin-conversations/"/>，你会发现许多其他<a href="https://www.xda-developers.com/best-text-messaging-apps-android/">安卓短信应用程序</a>。切换到其他应用程序的问题是，你将无法通过 RCS 发送消息，因此你将失去我们上面谈到的所有功能。然而，我们发现有证据表明，谷歌有一个未公开的“Android Messages API”，可以让任何第三方短信应用程序使用谷歌消息发送 SMS/MMS/RCS 消息。</p>
+
+<section class="emaki-custom-block emaki-custom-note"><div class="emaki-custom note" id="custom_block_3"><p>APK 拆卸通常可以预测应用程序未来更新中可能出现的功能，但我们在这里提到的任何功能都可能不会出现在未来的版本中。这是因为这些特性目前还没有在实时构建中实现，并且可能会被开发人员在未来的构建中随时引入。</p> </div></section>
+<p>当 Google Messages 今天在 Google Play 上发布时，我们解码了 APK，并在其资源中发现了以下字符串:</p>
+
+<pre> <code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"external_messaging_api_description"</span>&gt;</span>With this permission the app will be allowed to send SMS/MMS/RCS using Android Messages. It will have an access to send messages without any extra approvals.<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span><br/><span class="hljs-tag">&lt;<span class="hljs-name">string</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"external_messaging_api_label"</span>&gt;</span>Permission to send SMS/MMS/RCS messages using Android Messages API<span class="hljs-tag">&lt;/<span class="hljs-name">string</span>&gt;</span></code> </pre>
+<p>这些字符串清楚地描述了第三方消息应用程序可以请求的权限，以便能够通过 Google Messages 应用程序发送 SMS、MMS 或 RCS 消息。在 Google Messages 应用程序的清单文件中，我们还发现了消息应用程序必须声明的权限:</p>
+
+<pre> <code class="hljs javascript"><span class="hljs-tag">&lt;<span class="hljs-name">permission</span> <span class="hljs-attr">android:description</span>=<span class="hljs-string">"@string/external_messaging_api_description"</span> <span class="hljs-attr">android:label</span>=<span class="hljs-string">"@string/external_messaging_api_label"</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"com.google.android.apps.messaging.EXTERNAL_MESSAGING_API"</span> <span class="hljs-attr">android:permissionGroup</span>=<span class="hljs-string">"android.permission-group.SMS"</span> <span class="hljs-attr">android:protectionLevel</span>=<span class="hljs-string">"dangerous"</span>/&gt;</span></code> </pre>
+<p>权限类型被列为“危险”，这意味着在没有向用户显示确认信息的情况下，它不会被授予请求应用程序。上面嵌入的字符串也暗示了这一点，其中声明拥有权限的应用程序可以“发送消息而无需任何额外的批准”，这意味着最初必须获得批准。该权限被分组在短信类别下，这是有意义的，因为它只打算由消息应用程序使用。</p>
+
+<p>虽然我们希望看到 Google 开放 Android 平台的 RCS API，但是让 Google Messages 处理消息路由有一个潜在的巨大优势。这可能意味着所有通过第三方消息应用程序发送的 RCS 消息将使用谷歌的聊天服务，这是迄今为止使用最广泛的 RCS 实现，因为没有一个运营商的版本已经起飞。</p>
+
+<p>我们还没有发现谷歌关于这个 Android 消息 API 的声明，但我们希望它能很快开放。第三方短信应用目前处于劣势，因为它们缺乏 RCS 支持，但这个 API 将意味着你可以使用你最喜欢的短信应用，并享受 RCS 的好处。当然，第三方短信应用程序必须实际实现新的 API，但看起来实现起来不会太难。</p>
+
+ 
+
+
+
+<hr/>
+
+
+<h2 id="update-1-api-only-found-in-samsung-version-of-the-app">更新 1: API 仅在三星版本的应用程序中发现</h2>
+<p>在我们发表这篇文章后不久，我们了解到 Android Messages API 的字符串和清单条目只能在三星 Galaxy 手机的<a href="https://www.xda-developers.com/google-messages-galaxy-s21-one-ui-design/"> Google Messages 应用程序</a>中找到。这是相同的应用程序和包名称，但 Google Play 动态地向三星 Galaxy 手机推出这一版本的应用程序。这些条目是在几个版本之前添加的，所以 API 本身似乎并不新鲜。我们不确定为什么这些条目只出现在三星手机的应用程序版本中，但有可能谷歌制作了这个 API，以便三星的消息应用程序可以使用谷歌的聊天服务，而用户无需切换应用程序。然而，我们不明白为什么这个 API 不能对其他应用开放，我们也没有看到三星 Messages 应用本身使用这个 API 的任何证据。希望谷歌将 API 开放给所有第三方消息应用程序，将其包含在应用程序的主版本中。</p>
+
+<hr/>
+<p class="ad-odd"> </p>
+
+
+<h2 id="update-2-api-restricted-to-samsung-apps">更新 2: API 仅限于三星应用</h2>
+<p>深入挖掘谷歌消息应用程序(h/t<a href="https://9to5google.com/2021/07/09/google-messages-permission-samsung-message-continuity/"><em>9 到 5 谷歌</em> </a>)，我们发现有证据表明，这种 Android 消息 API 目前仅限于部分三星应用程序使用。具体来说，这项功能似乎旨在让三星可穿戴设备和联网平板电脑通过谷歌消息发送短信、彩信和 RCS 消息。这是三星呼叫&amp;消息连续性功能的一部分。</p>
+
+<p>当前的允许列表包括呼叫和消息连续性的包，即。“com . Samsung . Android . mdec service”，以及其他应用程序。该代码在授予对 API 的访问权限之前检查请求应用程序的包名和签名。一个标志允许任何应用程序访问 API，但是这个值显然不打算公开使用。(该标志被恰当地命名为“allow _ any _ app _ to _ connect _ do _ not _ use _ in _ public _ builds”。)</p>
+
+<p><em>感谢 PNF 软件为我们提供了使用</em> <em> <a href="https://www.pnfsoftware.com/?aid=xdadev"> JEB 反编译</a> </em> <em>的许可，这是一款针对 Android 应用的专业级逆向工程工具。</em></p>
+
+ </div>
+
+
+</div>    
+</body>
+</html>
