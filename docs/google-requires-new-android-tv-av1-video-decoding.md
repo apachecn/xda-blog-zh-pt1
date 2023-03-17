@@ -1,0 +1,15 @@
+# 谷歌可能要求新的安卓电视设备支持 AV1 视频解码
+
+> 原文：<https://www.xda-developers.com/google-requires-new-android-tv-av1-video-decoding/>
+
+有许多不同的硬件公司生产智能手机、平板电脑、电视、个人电脑和芯片；制作应用程序和操作系统的软件公司；和制作流媒体服务的媒体巨头，重要的是关键行业参与者同意支持某些视频编码格式，以确保最佳用户体验，最大限度地减少网络使用，并支持各种设备。这就是开放媒体联盟创建 AV1 视频编解码器的原因。它旨在通过互联网高效传输视频，对质量的影响最小。最好的部分是[它是免版税的](https://www.xda-developers.com/av1-future-video-codecs-google-hevc/),所以公司不必支付任何许可费，但可悲的是，它的采用一直相当缓慢，直到最近。AV1 的采用可能会在 2021 年加速，因为据报道，谷歌正在强制要求所有新的 Android 电视产品支持 AV1 视频解码。
+
+显然，AV1 在在线流媒体和媒体消费中越来越受欢迎，但迄今为止，只有少数流媒体服务将其部分内容编码为 AV1。YouTube 在选定的 Android 电视设备上流式传输以 AV1 [编码的一些视频，Vimeo 开始在 AV1 中对其员工精选频道](https://www.xda-developers.com/youtube-for-android-tv-adopts-av1-video-codec-in-certain-devices/)上的一些视频[进行编码，如果该服务的数据保存模式](https://www.xda-developers.com/vimeo-supports-av1-video-codec/)[打开](https://www.xda-developers.com/netflix-android-streams-some-shows-av1/)，网飞在 AV1 中流式传输选定的标题。AV1 的最大支持者之一谷歌最近宣布了将 AV1 用于“谷歌所有视频应用和服务”的计划。
+
+然而，为了更广泛地采用 AV1，需要有更多带硬件的设备来解码 AV1，这是确保省电和快速视频播放的必要条件。为此，谷歌要求 2021 年 3 月 31 日之后推出的所有新 Android 电视设备都支持 AV1 视频解码。根据 *XDA* 审阅的一份内部幻灯片，这一要求据说适用于今年晚些时候推出的所有搭载 Android 10 或 Android 11 的新电视产品。这张幻灯片是谷歌去年为其 Android 电视合作伙伴举行的演示的一部分。因此，我们不知道这个截止日期是否是最新的，当我们联系谷歌进行评论时，我们没有收到谷歌的回应。这篇文章发表后不久，我们注意到*协议*的 Janko Roettgers 在 2020 年 10 月 29 日的新闻简报中首次披露了这个消息[。](https://www.protocol.com/newsletters/next-up/the-future-of-cable-tv-private-equity?rebelltitem=2#rebelltitem4:~:text=Get%20ready%20for%20AV1)
+
+谷歌让 AV1 支持所有未来 Android 电视设备的要求背后有更多的证据。据报道，该公司已经要求所有搭载 Android 10 的 4K HDR 和 8K Android 电视设备支持 AV1 视频解码。业内人士 AndroidTV Guide 指出，许多最近推出的 4K HDR Android 电视设备都配备了 AV1 兼容的 SoC，如联发科 T30/T31/T32 或 Realtek RTD2851M。例如，TCL 的 X915 8K 电视支持 AV1 解码，这得益于其 Realtek RTD2851M SoC [与 RTD2893](https://twitter.com/androidtv_rumor/status/1286566173182693376) 的结合，使其成为首批支持[从 YouTube](https://www.xda-developers.com/8k-video-playback-available-youtube-android-tv-models/) 播放 8K 视频的电视之一。由于谷歌已经在推动高端电视支持 AV1，因此他们很快将这一要求扩展到所有安卓电视产品是有道理的，谷歌能够做到这一点，因为它控制着安卓电视平台。
+
+事实上，一个主要的电视品牌已经确认其整个 2021 年的电视阵容将支持 AV1 视频。 *FlatPanelsHD* [报道](https://www.flatpanelshd.com/news.php?subaction=showfull&id=1610437984#disqus_thread)[索尼 2021 年的所有电视](https://www.xda-developers.com/sony-2021-bravia-google-tv-support-hdmi-2-1-features/)都将支持 AV1 视频解码。索尼将其现有的电视与 Android TV 一起发运，并将在 2021 年继续这样做。另外，我们询问 TCL[其即将推出的 2021 年谷歌电视连续剧](https://www.xda-developers.com/2021-tcl-tvs-google-tv-8k/)是否会有 AV1 硬件解码，但在发布前我们没有收到回复。
+
+据 [*FlatPanelsHD*](https://www.flatpanelshd.com/news.php?subaction=showfull&id=1610437984#disqus_thread) 报道，LG 和三星都使用自己的操作系统，已经开始在他们的一些电视中实现 AV1 支持。大多数电视支持免版税编解码器只是时间问题。其他设备，如智能手机、平板电脑和个人电脑，最近也获得了 AV1 视频支持。联发科的 Dimensity 1000 和三星的 Exynos 2100 移动芯片组都支持 AV1 解码，而英特尔的第 11 代处理器、英伟达的 RTX 30 系列 GPU、AMD 的镭龙 RX 6000 系列 GPU[也都支持 AV1](https://www.xda-developers.com/windows-10-soon-hardware-based-av1-codec-spotlight-for-desktop/) 。随着设备获得更好的显示和流媒体服务质量的提高，采用更好的视频编码标准将对满足用户的期望和防止我们的互联网基础设施堵塞非常重要。

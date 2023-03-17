@@ -1,0 +1,11 @@
+# 小米可能正在开发两款 67W 无线充电的手机
+
+> 原文：<https://www.xda-developers.com/xiaomi-67w-wireless-charging/>
+
+小米抢先三星一步，推出了第一款搭载高通骁龙 888 移动平台的手机，但他们尚未在国际上推出这款手机——小米 11。也许小米正在等待在中国以外的地方推出米 11，这样他们就有时间添加[的“Lite”](https://www.xda-developers.com/xiaomi-prepares-add-mid-range-lite-model-mi-11-line/)和[“Pro”型号](https://www.xda-developers.com/miui-12-gallery-confirm-xiaomi-mi-11-pro/)？无论如何，我们现在已经看到了小米正在开发至少两款支持 67W 无线充电的手机的证据，这比标准 Mi 11 中的 50W 无线充电更快。虽然我们不能 100%确认小米 11 Pro 是否是这两款设备中的一款，但有一些证据表明情况确实如此，而且很难想象小米的 premium Pro 型号不会采用该公司迄今为止最快的无线充电技术。
+
+在最新的 MIUI 12.5 beta 版本中，XDA 成员和频繁的小米密报者 [kacskrz](https://forum.xda-developers.com/m/kacskrz.8240900/about) 发现了一个名为“key guard _ wireless _ strong _ charge _ 67w”的新字符串数组，其中包含以下两项:star 和 mars。我们已经追踪这两个代号几个星期了，从我们所知的来看，“星星”的型号名称以 K1 结尾，而火星的型号名称以 K1A 结尾。这表明这两种设备是相关的——也许一种是另一种的地区变体？(注:小米的型号名称通常遵循一种模式，以“M”开头，后跟几个数字，两三个字母表示基本设备[在这种情况下，K1/K1A]，然后几个字母表示特定的地区/型号。)除此之外，我们还怀疑至少“星星”将采用[高通的骁龙 888 芯片组](https://www.xda-developers.com/qualcomm-snapdragon-888-explained-specs-features/)，因为它出现在一个名为“s8350”的常数中，旁边是“金星”(Mi 11 的[代号)和“鲸鱼座”(小米即将推出的可折叠智能手机](https://www.xda-developers.com/xiaomi-mi-11-kernel-source-code/)的[代号)。](https://www.xda-developers.com/xiaomi-foldable-smartphone-cetus-108mp-camera-miui-12-code-hint/)
+
+本月早些时候，泄密者*数字聊天站* [透露](https://m.weibo.cn/detail/4593213618788248)一家公司正在测试其新款旗舰手机的 80W 无线充电，一些[猜测](https://www.gsmarena.com/xiaomi_might_bring_80w_wireless_charging_to_the_mi_11_pro-news-47208.php)指的是小米即将推出的 Mi 11 Pro。虽然小米[确实在测试 80W 无线充电](https://www.xda-developers.com/xiaomi-80w-wireless-charging-fills-4000mah-battery-19-minutes/)是真的，但我们不知道它是否准备好大规模生产。小米可能还没有准备好为智能手机配备 80W Mi 无线充电技术，因为我们没有在固件中发现任何证据表明这一点。也有可能是小米为了控制产生多少热量，故意把最大功率限制在 67W 而不是 80W。无论如何，有很好的证据表明，小米将在未来的产品中采用 67W 无线充电——他们甚至已经为此准备了一个标志！
+
+同样，我们不知道 Mi 11 Pro 是否会特别配备 67W 无线充电功能。据小米电报组的人说，小米 11 Pro 的代号是“star”，与我们发现的两个代号之一相匹配，它具有 120Hz 刷新率的 OLED 面板，以及由 50MP 索尼 IMX766 图像传感器、超广角相机和 48MP 5X 光学变焦长焦相机组成的三摄像头阵列。小米相信“火星”将具有类似的规格，这符合我们关于它们的型号名称的理论。我们不知道这些规格是否是真的，但我们知道小米是如何衍生出来的，所以我们至少有信心它们不是彻头彻尾的假的。然而，我们不用等很久就能发现它们是否属实，因为一个泄露[指出](https://www.gsmarena.com/xiaomi_mi_11_pro_to_arrive_in_february_2021-news-46932.php)Mi 11 Pro 将于 2021 年 2 月 12 日发布。

@@ -1,0 +1,13 @@
+# Chrome OS 可能很快会支持镜像你的手机屏幕
+
+> 原文：<https://www.xda-developers.com/chrome-os-soon-support-mirroring-phones-screen/>
+
+过去几个月，谷歌一直在为 Chrome 操作系统开发一个新的手机中枢功能。这个特性是在去年九月作为 Chromium Gerrit 的一个新特性标志首次被发现的。该标志透露，电话中心将提供 Chrome OS 和 Android 设备之间的更深层次的集成，允许用户从他们的 Chromebooks 访问通知和控制他们的手机。本月早些时候，功能[在金丝雀频道为一些运行 Chrome OS 90 的用户上线](https://www.xda-developers.com/chrome-os-phone-hub-will-keep-your-phone-and-chromebook-in-sync/)，我们了解了更多关于它的功能。
+
+到目前为止，我们已经了解到，电话中心功能将允许用户启用他们手机的热点，启用免打扰模式，定位他们放错地方的手机，同步 Chrome 标签，同步通知，并从他们的 Chromebook 上回复他们。现在，来自 *9to5Google* 的一份[近期报告](https://9to5google.com/2021/02/09/chrome-os-eche-screen-mirror-pixel-android-phone-hub/)表明，它还可以让你镜像你的手机屏幕。报道指出了一面正在研发中的[新国旗](https://redirect.viglink.com/?format=go&jsonp=vglnk_161293673520014&key=b8f771eed689587b82c4635131ce08d7&libId=kkyx8gf501010l04000DLe0iv52mc&loc=https%3A%2F%2F9to5google.com%2F2021%2F02%2F09%2Fchrome-os-eche-screen-mirror-pixel-android-phone-hub%2F&v=1&out=https%3A%2F%2Fchromium-review.googlesource.com%2Fc%2Fchromium%2Fsrc%2F%2B%2F2675553&ref=https%3A%2F%2Fapp.asana.com%2F&title=Chrome%20OS%20may%20soon%20be%20able%20to%20mirror%20Pixel%20phone%20screen%20-%209to5Google&txt=a%20new%20flag) — **#eche-swa** —。它声称这个标志启用了一个系统 Web App (SWA)版本的“Eche”，当从西班牙语翻译成英语时，大概是“throw”或“cast”的意思。这表明 SWA 将允许用户将手机屏幕投射到 Chrome OS 设备上。
+
+报道进一步谈到了一个[片段，该片段强调了](https://redirect.viglink.com/?format=go&jsonp=vglnk_161293583718313&key=b8f771eed689587b82c4635131ce08d7&libId=kkyx8gf501010l04000DLe0iv52mc&loc=https%3A%2F%2F9to5google.com%2F2021%2F02%2F09%2Fchrome-os-eche-screen-mirror-pixel-android-phone-hub%2F&v=1&out=https%3A%2F%2Fchromium.googlesource.com%2Fchromium%2Fsrc%2F%2B%2F78e307708a864c5b6683b4210fced83735e8b574%2Fchromeos%2Fcomponents%2Feche_app_ui%2Feche_app_manager.h%2315&ref=https%3A%2F%2Fapp.asana.com%2F&title=Chrome%20OS%20may%20soon%20be%20able%20to%20mirror%20Pixel%20phone%20screen%20-%209to5Google&txt=a%20snippet%20that%20explains)这面 **#eche-swa** 旗帜应该做什么。它声明:*“实现 EcheApp 的核心逻辑，这是一个通过 WebRTC 传输视频和双向数据的 SWA。”*这表明 Eche *是一个与通过 WebRTC 广播的视频相关的应用程序，WebRTC 是包括 Google Duo 在内的许多实时视频应用程序使用的相同技术，以及一些其他在两个设备之间来回发送的“数据”。*”
+
+这项新功能基本上可以让用户在点击电话中心通知时将手机屏幕投射到他们的 Chromebook 上，就像微软 Windows 10 的 [Your Phone](https://www.xda-developers.com/tag/your-phone/) 应用程序提供的功能一样。值得注意的是，该功能最有可能在发布时仅限于谷歌的 Pixel 设备，因为 Eche 应用程序的 Javascript 包含在谷歌源代码文件夹中，似乎是专门针对 Pixel 手机的。
+
+值得注意的是，Phone Hub 的屏幕镜像功能目前还处于早期开发阶段，我们没有任何关于发布时间表的信息。谷歌推测，如果这是一个像素专属功能，谷歌可能会在季度[像素功能发布](https://www.xda-developers.com/tag/pixel-featuredrops/)中推出它。当我们了解到更多关于这个特性的信息时，我们会尽快更新这篇文章。
